@@ -19,3 +19,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/html5-boilerplate"]
 	path = skin/frontend/mytheme/default/vendor/html5-boilerplate
 	url = git://github.com/h5bp/html5-boilerplate.git
+[submodule "skin/frontend/mytheme/default/vendor/tempo"]
+	path = skin/frontend/mytheme/default/vendor/tempo
+	url = git://github.com/twigkit/tempo.git
