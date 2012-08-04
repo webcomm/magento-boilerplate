@@ -1,0 +1,3 @@
+[submodule "skin/frontend/mytheme/default/vendor/html5shiv"]
+	path = skin/frontend/mytheme/default/vendor/html5shiv
+	url = git://github.com/aFarkas/html5shiv.git
