@@ -63,11 +63,9 @@
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/modernizr.js</name>
-			</action>
-			<action method="addItem">
-				<type>skin_js</type>
-				<name>js/jquery.js</name>
+				<name>js/html5shiv.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
@@ -77,9 +75,17 @@
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/selectivizr-1.0.2.min.js</name>
+				<name>js/selectivizr.js</name>
 				<params/>
 				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/modernizr.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
