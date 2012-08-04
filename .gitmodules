@@ -10,3 +10,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/selectivizr"]
 	path = skin/frontend/mytheme/default/vendor/selectivizr
 	url = git://github.com/keithclark/selectivizr.git
+[submodule "skin/frontend/mytheme/default/vendor/nwmatcher"]
+	path = skin/frontend/mytheme/default/vendor/nwmatcher
+	url = git://github.com/dperini/nwmatcher.git
