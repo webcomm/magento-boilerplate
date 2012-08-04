@@ -4,3 +4,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/bootstrap"]
 	path = skin/frontend/mytheme/default/vendor/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "skin/frontend/mytheme/default/vendor/semantic.gs"]
+	path = skin/frontend/mytheme/default/vendor/semantic.gs
+	url = git://github.com/twigkit/semantic.gs.git
