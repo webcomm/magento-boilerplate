@@ -13,3 +13,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/nwmatcher"]
 	path = skin/frontend/mytheme/default/vendor/nwmatcher
 	url = git://github.com/dperini/nwmatcher.git
+[submodule "skin/frontend/mytheme/default/vendor/modernizr"]
+	path = skin/frontend/mytheme/default/vendor/modernizr
+	url = git://github.com/Modernizr/Modernizr.git
