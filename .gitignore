@@ -106,8 +106,10 @@ publish
 /app/design/aminhtml/default/*
 !/app/design/aminhtml/default/layout
 /app/design/aminhtml/default/layout/*
+!/app/design/aminhtml/default/layout/webcomm_*
 !/app/design/aminhtml/default/template
 /app/design/aminhtml/default/template/*
+!/app/design/aminhtml/default/template/webcomm
 !/app/design/frontend
 /app/design/frontend/*
 !/app/design/frontend/base
@@ -116,14 +118,17 @@ publish
 /app/design/frontend/base/default/*
 !/app/design/frontend/base/default/layout
 /app/design/frontend/base/default/layout/*
+!/app/design/frontend/base/default/layout/webcomm_*
 !/app/design/frontend/base/default/template
 /app/design/frontend/base/default/template/*
+!/app/design/frontend/base/default/template/webcomm
 
 # Start: App modules
 !/app/etc
 /app/etc/*
 !/app/etc/modules
 /app/etc/modules/*
+!/app/etc/modules/Webcomm_*
 
 # Start: App locale
 !/app/locale
@@ -200,6 +205,7 @@ publish
 /skin/adminhtml/base/default/js/*
 !/skin/adminhtml/base/default/lib
 /skin/adminhtml/base/default/lib/*
+!/skin/adminhtml/base/default/webcomm
 !/skin/adminhtml/default
 /skin/adminhtml/default/*
 !/skin/adminhtml/default/default
