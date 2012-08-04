@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pyty Ltd
+ * @link        http://webcomm.com.au
+ */
+ -->
+
+<layout version="0.1.0">
+
+
+	<default>
+
+
+		<reference name="head">
+
+
+			<!-- Start: Remove Magento's default assets -->
+			<action method="removeItem">
+					<type>skin_css</type>
+					<name>css/print.css</name>
+				</action>
+				<action method="removeItem">
+					<type>skin_css</type>
+					<name>css/styles-ie.css</name>
+				</action>
+				<action method="removeItem">
+					<type>skin_css</type>
+					<name>css/styles.css</name>
+				</action>
+				<action method="removeItem">
+					<type>skin_css</type>
+					<name>css/widgets.css</name>
+				</action>
+				<action method="removeItem">
+					<type>skin_js</type>
+					<name>js/ie6.js</name>
+				</action>
+				<action method="removeItem">
+					<type>js</type>
+					<name>lib/ds-sleight.js</name>
+				</action>
+				<action method="removeItem">
+					<type>js</type>
+					<name>varien/menu.js</name>
+				</action>
+
+
+			<!-- Start: Add our own HTML5 assets -->
+			<action method="addCss">
+				<stylesheet>css/style.css</stylesheet>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/modernizr.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/nwmatcher.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/selectivizr-1.0.2.min.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/script-ck.js</name>
+			</action>
+
+
+		</reference>
+
+
+	</default>
+
+
+</layout>
