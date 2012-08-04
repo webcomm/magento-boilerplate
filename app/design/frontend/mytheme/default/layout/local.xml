@@ -14,6 +14,16 @@
 	<default>
 
 
+		<reference name="root">
+
+
+			<!-- Start: Add Chrome frame to templates -->
+			<block type="core/template" name="chromeframe" template="page/html/chromeframe.phtml"/>
+
+
+		</reference>
+
+
 		<reference name="head">
 
 

@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="<?=$this->getContentType()?>">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
+<title><?=$this->getTitle()?></title>
+<meta name="description" content="<?=htmlspecialchars($this->getDescription())?>">
+<meta name="keywords" content="<?=htmlspecialchars($this->getKeywords())?>">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="<?=htmlspecialchars($this->getRobots())?>">
+<link rel="icon" href="<?=$this->getFaviconFile()?>" type="image/x-icon">
+<link rel="shortcut icon" href="<?=$this->getFaviconFile()?>" type="image/x-icon">
+<meta http-equiv="imagetoolbar" content="false">
+
+<meta name="msapplication-tooltip" content="<?=Mage::helper('core/string')->truncate(htmlspecialchars($this->getDescription()))?>">
+
+<link rel="author" href="<?=Mage::getDesign()->getSkinUrl('humans.txt')?>" type="text/plain">
