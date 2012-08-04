@@ -1,6 +1,14 @@
+// ==================================== //
+//    Magento Boilerplate LESS file.    //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
 
 
-// Some style guide notes:
+// ==================================== //
+// Some style guide notes:              //
+// ==================================== //
 //
 //   - All HTML / CSS is to use the SMACSS
 //     principle. No exceptions.
@@ -12,14 +20,15 @@
 //     one LESS file are to be placed in
 //     variables.less
 //
-//   - Formatting requirements:
+//   - Formatting requirements: 
 //     1. There is a space after colons
-//     2. Tabbed in property declarations
+//     2. Property declarations should be
+//        camelCased
 //     3. Properties grouped by type
 //     3. Opening bracket on same line as
 //        rule set
 //     4. Colour declarations use variables
-//        followed by short form (lowecase
+//        followed by short form (lowercase
 //        letters)
 //
 //   - Property grouping is to be in
@@ -32,4 +41,19 @@
 //     5. Text
 //     6. Other (colours, transition etc)
 
-@import "../vendor/bootstrap/less/bootstrap";
+
+// CSS Reset
+@import "../vendor/bootstrap/less/reset.less";
+
+// Core variables with overrides
+@import "../vendor/bootstrap/less/variables.less";
+@import "variables.less";
+
+// Mixins
+@import "mixins.less";
+
+// Grid system and page structure
+@import "../vendor/bootstrap/less/scaffolding.less";
+@import "grid.less";
+@import "../vendor/bootstrap/less/layouts.less";
+
