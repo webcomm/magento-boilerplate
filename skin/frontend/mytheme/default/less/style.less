@@ -42,18 +42,44 @@
 //     6. Other (colours, transition etc)
 
 
-// CSS Reset
-@import "../vendor/bootstrap/less/reset.less";
-
 // Core variables with overrides
-@import "../vendor/bootstrap/less/variables.less";
-@import "variables.less";
+@import "variables";
 
 // Mixins
-@import "mixins.less";
+@import "mixins";
 
 // Grid system and page structure
-@import "../vendor/bootstrap/less/scaffolding.less";
-@import "grid.less";
-@import "../vendor/bootstrap/less/layouts.less";
+@import "grid";
 
+
+// SMACSS - BASE
+// --------------------------------------------------
+
+// CSS Reset
+@import "reset";
+
+@import "base";
+@import "base/type";
+@import "base/tables";
+@import "base/forms";
+
+// Standard Magento style sheet
+// that contains things we aren't
+// customising.
+@import "mage";
+
+
+// SMACSS - LAYOUT
+// --------------------------------------------------
+
+@import "layout";
+
+
+// SMACSS - MODULES
+// --------------------------------------------------
+
+
+// SMACSS - STATES
+// --------------------------------------------------
+
+@import "utilities";

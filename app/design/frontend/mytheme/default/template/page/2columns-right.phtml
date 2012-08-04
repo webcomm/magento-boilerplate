@@ -6,6 +6,27 @@
 <head>
 	<?=$this->getChildHtml('head')?>
 </head>
-<body>
+<body class="<?=$this->getBodyClass()?>">
+	<?=$this->getChildHtml('after_body_start')?>
 	<?=$this->getChildHtml('chromeframe')?>
+	<?=$this->getChildHtml('global_notices')?>
+
+	<?=$this->getChildHtml('header')?>
+
+	<div role="main">
+		<div class="centre-container">
+			<div class="main-content with-one-sidebar">
+				<?=$this->getChildHtml('breadcrumbs')?>
+				<?=$this->getChildHtml('content')?>
+			</div>
+			<aside class="main-sidebar">
+				<?=$this->getChildHtml('right')?>
+			</aside>
+		</div>
+	</div>
+
+	<?=$this->getChildHtml('footer')?>
+
+	<?=$this->getChildHtml('before_body_end')?>
 </body>
+</html>
