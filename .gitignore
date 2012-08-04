@@ -82,7 +82,6 @@ publish
 
 
 # Start: .htaccess files
-/.htaccess
 /.htaccess.sample
 
 # Start: API
@@ -148,7 +147,6 @@ publish
 /includes
 
 # Start: Index and installer files
-/index.php
 /index.php.sample
 /install.php
 
