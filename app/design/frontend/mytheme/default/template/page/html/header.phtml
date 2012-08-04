@@ -1,0 +1,23 @@
+<header role="banner">
+	<div class="centre-container">
+
+		<div class="logo-column">
+			<h1 id="logo">
+				<strong><?=$this->getLogoAlt()?></strong>
+				<a href="<?=$this->getUrl('')?>" title="<?=$this->getLogoAlt()?>" class="logo">
+					<img src="<?=$this->getLogoSrc()?>" alt="<?=$this->getLogoAlt()?>">
+				</a>
+			</h1>
+		</div>
+
+		<div class="quick-access">
+
+			<?=$this->getChildHtml('topSearch')?>
+			<p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+			<?php echo $this->getChildHtml('topLinks') ?>
+			<?php echo $this->getChildHtml('store_language') ?>
+
+		</div>
+
+	</div>
+</header>

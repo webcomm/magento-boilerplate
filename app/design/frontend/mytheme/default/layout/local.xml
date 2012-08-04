@@ -20,6 +20,14 @@
 			<block type="core/template" name="chromeframe" template="page/html/chromeframe.phtml"/>
 
 
+			<!-- Start: Add navigation block to root template -->
+			<block type="core/template" name="nav" as="nav" template="page/html/nav.phtml">
+				<action method="insert">
+					<name>catalog.topnav</name>
+				</action>
+			</block>
+
+
 		</reference>
 
 

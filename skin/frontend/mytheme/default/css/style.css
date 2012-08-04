@@ -553,6 +553,7 @@ small {
 cite {
   font-style: normal;
 }
+p,
 ul,
 ol,
 dl,
@@ -565,6 +566,16 @@ ul,
 ol {
   list-style: none;
   list-style-image: none;
+}
+ul.styled,
+ol.styled {
+  margin-left: 25px;
+}
+ul.styled {
+  list-style: disc;
+}
+ol.styled {
+  list-style: decimal;
 }
 table {
   max-width: 100%;
@@ -1466,6 +1477,9 @@ legend + .control-group {
 .form-horizontal .form-actions {
   padding-left: 160px;
 }
+form {
+  margin: 0;
+}
 .form-list li {
   margin: 0 0 8px;
 }
@@ -2120,32 +2134,6 @@ tr.summary-details-excluded {
   margin: 0 0 10px;
   border: 1px dotted #cccc73;
   padding: 10px;
-}
-.logo {
-  float: left;
-}
-.header {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-.header .logo {
-  float: left;
-  text-decoration: none !important;
-}
-.header .logo strong {
-  position: absolute;
-  top: -999em;
-  left: -999em;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-  text-indent: -999em;
-  overflow: hidden;
-}
-.header h1.logo {
-  margin: 0;
-  padding: 0;
 }
 .header .welcome-msg {
   font-weight: bold;
@@ -3658,6 +3646,25 @@ tr.summary-details-excluded {
 .centre-container:after {
   clear: both;
 }
+.column-full {
+  display: inline;
+  float: left;
+  width: 940px;
+  margin: 0 10px;
+}
+header[role="banner"] .logo-column {
+  display: inline;
+  float: left;
+  width: 300px;
+  margin: 0 10px;
+}
+header[role="banner"] .quick-access {
+  display: inline;
+  float: left;
+  width: 380px;
+  margin: 0 10px;
+  margin-left: 250px;
+}
 .main-content {
   display: inline;
   float: left;
@@ -4086,6 +4093,17 @@ input[type="submit"].btn.btn-mini {
 }
 .button:first-child {
   *margin-left: 0;
+}
+#logo strong {
+  display: block !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 .pull-right {
   float: right;

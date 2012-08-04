@@ -4,6 +4,7 @@
 @import "../../vendor/bootstrap/less/type";
 
 // Reset margin / padding on elements
+p,
 ul, ol,
 dl, dt, dd {
 	margin: 0;
@@ -14,4 +15,16 @@ dl, dt, dd {
 ul, ol {
 	list-style: none;
 	list-style-image: none;
+
+	&.styled {
+		margin-left: 25px;
+	}
+}
+
+ul.styled {
+	list-style: disc;
+}
+
+ol.styled {
+	list-style: decimal;
 }

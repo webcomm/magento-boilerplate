@@ -9,18 +9,12 @@
 	width: @totalWidth;
 }
 
-.main-content {
+// Column full, put in for a full-width column
+// inside .centre-container
+.column-full {
 	.column(12);
-
-	&.with-one-sidebar {
-		.column(9);
-	}
-
-	&.width-two-sidebars {
-		.column(6);
-	}
 }
 
-.main-sidebar {
-	.column(3);
-}
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
