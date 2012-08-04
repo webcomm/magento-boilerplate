@@ -1,15 +1,49 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="<?=$this->getContentType()?>">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
 <title><?=$this->getTitle()?></title>
 <meta name="description" content="<?=htmlspecialchars($this->getDescription())?>">
 <meta name="keywords" content="<?=htmlspecialchars($this->getKeywords())?>">
 <meta name="viewport" content="width=device-width">
 <meta name="robots" content="<?=htmlspecialchars($this->getRobots())?>">
+
+<!-- Icons -->
 <link rel="icon" href="<?=$this->getFaviconFile()?>" type="image/x-icon">
 <link rel="shortcut icon" href="<?=$this->getFaviconFile()?>" type="image/x-icon">
-<meta http-equiv="imagetoolbar" content="false">
 
+<?php if ($icon = $this->getAppleTouchIconIphone()): ?>
+	<link rel="apple-touch-icon<?=$this->shouldUsePrecomposedAppleTouchIcons() ? '-precomposed' : null?>" sizes="57x57" href="<?=$icon?>">
+	<?php unset($icon) ?>
+<?php endif ?>
+<?php if ($icon = $this->getAppleTouchIconIphoneRetina()): ?>
+	<link rel="apple-touch-icon<?=$this->shouldUsePrecomposedAppleTouchIcons() ? '-precomposed' : null?>" sizes="114x114" href="<?=$icon?>">
+	<?php unset($icon) ?>
+<?php endif ?>
+<?php if ($icon = $this->getAppleTouchIconIpad()): ?>
+	<link rel="apple-touch-icon<?=$this->shouldUsePrecomposedAppleTouchIcons() ? '-precomposed' : null?>" sizes="72x72" href="<?=$icon?>">
+	<?php unset($icon) ?>
+<?php endif ?>
+<?php if ($icon = $this->getAppleTouchIconIpadRetina()): ?>
+	<link rel="apple-touch-icon<?=$this->shouldUsePrecomposedAppleTouchIcons() ? '-precomposed' : null?>" sizes="144x144" href="<?=$icon?>">
+	<?php unset($icon) ?>
+<?php endif ?>
+
+<!-- IE specific -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
+<meta http-equiv="imagetoolbar" content="false">
 <meta name="msapplication-tooltip" content="<?=Mage::helper('core/string')->truncate(htmlspecialchars($this->getDescription()))?>">
 
 <link rel="author" href="<?=Mage::getDesign()->getSkinUrl('humans.txt')?>" type="text/plain">
+
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+	var BLANK_URL = '<?=$this->helper('core/js')->getJsUrl('blank.html')?>';
+	var BLANK_IMG = '<?=$this->helper('core/js')->getJsUrl('spacer.gif')?>';
+//]]>
+</script>
+<![endif]-->
+
+<?=$this->getCssJsHtml()?>
+<?=$this->getChildHtml()?>
+<?=$this->helper('core/js')->getTranslatorScript()?>
+<?=$this->getIncludes()?>
