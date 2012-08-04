@@ -15,7 +15,10 @@
 	<?=$this->getChildHtml('nav')?>
 
 	<div class="centre-container">
-		<div role="main" class="main-content with-one-sidebar">
+		<aside role="complementary" class="main-sidebar">
+			<?=$this->getChildHtml('left')?>
+		</aside>
+		<div role="main" class="main-content with-two-sidebars">
 			<?=$this->getChildHtml('breadcrumbs')?>
 			<?=$this->getChildHtml('global_messages')?>
 			<?=$this->getChildHtml('content')?>

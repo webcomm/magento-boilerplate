@@ -3652,6 +3652,9 @@ tr.summary-details-excluded {
   width: 940px;
   margin: 0 10px;
 }
+header[role="banner"] {
+  margin-bottom: 20px;
+}
 header[role="banner"] .logo-column {
   display: inline;
   float: left;
@@ -3665,28 +3668,44 @@ header[role="banner"] .quick-access {
   margin: 0 10px;
   margin-left: 250px;
 }
-.main-content {
+nav[role="navigation"] {
+  margin-bottom: 20px;
+}
+div[role="main"] {
   display: inline;
   float: left;
   width: 940px;
   margin: 0 10px;
 }
-.main-content.with-one-sidebar {
+div[role="main"].with-one-sidebar {
   display: inline;
   float: left;
   width: 700px;
   margin: 0 10px;
 }
-.main-content.width-two-sidebars {
+div[role="main"].with-two-sidebars {
   display: inline;
   float: left;
   width: 460px;
   margin: 0 10px;
 }
-.main-sidebar {
+aside[role="complementary"] {
   display: inline;
   float: left;
   width: 220px;
+  margin: 0 10px;
+}
+div[role="main"],
+div[role="main"].with-one-sidebar,
+div[role="main"].with-two-sidebars,
+aside[role="complementary"] {
+  margin-bottom: 20px;
+}
+footer[role="contentinfo"] .footer-left,
+footer[role="contentinfo"] .footer-right {
+  display: inline;
+  float: left;
+  width: 460px;
   margin: 0 10px;
 }
 .btn {

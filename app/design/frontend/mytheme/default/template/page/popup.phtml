@@ -6,27 +6,10 @@
 <head>
 	<?=$this->getChildHtml('head')?>
 </head>
-<body class="<?=$this->getBodyClass()?>">
+<body class="page-popup <?=$this->getBodyClass()?>">
 	<?=$this->getChildHtml('after_body_start')?>
 	<?=$this->getChildHtml('chromeframe')?>
-	<?=$this->getChildHtml('global_notices')?>
-
-	<?=$this->getChildHtml('header')?>
-	<?=$this->getChildHtml('nav')?>
-
-	<div class="centre-container">
-		<div role="main" class="main-content with-one-sidebar">
-			<?=$this->getChildHtml('breadcrumbs')?>
-			<?=$this->getChildHtml('global_messages')?>
-			<?=$this->getChildHtml('content')?>
-		</div>
-		<aside role="complementary" class="main-sidebar">
-			<?=$this->getChildHtml('right')?>
-		</aside>
-	</div>
-
-	<?=$this->getChildHtml('footer')?>
-
+	<?=$this->getChildHtml('content')?>
 	<?=$this->getChildHtml('before_body_end')?>
 	<?=$this->getAbsoluteFooter()?>
 </body>
