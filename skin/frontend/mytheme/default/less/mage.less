@@ -38,7 +38,7 @@
 // small,big     { font-size:1em; }
 // sup           { font-size:1em; vertical-align:top; }
 
-// // Lists 
+// // Lists - base/type.less
 // ul,ol         { list-style:none; }
 
 // // Tools - utilities.less
@@ -107,139 +107,139 @@
 
 
 // Global Styles ========================================================================= 
-// Form Elements 
-input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#000; }
-input.input-text,select,textarea { background:#fff; border:1px solid #ddd; }
-input.input-text,textarea { padding:2px; }
-select { padding:1px; }
-select option { padding-right:10px; }
-select.multiselect option { border-bottom:1px solid #ddd; padding:2px 5px; }
-select.multiselect option:last-child { border-bottom:0; }
-textarea { overflow:auto; }
-input.radio { margin-right:3px; }
-input.checkbox { margin-right:3px; }
-input.qty { width:2.5em !important; }
-button.button::-moz-focus-inner { padding:0; border:0; } // FF Fix 
-button.button { -webkit-border-fit:lines; } // <- Safari & Google Chrome Fix 
-button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
-button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
-button.button span span { background-position:100% 0; padding:0 12px 0 4px; }
-button.disabled {}
-button.disabled span {}
+// // Form Elements - base/forms.less
+// input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#000; }
+// input.input-text,select,textarea { background:#fff; border:1px solid #ddd; }
+// input.input-text,textarea { padding:2px; }
+// select { padding:1px; }
+// select option { padding-right:10px; }
+// select.multiselect option { border-bottom:1px solid #ddd; padding:2px 5px; }
+// select.multiselect option:last-child { border-bottom:0; }
+// textarea { overflow:auto; }
+// input.radio { margin-right:3px; }
+// input.checkbox { margin-right:3px; }
+// input.qty { width:2.5em !important; }
+// button.button::-moz-focus-inner { padding:0; border:0; } // FF Fix 
+// button.button { -webkit-border-fit:lines; } // <- Safari & Google Chrome Fix 
+// button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
+// button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
+// button.button span span { background-position:100% 0; padding:0 12px 0 4px; }
+// button.disabled {}
+// button.disabled span {}
 
-button.btn-checkout span {}
-button.btn-checkout.no-checkout {}
+// button.btn-checkout span {}
+// button.btn-checkout.no-checkout {}
 
-p.control input.checkbox,
-p.control input.radio { margin-right:6px; }
-// Form Highlight 
-//input.input-text:focus,select:focus,textarea:focus {}
-//.highlight { background:#efefef; }
+// p.control input.checkbox,
+// p.control input.radio { margin-right:6px; }
+// // Form Highlight 
+// //input.input-text:focus,select:focus,textarea:focus {}
+// //.highlight { background:#efefef; }
 
-// Form lists 
-// Grouped fields 
-//.form-list { width:535px; margin:0 auto; overflow:hidden; }
-.form-list li { margin:0 0 8px; }
-.form-list label { float:left; color:#111; font-weight:bold; position:relative; z-index:0; }
-.form-list label.required {}
-.form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-8px; }
-.form-list li.control label { float:none; }
-.form-list li.control input.radio,
-.form-list li.control input.checkbox { margin-right:6px; }
-.form-list li.control .input-box { clear:none; display:inline; width:auto; }
-//.form-list li.fields { margin-right:-15px; }
-.form-list .input-box { display:block; clear:both; width:260px; }
-.form-list .field { float:left; width:275px; }
-.form-list input.input-text { width:254px; }
-.form-list textarea { width:254px; height:10em; }
-.form-list select { width:260px; }
-.form-list li.wide .input-box { width:535px; }
-.form-list li.wide input.input-text { width:529px; }
-.form-list li.wide textarea { width:529px; }
-.form-list li.wide select { width:535px; }
-.form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
-.form-list li.additional-row .btn-remove { float:right; margin:5px 0 0; }
-.form-list .input-range input.input-text { width:74px; }
-// Customer 
-.form-list .customer-name-prefix .input-box,
-.form-list .customer-name-suffix .input-box,
-.form-list .customer-name-prefix-suffix .input-box,
-.form-list .customer-name-prefix-middlename .input-box,
-.form-list .customer-name-middlename-suffix .input-box,
-.form-list .customer-name-prefix-middlename-suffix .input-box { width:auto; }
+// // Form lists 
+// // Grouped fields 
+// //.form-list { width:535px; margin:0 auto; overflow:hidden; }
+// .form-list li { margin:0 0 8px; }
+// .form-list label { float:left; color:#111; font-weight:bold; position:relative; z-index:0; }
+// .form-list label.required {}
+// .form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-8px; }
+// .form-list li.control label { float:none; }
+// .form-list li.control input.radio,
+// .form-list li.control input.checkbox { margin-right:6px; }
+// .form-list li.control .input-box { clear:none; display:inline; width:auto; }
+// //.form-list li.fields { margin-right:-15px; }
+// .form-list .input-box { display:block; clear:both; width:260px; }
+// .form-list .field { float:left; width:275px; }
+// .form-list input.input-text { width:254px; }
+// .form-list textarea { width:254px; height:10em; }
+// .form-list select { width:260px; }
+// .form-list li.wide .input-box { width:535px; }
+// .form-list li.wide input.input-text { width:529px; }
+// .form-list li.wide textarea { width:529px; }
+// .form-list li.wide select { width:535px; }
+// .form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
+// .form-list li.additional-row .btn-remove { float:right; margin:5px 0 0; }
+// .form-list .input-range input.input-text { width:74px; }
+// // Customer 
+// .form-list .customer-name-prefix .input-box,
+// .form-list .customer-name-suffix .input-box,
+// .form-list .customer-name-prefix-suffix .input-box,
+// .form-list .customer-name-prefix-middlename .input-box,
+// .form-list .customer-name-middlename-suffix .input-box,
+// .form-list .customer-name-prefix-middlename-suffix .input-box { width:auto; }
 
-.form-list .name-prefix { width:65px; }
-.form-list .name-prefix select { width:55px; }
-.form-list .name-prefix input.input-text { width:49px; }
+// .form-list .name-prefix { width:65px; }
+// .form-list .name-prefix select { width:55px; }
+// .form-list .name-prefix input.input-text { width:49px; }
 
-.form-list .name-suffix { width:65px; }
-.form-list .name-suffix select { width:55px; }
-.form-list .name-suffix input.input-text { width:49px; }
+// .form-list .name-suffix { width:65px; }
+// .form-list .name-suffix select { width:55px; }
+// .form-list .name-suffix input.input-text { width:49px; }
 
-.form-list .name-middlename { width:70px; }
-.form-list .name-middlename input.input-text { width:49px; }
+// .form-list .name-middlename { width:70px; }
+// .form-list .name-middlename input.input-text { width:49px; }
 
-.form-list .customer-name-prefix-middlename-suffix .name-firstname,
-.form-list .customer-name-prefix-middlename .name-firstname { width:140px; }
-.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-middlename .name-firstname input.input-text { width:124px; }
-.form-list .customer-name-prefix-middlename-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text { width:189px; }
+// .form-list .customer-name-prefix-middlename-suffix .name-firstname,
+// .form-list .customer-name-prefix-middlename .name-firstname { width:140px; }
+// .form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
+// .form-list .customer-name-prefix-middlename .name-firstname input.input-text { width:124px; }
+// .form-list .customer-name-prefix-middlename-suffix .name-lastname { width:205px; }
+// .form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text { width:189px; }
 
-.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
-.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+// .form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+// .form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+// .form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+// .form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
 
-.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
-.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+// .form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+// .form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+// .form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+// .form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
 
-.form-list .customer-name-prefix .name-firstname,
-.form-list .customer-name-middlename .name-firstname { width:210px; }
+// .form-list .customer-name-prefix .name-firstname,
+// .form-list .customer-name-middlename .name-firstname { width:210px; }
 
-.form-list .customer-name-suffix .name-lastname,
-.form-list .customer-name-middlename .name-firstname,
-.form-list .customer-name-middlename-suffix .name-firstname,
-.form-list .customer-name-middlename-suffix .name-lastname { width:205px; }
+// .form-list .customer-name-suffix .name-lastname,
+// .form-list .customer-name-middlename .name-firstname,
+// .form-list .customer-name-middlename-suffix .name-firstname,
+// .form-list .customer-name-middlename-suffix .name-lastname { width:205px; }
 
-.form-list .customer-name-prefix .name-firstname input.input-text,
-.form-list .customer-name-suffix .name-lastname input.input-text,
-.form-list .customer-name-middlename .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+// .form-list .customer-name-prefix .name-firstname input.input-text,
+// .form-list .customer-name-suffix .name-lastname input.input-text,
+// .form-list .customer-name-middlename .name-firstname input.input-text,
+// .form-list .customer-name-middlename-suffix .name-firstname input.input-text,
+// .form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
 
-.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-year { float:left; width:85px; }
-.form-list .customer-dob input.input-text { display:block; width:74px; }
-.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month { width:60px; }
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text { width:46px; }
-.form-list .customer-dob .dob-year { width:140px; }
-.form-list .customer-dob .dob-year input.input-text { width:134px; }
+// .form-list .customer-dob .dob-month,
+// .form-list .customer-dob .dob-day,
+// .form-list .customer-dob .dob-year { float:left; width:85px; }
+// .form-list .customer-dob input.input-text { display:block; width:74px; }
+// .form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
+// .form-list .customer-dob .dob-day,
+// .form-list .customer-dob .dob-month { width:60px; }
+// .form-list .customer-dob .dob-day input.input-text,
+// .form-list .customer-dob .dob-month input.input-text { width:46px; }
+// .form-list .customer-dob .dob-year { width:140px; }
+// .form-list .customer-dob .dob-year input.input-text { width:134px; }
 
-.buttons-set { clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; }
-.buttons-set .back-link { float:left; }
-.buttons-set button.button { float:right; }
-.buttons-set p.required { margin:0 0 5px; }
+// .buttons-set { clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; }
+// .buttons-set .back-link { float:left; }
+// .buttons-set button.button { float:right; }
+// .buttons-set p.required { margin:0 0 5px; }
 
-.buttons-set-order {}
+// .buttons-set-order {}
 
-.fieldset { border:1px solid #ddd; background:#fefefe; padding:22px 25px 12px 33px; margin:28px 0; }
-.fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #fefefe; background:#dedede; color:#333; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
+// .fieldset { border:1px solid #ddd; background:#fefefe; padding:22px 25px 12px 33px; margin:28px 0; }
+// .fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #fefefe; background:#dedede; color:#333; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
 
-// Form Validation 
-.validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:10px; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat; color:#f00; }
-.validation-failed { border:1px dashed #f00 !important; background:#faebe7 !important; }
-.validation-passed {}
-p.required { font-size:10px; text-align:right; color:#f00; }
-// Expiration date and CVV number validation fix 
-.v-fix { float:left; }
-.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
+// // Form Validation 
+// .validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:10px; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat; color:#f00; }
+// .validation-failed { border:1px dashed #f00 !important; background:#faebe7 !important; }
+// .validation-passed {}
+// p.required { font-size:10px; text-align:right; color:#f00; }
+// // Expiration date and CVV number validation fix 
+// .v-fix { float:left; }
+// .v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
 
 // Global Messages  
 .success { color:#3d6611; font-weight:bold; }
