@@ -1,0 +1,26 @@
+// LAYOUT
+// ------
+
+@import "../vendor/bootstrap/less/layouts";
+
+// Used in conjunction with our semantic.gs
+.centre-container {
+	.container();
+	width: @totalWidth;
+}
+
+.main-content {
+	.column(12);
+
+	&.with-one-sidebar {
+		.column(9);
+	}
+
+	&.width-two-sidebars {
+		.column(6);
+	}
+}
+
+.main-sidebar {
+	.column(3);
+}
