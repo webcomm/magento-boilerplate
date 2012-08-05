@@ -29,58 +29,59 @@ $additional = $this->getChildGroup('detailed_info', 'getChildHtml');
 				<input type="hidden" name="related_product" id="related-products-field" value="">
 			</div>
 
-			<div class="product-shop">
-				<div class="product-name">
-					<h1><?=$helper->productAttribute($product, $product->getName(), 'name')?></h1>
+			<div class="clearfix">
+				<div class="product-img-box">
+					<?=$this->getChildHtml('media')?>
 				</div>
 
-				<?php if ($this->canEmailToFriend()): ?>
-					<p class="email-friend"><a href="<?=$this->helper('catalog/product')->getEmailToFriendUrl($product)?>"><?=$this->__('Email to a Friend')?></a></p>
-				<?php endif ?>
+				<div class="product-shop">
+					<div class="product-name">
+						<h1><?=$helper->productAttribute($product, $product->getName(), 'name')?></h1>
+					</div>
 
-				<?=$this->getReviewsSummaryHtml($product, false, true)?>
-				<?=$this->getChildHtml('alert_urls')?>
-				<?=$this->getChildHtml('product_type_data')?>
-				<?=$this->getTierPriceHtml()?>
-				<?=$this->getChildHtml('extrahint')?>
+					<?php if ($this->canEmailToFriend()): ?>
+						<p class="email-friend"><a href="<?=$this->helper('catalog/product')->getEmailToFriendUrl($product)?>"><?=$this->__('Email to a Friend')?></a></p>
+					<?php endif ?>
 
-				<?php if ( ! $this->hasOptions()): ?>
-					<div class="add-to-box">
-						<?php if ($product->isSaleable()): ?>
-							<?=$this->getChildHtml('addtocart')?>
-							<?php if ( $this->helper('wishlist')->isAllow() or $compareUrl=$this->helper('catalog/product_compare')->getAddUrl($product)): ?>
-								<span class="or"><?=$this->__('OR')?></span>
+					<?=$this->getReviewsSummaryHtml($product, false, true)?>
+					<?=$this->getChildHtml('alert_urls')?>
+					<?=$this->getChildHtml('product_type_data')?>
+					<?=$this->getTierPriceHtml()?>
+					<?=$this->getChildHtml('extrahint')?>
+
+					<?php if ( ! $this->hasOptions()): ?>
+						<div class="add-to-box">
+							<?php if ($product->isSaleable()): ?>
+								<?=$this->getChildHtml('addtocart')?>
+								<?php if ( $this->helper('wishlist')->isAllow() or $compareUrl=$this->helper('catalog/product_compare')->getAddUrl($product)): ?>
+									<span class="or"><?=$this->__('OR')?></span>
+								<?php endif ?>
 							<?php endif ?>
-						<?php endif ?>
-						<?=$this->getChildHtml('addto')?>
-					</div>
-					<?=$this->getChildHtml('extra_buttons')?>
-				<?php elseif ( ! $product->isSaleable()): ?>
-					<div class="add-to-box">
-						<?=$this->getChildHtml('addto')?>
-					</div>
-				<?php endif ?>
+							<?=$this->getChildHtml('addto')?>
+						</div>
+						<?=$this->getChildHtml('extra_buttons')?>
+					<?php elseif ( ! $product->isSaleable()): ?>
+						<div class="add-to-box">
+							<?=$this->getChildHtml('addto')?>
+						</div>
+					<?php endif ?>
 
-				<?php if ($product->getShortDescription()): ?>
-					<div class="short-description">
-						<h2><?=$this->__('Quick Overview')?></h2>
-						<article class="std"><?=$helper->productAttribute($product, nl2br($product->getShortDescription()), 'short_description')?></article>
-					</div>
-				<?php endif ?>
+					<?php if ($product->getShortDescription()): ?>
+						<div class="short-description">
+							<h2><?=$this->__('Quick Overview')?></h2>
+							<article class="std"><?=$helper->productAttribute($product, nl2br($product->getShortDescription()), 'short_description')?></article>
+						</div>
+					<?php endif ?>
 
-				<?=$this->getChildHtml('other');?>
+					<?=$this->getChildHtml('other');?>
 
-				<?php if ($product->isSaleable() and $this->hasOptions()): ?>
-					<?=$this->getChildChildHtml('container1', '', true, true)?>
-				<?php endif ?>
+					<?php if ($product->isSaleable() and $this->hasOptions()): ?>
+						<?=$this->getChildChildHtml('container1', '', true, true)?>
+					<?php endif ?>
 
+				</div>
 			</div>
 
-			<div class="product-img-box">
-				<?=$this->getChildHtml('media')?>
-			</div>
-
-			<div class="clearer"></div>
 			<?php if ($product->isSaleable() and $this->hasOptions()): ?>
 				<?=$this->getChildChildHtml('container2', '', true, true)?>
 			<?php endif ?>
@@ -138,31 +139,34 @@ $additional = $this->getChildGroup('detailed_info', 'getChildHtml');
 		</script>
 	</div>
 
-	<ul class="nav nav-tabs">
-		<?php
+	<div class="product-collateral">
+		<ul class="nav nav-tabs">
+			<?php
 
-		$i = 0;
-		foreach ($additional as $alias => $html): ?>
-			<li class="<?=$i++ === 0 ? 'active' : null?>">
-				<a href="#product-collateral-<?=$this->escapeHtml($alias)?>" data-toggle="tab">
-					<?=$this->escapeHtml(($this->getChildData($alias, 'title')) ?: $alias)?>
-				</a>
-			</li>
-		<?php endforeach ?>
-	</ul>
-	<div class="tab-content">
-		<?php
+			$i = 0;
+			foreach ($additional as $alias => $html): ?>
+				<li class="<?=$i++ === 0 ? 'active' : null?>">
+					<a href="#product-collateral-<?=$this->escapeHtml($alias)?>" data-toggle="tab">
+						<?=$this->escapeHtml(($this->getChildData($alias, 'title')) ?: $alias)?>
+					</a>
+				</li>
+			<?php endforeach ?>
+		</ul>
+		<div class="tab-content">
+			<?php
 
-		$i = 0;
-		foreach ($additional as $alias => $html): ?>
-			<div class="tab-pane <?=$i++ === 0 ? 'active' : null?>" id="product-collateral-<?=$this->escapeHtml($alias)?>">
-				<?=$html?>
-			</div>
-		<?php endforeach ?>
+			$i = 0;
+			foreach ($additional as $alias => $html): ?>
+				<div class="tab-pane <?=$i++ === 0 ? 'active' : null?> box-collateral" id="product-collateral-<?=$this->escapeHtml($alias)?>">
+					<?=$html?>
+				</div>
+			<?php endforeach ?>
+		</div>
 	</div>
+
+	<?=$this->getChildHtml('partof_products')?>
 
 <!-- 	<div class="product-collateral">
 		<?=$this->getChildHtml('upsell_products')?>
-		<?=$this->getChildHtml('product_additional_data')?>
 	</div> -->
 </div>

@@ -1,3 +1,13 @@
+// ==================================== //
+//       Magento Boilerplate LESS       //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
+
+// PRODUCT VIEW
+// ------------
+
 // Setup clearfixes
 .product-essential,
 .product-collateral {
@@ -18,12 +28,24 @@
 	.clearfix();
 }
 
+// Setup grid
 .product-essential {
-	margin: 0 0 @baseLineHeight;
-}
+	.row(9);
 
-.product-collateral .box-collateral {
-	margin: 0 0 @baseLineHeight;
+	.product-img-box {
+		.column(4);
+	}
+
+	.product-shop {
+		.column(5);
+	}
+
+	// Must be after the .column()
+	// declaration above
+	.product-shop,
+	.product-img-box {
+		margin-bottom: @baseLineHeight;
+	}
 }
 
 .product-view {
