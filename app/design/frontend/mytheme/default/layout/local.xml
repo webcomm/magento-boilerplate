@@ -107,4 +107,47 @@
 	</default>
 
 
+	<catalog_product_view>
+
+
+		<reference name="head">
+
+
+			<!-- Start: Adjust assets -->
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-tab.js</name>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.description">
+
+
+			<!-- Start: Add title -->
+			<action method="setTitle">
+				<title>Details</title>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.attributes">
+
+
+			<!-- Start: Add title -->
+			<action method="setTitle">
+				<title>Additional Information</title>
+			</action>
+
+
+		</reference>
+
+
+	</catalog_product_view>
+
+
 </layout>
