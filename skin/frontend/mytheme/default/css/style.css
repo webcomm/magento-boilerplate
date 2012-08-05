@@ -326,57 +326,6 @@ tr.summary-details-excluded{font-style:italic;}
 .ratings .rating-box{float:left;margin-right:3px;}
 .ratings-table th,.ratings-table td{font-size:11px;line-height:1.15;padding:3px 0;}
 .ratings-table th{font-weight:bold;padding-right:8px;}
-.availability{margin:0;}
-.availability span{font-weight:bold;}
-.availability.out-of-stock span{color:#d83820;}
-.availability-only{margin:0 0 7px;}
-.availability-only a{background:url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat;cursor:pointer;padding-right:15px;}
-.availability-only .expanded{background-position:100% -15px;}
-.availability-only-details{margin:0 0 7px;}
-.availability-only-details th{background:#f2f2f2;font-size:10px;padding:0 8px;}
-.availability-only-details td{border-bottom:1px solid #ddd;font-size:11px;padding:2px 8px 1px;}
-.price{white-space:nowrap !important;}
-.price-box .price{font-weight:bold;}
-.regular-price .price{font-weight:bold;}
-.old-price .price-label{white-space:nowrap;}
-.old-price .price{font-weight:bold;text-decoration:line-through;}
-.special-price .price-label{font-weight:bold;white-space:nowrap;}
-.special-price .price{font-weight:bold;}
-.minimal-price .price-label{font-weight:bold;white-space:nowrap;}
-.minimal-price-link{display:block;}
-.minimal-price-link .price{font-weight:normal;}
-.price-excluding-tax{display:block;}
-.price-excluding-tax .label{white-space:nowrap;}
-.price-excluding-tax .price{font-weight:normal;}
-.price-including-tax{display:block;}
-.price-including-tax .label{white-space:nowrap;}
-.price-including-tax .price{font-weight:bold;}
-.configured-price .price-label{font-weight:bold;white-space:nowrap;}
-.configured-price .price{font-weight:bold;}
-.weee{display:block;font-size:11px;color:#444;}
-.weee .price{font-size:11px;font-weight:normal;}
-.price-excl-tax{display:block;}
-.price-excl-tax .label{display:block;white-space:nowrap;}
-.price-excl-tax .price{display:block;}
-.price-incl-tax{display:block;}
-.price-incl-tax .label{display:block;white-space:nowrap;}
-.price-incl-tax .price{display:block;font-weight:bold;}
-.price-from .price-label{font-weight:bold;white-space:nowrap;}
-.price-to .price-label{font-weight:bold;white-space:nowrap;}
-.price-notice{padding-left:10px;}
-.price-notice .price{font-weight:bold;}
-.price-as-configured .price-label{font-weight:bold;white-space:nowrap;}
-.tier-prices .price{font-weight:bold;}
-.add-to-links .separator{display:none;}
-.add-to-cart label{float:left;margin-right:5px;}
-.add-to-cart .qty{float:left;}
-.add-to-cart button.button{float:left;margin-left:5px;}
-.add-to-cart .paypal-logo{clear:left;text-align:right;}
-.add-to-cart .paypal-logo .paypal-or{clear:both;display:block;margin:5px 60px 5px 0;}
-.product-view .add-to-cart .paypal-logo{margin:0;}
-.add-to-box .add-to-cart{float:left;}
-.add-to-box .or{float:left;margin:0 10px;}
-.add-to-box .add-to-links{float:left;}
 .product-collateral .box-collateral{margin:0 0 15px;}
 .product-view .product-img-box{float:left;width:267px;}
 .col3-layout .product-view .product-img-box{float:none;margin:0 auto;}
@@ -767,6 +716,55 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .block-login label{font-weight:bold;color:#666;}
 .block-login input.input-text{display:block;width:167px;margin:3px 0;}
 .sidebar .paypal-logo{display:block;margin:10px 0;text-align:center;}
+.availability{margin:0;}.availability span{font-weight:bold;}
+.availability.out-of-stock span{color:#bd362f;}
+.availability-only,.availability-only-details{margin:0 0 12px;}
+.availability-only a{padding-right:15px;cursor:pointer;}
+.price{white-space:nowrap !important;}
+.price-box .price{font-weight:bold;}
+.regular-price .price{font-weight:bold;}
+.old-price .price-label{white-space:nowrap;}
+.old-price .price{font-weight:bold;text-decoration:line-through;}
+.special-price .price-label{font-weight:bold;white-space:nowrap;}
+.special-price .price{font-weight:bold;}
+.minimal-price .price-label{font-weight:bold;white-space:nowrap;}
+.minimal-price-link{display:block;}
+.minimal-price-link .price{font-weight:normal;}
+.price-excluding-tax{display:block;}
+.price-excluding-tax .label{white-space:nowrap;}
+.price-excluding-tax .price{font-weight:normal;}
+.price-including-tax{display:block;}
+.price-including-tax .label{white-space:nowrap;}
+.price-including-tax .price{font-weight:bold;}
+.configured-price .price-label{font-weight:bold;white-space:nowrap;}
+.configured-price .price{font-weight:bold;}
+.weee{display:block;font-size:11px;color:#444;}
+.weee .price{font-size:11px;font-weight:normal;}
+.price-excl-tax{display:block;}
+.price-excl-tax .label{display:block;white-space:nowrap;}
+.price-excl-tax .price{display:block;}
+.price-incl-tax{display:block;}
+.price-incl-tax .label{display:block;white-space:nowrap;}
+.price-incl-tax .price{display:block;font-weight:bold;}
+.price-from .price-label{font-weight:bold;white-space:nowrap;}
+.price-to .price-label{font-weight:bold;white-space:nowrap;}
+.price-notice{padding-left:10px;}
+.price-notice .price{font-weight:bold;}
+.price-as-configured .price-label{font-weight:bold;white-space:nowrap;}
+.tier-prices .price{font-weight:bold;}
+.add-to-cart{*zoom:1;}.add-to-cart:before,.add-to-cart:after{display:table;content:"";}
+.add-to-cart:after{clear:both;}
+.add-to-cart:before,.add-to-cart:after{content:"";display:table;}
+.add-to-cart:after{clear:both;}
+.add-to-cart label{float:left;margin-right:5px;}
+.add-to-cart .qty{float:left;}
+.add-to-cart button.button{float:left;margin-left:5px;}
+.add-to-cart .paypal-logo{clear:left;text-align:right;}
+.add-to-cart .paypal-logo .paypal-or{clear:both;display:block;margin:5px 60px 5px 0;}
+.product-view .add-to-cart .paypal-logo{margin:0;}
+.add-to-box .add-to-cart{float:left;}
+.add-to-box .or{float:left;margin:0 10px;}
+.add-to-box .add-to-links{float:left;}
 .category-image,.category-description{margin:0 0 18px;}
 .category-image{width:100%;overflow:hidden;text-align:center;}
 .products-grid{display:block;width:500.00000000000006px;margin:0 -10px;*zoom:1;}.products-grid:before,.products-grid:after{display:table;content:"";}
