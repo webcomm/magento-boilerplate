@@ -140,7 +140,68 @@
 
 			<!-- Start: Add title -->
 			<action method="setTitle">
-				<title>Additional Information</title>
+				<title>Specifications</title>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.info.additional">
+
+
+			<!-- Start: Remove items from additional info -->
+			<action method="unsetChild">
+				<alias>partof_products</alias>
+			</action>
+			<action method="unsetChild">
+				<alias>product_tag_list</alias>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.info">
+
+
+			<!-- Start: Reinsert additional blocks into product info -->
+			<action method="insert">
+				<block>product_tag_list</block>
+				<siblingName>product.attributes</siblingName>
+				<after>1</after>
+				<alias>product_tag_list</alias>
+			</action>
+			<action method="insert">
+				<block>product.info.partof</block>
+				<siblingName>product.atrributes</siblingName>
+				<after>1</after>
+				<alias>partof_products</alias>
+			</action>
+
+
+			<!-- Start: Add blocks to the product info tabs group -->
+			<reference name="product.info.partof">
+				<action method="addToParentGroup">
+					<group>detailed_info</group>
+				</action>
+			</reference>
+			<reference name="product_tag_list">
+				<action method="addToParentGroup">
+					<group>detailed_info</group>
+				</action>
+			</reference>
+
+
+		</reference>
+
+
+		<reference name="product_tag_list">
+
+
+			<!-- Start: Add title -->
+			<action method="setTitle">
+				<title>Tags</title>
 			</action>
 
 

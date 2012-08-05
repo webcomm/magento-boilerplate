@@ -16,7 +16,7 @@ $description = $this->getProduct()->getDescription();
 ?>
 <?php if ($description): ?>
 	<h3><?=$this->__('Details')?></h3>
-    <article class="std">
-        <?=$this->helper('catalog/output')->productAttribute($this->getProduct(), $description, 'description')?>
-    </article>
+	<article class="std">
+		<?=$this->helper('catalog/output')->productAttribute($this->getProduct(), $description, 'description')?>
+	</article>
 <?php endif ?>
