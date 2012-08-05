@@ -1,3 +1,10 @@
+// ==================================== //
+//       Magento Boilerplate LESS       //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
+
 // TYPE
 // ----
 
@@ -6,7 +13,9 @@
 // Reset margin / padding on elements
 p,
 ul, ol,
-dl, dt, dd {
+dl, dt, dd,
+blockquote,
+address {
 	margin: 0;
 	padding: 0;
 }
@@ -16,15 +25,31 @@ ul, ol {
 	list-style: none;
 	list-style-image: none;
 
-	&.styled {
+	&.list-styled {
 		margin-left: 25px;
 	}
 }
 
-ul.styled {
+ul.list-styled {
 	list-style: disc;
 }
 
-ol.styled {
+ol.list-styled {
 	list-style: decimal;
+}
+
+dt {
+	font-weight: inherit;
+	line-height: @baseLineHeight;
+}
+
+dl.list-styled {
+
+	dt {
+		font-weight: bold;
+		line-height: @baseLineHeight - 1; // fix jank Helvetica Neue font bug
+	}
+	dd {
+		margin-left: @baseLineHeight / 2;
+	}
 }

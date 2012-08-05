@@ -1,5 +1,5 @@
 // ==================================== //
-//    Magento Boilerplate LESS file.    //
+//       Magento Boilerplate LESS       //
 //                                      //
 //  Copyright (c) 2012 Webcomm Pty Ltd  //
 //                                      //
@@ -48,9 +48,6 @@
 // Mixins
 @import "mixins";
 
-// Grid system and page structure
-@import "grid";
-
 
 // SMACSS - BASE
 // --------------------------------------------------
@@ -74,6 +71,9 @@
 
 @import "layout";
 
+// Grid system and page structure
+@import "grid";
+
 
 // SMACSS - MODULES
 // --------------------------------------------------
@@ -82,9 +82,23 @@
 @import "modules/btn";
 
 // Common modules
+@import "modules/page-title";
+@import "modules/toolbar";
+@import "modules/std";
+@import "modules/misc";
 
 // Header
 @import "modules/logo";
+@import "modules/welcome-msg";
+@import "modules/form-search";
+
+// Sidebar
+@import "modules/block";
+
+// Category page
+@import "pages/category-page";
+@import "modules/products-grid";
+@import "modules/products-list";
 
 
 // SMACSS - STATES

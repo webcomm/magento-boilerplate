@@ -1,0 +1,157 @@
+// ==================================== //
+//       Magento Boilerplate LESS       //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
+
+.block,
+.block-title,
+.block-content,
+.block .actions {
+	.clearfix();
+}
+
+.block {
+	margin: 0 0 @baseLineHeight;
+	border: 1px solid @grayLighter;
+
+	.block-title {
+		padding: 3px 10px;
+
+		border-bottom: 1px solid @grayLighter;
+
+		strong {
+			font-size: @baseFontSize + 5;
+			line-height: @baseLineHeight * 1.5;
+
+			span {
+
+			}
+		}
+	}
+
+	.block-subtitle {
+		font-size: @baseFontSize + 1;
+		font-weight: bold;
+	}
+
+	.block-content {
+		padding: 10px;
+
+		li.item {
+			padding: 5px 0;
+		}
+	}
+
+	.btn-remove,
+	.btn-edit {
+		.pull-right();
+	}
+
+	.actions {
+		text-align: right;
+
+		a {
+			.pull-left();
+		}
+	}
+
+	.empty {
+
+	}
+
+	li:nth-child(odd) {
+
+	}
+
+	li:nth-child(even) {
+		background-color: darken(@white, 5%);
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+}
+
+// Mini Products List 
+.mini-products-list li { padding: 5px 0; }
+.mini-products-list .product-image { float: left; width: 50px; padding: 5px; border: 1px solid #ddd; }
+.mini-products-list .product-details { margin-left: 75px; }
+.mini-products-list .product-details h4 { font-size: 1em; font-weight: bold; margin: 0; }
+.block-cart .mini-products-list .product-details .product-name,
+.block-cart .mini-products-list .product-details .nobr small { word-wrap: break-word; }
+.block-cart .mini-products-list .product-details .nobr { white-space: normal !important; }
+
+// Block: Account 
+.block-account {}
+
+// Block: Currency Switcher 
+.block-currency {}
+.block-currency select { width: 100%; border: 1px solid #888; }
+
+// Block: Layered Navigation 
+.block-layered-nav {}
+.block-layered-nav dt { font-weight: bold; }
+.block-layered-nav .currently {}
+.block-layered-nav .btn-remove { float: left; margin: 2px 3px 0 0; }
+
+// Block: Cart 
+.block-cart {}
+.block-cart .summary {}
+.block-cart .amount {}
+.block-cart .subtotal { text-align: center; }
+.block-cart .actions .paypal-logo { float: left; width: 100%; margin: 3px 0 0; text-align: right; }
+.block-cart .actions .paypal-logo .paypal-or { clear: both; display: block; padding: 0 55px 5px 0; }
+
+// Block: Wishlist 
+.block-wishlist {}
+
+// Block: Related 
+.block-related {}
+.block-related li { padding: 5px 0; }
+.block-related input.checkbox { float: left; margin-right: -20px; }
+.block-related .product { margin-left: 20px; }
+.block-related .product .product-image { float: left; margin-right: -65px; }
+.block-related .product .product-details { margin-left: 65px; }
+
+// Block: Compare Products 
+.block-compare {}
+.block-compare li { padding: 5px 0; }
+
+// Block: Recently Viewed 
+.block-viewed {}
+
+// Block: Recently Compared 
+.block-compared {}
+
+// Block: Poll 
+.block-poll label {}
+.block-poll input.radio { float: left; margin: 1px -18px 0 0; }
+.block-poll .label { display: block; margin-left: 18px; }
+.block-poll li { padding: 3px 9px; }
+.block-poll .actions { margin: 5px 0 0; }
+.block-poll .answer { font-weight: bold; }
+.block-poll .votes { float: right; margin-left: 10px; }
+
+// Block: Tags 
+.block-tags ul,
+.block-tags li { display: inline; }
+
+// Block: Subscribe 
+.block-subscribe {}
+
+// Block: Reorder 
+.block-reorder {}
+.block-reorder li { padding: 5px 0; }
+.block-reorder input.checkbox { float: left; margin: 3px -20px 0 0; }
+.block-reorder .product-name { margin-left: 20px; }
+
+// Block: Banner 
+.block-banner {}
+.block-banner .block-content { text-align: center; }
+
+// Block: Login 
+.block-login label { font-weight: bold; color: #666; }
+.block-login input.input-text { display: block; width: 167px; margin: 3px 0; }
+
+// Paypal 
+.sidebar .paypal-logo { display: block; margin: 10px 0; text-align: center; }
+// .sidebar .paypal-logo a { float: none; }

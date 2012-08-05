@@ -1,0 +1,39 @@
+// ==================================== //
+//       Magento Boilerplate LESS       //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
+
+.form-serach {
+	text-align: right;
+
+	.search-autocomplete {
+		z-index: @zindexModal;
+	}
+
+	ul {
+		border: 1px solid @grayLighter;
+
+		background-color: @white;
+	}
+
+	li {
+		.clearfix();
+		padding: 3px;
+
+		border-bottom: 1px solid @grayLighter;
+
+		cursor: pointer;
+
+		.amount {
+			.pull-right();
+
+			font-weight: bold;
+		}
+
+		&.selected {
+			
+		}
+	}
+}
