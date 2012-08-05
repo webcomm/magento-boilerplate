@@ -316,14 +316,6 @@ tr.summary-details-excluded{font-style:italic;}
 #nav ul li.active>a,#nav ul li.over>a{color:#000 !important;}
 #nav li ul.shown-sub,#nav li div.shown-sub{left:0;z-index:999;}
 #nav li .shown-sub ul.shown-sub,#nav li .shown-sub li div.shown-sub{left:100px;}
-.category-title{border:0;margin:0 0 7px;}
-.category-image{width:100%;overflow:hidden;margin:0 0 10px;text-align:center;}
-.category-description{margin:0 0 10px;}
-.products-grid{border-bottom:1px solid #ddd;position:relative;}
-.products-grid.last{border-bottom:0;}
-.products-grid li.item{float:left;width:138px;padding:12px 10px 80px;}
-.products-grid .product-image{display:block;width:135px;height:135px;margin:0 0 10px;}
-.products-grid .product-name{margin:0 0 5px;font-weight:bold;font-size:13px;}
 .products-grid .price-box{margin:5px 0;}
 .products-grid .availability{line-height:21px;}
 .products-grid .actions{position:absolute;bottom:12px;}
@@ -784,6 +776,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .block-poll .answer{font-weight:bold;}
 .block-poll .votes{float:right;margin-left:10px;}
 .block-tags ul,.block-tags li{display:inline;}
+.block-subscribe .input-text{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 .block-reorder li{padding:5px 0;}
 .block-reorder input.checkbox{float:left;margin:3px -20px 0 0;}
 .block-reorder .product-name{margin-left:20px;}
@@ -793,6 +786,14 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .sidebar .paypal-logo{display:block;margin:10px 0;text-align:center;}
 .category-image,.category-description{margin:0 0 18px;}
 .category-image{width:100%;overflow:hidden;text-align:center;}
+.products-grid{display:block;width:500.00000000000006px;margin:0 -10px;*zoom:1;}.products-grid:before,.products-grid:after{display:table;content:"";}
+.products-grid:after{clear:both;}
+.products-grid:before,.products-grid:after{content:"";display:table;}
+.products-grid:after{clear:both;}
+.products-grid .item-column{display:inline;float:left;width:140px;margin:0 10px;}
+.products-grid .item{position:relative;padding-bottom:80px;}
+.products-grid .product-image{display:block;margin:0 0 9px;text-align:center;}
+.products-grid .product-name{font-size:13px;font-weight:bold;line-height:19px;}
 .pull-right{float:right;}
 .pull-left{float:left;}
 .hide{display:none;}

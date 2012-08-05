@@ -6,5 +6,29 @@
 // ==================================== //
 
 .products-grid {
-	
+	.row(6); // For three columns
+	// .row(9); // For two columns
+	// .row(); // For one column
+
+	.item-column {
+		.column(2, 6); // For three columns
+		// .column(2, 9); // For three columns
+		// .column(2); // For three columns
+	}
+
+	.item {
+		position: relative;
+		padding-bottom: 80px;
+	}
+
+	.product-image {
+		display: block;
+		margin: 0 0 @baseLineHeight / 2;
+
+		text-align: center;
+	}
+
+	.product-name {
+		#font > .shorthand(@baseFontSize + 1, bold, @baseLineHeight + 1);
+	}
 }
