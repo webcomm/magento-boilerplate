@@ -12,8 +12,8 @@
 
 	.item-column {
 		.column(2, 6); // For three columns
-		// .column(2, 9); // For three columns
-		// .column(2); // For three columns
+		// .column(3, 9); // For three columns
+		// .column(3); // For three columns
 	}
 
 	.item {
@@ -29,6 +29,37 @@
 	}
 
 	.product-name {
+		margin: 0 0 @baseLineHeight / 2;
+
 		#font > .shorthand(@baseFontSize + 1, bold, @baseLineHeight + 1);
+	}
+
+	.price-box {
+
+	}
+
+	.availability {
+
+	}
+
+	.actions {
+		position: absolute;
+		bottom: 12px;
+	}
+}
+
+.main-content.with-one-sidebar .products-grid {
+	.row(9);
+
+	.item-column {
+		.column(3, 9);
+	}
+}
+
+.main-content.no-sidebars .products-grid {
+	.row();
+
+	.item-column {
+		.column(3);
 	}
 }
