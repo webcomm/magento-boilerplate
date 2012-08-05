@@ -1,0 +1,32 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pyty Ltd
+ * @link        http://webcomm.com.au
+ */
+
+/**
+ * Product additional attributes template
+ *
+ * @see Mage_Catalog_Block_Product_View_Attributes
+ */
+
+$helper     = $this->helper('catalog/output');
+$product    = $this->getProduct();
+$additional = $this->getAdditionalData();
+?>
+<?php if ($additional): ?>
+    <h3><?=$this->__('Additional Information')?></h3>
+
+    <table class="data-table" id="product-attribute-specs-table">
+        <tbody>
+            <?php foreach ($additional as $data): ?>
+                <tr>
+                    <th class="label"><?=$this->escapeHtml($this->__($data['label']))?></th>
+                    <td class="data"><?=$helper->productAttribute($product, $data['value'], $data['code'])?></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+<?php endif ?>
