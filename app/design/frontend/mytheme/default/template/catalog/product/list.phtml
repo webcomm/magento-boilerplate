@@ -50,13 +50,15 @@ $helper            = $this->helper('catalog/output');
 									<?=$this->getReviewsSummaryHtml($product)?>
 								<?php endif ?>
 
-								<?=$this->getPriceHtml($product, true)?>
+								<div class="clearfix">
+									<?=$this->getPriceHtml($product, true)?>
 
-								<?php if ($product->isSaleable()): ?>
-									<p><button type="button" title="<?=$this->__('Add to Cart')?>" class="button btn-cart" onclick="setLocation('<?=$this->getAddToCartUrl($product)?>')"><span><span><?=$this->__('Add to Cart')?></span></span></button></p>
-								<?php else: ?>
-									<p class="availability out-of-stock"><span><?=$this->__('Out of stock')?></span></p>
-								<?php endif ?>
+									<?php if ($product->isSaleable()): ?>
+										<p><button type="button" title="<?=$this->__('Add to Cart')?>" class="button btn-cart" onclick="setLocation('<?=$this->getAddToCartUrl($product)?>')"><span><span><?=$this->__('Add to Cart')?></span></span></button></p>
+									<?php else: ?>
+										<p class="availability out-of-stock"><span><?=$this->__('Out of stock')?></span></p>
+									<?php endif ?>
+								</div>
 
 								<article class="desc std">
 									<?=$helper->productAttribute($product, $product->getShortDescription(), 'short_description')?>
