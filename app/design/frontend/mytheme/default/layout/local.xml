@@ -21,11 +21,7 @@
 
 
 			<!-- Start: Add navigation block to root template -->
-			<block type="core/template" name="nav" as="nav" template="page/html/nav.phtml">
-				<action method="insert">
-					<name>catalog.topnav</name>
-				</action>
-			</block>
+			<block type="catalog/navigation" name="catalog.navigation" as="nav"/>
 
 
 		</reference>
@@ -94,6 +90,10 @@
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/jquery.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-dropdown.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>

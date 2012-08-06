@@ -1,0 +1,14 @@
+.cart-collaterals {
+	.row();
+
+	.collateral-crossell,
+	.collateral-misc,
+	.collateral-totals {
+		.column(4);
+	}
+
+	// Sometimes the crossell isn't included
+	.collateral-misc.no-crossell {
+		.push(4); // Push the same as the .columns() for cart-crossell
+	}
+}

@@ -1,0 +1,67 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pyty Ltd
+ * @link        http://webcomm.com.au
+ */
+
+/**
+ * Category navigation
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+
+$categories = $this->getStoreCategories();
+$helper     = $this->helper('catalog/output');
+$i          = 1;
+?>
+<?php if ($categories): ?>
+	<div class="centre-container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					
+					<nav role="navigation">
+						<ul class="nav">
+							<?php foreach ($categories as $category): ?>
+								<?php
+
+								// Find children categories
+								$childrenCategories = $this->getChildrenCategories($category);
+								?>
+								<li class="level-1-item <?=(count($childrenCategories) > 0) ? 'dropdown' : null?>">
+
+									<a class="level-1-link <?=(count($childrenCategories) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>" href="<?=$this->getCategoryUrl($category)?>" <?php if (count($childrenCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+										<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>
+										<?php if (count($childrenCategories) > 0): ?>
+											<b class="caret"></b>
+										<?php endif ?>
+									</a>
+
+									<?php if (count($childrenCategories) > 0): ?>
+										<ul class="level-2 dropdown-menu">
+											<?php foreach ($childrenCategories as $childCategory): ?>
+												<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel(2)->setRecursionCategory($childCategory)->toHtml()?>
+											<?php endforeach ?>
+										</ul>
+									<?php endif ?>
+
+								</li>
+							<?php endforeach ?>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="centre-container">
+		<nav role="navigation" class="column-full">
+			<ul class="level-1">
+							
+			</ul>
+		</nav>
+	</div>
+<?php endif ?>
