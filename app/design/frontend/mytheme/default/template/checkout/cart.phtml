@@ -23,7 +23,7 @@ $crossell = (string) $this->getChildHtml('crossell');
             <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
             <li><?=$methodHtml?></li>
             <?php endif ?>
-        <?php endforeach; ?>
+        <?php endforeach ?>
         </ul>
         <?php endif ?>
     </div>
@@ -31,7 +31,7 @@ $crossell = (string) $this->getChildHtml('crossell');
     <?=$this->getChildHtml('form_before') ?>
     <form action="<?=$this->getUrl('checkout/cart/updatePost') ?>" method="post">
         <fieldset>
-            <table id="shopping-cart-table" class="data-table cart-table">
+            <table id="shopping-cart-table" class="table table-bordered table-striped cart-table">
 
                 <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1) ?>
                 <thead>

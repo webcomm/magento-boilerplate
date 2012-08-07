@@ -15,7 +15,7 @@ $canApplyMsrp     = Mage::helper('catalog')->canApplyMsrp($item->getProduct(), M
 	<td class="a-center">
 		<?php if ($this->hasProductUrl()): ?><a href="<?=$this->getProductUrl()?>" title="<?=$this->htmlEscape($this->getProductName())?>" class="product-image"><?php endif ?>
 
-			<img src="<?=$this->getProductThumbnail()->resize(75) ?>" alt="<?=$this->htmlEscape($this->getProductName())?>">
+			<img src="<?=$this->getProductThumbnail()->resize(75) ?>" alt="<?=$this->htmlEscape($this->getProductName())?>" class="img-polaroid img-rounded">
 
 		<?php if ($this->hasProductUrl()): ?></a><?php endif ?>
 	</td>
@@ -167,7 +167,7 @@ $canApplyMsrp     = Mage::helper('catalog')->canApplyMsrp($item->getProduct(), M
 		<?php endif ?>
 	<?php endif ?>
 	<td class="a-center">
-		<input type="number" name="cart[<?=$item->getId()?>][qty]" value="<?=$this->getQty()?>" size="4" title="<?=$this->__('Qty')?>" class="input-text qty" maxlength="12">
+		<input type="number" name="cart[<?=$item->getId()?>][qty]" value="<?=$this->getQty()?>" size="4" title="<?=$this->__('Qty')?>" class="input-text input-mini qty" maxlength="12">
 	</td>
 	<?php if (($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()) && !$item->getNoSubtotal()): ?>
 	<td class="a-right">

@@ -10,6 +10,9 @@
 
 @import "../vendor/bootstrap/less/grid";
 
+
+
+
 /////////////////
 // Semantic.gs // for LESS: http://lesscss.org/
 /////////////////
@@ -75,3 +78,28 @@ body {
 .pull(@offset:1) {
 	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
+
+
+
+// COLUMN SETS
+// -----------
+
+.col2-set,
+.col3-set,
+.col4-set {
+	.clearfix();
+}
+
+.col2-set .col-1 { float:left; width:49%; }
+.col2-set .col-2 { float:right; width:49%; }
+.col2-set .col-narrow { width:33%; }
+.col2-set .col-wide { width:65%; }
+
+.col3-set .col-1 { float:left; width:32%; }
+.col3-set .col-2 { float:left; width:32%; margin-left:2%; }
+.col3-set .col-3 { float:right; width:32%; }
+
+.col4-set .col-1 { float:left; width:23.5%; }
+.col4-set .col-2 { float:left; width:23.5%; margin:0 2%; }
+.col4-set .col-3 { float:left; width:23.5%; }
+// .col4-set .col-4 { float:right; width:23.5%; }
