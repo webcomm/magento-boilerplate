@@ -8,6 +8,8 @@
 // TOOLBAR
 // -------
 
+@import "../../vendor/bootstrap/less/pagination";
+
 .pager,
 .sorter {
 	.clearfix();
@@ -16,22 +18,34 @@
 }
 
 .pager {
-	text-align: center;
+	// text-align: center;
 
-	.amount {
+	.amount-limiter {
 		.pull-left();
 	}
 
+	.amount {
+	}
+
 	.limiter {
-		.pull-right();
 	}
 
 	.pages {
-		margin: 0 140px;
-	}
+		// margin-left: 200px;
+		.pull-right();
 
-	ol, li {
-		display: inline;
+		.pagination-label, .pagination {
+			.pull-left();
+		}
+
+		.pagination-label {
+			margin-top: 10px;
+			padding-right: 5px;
+		}
+
+		.pagination {
+			margin: 0;
+		}
 	}
 
 	.current {
