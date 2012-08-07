@@ -1,0 +1,109 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pyty Ltd
+ * @link        http://webcomm.com.au
+ */
+
+/**
+ * Pager template
+ *
+ * @see Mage_Page_Block_Html_Pager
+ */
+?>
+<?php if ($this->getCollection()->getSize()): ?>
+
+	<?php if ($this->getUseContainer()): ?>
+		<div class="pager">
+	<?php endif ?>
+
+	<?php if ($this->getShowAmounts()): ?>
+		<p class="amount">
+			<?php if ($this->getLastPageNum() > 1): ?>
+				<?=$this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum())?>
+			<?php else: ?>
+				<strong><?=$this->__('%s Item(s)', $this->getTotalNum())?></strong>
+			<?php endif ?>
+		</p>
+	<?php endif ?>
+
+	<?php if ($this->getShowPerPage()): ?>
+		<div class="limiter">
+			<label><?=$this->__('Show')?></label>
+			<select onchange="setLocation(this.value)" class="input-mini">
+				<?php foreach ($this->getAvailableLimit() as $key=>$limit): ?>
+					<option value="<?=$this->getLimitUrl($key)?>"<?php if ($this->isLimitCurrent($key)): ?> selected="selected"<?php endif ?>>
+						<?=$limit?>
+					</option>
+				<?php endforeach ?>
+			</select> <?=$this->__('per page')?>
+		</div>
+	<?php endif ?>
+
+	<?php if ($this->getLastPageNum() > 1): ?>
+		<div class="pages">
+			<label class="pagination-label">
+				<strong><?=$this->__('Page:')?></strong>
+			</label>
+			<ol class="pagination">
+				<?php if ( ! $this->isFirstPage()): ?>
+					<li>
+						<a class="previous<?php if ( ! $this->getAnchorTextForPrevious()): ?> i-previous<?php endif ?>" href="<?=$this->getPreviousPageUrl()?>" title="<?=$this->__('Previous')?>">
+							<?php if ( ! $this->getAnchorTextForPrevious()): ?>
+								&laquo;
+							<?php else: ?>
+								<?=$this->getAnchorTextForPrevious()?>
+							<?php endif ?>
+						</a>
+					</li>
+				<?php endif ?>
+
+				<?php if ($this->canShowFirst()): ?>
+					<li><a class="first" href="<?=$this->getFirstPageUrl()?>">1</a></li>
+				<?php endif ?>
+
+				<?php if ($this->canShowPreviousJump()): ?>
+					<li><a class="previous_jump" title="" href="<?=$this->getPreviousJumpUrl()?>">...</a></li>
+				<?php endif ?>
+
+				<?php foreach ($this->getFramePages() as $page): ?>
+					<?php if ($this->isPageCurrent($page)): ?>
+						<li class="active current">
+							<a><?=$page?></a>
+						</li>
+					<?php else: ?>
+						<li><a href="<?=$this->getPageUrl($page)?>"><?=$page?></a></li>
+					<?php endif ?>
+				<?php endforeach ?>
+
+
+				<?php if ($this->canShowNextJump()): ?>
+					<li><a class="next_jump" title="" href="<?=$this->getNextJumpUrl()?>">...</a></li>
+				<?php endif ?>
+
+				<?php if ($this->canShowLast()): ?>
+				 <li><a class="last" href="<?=$this->getLastPageUrl()?>"><?=$this->getLastPageNum()?></a></li>
+				<?php endif ?>
+
+				<?php if ( ! $this->isLastPage()): ?>
+					<li>
+						<a class="next<?php if ( ! $this->getAnchorTextForNext()): ?> i-next<?php endif ?>" href="<?=$this->getNextPageUrl()?>" title="<?=$this->__('Next')?>">
+							<?php if ( ! $this->getAnchorTextForNext()): ?>
+								&raquo;
+							<?php else: ?>
+								<?=$this->getAnchorTextForNext()?>
+							<?php endif ?>
+						</a>
+					</li>
+				<?php endif ?>
+			</ol>
+
+		</div>
+	<?php endif ?>
+
+	<?php if ($this->getUseContainer()): ?>
+		</div>
+	<?php endif ?>
+
+<?php endif ?>
