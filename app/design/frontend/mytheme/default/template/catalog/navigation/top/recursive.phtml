@@ -12,13 +12,13 @@ $childCategories = $this->getChildrenCategories($category);
 $level           = $this->getLevel();
 ?>
 <?php if ($category and $level): ?>
-	<li class="level-<?=$level?>-item <?=(count($childCategories) > 0) ? 'dropdown-toggle' : null?>">
-		<a href="<?=$this->getCategoryUrl($category)?>" class="level-<?=$level?>-link <?=$this->isCategoryActive($category) ? 'active' : null?>"  <?php if (count($childCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+	<li class="level-<?=$level?>-item <?=(count($childCategories) > 0) ? 'dropdown-submenu' : null?>">
+		<a href="<?=$this->getCategoryUrl($category)?>" class="level-<?=$level?>-link <?=$this->isCategoryActive($category) ? 'active' : null?>">
 			<?=$category->getName()?>
 		</a>
 
 		<?php if (count($childCategories) > 0): ?>
-			<ul class="nav nav-list level-<?=++$level?>">
+			<ul class="dropdown-menu level-<?=++$level?>">
 				<?php foreach ($childCategories as $childCategory): ?>
 					<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel($level)->setRecursionCategory($childCategory)->toHtml()?>
 				<?php endforeach ?>
