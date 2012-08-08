@@ -14,136 +14,313 @@ form {
 	margin: 0;
 }
 
-// // Form Elements 
-// input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#000; }
-// input.input-text,select,textarea { background:#fff; border:1px solid #ddd; }
-// input.input-text,textarea { padding:2px; }
-// select { padding:1px; }
-// select option { padding-right:10px; }
-// select.multiselect option { border-bottom:1px solid #ddd; padding:2px 5px; }
-// select.multiselect option:last-child { border-bottom:0; }
-// textarea { overflow:auto; }
-// input.radio { margin-right:3px; }
-// input.checkbox { margin-right:3px; }
-// input.qty { width:2.5em !important; }
-// button.button::-moz-focus-inner { padding:0; border:0; } // FF Fix 
-// button.button { -webkit-border-fit:lines; } // <- Safari & Google Chrome Fix 
-// button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
-// button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
-// button.button span span { background-position:100% 0; padding:0 12px 0 4px; }
-// button.disabled {}
-// button.disabled span {}
+fieldset, .fieldset {
 
-// button.btn-checkout span {}
-// button.btn-checkout.no-checkout {}
+	// Override because of .fieldset class
+	padding: @baseLineHeight;
+	margin: 0 0 @baseLineHeight / 2;
 
-// p.control input.checkbox,
-// p.control input.radio { margin-right:6px; }
-// // Form Highlight 
-// //input.input-text:focus,select:focus,textarea:focus {}
-// //.highlight { background:#efefef; }
+	// Set border
+	border: 1px solid #e5e5e5;
+	.border-radius(@inputBorderRadius);
+}
+
+legend, .legend {
+	display: block;
+	width: 100%;
+	padding: 0 0 @baseLineHeight / 2;
+	margin: 0;
+	margin-bottom: @baseLineHeight;
+	font-size: @baseFontSize * 1.5;
+	line-height: @baseFontSize * 1.5;
+	// line-height: @baseLineHeight * 2;
+	color: @grayDark;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
+
+	// Small
+	small {
+		font-size: @baseLineHeight * .75;
+		color: @grayLight;
+	}
+}
 
 // Form lists 
-// Grouped fields 
-//.form-list { width:535px; margin:0 auto; overflow:hidden; }
-.form-list li { margin:0 0 8px; }
-.form-list label { float:left; color:#111; font-weight:bold; position:relative; z-index:0; }
-.form-list label.required {}
-.form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-8px; }
-.form-list li.control label { float:none; }
-.form-list li.control input.radio,
-.form-list li.control input.checkbox { margin-right:6px; }
-.form-list li.control .input-box { clear:none; display:inline; width:auto; }
-//.form-list li.fields { margin-right:-15px; }
-.form-list .input-box { display:block; clear:both; width:260px; }
-.form-list .field { float:left; width:275px; }
-.form-list input.input-text { width:254px; }
-.form-list textarea { width:254px; height:10em; }
-.form-list select { width:260px; }
-.form-list li.wide .input-box { width:535px; }
-.form-list li.wide input.input-text { width:529px; }
-.form-list li.wide textarea { width:529px; }
-.form-list li.wide select { width:535px; }
-.form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
-.form-list li.additional-row .btn-remove { float:right; margin:5px 0 0; }
-.form-list .input-range input.input-text { width:74px; }
-// Customer 
-.form-list .customer-name-prefix .input-box,
-.form-list .customer-name-suffix .input-box,
-.form-list .customer-name-prefix-suffix .input-box,
-.form-list .customer-name-prefix-middlename .input-box,
-.form-list .customer-name-middlename-suffix .input-box,
-.form-list .customer-name-prefix-middlename-suffix .input-box { width:auto; }
+.form-list {
 
-.form-list .name-prefix { width:65px; }
-.form-list .name-prefix select { width:55px; }
-.form-list .name-prefix input.input-text { width:49px; }
+	// All list items
+	li {
+		.clearfix();
+		margin: 0 0 @baseLineHeight / 2;
+	}
 
-.form-list .name-suffix { width:65px; }
-.form-list .name-suffix select { width:55px; }
-.form-list .name-suffix input.input-text { width:49px; }
+	// All labels
+	label {
+		float: left;
+		position: relative;
+		z-index: 0;
+	}
 
-.form-list .name-middlename { width:70px; }
-.form-list .name-middlename input.input-text { width:49px; }
+	// Little *'s for required
+	// inputs
+	label.required em {
+		float: right;
+		font-style: normal;
+		color: @btnDangerBackground;
+		position: absolute;
+		top: 0;
+		right: -8px;
+	}
 
-.form-list .customer-name-prefix-middlename-suffix .name-firstname,
-.form-list .customer-name-prefix-middlename .name-firstname { width:140px; }
-.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-middlename .name-firstname input.input-text { width:124px; }
-.form-list .customer-name-prefix-middlename-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text { width:189px; }
+	// Control lists - lists that
+	// contain checkboxes
+	li.control {
+		label {
+			float: none;
+			display: inline-block;
+		}
 
-.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
-.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+		input[type="radio"],
+		input[type="checkbox"] {
+			margin-right: 6px;
+		}
+	}
 
-.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
-.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+	// Input boxes (these hold a label and
+	// an input below)
+	.input-box {
+		display: block;
+		clear: both;
+		width: 260px;
+	}
 
-.form-list .customer-name-prefix .name-firstname,
-.form-list .customer-name-middlename .name-firstname { width:210px; }
+	// Field - these are side-by-side within
+	// the form list. It's what holds input
+	// boxes
+	.field {
+		float: left;
+		width: @formListColumnWidth;
+	}
 
-.form-list .customer-name-suffix .name-lastname,
-.form-list .customer-name-middlename .name-firstname,
-.form-list .customer-name-middlename-suffix .name-firstname,
-.form-list .customer-name-middlename-suffix .name-lastname { width:205px; }
+	// Wide input containers. These
+	// span across two columns
+	li.wide {
+		.input-box {
+			width: 535px;
+		}
 
-.form-list .customer-name-prefix .name-firstname input.input-text,
-.form-list .customer-name-suffix .name-lastname input.input-text,
-.form-list .customer-name-middlename .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+		textarea,
+		input[type="text"],
+		input[type="password"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="week"],
+		input[type="number"],
+		input[type="email"],
+		input[type="url"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		.uneditable-input {
+			width: @formListColumnWidth + 210px;
+		}
 
-.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-year { float:left; width:85px; }
-.form-list .customer-dob input.input-text { display:block; width:74px; }
-.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month { width:60px; }
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text { width:46px; }
-.form-list .customer-dob .dob-year { width:140px; }
-.form-list .customer-dob .dob-year input.input-text { width:134px; }
+		select {
+			width: @formListColumnWidth + 210px;
+		}
+	}
 
-.buttons-set { clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; }
-.buttons-set .back-link { float:left; }
-.buttons-set button.button { float:right; }
-.buttons-set p.required { margin:0 0 5px; }
+	li.additional-row {
+		border-top: 1px solid #ccc;
+		margin-top: 10px;
+		padding-top: 7px;
+	}
+	li.additional-row .btn-remove {
+		float: right;
+		margin: 5px 0 0;
+	}
+	.input-range input.input-text {
+		width: 74px;
+	}
+	.customer-name-prefix .input-box,
+	.customer-name-suffix .input-box,
+	.customer-name-prefix-suffix .input-box,
+	.customer-name-prefix-middlename .input-box,
+	.customer-name-middlename-suffix .input-box,
+	.customer-name-prefix-middlename-suffix .input-box {
+		width: auto;
+	}
+	.name-prefix {
+		width: 65px;
+	}
+	.name-prefix select {
+		width: 55px;
+	}
+	.name-prefix input.input-text {
+		width: 49px;
+	}
+	.name-suffix {
+		width: 65px;
+	}
+	.name-suffix select {
+		width: 55px;
+	}
+	.name-suffix input.input-text {
+		width: 49px;
+	}
+	.name-middlename {
+		width: 70px;
+	}
+	.name-middlename input.input-text {
+		width: 49px;
+	}
+	.customer-name-prefix-middlename-suffix .name-firstname,
+	.customer-name-prefix-middlename .name-firstname {
+		width: 140px;
+	}
+	.customer-name-prefix-middlename-suffix .name-firstname input.input-text,
+	.customer-name-prefix-middlename .name-firstname input.input-text {
+		width: 124px;
+	}
+	.customer-name-prefix-middlename-suffix .name-lastname {
+		width: 205px;
+	}
+	.customer-name-prefix-middlename-suffix .name-lastname input.input-text {
+		width: 189px;
+	}
+	.customer-name-prefix-suffix .name-firstname {
+		width: 210px;
+	}
+	.customer-name-prefix-suffix .name-lastname {
+		width: 205px;
+	}
+	.customer-name-prefix-suffix .name-firstname input.input-text,
+	.customer-name-prefix-suffix .name-lastname input.input-text {
+		width: 189px;
+	}
+	.customer-name-prefix-suffix .name-firstname {
+		width: 210px;
+	}
+	.customer-name-prefix-suffix .name-lastname {
+		width: 205px;
+	}
+	.customer-name-prefix-suffix .name-firstname input.input-text,
+	.customer-name-prefix-suffix .name-lastname input.input-text {
+		width: 189px;
+	}
+	.customer-name-prefix .name-firstname,
+	.customer-name-middlename .name-firstname {
+		width: 210px;
+	}
+	.customer-name-suffix .name-lastname,
+	.customer-name-middlename .name-firstname,
+	.customer-name-middlename-suffix .name-firstname,
+	.customer-name-middlename-suffix .name-lastname {
+		width: 205px;
+	}
+	.customer-name-prefix .name-firstname input.input-text,
+	.customer-name-suffix .name-lastname input.input-text,
+	.customer-name-middlename .name-firstname input.input-text,
+	.customer-name-middlename-suffix .name-firstname input.input-text,
+	.customer-name-middlename-suffix .name-lastname input.input-text {
+		width: 189px;
+	}
+	.customer-dob .dob-month,
+	.customer-dob .dob-day,
+	.customer-dob .dob-year {
+		float: left;
+		width: 85px;
+	}
+	.customer-dob input.input-text {
+		display: block;
+		width: 74px;
+	}
+	.customer-dob label {
+		font-size: @baseFontSize - 2;
+		color: #888;
+	}
+	.customer-dob .dob-day,
+	.customer-dob .dob-month {
+		width: 60px;
+	}
+	.customer-dob .dob-day input.input-text,
+	.customer-dob .dob-month input.input-text {
+		width: 46px;
+	}
+	.customer-dob .dob-year {
+		width: 140px;
+	}
+	.customer-dob .dob-year input.input-text {
+		width: 134px;
+	}
+}
 
-.buttons-set-order {}
-
-// .fieldset { border:1px solid #ddd; background:#fefefe; padding:22px 25px 12px 33px; margin:28px 0; }
-// .fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #fefefe; background:#dedede; color:#333; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
-
-// Form Validation 
-.validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:10px; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat; color:#f00; }
-.validation-failed { border:1px dashed #f00 !important; background:#faebe7 !important; }
-.validation-passed {}
-p.required { font-size:10px; text-align:right; color:#f00; }
-// Expiration date and CVV number validation fix 
-.v-fix { float:left; }
-.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
+.buttons-set {
+	clear: both;
+	margin: 5px 0 0;
+	padding: 5px;
+	border: 1px solid #ddd;
+	padding: 19px 20px 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	*zoom: 1;
+}
+.buttons-set:before,
+.buttons-set:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.buttons-set:after {
+	clear: both;
+}
+.buttons-set:before,
+.buttons-set:after {
+	content: "";
+	display: table;
+}
+.buttons-set:after {
+	clear: both;
+}
+.buttons-set .back-link {
+	float: left;
+}
+.buttons-set button.button {
+	float: right;
+}
+.buttons-set p.required {
+	margin: 0 0 5px;
+}
+.validation-advice {
+	clear: both;
+	min-height: 13px;
+	margin: 3px 0 0;
+	padding-left: 17px;
+	font-size: 10px;
+	line-height: 13px;
+	background: url(../images/validation_advice_bg.gif) 2px 1px no-repeat;
+	color: #f00;
+}
+.validation-failed {
+	border: 1px dashed #f00 !important;
+	background: #faebe7 !important;
+}
+p.required {
+	font-size: 10px;
+	text-align: right;
+	color: #f00;
+}
+.v-fix {
+	float: left;
+}
+.v-fix .validation-advice {
+	display: block;
+	width: 12em;
+	margin-right: -12em;
+	position: relative;
+}

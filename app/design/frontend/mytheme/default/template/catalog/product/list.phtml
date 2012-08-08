@@ -36,7 +36,7 @@ $helper            = $this->helper('catalog/output');
 					<li class="item">
 
 						<a href="<?=$product->getProductUrl()?>" title="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="product-image">
-							<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(135)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>">
+							<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(135)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="img-rounded img-polaroid">
 						</a>
 
 						<div class="product-shop">
@@ -108,7 +108,7 @@ $helper            = $this->helper('catalog/output');
 					<li class="item-column">
 						<div class="item">
 							<a href="<?=$product->getProductUrl()?>" title="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="product-image">
-								<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(135)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>">
+								<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(135)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="img-rounded img-polaroid">
 							</a>
 
 							<h2 class="product-name">
