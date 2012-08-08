@@ -21,9 +21,14 @@
 		<div class="quick-access">
 
 			<?=$this->getChildHtml('topSearch')?>
-			<p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-			<?php echo $this->getChildHtml('topLinks') ?>
-			<?php echo $this->getChildHtml('store_language') ?>
+
+			<p class="welcome-msg">
+				<?=$this->getWelcome()?>
+				<?=$this->getAdditionalHtml()?>
+			</p>
+
+			<?=$this->getChildHtml('topLinks')?>
+			<?=$this->getChildHtml('store_language')?>
 
 		</div>
 

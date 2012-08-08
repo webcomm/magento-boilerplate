@@ -104,6 +104,17 @@
 		</reference>
 
 
+		<reference name="top.links">
+
+
+			<action method="setName">
+				<name>top-links</name>
+			</action>
+
+
+		</reference>
+
+
 	</default>
 
 
