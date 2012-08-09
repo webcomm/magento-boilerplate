@@ -1,0 +1,30 @@
+// One Page Checkout
+.block-progress {}
+.block-progress dt { font-weight:bold; }
+.block-progress dt.complete,
+.block-progress dd.complete { background-color:#f6f6f6; }
+
+.opc { border-bottom:1px solid #ddd; position:relative; }
+.opc li.section { border:1px solid #ddd; border-bottom:0; }
+
+.opc .buttons-set.disabled button.button { display:none; }
+.opc .buttons-set .please-wait { height:21px; line-height:21px; }
+
+.opc .step-title { background-color:#f6f6f6; padding:0 5px; text-align:right; }
+.opc .step-title .number { float:left; line-height:22px; margin-right:5px; }
+.opc .step-title h2 { float:left; }
+.opc .step-title a { display:none; float:right; }
+
+.opc .allow .step-title { cursor:pointer; }
+//.opc .allow .step-title a { display:block; }
+
+.opc .active {}
+.opc .active .step-title { background-color:#ccc; cursor:default; }
+//.opc .active .step-title a { display:none; }
+
+.opc .step { border-top:1px solid #ddd; padding:10px; position:relative; }
+.opc .step .tool-tip { right:10px; }
+
+.opc .order-review {}
+.opc .order-review .authentication {}
+.opc .order-review .warning-message {}
