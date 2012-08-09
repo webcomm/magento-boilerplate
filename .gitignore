@@ -94,7 +94,7 @@ publish
 !/app/code
 /app/code/*
 !/app/code/community
-/app/code/community/*
+/app/code/community/*/*
 !/app/code/local
 
 # Start: App design
