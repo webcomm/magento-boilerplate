@@ -181,6 +181,7 @@ publish
 /media/*
 
 # Start: Misc files
+/package.xml
 /php.ini.sample
 /pkginfo/*
 /RELEASE_NOTES.txt
