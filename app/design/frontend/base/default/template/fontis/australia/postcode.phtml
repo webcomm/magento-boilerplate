@@ -1,0 +1,55 @@
+<?php
+/**
+ * Fontis Australia Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Fontis
+ * @package    Fontis_Australia
+ * @author     Chris Norton
+ * @copyright  Copyright (c) 2008 Fontis Pty. Ltd. (http://www.fontis.com.au)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<script type="text/javascript">
+
+// Create and insert the div that will hold the list of autocomplete items. This
+// is added to the DOM immediately following the #city field.
+var autocomplete_city = new Element('div', { id: 'autocomplete_city', 'class': 'search-autocomplete' });
+$('city').parentNode.appendChild(autocomplete_city);
+
+function updateAddress(text, item) {
+	// Update state and postcode fields
+	var id = item.id;
+	var tokens = id.split('-');
+	
+	// Assume item at index 1 is region_id, item at index 3 is postcode
+	$('region_id').value = tokens[1];
+	$('zip').value = tokens[3];
+}
+
+// Create the autocompleter and assign it to a variable for future use.
+var completer = new Ajax.Autocompleter("city", "autocomplete_city", "<?=$this->helper('australia')->getCitySuggestUrl();?>", {
+	afterUpdateElement: updateAddress,
+	minChars: 2,
+	parameters: 'country=' + $F('country')
+});
+
+// Detect when the country has changed and update the parameters sent by the autocompleter.
+$('country').observe('change', function() {
+	completer = new Ajax.Autocompleter("city", "autocomplete_city", "<?=$this->helper('australia')->getCitySuggestUrl();?>", {
+		afterUpdateElement: updateAddress,
+		minChars: 2,
+		parameters: 'country=' + $F('country')
+	});
+});
+
+</script>

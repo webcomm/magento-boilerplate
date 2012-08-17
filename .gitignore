@@ -273,8 +273,21 @@ publish
 
 !/app/etc/modules/MyTheme_Template.xml
 
-# Start: Webcomm 
-!/app/etc/modules/Webcom
+
+
+# Start: Fontis Australia
+!/app/code/community/Fontis/Australia
+!/app/design/adminhtml/default/default/template/fontis
+/app/design/adminhtml/default/default/template/fontis/*
+!/app/design/adminhtml/default/default/template/fontis/australia
+!/app/design/frontend/base/default/layout/fontis_australia.xml
+!/app/design/frontend/base/default/template/fontis
+/app/design/frontend/base/default/template/fontis/*
+!/app/design/frontend/base/default/template/fontis/australia
+!/app/etc/modules/Fontis_Australia.xml
+!/skin/frontend/base/default/images/fontis
+/skin/frontend/base/default/images/fontis/*
+!/skin/frontend/base/default/images/fontis/bpay.png
 
 
 

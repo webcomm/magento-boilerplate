@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fontis Australia Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Fontis
+ * @package    Fontis_Australia
+ * @author     Chris Norton
+ * @copyright  Copyright (c) 2008 Fontis Pty. Ltd. (http://www.fontis.com.au)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+    <customer_address_form>
+        <reference name="footer">
+            <block type="core/template" name="fontis_australia_autocomplete" template="fontis/australia/postcode.phtml"/>
+        </reference>
+    </customer_address_form>
+    <customer_account_create>
+        <reference name="footer">
+            <block type="core/template" name="fontis_australia_autocomplete" template="fontis/australia/postcode.phtml"/>
+        </reference>
+    </customer_account_create>
+    <checkout_onepage_index>
+        <reference name="footer">
+            <block type="core/template" name="fontis_australia_autocomplete" template="fontis/australia/postcode-checkout.phtml"/>
+        </reference>    
+    </checkout_onepage_index>
+    <checkout_onepage_success>
+        <reference name="checkout.success">
+            <block type="checkout/onepage_success" name="fontis.australia.bpay.success" template="fontis/australia/payment/bpay/success.phtml"/>
+            <block type="checkout/onepage_success" name="fontis.australia.directdeposit.success" template="fontis/australia/payment/directdeposit/success.phtml"/>
+        </reference>
+    </checkout_onepage_success>
+</layout>
