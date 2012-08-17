@@ -1,0 +1,107 @@
+<?php
+/**
+ * Fontis Australia Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Fontis
+ * @package    Fontis_Australia
+ * @author     Chris Norton
+ * @copyright  Copyright (c) 2008 Fontis Pty. Ltd. (http://www.fontis.com.au)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<fieldset class="form-list">
+    <ul id="payment_form_<?php echo $this->getMethodCode(); ?>" style="display:none">
+        <li>
+            <div class="input-box">
+			    <style type="text/css">
+			    <!--
+			    table.bpay{
+				    width: 200px;
+				    font-family: Arial, Helvetica, sans-serif;
+				    background-color: #FFFFFF;
+				    margin: 0px;
+				    border: 2px solid #10204B;
+				    padding: 6px;
+			    }
+			    td.bpayLogo {
+				    width: 42px;
+				    border: 2px solid #142C61;
+			    }
+			    .bpayLogo img {
+				    margin: 12px;
+			    }
+			    td.customerReferenceBox {
+				    border: 2px solid #142C61;
+				    padding: 0px 8px;
+				    height: 54px;
+				    width: 158px;
+			    }
+
+			    .customerReferenceBoxText {
+				    font-size: 13px;
+				    text-transform: capitalize;
+				    color: #142C61;
+				    white-space: nowrap;
+				    line-height: 22px;
+				    font-weight: normal;
+			    }
+
+			    .billerTextHeading {
+				    font-size: 11px;
+				    text-transform: capitalize;
+				    color: #142C61;
+				    white-space: nowrap;
+				    line-height: 20px;
+				    font-weight: bold;	
+			    }
+			    .billerText{
+				    font-size: 11px;
+				    color: #142C61;
+			    }
+			    -->
+			    </style>
+			    <div align="left">
+			        <table border="0" cellpadding="0" cellspacing="0" class="bpay">
+			        <tr> 
+				        <td width="1%" class="bpayLogo"><img src="http://www.bpay.com.au/images/bpay.jpg" width="51" height="82" /></td>
+				        <td class="customerReferenceBox"> 
+					        <p class="customerReferenceBoxText">
+					        <?php if ($this->getMethod()->getBillerCode()): ?>
+						        <?php echo $this->__('<b>Biller Code</b>: %s', $this->getMethod()->getBillerCode()); ?><br />
+					        <?php endif; ?>
+					        <?php if ($this->getMethod()->getRef()): ?>
+						        <?php echo $this->__('<b>Ref</b>: %s', $this->getMethod()->getRef()); ?><br />
+					        <?php endif; ?>
+					        </p>
+				        </td>
+			        </tr>
+			        <tr>
+				        <td colspan="2">
+					        <p class="billerTextHeading">Telephone & Internet Banking – BPAY&reg;</p>
+				        </td>
+			        </tr>
+			        <tr>
+				        <td colspan="2">
+					        <p class="billerText">
+					        Contact your bank or financial institution to make this
+					        payment from your cheque, savings, debit, credit card
+					        or transaction account. More info: www.bpay.com.au
+					        </p>
+				        </td>
+			        </tr>
+			        </table>
+			    </div>
+            </div>
+        </li>
+    </ul>
+</fieldset>
