@@ -107,6 +107,7 @@
 		<reference name="top.links">
 
 
+			<!-- Start: Set the ID of the top links -->
 			<action method="setName">
 				<name>top-links</name>
 			</action>

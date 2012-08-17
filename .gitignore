@@ -272,6 +272,9 @@ publish
 
 !/app/etc/modules/MyTheme_Template.xml
 
+# Start: Webcomm 
+!/app/etc/modules/Webcom
+
 
 
 # ==================================== #

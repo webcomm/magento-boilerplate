@@ -15,6 +15,7 @@
 $categories = $this->getStoreCategories();
 $helper     = $this->helper('catalog/output');
 $i          = 1;
+$limit      = $this->getLimit();
 ?>
 <?php if ($categories): ?>
 	<div class="centre-container">
@@ -39,10 +40,10 @@ $i          = 1;
 										<?php endif ?>
 									</a>
 
-									<?php if (count($childrenCategories) > 0): ?>
+									<?php if ($limit > 1 and count($childrenCategories) > 0): ?>
 										<ul class="level-2 dropdown-menu">
 											<?php foreach ($childrenCategories as $childCategory): ?>
-												<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel(2)->setRecursionCategory($childCategory)->toHtml()?>
+												<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
 											<?php endforeach ?>
 										</ul>
 									<?php endif ?>
@@ -55,13 +56,5 @@ $i          = 1;
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="centre-container">
-		<nav role="navigation" class="column-full">
-			<ul class="level-1">
-							
-			</ul>
-		</nav>
 	</div>
 <?php endif ?>
