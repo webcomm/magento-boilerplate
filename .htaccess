@@ -218,7 +218,7 @@ SetEnvIf Host local\.* MAGE_IS_DEVELOPER_MODE true
 ## Setup multiple stores
 
     # Magento run type
-    SetEnvIf Host (local|www)?\.?(store|name|here)(\.stage\.webcomm)?\.com\.au MAGE_RUN_TYPE=website
+    SetEnvIf Host (local|www)?\.?(store|name|here)(\.stage\.webcomm)?\.com(?:\.au)? MAGE_RUN_TYPE=website
 
     # Magento run code
-    SetEnvIf Host (local|www)?\.?(store|name|here)(\.stage\.webcomm)?\.com\.au MAGE_RUN_CODE=$2
+    SetEnvIf Host (local|www)?\.?(store|name|here)(\.stage\.webcomm)?\.com(?:\.au)? MAGE_RUN_CODE=$2
