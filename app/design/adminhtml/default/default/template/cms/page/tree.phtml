@@ -1,0 +1,585 @@
+<div class="categories-side-col">
+    <div class="content-header">
+        <h3 class="icon-head head-categories"><?php echo Mage::helper('cms')->__('Pages') ?></h3>
+        <?php if ($this->getRoot()): ?>
+            <?php echo $this->getAddSubButtonHtml() ?>
+        <?php endif; ?>
+    </div>
+    <?php echo $this->getStoreSwitcherHtml();?>
+    <div class="tree-actions">
+        <?php if($this->getRoot()): ?>
+            <a href="#" onclick="tree.collapseTree(); return false;"><?php echo Mage::helper('cms')->__('Collapse All'); ?></a> <span class="separator">|</span> <a href="#" onclick="tree.expandTree(); return false;"><?php echo Mage::helper('cms')->__('Expand All'); ?></a>
+        <?php endif; ?>
+    </div>
+    <?php if ($this->getRoot()): ?>
+    <div class="tree-holder">
+        <div id="tree-div" style="width:100%; overflow:auto;"></div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var tree;
+
+/**
+ * Fix ext compatibility with prototype 1.6
+ */
+Ext.lib.Event.getTarget = function(e) {
+    var ee = e.browserEvent || e;
+    return ee.target ? Event.element(ee) : null;
+};
+
+Ext.tree.TreePanel.Enhanced = function(el, config)
+{
+    Ext.tree.TreePanel.Enhanced.superclass.constructor.call(this, el, config);
+};
+
+Ext.extend(Ext.tree.TreePanel.Enhanced, Ext.tree.TreePanel, {
+
+    loadTree : function(config, firstLoad)
+    {
+        var parameters = config['parameters'];
+        var data = config['data'];
+
+        this.storeId = parameters['store_id'];
+
+        if ((typeof parameters['root_visible']) != 'undefined') {
+            this.rootVisible = parameters['root_visible']*1;
+        }
+
+        var root = new Ext.tree.TreeNode(parameters);
+
+        this.nodeHash = {};
+        this.setRootNode(root);
+
+        if (firstLoad) {
+            this.addListener('click', this.pageClick);
+            this.addListener('beforenodedrop', pageMove.createDelegate(this));
+        }
+
+        this.loader.buildPageTree(root, data);
+        this.el.dom.innerHTML = '';
+        // render the tree
+        this.render();
+        if (parameters['expanded']) {
+            this.expandAll();
+        } else {
+            root.expand();
+        }
+
+        var selectedNode = this.getNodeById(parameters['page_id']);
+        if (selectedNode) {
+            this.currentNodeId = parameters['page_id'];
+        }
+        this.selectCurrentNode();
+    },
+
+    request : function(url, params)
+    {
+        if (!params) {
+        	var params = {};
+        }
+        if (!params.form_key) {
+            params.form_key = FORM_KEY;
+        }
+        var result = new Ajax.Request(
+            url + (url.match(new RegExp('\\?')) ? '&isAjax=true' : '?isAjax=true' ),
+            {
+               parameters:  params,
+               method:      'post'
+            }
+        );
+
+        return result;
+    },
+
+    selectCurrentNode : function()
+    {
+        if (this.currentNodeId) {
+            var selectedNode = this.getNodeById(this.currentNodeId);
+            try {
+                this.getSelectionModel().select(selectedNode);
+            } catch (e) {}
+        }
+    },
+
+    collapseTree : function()
+    {
+        this.collapseAll();
+    },
+
+    expandTree : function()
+    {
+        this.expandAll();
+    },
+
+    pageClick : function(node, e)
+    {
+        var baseUrl = '<?php echo $this->getEditUrl() ?>';
+        var urlExt = (this.storeId?'store/'+this.storeId+'/':'')+'id/'+node.id+'/';
+        var url = parseSidUrl(baseUrl, urlExt);
+
+        this.currentNodeId = node.id;
+        if (!this.useAjax) {
+            setLocation(url);
+            return;
+        }
+        tinyMCE.execCommand("mceRemoveControl", true, 'page_content');
+        updateContent(url);
+    }
+});
+
+function reRenderTree(event, switcher)
+{
+    // re-render tree by store switcher
+    if (tree && event) {
+        var obj = event.target;
+        var newStoreId = obj.value * 1;
+        var storeParam = newStoreId ? 'store/'+newStoreId + '/' : '';
+
+        if (obj.switchParams) {
+            storeParam += obj.switchParams;
+        }
+        if (switcher.useConfirm) {
+            if (!confirm("<?php echo $this->__('Please confirm site switching. All data that hasn\'t been saved will be lost.') ?>")){
+                obj.value = '<?php echo (int) $this->getStoreId() ?>';
+                return false;
+            }
+        }
+
+        // retain current selected page id
+        storeParam = storeParam + 'id/' + tree.currentNodeId + '/';
+        var url = tree.switchTreeUrl + storeParam;
+
+        // load from cache
+        // load from ajax
+        new Ajax.Request(url + (url.match(new RegExp('\\?')) ? '&isAjax=true' : '?isAjax=true' ), {
+            parameters : {store: newStoreId, form_key: FORM_KEY},
+            method     : 'post',
+            onComplete : function(transport) {
+                var response = eval('(' + transport.responseText + ')');
+                if (!response['parameters']) {
+                    return false;
+                }
+
+                _renderNewTree(response, storeParam);
+            }
+        });
+    }
+    // render default tree
+    else {
+        _renderNewTree();
+    }
+}
+
+function _renderNewTree(config, storeParam)
+{
+    if (!config) {
+        var config = defaultLoadTreeParams;
+    }
+    if (tree) {
+        tree.purgeListeners();
+        tree.el.dom.innerHTML = '';
+    }
+    tree = new Ext.tree.TreePanel.Enhanced('tree-div', newTreeParams);
+    tree.loadTree(config, true);
+
+    // try to select current page
+    var selectedNode = config.parameters.page_id;
+    if (selectedNode) {
+        tree.currentNodeId = config.parameters.page_id;
+    }
+    tree.selectCurrentNode();
+
+    // update content area
+    var url = tree.editUrl;
+    if (storeParam) {
+        url = url + storeParam;
+    }
+    if (selectedNode) {
+        url = url + 'id/' + config.parameters.page_id;
+    }
+    updateContent(url);
+}
+
+Ext.onReady(function()
+{
+    pageLoader = new Ext.tree.TreeLoader({
+       dataUrl: '<?php echo $this->getLoadTreeUrl() ?>'
+    });
+
+    pageLoader.createNode = function(config) {
+        var node;
+        var _node = Object.clone(config);
+        if (config.children && !config.children.length) {
+            delete(config.children);
+            node = new Ext.tree.AsyncTreeNode(config);
+        } else {
+            node = new Ext.tree.TreeNode(config);
+        }
+
+        return node;
+    };
+
+    pageLoader.buildPageTree = function(parent, config)
+    {
+        if (!config) return null;
+
+        if (parent && config && config.length){
+            for (var i = 0; i < config.length; i++) {
+                var node;
+                var _node = Object.clone(config[i]);
+                if (_node.children && !_node.children.length) {
+                    delete(_node.children);
+                    node = new Ext.tree.AsyncTreeNode(_node);
+                } else {
+                    node = new Ext.tree.TreeNode(config[i]);
+                }
+                parent.appendChild(node);
+                node.loader = node.getOwnerTree().loader;
+                if (_node.children) {
+                    this.buildPageTree(node, _node.children);
+                }
+            }
+        }
+    };
+
+    pageLoader.buildHash = function(node)
+    {
+        var hash = {};
+
+        hash = this.toArray(node.attributes);
+
+        if (node.childNodes.length>0 || (node.loaded==false && node.loading==false)) {
+            hash['children'] = new Array;
+
+            for (var i = 0, len = node.childNodes.length; i < len; i++) {
+                if (!hash['children']) {
+                    hash['children'] = new Array;
+                }
+                hash['children'].push(this.buildHash(node.childNodes[i]));
+            }
+        }
+
+        return hash;
+    };
+
+    pageLoader.toArray = function(attributes) {
+        var data = {form_key: FORM_KEY};
+        for (var key in attributes) {
+            var value = attributes[key];
+            data[key] = value;
+        }
+
+        return data;
+    };
+
+    pageLoader.on("beforeload", function(treeLoader, node) {
+        treeLoader.baseParams.id = node.attributes.id;
+        treeLoader.baseParams.store = node.attributes.store;
+        treeLoader.baseParams.form_key = FORM_KEY;
+    });
+
+    pageLoader.on("load", function(treeLoader, node, config) {
+        varienWindowOnload();
+    });
+
+    if ((typeof varienStoreSwitcher)!='undefined') {
+        varienStoreSwitcher.storeSelectorClickCallback = reRenderTree;
+    }
+
+    newTreeParams = {
+        animate         : false,
+        loader          : pageLoader,
+        enableDD        : true,
+        containerScroll : true,
+        selModel        : new Ext.tree.CheckNodeMultiSelectionModel(),
+        rootVisible     : '<?php echo $this->getRoot()->getIsVisible() ?>',
+        useAjax         : <?php echo $this->getUseAjax() ?>,
+        switchTreeUrl   : '<?php echo $this->getSwitchTreeUrl() ?>',
+        editUrl         : '<?php echo $this->getEditUrl() ?>',
+        currentNodeId   : <?php echo (int) $this->getPageId() ?>
+    };
+
+    defaultLoadTreeParams = {
+        parameters : {
+            text        : '<?php echo htmlspecialchars($this->getRoot()->getName(), ENT_QUOTES) ?>',
+            draggable   : false,
+            allowDrop   : <?php if ($this->getRoot()->getIsVisible()): ?>true<?php else : ?>false<?php endif; ?>,
+            id          : <?php echo (int) $this->getRoot()->getId() ?>,
+            expanded    : <?php echo (int) $this->getIsWasExpanded() ?>,
+            store_id    : <?php echo (int) $this->getStore()->getId() ?>,
+            page_id     : <?php echo (int) $this->getPageId() ?>
+        },
+        data : <?php echo $this->getTreeJson() ?>
+    };
+
+    reRenderTree();
+});
+
+function addNew(url, isRoot)
+{
+    if (isRoot) {
+        tree.currentNodeId = tree.root.id;
+    }
+
+    if (/store\/\d+/.test(url)) {
+        url = url.replace(/store\/\d+/, "store/" + tree.storeId);
+    }
+    else    {
+        url+= "store/" + tree.storeId + "/";
+    }
+
+    url+= 'parent/'+tree.currentNodeId;
+    tinyMCE.execCommand("mceRemoveControl", true, 'page_content');
+    updateContent(url);
+}
+
+function pageMove(obj)
+{
+	tinyMCE.execCommand("mceRemoveControl", true, 'page_content');
+    var data = {id: obj.dropNode.id, form_key: FORM_KEY};
+
+    data.point = obj.point;
+    switch (obj.point) {
+        case 'above' :
+            data.pid = obj.target.parentNode.id;
+            data.paid = obj.dropNode.parentNode.id;
+            if (obj.target.previousSibling) {
+                data.aid = obj.target.previousSibling.id;
+            } else {
+                data.aid = 0;
+            }
+            break;
+        case 'below' :
+            data.pid = obj.target.parentNode.id;
+            data.aid = obj.target.id;
+        break;
+        case 'append' :
+            data.pid = obj.target.id;
+            data.paid = obj.dropNode.parentNode.id;
+            if (obj.target.lastChild) {
+                data.aid = obj.target.lastChild.id;
+            } else {
+                data.aid = 0;
+            }
+        break;
+        default :
+            obj.cancel = true;
+            return obj;
+    }
+
+    var success = function(o) {
+        try {
+            if(o.responseText){
+                if(o.responseText==='SUCCESS'){
+                    // retain current selected page id
+                    storeParam = 'id/' + tree.currentNodeId + '/';
+                    var url = tree.switchTreeUrl + storeParam;
+
+                    // load from cache
+                    // load from ajax
+                    new Ajax.Request(url + (url.match(new RegExp('\\?')) ? '&isAjax=true' : '?isAjax=true' ), {
+                        parameters : {store: <?php echo (int) $this->getStoreId() ?>, form_key: FORM_KEY},
+                        method     : 'post',
+                        onComplete : function(transport) {
+                            var response = eval('(' + transport.responseText + ')');
+                            if (!response['parameters']) {
+                                return false;
+                            }
+
+                            _renderNewTree(response, storeParam);
+                        }
+                    });
+                } else {
+                    alert(o.responseText);
+                    location.reload();
+                }
+            }
+        }
+        catch(e) {
+        }
+    };
+
+    var failure = function(o) {
+        try {
+            console.log(o.statusText);
+        } catch (e2) {
+            alert(o.statusText);
+        }
+        location.reload();
+    };
+
+    var pd = [];
+    for(var key in data) {
+        pd.push(encodeURIComponent(key), "=", encodeURIComponent(data[key]), "&");
+    }
+    pd.splice(pd.length-1,1);
+    new Ajax.Request(
+        '<?php echo $this->getMoveUrl() ?>',
+        {
+            method:     'POST',
+            parameters: pd.join(""),
+            onSuccess : success,
+            onFailure : failure
+        }
+    );
+}
+//]]>
+</script>
+<?php endif; ?>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    function pageReset(url,useAjax){
+        if(useAjax){
+            var params = {active_tab_id:false};
+            updateContent(url, params);
+        }else{
+            location.href = url;
+        }
+    }
+
+    /**
+    * Delete some page
+    * This routine get pageId explicitly, so even if currently selected tree node is out of sync
+    * with this form, we surely delete same page in the tree and at backend
+    */
+    function pageDelete(url, useAjax, pageId) {
+        if (confirm('<?php echo Mage::helper('cms')->__('Are you sure you want to delete this page?') ?>')){
+            if (useAjax){
+                tree.nodeForDelete = pageId;
+                updateContent(url, {}, true);
+            } else {
+                location.href = url;
+            }
+        }
+    }
+
+    /**
+     * Update page content area
+     */
+    function updateContent(url, params, refreshTree) {
+        if (!params) {
+            params = {};
+        }
+        if (!params.form_key) {
+            params.form_key = FORM_KEY;
+        }
+
+        toolbarToggle.stop();
+
+       /*if(params.node_name)
+       {
+           var currentNode = tree.getNodeById(tree.currentNodeId);
+           currentNode.setText(params.node_name);
+       }*/
+
+        var pageContainer = $('content');
+        var messagesContainer = $('messages');
+        var thisObj = this;
+        new Ajax.Request(url + (url.match(new RegExp('\\?')) ? '&isAjax=true' : '?isAjax=true' ), {
+            parameters:  params,
+            evalScripts: true,
+            onComplete: function () {
+                try {
+                    if (refreshTree) {
+                        thisObj.refreshTreeArea();
+                    }
+                    toolbarToggle.start();
+                } catch (e) {
+                    alert(e.message);
+                };
+            },
+            onSuccess: function(transport) {
+                try {
+                    if (transport.responseText.isJSON()) {
+                        var response = transport.responseText.evalJSON();
+                        var needUpdate = true;
+                        if (response.error) {
+                            alert(response.message);
+                            needUpdate = false;
+                        }
+                        if(response.ajaxExpired && response.ajaxRedirect) {
+                            setLocation(response.ajaxRedirect);
+                            needUpdate = false;
+                        }
+                        if (needUpdate){
+                            if (response.content){
+                                $(pageContainer).update(response.content);
+                            }
+                        }
+                    } else {
+                        $(pageContainer).update(transport.responseText);
+                    }
+                }
+                catch (e) {
+                    $(pageContainer).update(transport.responseText);
+                }
+            }
+        });
+    }
+
+    /**
+     * Refresh tree nodes after saving or deleting a page
+     */
+    function refreshTreeArea(transport)
+    {
+        if (tree && window.editingPageBreadcrumbs) {
+            // page deleted - delete its node
+            if (tree.nodeForDelete) {
+                var node = tree.getNodeById(tree.nodeForDelete);
+                tree.nodeForDelete = false;
+
+                if (node) { // Check maybe tree became somehow not synced with ajax and we're trying to delete unknown node
+                    node.parentNode.removeChild(node);
+                    tree.currentNodeId = false;
+                }
+            }
+            // page created - add its node
+            else if (tree.addNodeTo) {
+                var parent = tree.getNodeById(tree.addNodeTo);
+                tree.addNodeTo = false;
+
+                if (parent) { // Check maybe tree became somehow not synced with ajax and we're trying to add to unknown node
+                    var node = new Ext.tree.AsyncTreeNode(editingPageBreadcrumbs[editingPageBreadcrumbs.length - 1]);
+                    node.loaded = true;
+                    tree.currentNodeId = node.id;
+                    parent.appendChild(node);
+
+                    if (parent.expanded) {
+                        tree.selectCurrentNode();
+                    } else {
+                        var timer;
+                        parent.expand();
+                        var f = function(){
+                            if(parent.expanded){ // done expanding
+                                clearInterval(timer);
+                                tree.selectCurrentNode();
+                            }
+                        };
+                        timer = setInterval(f, 200);
+                    }
+                }
+            }
+
+            // update all affected categories nodes names
+            for (var i = 0; i < editingPageBreadcrumbs.length; i++) {
+                var node = tree.getNodeById(editingPageBreadcrumbs[i].id);
+                if (node) {
+                    node.setText(editingPageBreadcrumbs[i].text);
+                }
+            }
+        }
+    }
+
+    function displayLoadingMask()
+    {
+       var loaderArea = $$('#html-body .wrapper')[0]; // Blocks all page
+        Position.clone($(loaderArea), $('loading-mask'), {offsetLeft:-2});
+        toggleSelectsUnderBlock($('loading-mask'), false);
+        Element.show('loading-mask');
+    }
+//]]>
+</script>
+<?php echo $this->getChildHtml('googleoptimizer_js') ?>

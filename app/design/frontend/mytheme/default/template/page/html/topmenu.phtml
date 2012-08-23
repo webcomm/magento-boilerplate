@@ -1,0 +1,21 @@
+<?php
+/**
+ * Top menu for store
+ *
+ * @see JR_CleverCms_Block_Catalog_Navigation
+ */
+?>
+<?php
+  $_cmsIsFirst = !$this->hasCategoriesNavigationMenuPages();
+  $_categoriesIsLast = !$this->hasCmsNavigationMenuPages();
+
+  $_menu  = $this->renderCategoriesMenuHtmlClever(0, $_categoriesIsLast, true, 'level-top');
+  $_menu .= $this->renderCmsMenuHtml(0, true, $_cmsIsFirst, 'level-top');
+?>
+<?php if ($_menu): ?>
+<div class="nav-container">
+    <ul id="nav">
+        <?php echo $_menu ?>
+    </ul>
+</div>
+<?php endif ?>
