@@ -8,7 +8,7 @@
 
 // Get resources
 $category        = $this->getRecursionCategory();
-$childCategories = $this->getChildrenCategories($category);
+$childCategories = $this->getActiveChildrenCategories($category);
 $level           = $this->getLevel();
 $limit           = $this->getLimit();
 ?>
@@ -18,7 +18,7 @@ $limit           = $this->getLimit();
 			<?=$category->getName()?>
 		</a>
 
-		<?php if ($limit > $level and count($childCategories) > 0): ?>
+		<?php if (($limit == 0 or $limit > $level) and count($childCategories) > 0): ?>
 			<ul class="dropdown-menu level-<?=++$level?>">
 				<?php foreach ($childCategories as $childCategory): ?>
 					<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel($level)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
