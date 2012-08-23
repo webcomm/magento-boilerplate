@@ -39,7 +39,7 @@ $limit      = $this->getLimit();
 										<?php endif ?>
 									</a>
 
-									<?php if (($limit == 0 or $limit > 1) and count($childrenCategories) > 0): ?>
+									<?php if (( ! $limit or $limit > 1) and count($childrenCategories) > 0): ?>
 										<ul class="level-2 dropdown-menu">
 											<?php foreach ($childrenCategories as $childCategory): ?>
 												<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
