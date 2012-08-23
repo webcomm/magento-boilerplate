@@ -322,9 +322,15 @@ publish
 !/app/design/adminhtml/default/default/template/customer/group/switcher.phtml
 !/app/etc/modules/JR_CleverCms.xml
 
+# Start: Johann Reinke Suffix JS CSS
+# !/app/code/community/JR
+# /app/code/community/JR/*
+!/app/code/community/JR/SuffixJsCss
+!/app/etc/modules/JR_SuffixJsCss.xml
+
 # Start: Johann Reinke Stock History
-!/app/code/community/JR
-/app/code/community/JR/*
+# !/app/code/community/JR
+# /app/code/community/JR/*
 !/app/code/community/JR/StockHistory
 !/app/etc/modules/JR_StockHistory.xml
 
