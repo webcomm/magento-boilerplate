@@ -1,0 +1,29 @@
+<?php if ($groups = $this->getCustomerGroups()): ?>
+<p class="switcher"><label for="customer_group_switcher"><?php echo $this->__('Choose Customer Group') ?>:</label>
+<select name="customer_group_switcher" id="customer_group_switcher" onchange="return switchCustomerGroup(this);">
+    <?php foreach ($groups as $group): ?>
+        <option value="<?php echo $group->getId() ?>" <?php if ($this->getCustomerGroupId() == $group->getId()): ?>selected="selected"<?php endif; ?>><?php echo $group->getCode() ?></option>
+    <?php endforeach; ?>
+</select>
+</p>
+<script type="text/javascript">
+    function switchCustomerGroup(obj){
+        var groupParam = 'group/' + (obj.value ? obj.value : '0');
+        if(obj.switchParams){
+            groupParam+= obj.switchParams;
+        }
+    <?php if($this->getUseConfirm()): ?>
+        if(confirm("<?php echo $this->__('Please confirm customer group switching. All data that hasn\'t been saved will be lost.') ?>")){
+            setLocation('<?php echo $this->getSwitchUrl() ?>'+groupParam);
+            return true;
+        }
+        else {
+            obj.value = '<?php echo $this->getCustomerGroupId() ?>';
+        }
+        return false;
+    <?php else: ?>
+        setLocation('<?php echo $this->getSwitchUrl() ?>'+groupParam);
+    <?php endif; ?>
+    }
+</script>
+<?php endif; ?>

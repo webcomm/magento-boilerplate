@@ -1,0 +1,29 @@
+<div>
+    <div>
+    <?php if($this->getChildHtml('left')): ?>
+
+        <div class="columns <?php echo $this->getContainerCssClass() ?>">
+            <div class="side-col">
+                <?php echo $this->getChildHtml('left') ?>
+            </div>
+            <div class="main-col">
+                <div class="main-col-inner">
+                    <div id="messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+                    <?php echo $this->getChildHtml('content') ?>
+                    <script type="text/javascript">
+                        <?php if (Mage::getStoreConfig('cms/wysiwyg/enabled') == Mage_Cms_Model_Wysiwyg_Config::WYSIWYG_ENABLED): ?>
+                            $('togglepage_content').click();
+                        <?php endif; ?>
+                    	$('page_tabs_main_section').show();
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    <?php else: ?>
+        <div id="messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+        <?php echo $this->getChildHtml('content') ?>
+    <?php endif; ?>
+    </div>
+</div>
+<?php echo $this->getChildHtml('js') ?>

@@ -301,6 +301,28 @@ publish
 
 
 
+#Start: Johann Reinke Clever CMS
+!/app/code/community/JR
+/app/code/community/JR/*
+!/app/code/community/JR/CleverCms
+!/app/design/adminhtml/default/default/layout/local.xml
+!/app/design/adminhtml/default/default/template/cms
+/app/design/adminhtml/default/default/template/cms/*
+!/app/design/adminhtml/default/default/template/cms/page
+/app/design/adminhtml/default/default/template/cms/page/*
+!/app/design/adminhtml/default/default/template/cms/page/ajax-edit.phtml
+!/app/design/adminhtml/default/default/template/cms/page/index.phtml
+!/app/design/adminhtml/default/default/template/cms/page/permissions
+!/app/design/adminhtml/default/default/template/cms/page/store
+!/app/design/adminhtml/default/default/template/cms/page/tree.phtml
+!/app/design/adminhtml/default/default/template/customer
+/app/design/adminhtml/default/default/template/customer/*
+!/app/design/adminhtml/default/default/template/customer/group
+/app/design/adminhtml/default/default/template/customer/group/*
+!/app/design/adminhtml/default/default/template/customer/group/switcher.phtml
+!/app/etc/modules/JR_CleverCms.xml
+
+
 # ==================================== #
 # Part D: Setup your theme overrides   #
 # ==================================== #

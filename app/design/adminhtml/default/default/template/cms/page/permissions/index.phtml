@@ -1,0 +1,19 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="width:50%;"><h3 class="icon-head"><?php echo $this->__('Manage Content Permissions') ?></h3></td>
+            <td class="form-buttons">
+                <button onclick="permissionsForm.submit();return false;" class="scalable save" type="button">
+                    <span><span><span><?php echo $this->__('Save Permissions') ?></span></span></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<form action="<?php echo $this->getUrl('*/*/save', array('_current' => true)) ?>" method="post" id="permissions_form">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <?php echo $this->getChildHtml() ?>
+</form>
+<script type="text/javascript">
+    var permissionsForm = new varienForm('permissions_form');
+</script>
