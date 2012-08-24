@@ -12,9 +12,9 @@ $childrenPages = $this->getActiveChildrenCmsPages($page);
 $limit         = $this->getLimit();
 ?>
 <?php if ($page): ?>
-	<li class="level-1-item <?=(count($childrenPages) > 0) ? 'dropdown' : null?>">
+	<li class="level-1-item <?=(count($childrenPages) > 0) ? 'dropdown' : null?> <?=$this->isCmsPageActive($page) ? 'active' : null?>">
 		
-		<a class="level-1-link <?=(count($childrenPages) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCmsPageActive($page) ? 'active' : null?>" href="<?=$page->getUrl()?>" <?php if (count($childrenPages) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+		<a class="level-1-link <?=(count($childrenPages) > 0) ? 'dropdown-toggle' : null?>" href="<?=$page->getUrl()?>" <?php if (count($childrenPages) > 0): ?>data-toggle="dropdown"<?php endif ?>>
 			<?=$this->escapeHtml($page->getTitle())?>
 			<?php if (count($childrenPages) > 0): ?>
 				<b class="caret"></b>

@@ -12,8 +12,8 @@ $level      = $this->getLevel();
 $limit      = $this->getLimit();
 ?>
 <?php if ($page and $level): ?>
-	<li class="level-<?=$level?>-item <?=(count($childPages) > 0) ? 'dropdown-submenu' : null?>">
-		<a href="<?=$page->getUrl()?>" class="level-<?=$level?>-link <?=$this->isCmsPageActive($page) ? 'active' : null?>" title="<?=$this->escapeHtml($page->getTitle())?>">
+	<li class="level-<?=$level?>-item <?=(count($childPages) > 0) ? 'dropdown-submenu' : null?> <?=$this->isCmsPageActive($page) ? 'active' : null?>">
+		<a href="<?=$page->getUrl()?>" class="level-<?=$level?>-link" title="<?=$this->escapeHtml($page->getTitle())?>">
 			<?=$this->escapeHtml($page->getTitle())?>
 		</a>
 
