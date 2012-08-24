@@ -14,8 +14,8 @@ $level           = $this->getLevel();
 $limit           = $this->getLimit();
 ?>
 <?php if ($category and $level): ?>
-	<li class="level-<?=$level?>-item <?=(count($childCategories) > 0) ? 'dropdown-submenu' : null?>">
-		<a href="<?=$this->getCategoryUrl($category)?>" class="level-<?=$level?>-link <?=$this->isCategoryActive($category) ? 'active' : null?>" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>">
+	<li class="level-<?=$level?>-item <?=(count($childCategories) > 0) ? 'dropdown-submenu' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>">
+		<a href="<?=$this->getCategoryUrl($category)?>" class="level-<?=$level?>-link" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>">
 			<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>
 		</a>
 

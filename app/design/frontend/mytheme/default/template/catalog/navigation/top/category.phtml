@@ -13,9 +13,9 @@ $childrenCategories = $this->getActiveChildrenCategories($category);
 $limit              = $this->getLimit();
 ?>
 <?php if ($category): ?>
-	<li class="level-1-item <?=(count($childrenCategories) > 0) ? 'dropdown' : null?>">
+	<li class="level-1-item <?=(count($childrenCategories) > 0) ? 'dropdown' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>">
 
-		<a class="level-1-link <?=(count($childrenCategories) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>" href="<?=$this->getCategoryUrl($category)?>" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>" <?php if (count($childrenCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+		<a class="level-1-link <?=(count($childrenCategories) > 0) ? 'dropdown-toggle' : null?>" href="<?=$this->getCategoryUrl($category)?>" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>" <?php if (count($childrenCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
 			<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>
 			<?php if (count($childrenCategories) > 0): ?>
 				<b class="caret"></b>
