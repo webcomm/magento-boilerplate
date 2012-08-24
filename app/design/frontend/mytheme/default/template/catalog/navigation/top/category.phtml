@@ -1,0 +1,34 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pty Ltd
+ * @link        http://webcomm.com.au
+ */
+
+// Get resources
+$helper             = $this->helper('catalog/output');
+$category           = $this->getTopCategory();
+$childrenCategories = $this->getActiveChildrenCategories($category);
+$limit              = $this->getLimit();
+?>
+<?php if ($category): ?>
+	<li class="level-1-item <?=(count($childrenCategories) > 0) ? 'dropdown' : null?>">
+
+		<a class="level-1-link <?=(count($childrenCategories) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>" href="<?=$this->getCategoryUrl($category)?>" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>" <?php if (count($childrenCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+			<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>
+			<?php if (count($childrenCategories) > 0): ?>
+				<b class="caret"></b>
+			<?php endif ?>
+		</a>
+
+		<?php if (( ! $limit or $limit > 1) and count($childrenCategories) > 0): ?>
+			<ul class="level-2 dropdown-menu">
+				<?php foreach ($childrenCategories as $childCategory): ?>
+					<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
+				<?php endforeach ?>
+			</ul>
+		<?php endif ?>
+
+	</li>
+<?php endif ?>
