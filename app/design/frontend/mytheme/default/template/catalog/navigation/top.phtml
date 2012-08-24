@@ -27,14 +27,30 @@ $limit      = $this->getLimit();
 
 							// If categories are going first
 							if ($this->getOrder() === 'categories'): ?>
-								<?php foreach ($categories as $category): ?>
-									<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
-								<?php endforeach ?>
-								<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
-									<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
-								<?php endforeach ?>
-							<?php else: ?>
+								<?php if ($this->shouldDisplayCategories()): ?>
+									<?php foreach ($categories as $category): ?>
+										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
+									<?php endforeach ?>
+								<?php endif ?>
+								<?php if ($this->shouldDisplayCmsPages()): ?>
+									<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
+										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
+									<?php endforeach ?>
+								<?php endif ?>
+							<?php
 
+							// If CMS pages are going first
+							else: ?>
+								<?php if ($this->shouldDisplayCmsPages()): ?>
+									<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
+										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
+									<?php endforeach ?>
+								<?php endif ?>
+								<?php if ($this->shouldDisplayCategories()): ?>
+									<?php foreach ($categories as $category): ?>
+										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
+									<?php endforeach ?>
+								<?php endif ?>
 							<?php endif ?>
 						</ul>
 					</nav>
