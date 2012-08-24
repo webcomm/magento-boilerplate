@@ -12,11 +12,10 @@
  * @see Mage_Catalog_Block_Navigation
  */
 $categories = $this->getActiveStoreCategories();
-$helper     = $this->helper('catalog/output');
-$i          = 1;
+$pages      = $this->getActiveStoreCmsPages();
 $limit      = $this->getLimit();
 ?>
-<?php if ($categories): ?>
+<?php if ($categories or $pages): ?>
 	<div class="centre-container">
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -24,31 +23,19 @@ $limit      = $this->getLimit();
 					
 					<nav role="navigation">
 						<ul class="nav">
-							<?php foreach ($categories as $category): ?>
-								<?php
+							<?php
 
-								// Find children categories
-								$childrenCategories = $this->getActiveChildrenCategories($category);
-								?>
-								<li class="level-1-item <?=(count($childrenCategories) > 0) ? 'dropdown' : null?>">
+							// If categories are going first
+							if ($this->getOrder() === 'categories'): ?>
+								<?php foreach ($categories as $category): ?>
+									<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
+								<?php endforeach ?>
+								<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
+									<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
+								<?php endforeach ?>
+							<?php else: ?>
 
-									<a class="level-1-link <?=(count($childrenCategories) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCategoryActive($category) ? 'active' : null?>" href="<?=$this->getCategoryUrl($category)?>" <?php if (count($childrenCategories) > 0): ?>data-toggle="dropdown"<?php endif ?>>
-										<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>
-										<?php if (count($childrenCategories) > 0): ?>
-											<b class="caret"></b>
-										<?php endif ?>
-									</a>
-
-									<?php if (( ! $limit or $limit > 1) and count($childrenCategories) > 0): ?>
-										<ul class="level-2 dropdown-menu">
-											<?php foreach ($childrenCategories as $childCategory): ?>
-												<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
-											<?php endforeach ?>
-										</ul>
-									<?php endif ?>
-
-								</li>
-							<?php endforeach ?>
+							<?php endif ?>
 						</ul>
 					</nav>
 

@@ -1,0 +1,33 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 Webcomm Pty Ltd
+ * @link        http://webcomm.com.au
+ */
+
+// Get resources
+$page          = $this->getTopPage();
+$childrenPages = $this->getActiveChildrenCmsPages($page);
+$limit         = $this->getLimit();
+?>
+<?php if ($page): ?>
+	<li class="level-1-item <?=(count($childrenPages) > 0) ? 'dropdown' : null?>">
+		
+		<a class="level-1-link <?=(count($childrenPages) > 0) ? 'dropdown-toggle' : null?> <?=$this->isCmsPageActive($page) ? 'active' : null?>" href="<?=$page->getUrl()?>" <?php if (count($childrenPages) > 0): ?>data-toggle="dropdown"<?php endif ?>>
+			<?=$this->escapeHtml($page->getTitle())?>
+			<?php if (count($childrenPages) > 0): ?>
+				<b class="caret"></b>
+			<?php endif ?>
+		</a>
+
+		<?php if (( ! $limit or $limit > 1) and count($childrenPages) > 0): ?>
+			<ul class="level-2 dropdown-menu">
+				<?php foreach ($childrenPages as $childPage): ?>
+					<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionPage($childPage)->toHtml()?>
+				<?php endforeach ?>
+			</ul>
+		<?php endif ?>
+
+	</li>
+<?php endif ?>
