@@ -239,6 +239,7 @@ publish
 /skin/frontend/base/default/js/*
 !/skin/frontend/base/default/lib
 /skin/frontend/base/default/lib/*
+!/skin/frontend/base/default/webcomm
 !/skin/frontend/default
 /skin/frontend/default/*
 !/skin/frontend/default/default
@@ -253,6 +254,7 @@ publish
 /skin/frontend/default/default/js/*
 !/skin/frontend/default/default/lib
 /skin/frontend/default/default/lib/*
+!/skin/frontend/default/default/lib/webcomm
 
 # Start: Var folder
 /var
