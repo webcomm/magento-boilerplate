@@ -14,7 +14,7 @@ $catalogSearchHelper = $this->helper('catalogsearch');
 <form id="search_mini_form" action="<?=$catalogSearchHelper->getResultUrl()?>" method="get">
 	<div class="form-search">
 		<div class="input-append">
-			<input id="search" type="text" name="<?=$catalogSearchHelper->getQueryParamName()?>" value="<?=$catalogSearchHelper->getEscapedQueryText()?>" class="input-text search-query" maxlength="<?=$catalogSearchHelper->getMaxQueryLength()?>">
+			<input id="search" type="text" name="<?=$catalogSearchHelper->getQueryParamName()?>" value="<?=$catalogSearchHelper->getEscapedQueryText()?>" class="input-text search-query" maxlength="<?=$catalogSearchHelper->getMaxQueryLength()?>" placeholder="<?=$this->__('Search entire store here...')?>">
 			<button type="submit" title="<?=$this->__('Search')?>" class="btn">
 				<span><span><?=$this->__('Search')?></span></span>
 			</button>
@@ -22,7 +22,7 @@ $catalogSearchHelper = $this->helper('catalogsearch');
 		<div id="search_autocomplete" class="search-autocomplete"></div>
 		<script type="text/javascript">
 		//<![CDATA[
-			var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?=$this->__('Search entire store here...')?>');
+			var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
 			searchForm.initAutocomplete('<?=$catalogSearchHelper->getSuggestUrl()?>', 'search_autocomplete');
 		//]]>
 		</script>
