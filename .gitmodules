@@ -22,3 +22,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/tempo"]
 	path = skin/frontend/mytheme/default/vendor/tempo
 	url = git://github.com/twigkit/tempo.git
+[submodule "skin/frontend/mytheme/default/vendor/flexslider"]
+	path = skin/frontend/mytheme/default/vendor/flexslider
+	url = git://github.com/woothemes/FlexSlider.git
