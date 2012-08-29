@@ -104,6 +104,41 @@
 	// Blockquotes
 	blockquote {
 		margin: 0 0 @baseLineHeight;
+		padding: 0 0 0 15px;
+
+		p {
+			margin-bottom: 0;
+			#font > .shorthand(16px,300,@baseLineHeight * 1.25);
+		}
+		small {
+			display: block;
+			line-height: @baseLineHeight;
+			color: @grayLight;
+			&:before {
+				content: '\2014 \00A0';
+			}
+		}
+
+		// Float right with text-align: right
+		&.pull-right {
+			float: right;
+			padding-right: 15px;
+			padding-left: 0;
+			border-right: 5px solid @grayLighter;
+			border-left: 0;
+			p,
+			small {
+				text-align: right;
+			}
+			small {
+				&:before {
+					content: '';
+				}
+				&:after {
+					content: '\00A0 \2014';
+				}
+			}
+		}
 	}
 
 	// Quotes

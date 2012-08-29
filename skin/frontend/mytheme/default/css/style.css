@@ -1535,6 +1535,12 @@ legend small,
   font-size: 15px;
   color: #999999;
 }
+fieldset > legend,
+fieldset > .legend,
+.fieldset > legend,
+.fieldset > .legend {
+  float: left;
+}
 .form-list li {
   *zoom: 1;
   margin: 0 0 10px;
@@ -1803,6 +1809,52 @@ p.required {
   width: 12em;
   margin-right: -12em;
   position: relative;
+}
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 10px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+code {
+  padding: 2px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 11px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+pre.prettyprint {
+  margin-bottom: 20px;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
 }
 .success {
   color: #3d6611;
@@ -2814,10 +2866,28 @@ tr.summary-details-excluded {
   clear: both;
 }
 .centre-container {
+  *zoom: 1;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 960px;
+}
+.centre-container:before,
+.centre-container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.centre-container:after {
+  clear: both;
+}
+.centre-container:before,
+.centre-container:after {
+  content: "";
+  display: table;
+}
+.centre-container:after {
+  clear: both;
 }
 .column-full {
   display: inline;
@@ -5039,6 +5109,38 @@ input[type="submit"].btn.btn-mini {
 }
 .std blockquote {
   margin: 0 0 20px;
+  padding: 0 0 0 15px;
+}
+.std blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+.std blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+.std blockquote small:before {
+  content: '\2014 \00A0';
+}
+.std blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+.std blockquote.pull-right p,
+.std blockquote.pull-right small {
+  text-align: right;
+}
+.std blockquote.pull-right small:before {
+  content: '';
+}
+.std blockquote.pull-right small:after {
+  content: '\00A0 \2014';
 }
 .std q:before,
 .std q:after,
