@@ -4889,6 +4889,11 @@ input[type="submit"].btn.btn-mini {
 .sub-title:after {
   clear: both;
 }
+.page-title {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #eeeeee;
+}
 .page-title h1,
 .page-title h2 {
   font-size: 24px;
@@ -5052,9 +5057,6 @@ input[type="submit"].btn.btn-mini {
 }
 .std .lead {
   margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 30px;
 }
 .std ul,
 .std ol {
