@@ -272,34 +272,16 @@ fieldset > .legend,
 }
 
 .buttons-set {
-	clear: both;
-	margin: 5px 0 0;
-	padding: 5px;
-	border: 1px solid #ddd;
+	.clearfix();
 	padding: 19px 20px 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	background-color: #f5f5f5;
+	margin: @gridGutterWidth 0;
+
+	border: 1px solid #ddd;
 	border-top: 1px solid #e5e5e5;
-	*zoom: 1;
+
+	background-color: #f5f5f5;
 }
-.buttons-set:before,
-.buttons-set:after {
-	display: table;
-	content: "";
-	line-height: 0;
-}
-.buttons-set:after {
-	clear: both;
-}
-.buttons-set:before,
-.buttons-set:after {
-	content: "";
-	display: table;
-}
-.buttons-set:after {
-	clear: both;
-}
+
 .buttons-set .back-link {
 	float: left;
 }
