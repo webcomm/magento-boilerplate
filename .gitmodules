@@ -25,3 +25,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/flexslider"]
 	path = skin/frontend/mytheme/default/vendor/flexslider
 	url = git://github.com/woothemes/FlexSlider.git
+[submodule "skin/frontend/mytheme/default/vendor/jquery-transition"]
+	path = skin/frontend/mytheme/default/vendor/jquery-transition
+	url = git://github.com/louisremi/jquery.transition.js.git
