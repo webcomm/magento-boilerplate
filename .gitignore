@@ -134,6 +134,7 @@ publish
 
 # Start: App locale
 !/app/locale
+/app/locale/*
 !/app/locale/en_AU
 !/app/locale/en_US
 /app/locale/en_US/*
@@ -146,12 +147,26 @@ publish
 /cron.php
 /cron.sh
 
-# Start: Misc files
+# Start: Downloader
 /downloader
-/errors
+
+
+# Start: Errors
+/errors/.htaccess
+/errors/404.php
+/errors/503.php
+/errors/default
+/errors/design.xml
+/errors/local.xml.sample
+/errors/processor.php
+/errors/report.php
+
+
+# Start: Misc files
 /favicon.ico
 /get.php
 /includes
+
 
 # Start: Index and installer files
 /index.php.sample
