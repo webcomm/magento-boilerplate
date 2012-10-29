@@ -46,58 +46,60 @@
 			<label class="pagination-label">
 				<strong><?=$this->__('Page:')?></strong>
 			</label>
-			<ol class="pagination">
-				<?php if ( ! $this->isFirstPage()): ?>
-					<li>
-						<a class="previous<?php if ( ! $this->getAnchorTextForPrevious()): ?> i-previous<?php endif ?>" href="<?=$this->getPreviousPageUrl()?>" title="<?=$this->__('Previous')?>">
-							<?php if ( ! $this->getAnchorTextForPrevious()): ?>
-								&laquo;
-							<?php else: ?>
-								<?=$this->getAnchorTextForPrevious()?>
-							<?php endif ?>
-						</a>
-					</li>
-				<?php endif ?>
-
-				<?php if ($this->canShowFirst()): ?>
-					<li><a class="first" href="<?=$this->getFirstPageUrl()?>">1</a></li>
-				<?php endif ?>
-
-				<?php if ($this->canShowPreviousJump()): ?>
-					<li><a class="previous_jump" title="" href="<?=$this->getPreviousJumpUrl()?>">...</a></li>
-				<?php endif ?>
-
-				<?php foreach ($this->getFramePages() as $page): ?>
-					<?php if ($this->isPageCurrent($page)): ?>
-						<li class="active current">
-							<a><?=$page?></a>
+			<div class="pagination">
+				<ul>
+					<?php if ( ! $this->isFirstPage()): ?>
+						<li>
+							<a class="previous<?php if ( ! $this->getAnchorTextForPrevious()): ?> i-previous<?php endif ?>" href="<?=$this->getPreviousPageUrl()?>" title="<?=$this->__('Previous')?>">
+								<?php if ( ! $this->getAnchorTextForPrevious()): ?>
+									&laquo;
+								<?php else: ?>
+									<?=$this->getAnchorTextForPrevious()?>
+								<?php endif ?>
+							</a>
 						</li>
-					<?php else: ?>
-						<li><a href="<?=$this->getPageUrl($page)?>"><?=$page?></a></li>
 					<?php endif ?>
-				<?php endforeach ?>
+
+					<?php if ($this->canShowFirst()): ?>
+						<li><a class="first" href="<?=$this->getFirstPageUrl()?>">1</a></li>
+					<?php endif ?>
+
+					<?php if ($this->canShowPreviousJump()): ?>
+						<li><a class="previous_jump" title="" href="<?=$this->getPreviousJumpUrl()?>">...</a></li>
+					<?php endif ?>
+
+					<?php foreach ($this->getFramePages() as $page): ?>
+						<?php if ($this->isPageCurrent($page)): ?>
+							<li class="active current">
+								<a><?=$page?></a>
+							</li>
+						<?php else: ?>
+							<li><a href="<?=$this->getPageUrl($page)?>"><?=$page?></a></li>
+						<?php endif ?>
+					<?php endforeach ?>
 
 
-				<?php if ($this->canShowNextJump()): ?>
-					<li><a class="next_jump" title="" href="<?=$this->getNextJumpUrl()?>">...</a></li>
-				<?php endif ?>
+					<?php if ($this->canShowNextJump()): ?>
+						<li><a class="next_jump" title="" href="<?=$this->getNextJumpUrl()?>">...</a></li>
+					<?php endif ?>
 
-				<?php if ($this->canShowLast()): ?>
-				 <li><a class="last" href="<?=$this->getLastPageUrl()?>"><?=$this->getLastPageNum()?></a></li>
-				<?php endif ?>
+					<?php if ($this->canShowLast()): ?>
+					 <li><a class="last" href="<?=$this->getLastPageUrl()?>"><?=$this->getLastPageNum()?></a></li>
+					<?php endif ?>
 
-				<?php if ( ! $this->isLastPage()): ?>
-					<li>
-						<a class="next<?php if ( ! $this->getAnchorTextForNext()): ?> i-next<?php endif ?>" href="<?=$this->getNextPageUrl()?>" title="<?=$this->__('Next')?>">
-							<?php if ( ! $this->getAnchorTextForNext()): ?>
-								&raquo;
-							<?php else: ?>
-								<?=$this->getAnchorTextForNext()?>
-							<?php endif ?>
-						</a>
-					</li>
-				<?php endif ?>
-			</ol>
+					<?php if ( ! $this->isLastPage()): ?>
+						<li>
+							<a class="next<?php if ( ! $this->getAnchorTextForNext()): ?> i-next<?php endif ?>" href="<?=$this->getNextPageUrl()?>" title="<?=$this->__('Next')?>">
+								<?php if ( ! $this->getAnchorTextForNext()): ?>
+									&raquo;
+								<?php else: ?>
+									<?=$this->getAnchorTextForNext()?>
+								<?php endif ?>
+							</a>
+						</li>
+					<?php endif ?>
+				</ul>
+			</div>
 
 		</div>
 	<?php endif ?>
