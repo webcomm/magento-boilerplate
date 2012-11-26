@@ -294,13 +294,6 @@ publish
 
 
 
-# Webcomm - Foreman
-
-!/app/design/adminhtml/default/default/layout/foreman.xml
-!/app/design/adminhtml/default/default/template/foreman
-
-
-
 # Fontis - Australia
 
 !/app/code/community/Fontis/Australia
