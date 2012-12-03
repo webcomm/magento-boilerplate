@@ -22,14 +22,20 @@
 	<?=$this->getChildHtml('header')?>
 	<?=$this->getChildHtml('nav')?>
 
-	<div class="centre-container">
-		<aside role="complementary" class="main-sidebar">
-			<?=$this->getChildHtml('left')?>
-		</aside>
-		<div role="main" class="main-content with-one-sidebar">
-			<?=$this->getChildHtml('breadcrumbs')?>
-			<?=$this->getChildHtml('global_messages')?>
-			<?=$this->getChildHtml('content')?>
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<aside role="complementary" class="main-sidebar">
+					<?=$this->getChildHtml('left')?>
+				</aside>
+			</div>
+			<div class="span9">
+				<div role="main" class="main-content with-one-sidebar">
+					<?=$this->getChildHtml('breadcrumbs')?>
+					<?=$this->getChildHtml('global_messages')?>
+					<?=$this->getChildHtml('content')?>
+				</div>
+			</div>
 		</div>
 	</div>
 

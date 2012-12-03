@@ -16,47 +16,62 @@ $pages      = $this->getActiveStoreCmsPages();
 $limit      = $this->getLimit();
 ?>
 <?php if ($categories or $pages): ?>
-	<div class="centre-container">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<div class="container">
-					
-					<nav role="navigation">
-						<ul class="nav">
-							<?php
 
-							// If categories are going first
-							if ($this->getOrder() === 'categories'): ?>
-								<?php if ($this->shouldDisplayCategories()): ?>
-									<?php foreach ($categories as $category): ?>
-										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
-									<?php endforeach ?>
-								<?php endif ?>
-								<?php if ($this->shouldDisplayCmsPages()): ?>
-									<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
-										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
-									<?php endforeach ?>
-								<?php endif ?>
-							<?php
+	<nav role="navigation">
+		<div class="container-fluid">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
 
-							// If CMS pages are going first
-							else: ?>
-								<?php if ($this->shouldDisplayCmsPages()): ?>
-									<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
-										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
-									<?php endforeach ?>
-								<?php endif ?>
-								<?php if ($this->shouldDisplayCategories()): ?>
-									<?php foreach ($categories as $category): ?>
-										<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
-									<?php endforeach ?>
-								<?php endif ?>
-							<?php endif ?>
-						</ul>
-					</nav>
+						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
 
+						<!-- Be sure to leave the brand out there if you want it shown -->
+						<a class="brand" href="#">Project name</a>
+
+						<!-- Everything you want hidden at 940px or less, place within here -->
+						<div class="nav-collapse collapse">
+							<ul class="nav">
+								<?php
+
+								// If categories are going first
+								if ($this->getOrder() === 'categories'): ?>
+									<?php if ($this->shouldDisplayCategories()): ?>
+										<?php foreach ($categories as $category): ?>
+											<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
+										<?php endforeach ?>
+									<?php endif ?>
+									<?php if ($this->shouldDisplayCmsPages()): ?>
+										<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
+											<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
+										<?php endforeach ?>
+									<?php endif ?>
+								<?php
+
+								// If CMS pages are going first
+								else: ?>
+									<?php if ($this->shouldDisplayCmsPages()): ?>
+										<?php foreach ($this->getActiveStoreCmsPages() as $page): ?>
+											<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/page.phtml')->setTopPage($page)->setLimit($limit)->toHtml()?>
+										<?php endforeach ?>
+									<?php endif ?>
+									<?php if ($this->shouldDisplayCategories()): ?>
+										<?php foreach ($categories as $category): ?>
+											<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category.phtml')->setTopCategory($category)->setLimit($limit)->toHtml()?>
+										<?php endforeach ?>
+									<?php endif ?>
+								<?php endif ?>
+							</ul>
+						</div>
+
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div>			
+	</nav>
+
 <?php endif ?>
