@@ -7,15 +7,16 @@
  */
 ?>
 <footer role="contentinfo">
-	<div class="centre-container">
-
-		<div class="footer-left">
-			<?=$this->getChildHtml()?>
+	<div class="container">
+		<div class="row">
+			<div class="span6">
+				<?=$this->getChildHtml()?>
+			</div>
+			<div class="span6">
+				<div class="pull-right">
+					<?=$this->getCopyright()?>
+				</div>
+			</div>
 		</div>
-
-		<div class="footer-right">
-			<?=$this->getCopyright()?>
-		</div>
-
 	</div>
 </footer>

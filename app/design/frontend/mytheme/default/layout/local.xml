@@ -65,6 +65,9 @@
 			<action method="addCss">
 				<stylesheet>css/style.css</stylesheet>
 			</action>
+			<action method="addCss">
+				<stylesheet>css/responsive.css</stylesheet>
+			</action>
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/html5shiv.js</name>
@@ -90,6 +93,10 @@
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/jquery.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-collapse.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
