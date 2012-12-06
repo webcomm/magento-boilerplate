@@ -103,12 +103,12 @@ $helper            = $this->helper('catalog/output');
 
 				// Start new row
 				if ($i++ % $columnCount == 0): ?>
-					<ul class="products-grid">
+					<ul class="products-grid row-fluid">
 				<?php endif ?>
-					<li class="item-column">
+					<li class="item-column span4">
 						<div class="item">
 							<a href="<?=$product->getProductUrl()?>" title="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="product-image">
-								<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(135)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="img-rounded img-polaroid">
+								<img src="<?=$this->helper('catalog/image')->init($product, 'small_image')->resize(200)?>" alt="<?=$this->stripTags($this->getImageLabel($product, 'small_image'), null, true)?>" class="img-rounded img-polaroid">
 							</a>
 
 							<h2 class="product-name">
