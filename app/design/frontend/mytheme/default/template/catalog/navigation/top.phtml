@@ -14,26 +14,28 @@
 $categories = $this->getActiveStoreCategories();
 $pages      = $this->getActiveStoreCmsPages();
 $limit      = $this->getLimit();
+$storeName  =  Mage::getStoreConfig('general/store_information/name');
 ?>
 <?php if ($categories or $pages): ?>
 
 	<nav role="navigation">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container">
 
-						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</a>
 
-						<!-- Be sure to leave the brand out there if you want it shown -->
-						<a class="brand" href="#">Project name</a>
+						<?php if ($storeName): ?>
+							<span class="hidden-desktop">
+								<a class="brand" href="#"><?=$storeName?></a>
+							</span>
+						<?php endif ?>
 
-						<!-- Everything you want hidden at 940px or less, place within here -->
 						<div class="nav-collapse collapse">
 							<ul class="nav">
 								<?php
