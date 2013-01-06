@@ -1899,65 +1899,6 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-.success {
-  color: #3d6611;
-  font-weight: bold;
-}
-.error {
-  color: #f00;
-  font-weight: bold;
-}
-.notice {
-  color: #ccc;
-}
-.messages,
-.messages ul {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.messages {
-  width: 100%;
-  overflow: hidden;
-}
-.messages li {
-  margin: 0 0 10px;
-}
-.messages li li {
-  margin: 0 0 3px;
-}
-.error-msg,
-.success-msg,
-.note-msg,
-.notice-msg {
-  border-style: solid !important;
-  border-width: 1px !important;
-  background-position: 10px 9px !important;
-  background-repeat: no-repeat !important;
-  min-height: 24px !important;
-  padding: 8px 8px 8px 32px !important;
-  font-size: 11px !important;
-  font-weight: bold !important;
-}
-.error-msg {
-  border-color: #f16048;
-  background-color: #faebe7;
-  background-image: url(../images/i_msg-error.gif);
-  color: #df280a;
-}
-.success-msg {
-  border-color: #446423;
-  background-color: #eff5ea;
-  background-image: url(../images/i_msg-success.gif);
-  color: #3d6611;
-}
-.note-msg,
-.notice-msg {
-  border-color: #fcd344;
-  background-color: #fafaec;
-  background-image: url(../images/i_msg-note.gif);
-  color: #3d6611;
-}
 tr.summary-total {
   cursor: pointer;
 }
@@ -5282,6 +5223,111 @@ input[type="submit"].btn.btn-mini {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #c09853;
+}
+.alert h4 {
+  margin: 0;
+}
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 20px;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+.alert-danger,
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad;
+}
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}
+.success,
+.error,
+.notice {
+  font-weight: bold;
+}
+.success {
+  color: #dff0d8;
+}
+.notice {
+  color: #fcf8e3;
+}
+.error {
+  color: #f2dede;
+}
+.messages {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.messages ul {
+  margin: 0;
+}
+.messages > li {
+  padding-left: 45px;
+  background-image: url(../images/i_alert.png);
+  background-position: 8px 5px;
+  background-repeat: no-repeat;
+}
+.success-msg,
+.error-msg,
+.note-msg,
+.notice-msg {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #c09853;
+}
+.success-msg {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+.error-msg {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+.note-msg,
+.notice-msg {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad;
+}
 #logo strong {
   display: block !important;
   border: 0 !important;
@@ -5892,32 +5938,6 @@ header[role="banner"] .welcome-msg {
 .product-essential .product-shop,
 .product-essential .product-img-box {
   margin-bottom: 20px;
-}
-.cart-collaterals {
-  display: block;
-  width: 979.9999999999999px;
-  margin: 0 -10px;
-  *zoom: 1;
-}
-.cart-collaterals:before,
-.cart-collaterals:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.cart-collaterals:after {
-  clear: both;
-}
-.cart-collaterals .collateral-crossell,
-.cart-collaterals .collateral-misc,
-.cart-collaterals .collateral-totals {
-  display: inline;
-  float: left;
-  width: 300px;
-  margin: 0 10px;
-}
-.cart-collaterals .collateral-misc.no-crossell {
-  margin-left: 330px;
 }
 .block-progress dt {
   font-weight: bold;
