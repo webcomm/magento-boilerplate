@@ -65,6 +65,7 @@ publish
 .idea
 
 # Composer
+/vendor
 composer.lock
 
 
