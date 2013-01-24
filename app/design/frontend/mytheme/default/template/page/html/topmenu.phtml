@@ -2,20 +2,32 @@
 /**
  * Top menu for store
  *
- * @see JR_CleverCms_Block_Catalog_Navigation
+ * @see Mage_Page_Block_Html_Topmenu
  */
-?>
-<?php
-  $_cmsIsFirst = !$this->hasCategoriesNavigationMenuPages();
-  $_categoriesIsLast = !$this->hasCmsNavigationMenuPages();
 
-  $_menu  = $this->renderCategoriesMenuHtmlClever(0, $_categoriesIsLast, true, 'level-top');
-  $_menu .= $this->renderCmsMenuHtml(0, true, $_cmsIsFirst, 'level-top');
+$name = Mage::getStoreConfig('general/store_information/name');
+$menu = $this->getHtml('level-top', 'dropdown-menu');
 ?>
-<?php if ($_menu): ?>
-<div class="nav-container">
-    <ul id="nav">
-        <?php echo $_menu ?>
-    </ul>
-</div>
+<?php if ($menu): ?>
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand hidden-desktop">
+						<?=$name?>
+					</a>
+					<div class="nav-collapse collapse">
+						<ul id="nav" class="nav">
+							<?=$menu?>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <?php endif ?>
