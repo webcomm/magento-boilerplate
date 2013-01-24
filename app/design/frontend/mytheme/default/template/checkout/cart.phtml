@@ -98,27 +98,35 @@ $crossell = (string) $this->getChildHtml('crossell');
 		</fieldset>
 	</form>
 	<div class="cart-collaterals">
-		<div class="collateral-crossell">
-			<?=$crossell?>
-		</div>
-		<div class="collateral-misc <?=(strlen(trim($crossell)) === 0) ? 'no-crossell' : null?>">
-			<?php /* Extensions placeholder */ ?>
-			<?=$this->getChildHtml('checkout.cart.extra') ?>
-			<?=$this->getChildHtml('coupon') ?>
-			<?php if ( ! $this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif ?>
-		</div>
-		<div class="collateral-totals">
-			<div class="totals">
-				<?=$this->getChildHtml('totals')?>
-				<?php if ( ! $this->hasError()): ?>
-				<ul class="checkout-types">
-				<?php foreach ($this->getMethods('methods') as $method): ?>
-					<?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-					<li><?=$methodHtml?></li>
-					<?php endif ?>
-				<?php endforeach; ?>
-				</ul>
-				<?php endif ?>
+		<div class="row">
+			<div class="span4">
+				<div class="collateral-crossell">
+					<?=$crossell?>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="collateral-misc <?=(strlen(trim($crossell)) === 0) ? 'no-crossell' : null?>">
+					<?php /* Extensions placeholder */ ?>
+					<?=$this->getChildHtml('checkout.cart.extra') ?>
+					<?=$this->getChildHtml('coupon') ?>
+					<?php if ( ! $this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif ?>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="collateral-totals">
+					<div class="totals">
+						<?=$this->getChildHtml('totals')?>
+						<?php if ( ! $this->hasError()): ?>
+						<ul class="checkout-types">
+						<?php foreach ($this->getMethods('methods') as $method): ?>
+							<?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+							<li><?=$methodHtml?></li>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</ul>
+						<?php endif ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

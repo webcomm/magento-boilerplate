@@ -22,15 +22,21 @@
 	<?=$this->getChildHtml('header')?>
 	<?=$this->getChildHtml('nav')?>
 
-	<div class="centre-container">
-		<div role="main" class="main-content with-one-sidebar">
-			<?=$this->getChildHtml('breadcrumbs')?>
-			<?=$this->getChildHtml('global_messages')?>
-			<?=$this->getChildHtml('content')?>
+	<div class="container">
+		<div class="row">
+			<div class="span9">
+				<div role="main" class="main-content with-one-sidebar">
+					<?=$this->getChildHtml('breadcrumbs')?>
+					<?=$this->getChildHtml('global_messages')?>
+					<?=$this->getChildHtml('content')?>
+				</div>
+			</div>
+			<div class="span3">
+				<aside role="complementary" class="main-sidebar">
+					<?=$this->getChildHtml('right')?>
+				</aside>
+			</div>
 		</div>
-		<aside role="complementary" class="main-sidebar">
-			<?=$this->getChildHtml('right')?>
-		</aside>
 	</div>
 
 	<?=$this->getChildHtml('footer')?>

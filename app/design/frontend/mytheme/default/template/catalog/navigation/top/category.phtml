@@ -24,9 +24,19 @@ $limit              = $this->getLimit();
 
 		<?php if (( ! $limit or $limit > 1) and count($childrenCategories) > 0): ?>
 			<ul class="level-2 dropdown-menu">
+
+				<li class="level-1-item <?=$this->isCategoryActive($category) ? 'active' : null?>">
+					<a href="<?=$this->getCategoryUrl($category)?>" class="level-1-link" title="<?=$helper->categoryAttribute($category, $category->getName(), 'name')?>">
+						<strong><?=$this->__('%s Range', $helper->categoryAttribute($category, $category->getName(), 'name'))?></strong>
+					</a>
+				</li>
+
+				<li class="divider"></li>
+
 				<?php foreach ($childrenCategories as $childCategory): ?>
 					<?=$this->getLayout()->createBlock('catalog/navigation')->setTemplate('catalog/navigation/top/category/recursive.phtml')->setLevel(2)->setLimit($limit)->setRecursionCategory($childCategory)->toHtml()?>
 				<?php endforeach ?>
+
 			</ul>
 		<?php endif ?>
 

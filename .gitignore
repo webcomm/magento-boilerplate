@@ -64,6 +64,9 @@ intermediate
 publish
 .idea
 
+# Composer
+/vendor
+
 
 
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
