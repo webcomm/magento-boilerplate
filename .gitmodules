@@ -22,3 +22,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/flexslider"]
 	path = skin/frontend/mytheme/default/vendor/flexslider
 	url = git://github.com/woothemes/FlexSlider.git
+[submodule "skin/frontend/mytheme/default/vendor/bootstrap-hover-dropdown"]
+	path = skin/frontend/mytheme/default/vendor/bootstrap-hover-dropdown
+	url = git://github.com/CWSpear/twitter-bootstrap-hover-dropdown.git
