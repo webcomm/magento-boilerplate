@@ -9,24 +9,20 @@
 // ------------
 
 .form-search {
-	text-align: right;
 
 	.search-autocomplete {
 		z-index: @zindexModal;
 	}
+}
 
-	ul {
-		border: 1px solid @grayLighter;
 
-		background-color: @white;
-	}
+.search-autocomplete {
 
 	li {
 		.clearfix();
-		padding: 3px;
+		padding: 3px 20px;
 
-		border-bottom: 1px solid @grayLighter;
-
+		color: @dropdownLinkColor;
 		cursor: pointer;
 
 		.amount {
@@ -36,7 +32,12 @@
 		}
 
 		&.selected {
-			
+			color: @dropdownLinkColorHover;
+			#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 5%));
+		}
+
+		&:hover {
+
 		}
 	}
 }
