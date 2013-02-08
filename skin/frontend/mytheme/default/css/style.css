@@ -5313,15 +5313,20 @@ input[type="submit"].btn.btn-mini {
 .error {
   color: #f2dede;
 }
-.messages {
+ul.messages,
+ul.messages ul {
+  list-style: none;
+  list-style-image: none;
+}
+ul.messages {
   margin: 0 0 20px;
   font-size: 14px;
   font-weight: 600;
 }
-.messages ul {
+ul.messages ul {
   margin: 0;
 }
-.messages > li {
+ul.messages > li {
   padding-left: 45px;
   background-image: url(../images/i_alert.png);
   background-position: 8px 5px;

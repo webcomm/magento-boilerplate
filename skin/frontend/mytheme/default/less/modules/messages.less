@@ -27,8 +27,14 @@
 	color: @errorBackground;
 }
 
+ul.messages,
+ul.messages ul {
+	list-style: none;
+	list-style-image: none;
+}
+
 // Messages list
-.messages {
+ul.messages {
 	margin: 0 0 @baseLineHeight;
 
 	font-size: @baseFontSize + 2;

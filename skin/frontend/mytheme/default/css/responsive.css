@@ -403,6 +403,9 @@
     margin-left: 0;
   }
 }
+@media (min-width: 1200px) {
+  
+}
 @media (min-width: 768px) and (max-width: 979px) {
   .row {
     margin-left: -20px;
@@ -719,6 +722,9 @@
     width: 28px;
   }
 }
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
 @media (max-width: 767px) {
   body {
     padding-left: 20px;
@@ -866,6 +872,19 @@
   .carousel-caption {
     position: static;
   }
+}
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 480px) {
+  
 }
 @media (max-width: 979px) {
   body {
