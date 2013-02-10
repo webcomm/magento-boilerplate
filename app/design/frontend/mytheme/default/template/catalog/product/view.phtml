@@ -29,56 +29,59 @@ $additional = $this->getChildGroup('detailed_info', 'getChildHtml');
 				<input type="hidden" name="related_product" id="related-products-field" value="">
 			</div>
 
-			<div class="clearfix">
-				<div class="product-img-box">
-					<?=$this->getChildHtml('media')?>
-				</div>
-
-				<div class="product-shop">
-					<div class="product-name">
-						<h1><?=$helper->productAttribute($product, $product->getName(), 'name')?></h1>
+			<div class="row">
+				<div class="span4">
+					<div class="product-img-box">
+						<?=$this->getChildHtml('media')?>
 					</div>
+				</div>
+				<div class="span5">
+					<div class="product-shop">
+						<div class="product-name">
+							<h1><?=$helper->productAttribute($product, $product->getName(), 'name')?></h1>
+						</div>
 
-					<?php if ($this->canEmailToFriend()): ?>
-						<p class="email-friend"><a href="<?=$this->helper('catalog/product')->getEmailToFriendUrl($product)?>"><?=$this->__('Email to a Friend')?></a></p>
-					<?php endif ?>
+						<?php if ($this->canEmailToFriend()): ?>
+							<p class="email-friend"><a href="<?=$this->helper('catalog/product')->getEmailToFriendUrl($product)?>"><?=$this->__('Email to a Friend')?></a></p>
+						<?php endif ?>
 
-					<?=$this->getReviewsSummaryHtml($product, false, true)?>
-					<?=$this->getChildHtml('alert_urls')?>
-					<?=$this->getChildHtml('product_type_data')?>
-					<?=$this->getTierPriceHtml()?>
-					<?=$this->getChildHtml('extrahint')?>
+						<?=$this->getReviewsSummaryHtml($product, false, true)?>
+						<?=$this->getChildHtml('alert_urls')?>
+						<?=$this->getChildHtml('product_type_data')?>
+						<?=$this->getTierPriceHtml()?>
+						<?=$this->getChildHtml('extrahint')?>
 
-					<?php if ( ! $this->hasOptions()): ?>
-						<div class="add-to-box">
-							<?php if ($product->isSaleable()): ?>
-								<?=$this->getChildHtml('addtocart')?>
-								<?php if ( $this->helper('wishlist')->isAllow() or $compareUrl=$this->helper('catalog/product_compare')->getAddUrl($product)): ?>
-									<span class="or"><?=$this->__('OR')?></span>
+						<?php if ( ! $this->hasOptions()): ?>
+							<div class="add-to-box">
+								<?php if ($product->isSaleable()): ?>
+									<?=$this->getChildHtml('addtocart')?>
+									<?php if ( $this->helper('wishlist')->isAllow() or $compareUrl=$this->helper('catalog/product_compare')->getAddUrl($product)): ?>
+										<span class="or"><?=$this->__('OR')?></span>
+									<?php endif ?>
 								<?php endif ?>
-							<?php endif ?>
-							<?=$this->getChildHtml('addto')?>
-						</div>
-						<?=$this->getChildHtml('extra_buttons')?>
-					<?php elseif ( ! $product->isSaleable()): ?>
-						<div class="add-to-box">
-							<?=$this->getChildHtml('addto')?>
-						</div>
-					<?php endif ?>
+								<?=$this->getChildHtml('addto')?>
+							</div>
+							<?=$this->getChildHtml('extra_buttons')?>
+						<?php elseif ( ! $product->isSaleable()): ?>
+							<div class="add-to-box">
+								<?=$this->getChildHtml('addto')?>
+							</div>
+						<?php endif ?>
 
-					<?php if ($product->getShortDescription()): ?>
-						<div class="short-description">
-							<h2><?=$this->__('Quick Overview')?></h2>
-							<article class="std"><?=$helper->productAttribute($product, nl2br($product->getShortDescription()), 'short_description')?></article>
-						</div>
-					<?php endif ?>
+						<?php if ($product->getShortDescription()): ?>
+							<div class="short-description">
+								<h2><?=$this->__('Quick Overview')?></h2>
+								<article class="std"><?=$helper->productAttribute($product, nl2br($product->getShortDescription()), 'short_description')?></article>
+							</div>
+						<?php endif ?>
 
-					<?=$this->getChildHtml('other');?>
+						<?=$this->getChildHtml('other');?>
 
-					<?php if ($product->isSaleable() and $this->hasOptions()): ?>
-						<?=$this->getChildChildHtml('container1', '', true, true)?>
-					<?php endif ?>
+						<?php if ($product->isSaleable() and $this->hasOptions()): ?>
+							<?=$this->getChildChildHtml('container1', '', true, true)?>
+						<?php endif ?>
 
+					</div>
 				</div>
 			</div>
 

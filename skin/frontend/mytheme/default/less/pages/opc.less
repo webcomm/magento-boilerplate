@@ -1,10 +1,12 @@
 // One Page Checkout
 .block-progress {
-	
+
 }
+
 .block-progress dt {
 	font-weight: bold;
 }
+
 .block-progress dt.complete,
 .block-progress dd.complete {
 	background-color: #f6f6f6;
@@ -13,61 +15,78 @@
 .opc {
 	border-bottom: 1px solid #ddd;
 	position: relative;
-}
-.opc li.section {
-	border: 1px solid #ddd;
-	border-bottom: 0;
-}
 
-.opc .buttons-set.disabled button.button {
-	display: none;
-}
-.opc .buttons-set .please-wait {
-	height: 21px;
-	line-height: 21px;
-}
+	li.section {
+		border: 1px solid #ddd;
+		border-bottom: 0;
+	}
 
-.opc .step-title {
-	background-color: #f6f6f6;
-	padding: 0 5px;
-	text-align: right;
-}
-.opc .step-title .number {
-	float: left;
-	line-height: 22px;
-	margin-right: 5px;
-}
-.opc .step-title h2 {
-	float: left;
-}
-.opc .step-title a {
-	display: none;
-	float: right;
-}
+	.buttons-set.disabled button.button {
+		display: none;
+	}
+	.buttons-set .please-wait {
+		height: 21px;
+		line-height: 21px;
+	}
 
-.opc .allow .step-title {
-	cursor: pointer;
-}
-//.opc .allow .step-title a { display:block; }
+	.step-title {
+		.clearfix();
 
-.opc .active {
+		background-color: #f6f6f6;
+		padding: 0 5px;
+	}
 
-}
-.opc .active .step-title {
-	background-color: #ccc;
-	cursor: default;
-}
-//.opc .active .step-title a { display:none; }
+	.step-title {
 
-.opc .step {
-	border-top: 1px solid #ddd;
-	padding: 10px;
-	position: relative;
-}
-.opc .step .tool-tip {
-	right: 10px;
-}
+		.number, h2 {
+			line-height: @baseLineHeight * 2;
+		}
 
-.opc .order-review {}
-.opc .order-review .authentication {}
-.opc .order-review .warning-message {}
+		.number {
+			float: left;
+			width: 30px;
+			text-align: center;
+		}
+
+		h2 {
+			margin: 0 0 0 30px;
+
+			font-size: @baseFontSize + 2;
+		}
+
+		a {
+			display: none;
+			float: right;
+		}
+	}
+
+	.allow .step-title {
+		cursor: pointer;
+	}
+	//.allow .step-title a { display:block; }
+
+	.active {
+
+	}
+	.active .step-title {
+		background-color: @linkColor;
+
+		color: @white;
+
+		cursor: default;
+	}
+	//.active .step-title a { display:none; }
+
+	.step {
+		border-top: 1px solid #ddd;
+		padding: 10px;
+		position: relative;
+	}
+	.step .tool-tip {
+		right: 10px;
+	}
+
+	.order-review {}
+	.order-review .authentication {}
+	.order-review .warning-message {}
+}
