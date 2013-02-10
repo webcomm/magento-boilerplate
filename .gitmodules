@@ -10,9 +10,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/nwmatcher"]
 	path = skin/frontend/mytheme/default/vendor/nwmatcher
 	url = git://github.com/dperini/nwmatcher.git
-[submodule "skin/frontend/mytheme/default/vendor/html5-boilerplate"]
-	path = skin/frontend/mytheme/default/vendor/html5-boilerplate
-	url = git://github.com/h5bp/html5-boilerplate.git
 [submodule "skin/frontend/mytheme/default/vendor/flexslider"]
 	path = skin/frontend/mytheme/default/vendor/flexslider
 	url = git://github.com/woothemes/FlexSlider.git
