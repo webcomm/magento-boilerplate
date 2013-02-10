@@ -16,3 +16,6 @@
 [submodule "skin/frontend/mytheme/default/vendor/bootstrap-hover-dropdown"]
 	path = skin/frontend/mytheme/default/vendor/bootstrap-hover-dropdown
 	url = git://github.com/CWSpear/twitter-bootstrap-hover-dropdown.git
+[submodule "skin/frontend/mytheme/default/vendor/font-awesome"]
+	path = skin/frontend/mytheme/default/vendor/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
