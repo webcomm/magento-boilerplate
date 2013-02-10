@@ -4,18 +4,12 @@
 [submodule "skin/frontend/mytheme/default/vendor/bootstrap"]
 	path = skin/frontend/mytheme/default/vendor/bootstrap
 	url = git://github.com/twitter/bootstrap.git
-[submodule "skin/frontend/mytheme/default/vendor/semantic.gs"]
-	path = skin/frontend/mytheme/default/vendor/semantic.gs
-	url = git://github.com/twigkit/semantic.gs.git
 [submodule "skin/frontend/mytheme/default/vendor/selectivizr"]
 	path = skin/frontend/mytheme/default/vendor/selectivizr
 	url = git://github.com/keithclark/selectivizr.git
 [submodule "skin/frontend/mytheme/default/vendor/nwmatcher"]
 	path = skin/frontend/mytheme/default/vendor/nwmatcher
 	url = git://github.com/dperini/nwmatcher.git
-[submodule "skin/frontend/mytheme/default/vendor/modernizr"]
-	path = skin/frontend/mytheme/default/vendor/modernizr
-	url = git://github.com/Modernizr/Modernizr.git
 [submodule "skin/frontend/mytheme/default/vendor/html5-boilerplate"]
 	path = skin/frontend/mytheme/default/vendor/html5-boilerplate
 	url = git://github.com/h5bp/html5-boilerplate.git
