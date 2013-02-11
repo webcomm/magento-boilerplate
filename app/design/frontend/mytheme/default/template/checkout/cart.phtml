@@ -11,8 +11,6 @@
  *
  * @see Mage_Checkout_Block_Cart
  */
-
-$crossell = (string) $this->getChildHtml('crossell');
 ?>
 <div class="cart">
 	<div class="page-title title-buttons">
@@ -97,20 +95,27 @@ $crossell = (string) $this->getChildHtml('crossell');
 	</form>
 	<div class="cart-collaterals">
 		<div class="row">
-			<div class="span4">
+			<div class="span3">
 				<div class="collateral-crossell">
-					<?=$crossell?>
+					<?=$this->getChildHtml('crossell')?>
 				</div>
 			</div>
-			<div class="span4">
-				<div class="collateral-misc <?=(strlen(trim($crossell)) === 0) ? 'no-crossell' : null?>">
-					<?php /* Extensions placeholder */ ?>
-					<?=$this->getChildHtml('checkout.cart.extra') ?>
+			<div class="span3">
+				<?php if ( ! $this->getIsVirtual()): ?>
+					<div class="collaterla-shipping">
+						<?=$this->getChildHtml('shipping')?>
+					</div>
+				<?php endif ?>
+			</div>
+			<div class="span3">
+				<div class="collateral-coupon">
 					<?=$this->getChildHtml('coupon') ?>
-					<?php if ( ! $this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif ?>
+				</div>
+				<div class="collateral-misc">
+					<?=$this->getChildHtml('checkout.cart.extra') ?>
 				</div>
 			</div>
-			<div class="span4">
+			<div class="span3">
 				<div class="collateral-totals">
 					<div class="totals">
 						<?=$this->getChildHtml('totals')?>
