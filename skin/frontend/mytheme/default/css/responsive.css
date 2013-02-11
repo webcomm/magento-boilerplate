@@ -950,8 +950,21 @@
   .form-list .field {
     width: 100%;
   }
-  .form-list .field {
+  .form-list .field,
+  .form-list .field:last-child {
     float: none;
+  }
+  .form-list [class^="customer-name-"] .field,
+  .form-list [class*=" customer-name-"] .field {
+    width: auto;
+  }
+  .form-list [class^="customer-name-"] .name-prefix,
+  .form-list [class*=" customer-name-"] .name-prefix,
+  .form-list [class^="customer-name-"] .name-suffix,
+  .form-list [class*=" customer-name-"] .name-suffix,
+  .form-list [class^="customer-name-"] .name-middlename,
+  .form-list [class*=" customer-name-"] .name-middlename {
+    width: 48%;
   }
 }
 @media (max-width: 979px) {

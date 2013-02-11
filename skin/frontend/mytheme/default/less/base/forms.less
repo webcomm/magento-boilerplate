@@ -153,18 +153,16 @@ fieldset > .legend,
 	// Field - these are side-by-side within
 	// the form list. It's what holds input
 	// boxes
-	.fields {
-		display: table;
-		width: 100%;
-	}
 	.field {
-		vertical-align: top;
-		display: table-cell;
-		// float: left;
-		// width: (100% - @formListGutter) / 2;
+		float: left;
+		width: (100% - @formListGutter) / 2;
 
-		&:nth-child(2):last-child {
+		&:last-child {
 			float: right;
+
+			&:first-child {
+				float: left;
+			}
 		}
 	}
 
@@ -203,6 +201,7 @@ fieldset > .legend,
 	.input-range input.input-text {
 		width: 74px;
 	}
+
 	.customer-name-prefix .input-box,
 	.customer-name-suffix .input-box,
 	.customer-name-prefix-suffix .input-box,
@@ -211,6 +210,63 @@ fieldset > .legend,
 	.customer-name-prefix-middlename-suffix .input-box {
 		width: auto;
 	}
+
+	.name-prefix,
+	.name-suffix,
+	.name-middlename {
+		width: 10%;
+	}
+
+	// Name with just a prefix
+	.customer-name-prefix,
+	.customer-name-middlename,
+	.customer-name-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 2) - 10%) / 2;
+		}
+	}
+
+	// Name with a prefix and a suffix
+	.customer-name-prefix-suffix,
+	.customer-name-prefix-middlename,
+	.customer-name-middlename-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 3) - 20%) / 2;
+		}
+	}
+
+	// Name with a prefix, middle and suffix
+	.customer-name-prefix-middlename-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 4) - 30%) / 2;
+		}
+	}
+
+
 	// .name-prefix {
 	// 	width: 65px;
 	// }

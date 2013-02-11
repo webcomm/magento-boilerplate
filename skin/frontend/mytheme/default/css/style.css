@@ -2894,16 +2894,15 @@ fieldset > .legend,
 .form-list li.wide .input-box {
   width: auto;
 }
-.form-list .fields {
-  display: table;
-  width: 100%;
-}
 .form-list .field {
-  vertical-align: top;
-  display: table-cell;
+  float: left;
+  width: 48%;
 }
-.form-list .field:nth-child(2):last-child {
+.form-list .field:last-child {
   float: right;
+}
+.form-list .field:last-child:first-child {
+  float: left;
 }
 .form-list li.control label {
   float: none;
@@ -2939,6 +2938,57 @@ fieldset > .legend,
 .form-list .customer-name-middlename-suffix .input-box,
 .form-list .customer-name-prefix-middlename-suffix .input-box {
   width: auto;
+}
+.form-list .name-prefix,
+.form-list .name-suffix,
+.form-list .name-middlename {
+  width: 10%;
+}
+.form-list .customer-name-prefix .field,
+.form-list .customer-name-middlename .field,
+.form-list .customer-name-suffix .field {
+  margin-right: 4%;
+}
+.form-list .customer-name-prefix .field:last-child,
+.form-list .customer-name-middlename .field:last-child,
+.form-list .customer-name-suffix .field:last-child {
+  margin-right: 0;
+}
+.form-list .customer-name-prefix .name-firstname,
+.form-list .customer-name-middlename .name-firstname,
+.form-list .customer-name-suffix .name-firstname,
+.form-list .customer-name-prefix .name-lastname,
+.form-list .customer-name-middlename .name-lastname,
+.form-list .customer-name-suffix .name-lastname {
+  width: 41%;
+}
+.form-list .customer-name-prefix-suffix .field,
+.form-list .customer-name-prefix-middlename .field,
+.form-list .customer-name-middlename-suffix .field {
+  margin-right: 4%;
+}
+.form-list .customer-name-prefix-suffix .field:last-child,
+.form-list .customer-name-prefix-middlename .field:last-child,
+.form-list .customer-name-middlename-suffix .field:last-child {
+  margin-right: 0;
+}
+.form-list .customer-name-prefix-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename .name-firstname,
+.form-list .customer-name-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-suffix .name-lastname,
+.form-list .customer-name-prefix-middlename .name-lastname,
+.form-list .customer-name-middlename-suffix .name-lastname {
+  width: 34%;
+}
+.form-list .customer-name-prefix-middlename-suffix .field {
+  margin-right: 4%;
+}
+.form-list .customer-name-prefix-middlename-suffix .field:last-child {
+  margin-right: 0;
+}
+.form-list .customer-name-prefix-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename-suffix .name-lastname {
+  width: 27%;
 }
 .buttons-set {
   *zoom: 1;

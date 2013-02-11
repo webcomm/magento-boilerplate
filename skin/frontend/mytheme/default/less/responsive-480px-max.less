@@ -14,8 +14,21 @@
 			width: 100%;
 		}
 
-		.field {
+		.field, .field:last-child {
 			float: none;
+		}
+
+		[class^="customer-name-"],
+		[class*=" customer-name-"] {
+			.field {
+				width: auto;
+			}
+
+			.name-prefix,
+			.name-suffix,
+			.name-middlename {
+				width: (100% - @formListGutter) / 2;
+			}
 		}
 	}
 
