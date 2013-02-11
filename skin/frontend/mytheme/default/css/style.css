@@ -2894,11 +2894,11 @@ fieldset > .legend,
 .form-list li.wide .input-box {
   width: auto;
 }
-.form-list .fields .field {
+.form-list .field {
   float: left;
   width: 48%;
 }
-.form-list .fields .field:last-child {
+.form-list .field:last-child {
   float: right;
 }
 .form-list li.control label {

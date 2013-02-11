@@ -946,7 +946,13 @@
   }
 }
 @media (max-width: 480px) {
-  
+  .form-list li .input-box,
+  .form-list .field {
+    width: 100%;
+  }
+  .form-list .field {
+    float: none;
+  }
 }
 @media (max-width: 979px) {
   body {
