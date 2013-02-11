@@ -29,9 +29,8 @@ $crossell = (string) $this->getChildHtml('crossell');
 	</div>
 	<?=$this->getMessagesBlock()->getGroupedHtml() ?>
 	<?=$this->getChildHtml('form_before') ?>
-	<form action="<?=$this->getUrl('checkout/cart/updatePost') ?>" method="post">
-		<fieldset>
-			<table id="shopping-cart-table" class="table table-bordered table-striped cart-table">
+	<form action="<?=$this->getUrl('checkout/cart/updatePost') ?>" method="post" class="cart-form">
+		<table id="shopping-cart-table" class="table table-bordered table-striped cart-table">
 
 				<?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1) ?>
 				<thead>
@@ -95,7 +94,6 @@ $crossell = (string) $this->getChildHtml('crossell');
 					</tr>
 				</tfoot>
 			</table>
-		</fieldset>
 	</form>
 	<div class="cart-collaterals">
 		<div class="row">
