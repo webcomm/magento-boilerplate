@@ -6979,6 +6979,10 @@ header[role="banner"] .welcome-msg {
   overflow: hidden;
   text-align: center;
 }
+.cart-form {
+  max-width: 100%;
+  overflow-x: scroll;
+}
 .block-progress dt {
   font-weight: bold;
 }
