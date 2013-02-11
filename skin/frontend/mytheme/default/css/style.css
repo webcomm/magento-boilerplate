@@ -2894,11 +2894,15 @@ fieldset > .legend,
 .form-list li.wide .input-box {
   width: auto;
 }
-.form-list .field {
-  float: left;
-  width: 48%;
+.form-list .fields {
+  display: table;
+  width: 100%;
 }
-.form-list .field:last-child {
+.form-list .field {
+  vertical-align: top;
+  display: table-cell;
+}
+.form-list .field:nth-child(2):last-child {
   float: right;
 }
 .form-list li.control label {
@@ -2935,109 +2939,6 @@ fieldset > .legend,
 .form-list .customer-name-middlename-suffix .input-box,
 .form-list .customer-name-prefix-middlename-suffix .input-box {
   width: auto;
-}
-.form-list .name-prefix {
-  width: 65px;
-}
-.form-list .name-prefix select {
-  width: 55px;
-}
-.form-list .name-prefix input.input-text {
-  width: 49px;
-}
-.form-list .name-suffix {
-  width: 65px;
-}
-.form-list .name-suffix select {
-  width: 55px;
-}
-.form-list .name-suffix input.input-text {
-  width: 49px;
-}
-.form-list .name-middlename {
-  width: 70px;
-}
-.form-list .name-middlename input.input-text {
-  width: 49px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-firstname,
-.form-list .customer-name-prefix-middlename .name-firstname {
-  width: 140px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-middlename .name-firstname input.input-text {
-  width: 124px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-prefix-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-prefix-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-name-prefix .name-firstname,
-.form-list .customer-name-middlename .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-suffix .name-lastname,
-.form-list .customer-name-middlename .name-firstname,
-.form-list .customer-name-middlename-suffix .name-firstname,
-.form-list .customer-name-middlename-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix .name-firstname input.input-text,
-.form-list .customer-name-suffix .name-lastname input.input-text,
-.form-list .customer-name-middlename .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-year {
-  float: left;
-  width: 85px;
-}
-.form-list .customer-dob input.input-text {
-  display: block;
-  width: 74px;
-}
-.form-list .customer-dob label {
-  font-size: 11px;
-  color: #888;
-}
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month {
-  width: 60px;
-}
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text {
-  width: 46px;
-}
-.form-list .customer-dob .dob-year {
-  width: 140px;
-}
-.form-list .customer-dob .dob-year input.input-text {
-  width: 134px;
 }
 .buttons-set {
   *zoom: 1;

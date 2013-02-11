@@ -153,11 +153,17 @@ fieldset > .legend,
 	// Field - these are side-by-side within
 	// the form list. It's what holds input
 	// boxes
+	.fields {
+		display: table;
+		width: 100%;
+	}
 	.field {
-		float: left;
-		width: (100% - @formListGutter) / 2;
+		vertical-align: top;
+		display: table-cell;
+		// float: left;
+		// width: (100% - @formListGutter) / 2;
 
-		&:last-child {
+		&:nth-child(2):last-child {
 			float: right;
 		}
 	}
@@ -205,109 +211,109 @@ fieldset > .legend,
 	.customer-name-prefix-middlename-suffix .input-box {
 		width: auto;
 	}
-	.name-prefix {
-		width: 65px;
-	}
-	.name-prefix select {
-		width: 55px;
-	}
-	.name-prefix input.input-text {
-		width: 49px;
-	}
-	.name-suffix {
-		width: 65px;
-	}
-	.name-suffix select {
-		width: 55px;
-	}
-	.name-suffix input.input-text {
-		width: 49px;
-	}
-	.name-middlename {
-		width: 70px;
-	}
-	.name-middlename input.input-text {
-		width: 49px;
-	}
-	.customer-name-prefix-middlename-suffix .name-firstname,
-	.customer-name-prefix-middlename .name-firstname {
-		width: 140px;
-	}
-	.customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-	.customer-name-prefix-middlename .name-firstname input.input-text {
-		width: 124px;
-	}
-	.customer-name-prefix-middlename-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix-middlename-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix-suffix .name-firstname {
-		width: 210px;
-	}
-	.customer-name-prefix-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix-suffix .name-firstname input.input-text,
-	.customer-name-prefix-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix-suffix .name-firstname {
-		width: 210px;
-	}
-	.customer-name-prefix-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix-suffix .name-firstname input.input-text,
-	.customer-name-prefix-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix .name-firstname,
-	.customer-name-middlename .name-firstname {
-		width: 210px;
-	}
-	.customer-name-suffix .name-lastname,
-	.customer-name-middlename .name-firstname,
-	.customer-name-middlename-suffix .name-firstname,
-	.customer-name-middlename-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix .name-firstname input.input-text,
-	.customer-name-suffix .name-lastname input.input-text,
-	.customer-name-middlename .name-firstname input.input-text,
-	.customer-name-middlename-suffix .name-firstname input.input-text,
-	.customer-name-middlename-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-dob .dob-month,
-	.customer-dob .dob-day,
-	.customer-dob .dob-year {
-		float: left;
-		width: 85px;
-	}
-	.customer-dob input.input-text {
-		display: block;
-		width: 74px;
-	}
-	.customer-dob label {
-		font-size: @baseFontSize - 2;
-		color: #888;
-	}
-	.customer-dob .dob-day,
-	.customer-dob .dob-month {
-		width: 60px;
-	}
-	.customer-dob .dob-day input.input-text,
-	.customer-dob .dob-month input.input-text {
-		width: 46px;
-	}
-	.customer-dob .dob-year {
-		width: 140px;
-	}
-	.customer-dob .dob-year input.input-text {
-		width: 134px;
-	}
+	// .name-prefix {
+	// 	width: 65px;
+	// }
+	// .name-prefix select {
+	// 	width: 55px;
+	// }
+	// .name-prefix input.input-text {
+	// 	width: 49px;
+	// }
+	// .name-suffix {
+	// 	width: 65px;
+	// }
+	// .name-suffix select {
+	// 	width: 55px;
+	// }
+	// .name-suffix input.input-text {
+	// 	width: 49px;
+	// }
+	// .name-middlename {
+	// 	width: 120px;
+	// }
+	// .name-middlename input.input-text {
+	// 	width: 49px;
+	// }
+	// .customer-name-prefix-middlename-suffix .name-firstname,
+	// .customer-name-prefix-middlename .name-firstname {
+	// 	width: 140px;
+	// }
+	// .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
+	// .customer-name-prefix-middlename .name-firstname input.input-text {
+	// 	width: 124px;
+	// }
+	// .customer-name-prefix-middlename-suffix .name-lastname {
+	// 	width: 205px;
+	// }
+	// .customer-name-prefix-middlename-suffix .name-lastname input.input-text {
+	// 	width: 189px;
+	// }
+	// .customer-name-prefix-suffix .name-firstname {
+	// 	width: 210px;
+	// }
+	// .customer-name-prefix-suffix .name-lastname {
+	// 	width: 205px;
+	// }
+	// .customer-name-prefix-suffix .name-firstname input.input-text,
+	// .customer-name-prefix-suffix .name-lastname input.input-text {
+	// 	width: 189px;
+	// }
+	// .customer-name-prefix-suffix .name-firstname {
+	// 	width: 210px;
+	// }
+	// .customer-name-prefix-suffix .name-lastname {
+	// 	width: 205px;
+	// }
+	// .customer-name-prefix-suffix .name-firstname input.input-text,
+	// .customer-name-prefix-suffix .name-lastname input.input-text {
+	// 	width: 189px;
+	// }
+	// .customer-name-prefix .name-firstname,
+	// .customer-name-middlename .name-firstname {
+	// 	width: 210px;
+	// }
+	// .customer-name-suffix .name-lastname,
+	// .customer-name-middlename .name-firstname,
+	// .customer-name-middlename-suffix .name-firstname,
+	// .customer-name-middlename-suffix .name-lastname {
+	// 	width: 205px;
+	// }
+	// .customer-name-prefix .name-firstname input.input-text,
+	// .customer-name-suffix .name-lastname input.input-text,
+	// .customer-name-middlename .name-firstname input.input-text,
+	// .customer-name-middlename-suffix .name-firstname input.input-text,
+	// .customer-name-middlename-suffix .name-lastname input.input-text {
+	// 	width: 189px;
+	// }
+	// .customer-dob .dob-month,
+	// .customer-dob .dob-day,
+	// .customer-dob .dob-year {
+	// 	float: left;
+	// 	width: 85px;
+	// }
+	// .customer-dob input.input-text {
+	// 	display: block;
+	// 	width: 74px;
+	// }
+	// .customer-dob label {
+	// 	font-size: @baseFontSize - 2;
+	// 	color: #888;
+	// }
+	// .customer-dob .dob-day,
+	// .customer-dob .dob-month {
+	// 	width: 60px;
+	// }
+	// .customer-dob .dob-day input.input-text,
+	// .customer-dob .dob-month input.input-text {
+	// 	width: 46px;
+	// }
+	// .customer-dob .dob-year {
+	// 	width: 140px;
+	// }
+	// .customer-dob .dob-year input.input-text {
+	// 	width: 134px;
+	// }
 }
 
 .buttons-set {
