@@ -53,13 +53,55 @@ fieldset > .legend,
 	float: left;
 }
 
+.input-box {
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	.uneditable-input {
+		.input-block-level();
+	}
+}
+
 // Form lists
 .form-list {
 
-	// All list items
-	li {
-		.clearfix();
-		margin: 0 0 @baseLineHeight / 2;
+	fieldset, .fieldset {
+		padding: 0;
+		border: 0;
+		.border-radius(0);
+	}
+
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	.uneditable-input {
+		.input-block-level();
 	}
 
 	// All labels
@@ -83,30 +125,57 @@ fieldset > .legend,
 	// Input boxes (these hold a label and
 	// an input below)
 	.input-box {
-		display: block;
 		clear: both;
-		width: 260px;
+	}
+
+	// All list items
+	li {
+		.clearfix();
+		margin: 0 0 @baseLineHeight / 2;
+
+		// By default, input boxes only take
+		// up less than half of the form-list
+		.input-box {
+			width: (100% - @formListGutter) / 2;
+		}
+
+		// On wide elements, our input boxes
+		// take up the full width as the container
+		// elements for the input box div's handle
+		// the widths.
+		&.fields, &.wide {
+			.input-box {
+				width: auto;
+			}
+		}
 	}
 
 	// Field - these are side-by-side within
 	// the form list. It's what holds input
 	// boxes
-	.field {
+	.fields .field {
 		float: left;
-		width: @formListColumnWidth;
+		width: (100% - @formListGutter) / 2;
+
+		&:last-child {
+			float: right;
+		}
 	}
 
 	// Control lists - lists that
-	// contain checkboxes
+	// contain checkboxes and radio
+	// buttons
 	li.control {
 		label {
 			float: none;
 			display: inline-block;
+			margin: 0;
 		}
 
 		input[type="radio"],
 		input[type="checkbox"] {
-			margin-right: 6px;
+			margin: 0 6px 0 0;
+			vertical-align: baseline;
 		}
 
 		.input-box {
@@ -119,32 +188,33 @@ fieldset > .legend,
 	// Wide input containers. These
 	// span across two columns
 	li.wide {
-		.input-box {
-			width: 535px;
-		}
 
-		textarea,
-		input[type="text"],
-		input[type="password"],
-		input[type="datetime"],
-		input[type="datetime-local"],
-		input[type="date"],
-		input[type="month"],
-		input[type="time"],
-		input[type="week"],
-		input[type="number"],
-		input[type="email"],
-		input[type="url"],
-		input[type="search"],
-		input[type="tel"],
-		input[type="color"],
-		.uneditable-input {
-			width: @formListColumnWidth + 210px;
-		}
+		// .input-box {
+		// 	width: 535px;
+		// }
 
-		select {
-			width: @formListColumnWidth + 210px;
-		}
+		// textarea,
+		// input[type="text"],
+		// input[type="password"],
+		// input[type="datetime"],
+		// input[type="datetime-local"],
+		// input[type="date"],
+		// input[type="month"],
+		// input[type="time"],
+		// input[type="week"],
+		// input[type="number"],
+		// input[type="email"],
+		// input[type="url"],
+		// input[type="search"],
+		// input[type="tel"],
+		// input[type="color"],
+		// .uneditable-input, {
+		// 	width: @formListColumnWidth + 210px;
+		// }
+
+		// select {
+		// 	width: @formListColumnWidth + 210px;
+		// }
 	}
 
 	li.additional-row {
