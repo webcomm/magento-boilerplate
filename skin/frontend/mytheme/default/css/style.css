@@ -2990,6 +2990,33 @@ fieldset > .legend,
 .form-list .customer-name-prefix-middlename-suffix .name-lastname {
   width: 27%;
 }
+.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year {
+  float: left;
+  margin-left: 4%;
+}
+.form-list .customer-dob .dob-month:first-child,
+.form-list .customer-dob .dob-day:first-child,
+.form-list .customer-dob .dob-year:first-child {
+  margin-left: 0;
+}
+.form-list .customer-dob .dob-month:nth-child(3),
+.form-list .customer-dob .dob-day:nth-child(3),
+.form-list .customer-dob .dob-year:nth-child(3) {
+  float: right;
+}
+.form-list .customer-dob label {
+  font-size: 11px;
+  color: #888;
+}
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month {
+  width: 23%;
+}
+.form-list .customer-dob .dob-year {
+  width: 46%;
+}
 .buttons-set {
   *zoom: 1;
   padding: 19px 20px 20px;
