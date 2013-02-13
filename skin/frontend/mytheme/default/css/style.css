@@ -2834,30 +2834,6 @@ fieldset > .legend,
   -moz-border-radius: 0;
   border-radius: 0;
 }
-.form-list select,
-.form-list textarea,
-.form-list input[type="text"],
-.form-list input[type="password"],
-.form-list input[type="datetime"],
-.form-list input[type="datetime-local"],
-.form-list input[type="date"],
-.form-list input[type="month"],
-.form-list input[type="time"],
-.form-list input[type="week"],
-.form-list input[type="number"],
-.form-list input[type="email"],
-.form-list input[type="url"],
-.form-list input[type="search"],
-.form-list input[type="tel"],
-.form-list input[type="color"],
-.form-list .uneditable-input {
-  display: block;
-  width: 100%;
-  min-height: 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .form-list label {
   float: left;
   position: relative;
