@@ -7076,6 +7076,18 @@ header[role="banner"] .welcome-msg {
 .opc .step .tool-tip {
   right: 10px;
 }
+#opc-payment .sp-methods dt input[type="radio"] {
+  display: inline;
+  margin: 0 3px 0 0;
+  position: relative;
+  top: -1px;
+  vertical-align: baseline;
+  line-height: 20px;
+}
+#opc-payment .sp-methods dt label {
+  display: inline;
+  margin: 0;
+}
 .checkout-progress {
   padding: 0 50px;
   margin: 10px 0;
