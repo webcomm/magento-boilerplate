@@ -2901,6 +2901,9 @@ fieldset > .legend,
 .form-list .field:last-child {
   float: right;
 }
+.form-list .field:last-child:first-child {
+  float: left;
+}
 .form-list li.control label {
   float: none;
   display: inline-block;
@@ -2936,90 +2939,72 @@ fieldset > .legend,
 .form-list .customer-name-prefix-middlename-suffix .input-box {
   width: auto;
 }
-.form-list .name-prefix {
-  width: 65px;
-}
-.form-list .name-prefix select {
-  width: 55px;
-}
-.form-list .name-prefix input.input-text {
-  width: 49px;
-}
-.form-list .name-suffix {
-  width: 65px;
-}
-.form-list .name-suffix select {
-  width: 55px;
-}
-.form-list .name-suffix input.input-text {
-  width: 49px;
-}
+.form-list .name-prefix,
+.form-list .name-suffix,
 .form-list .name-middlename {
-  width: 70px;
+  width: 10%;
 }
-.form-list .name-middlename input.input-text {
-  width: 49px;
+.form-list .customer-name-prefix .field,
+.form-list .customer-name-middlename .field,
+.form-list .customer-name-suffix .field {
+  margin-right: 4%;
 }
-.form-list .customer-name-prefix-middlename-suffix .name-firstname,
-.form-list .customer-name-prefix-middlename .name-firstname {
-  width: 140px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-middlename .name-firstname input.input-text {
-  width: 124px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-prefix-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text {
-  width: 189px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-prefix-suffix .name-lastname {
-  width: 205px;
-}
-.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
-.form-list .customer-name-prefix-suffix .name-lastname input.input-text {
-  width: 189px;
+.form-list .customer-name-prefix .field:last-child,
+.form-list .customer-name-middlename .field:last-child,
+.form-list .customer-name-suffix .field:last-child {
+  margin-right: 0;
 }
 .form-list .customer-name-prefix .name-firstname,
-.form-list .customer-name-middlename .name-firstname {
-  width: 210px;
-}
-.form-list .customer-name-suffix .name-lastname,
 .form-list .customer-name-middlename .name-firstname,
-.form-list .customer-name-middlename-suffix .name-firstname,
-.form-list .customer-name-middlename-suffix .name-lastname {
-  width: 205px;
+.form-list .customer-name-suffix .name-firstname,
+.form-list .customer-name-prefix .name-lastname,
+.form-list .customer-name-middlename .name-lastname,
+.form-list .customer-name-suffix .name-lastname {
+  width: 41%;
 }
-.form-list .customer-name-prefix .name-firstname input.input-text,
-.form-list .customer-name-suffix .name-lastname input.input-text,
-.form-list .customer-name-middlename .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
-.form-list .customer-name-middlename-suffix .name-lastname input.input-text {
-  width: 189px;
+.form-list .customer-name-prefix-suffix .field,
+.form-list .customer-name-prefix-middlename .field,
+.form-list .customer-name-middlename-suffix .field {
+  margin-right: 4%;
+}
+.form-list .customer-name-prefix-suffix .field:last-child,
+.form-list .customer-name-prefix-middlename .field:last-child,
+.form-list .customer-name-middlename-suffix .field:last-child {
+  margin-right: 0;
+}
+.form-list .customer-name-prefix-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename .name-firstname,
+.form-list .customer-name-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-suffix .name-lastname,
+.form-list .customer-name-prefix-middlename .name-lastname,
+.form-list .customer-name-middlename-suffix .name-lastname {
+  width: 34%;
+}
+.form-list .customer-name-prefix-middlename-suffix .field {
+  margin-right: 4%;
+}
+.form-list .customer-name-prefix-middlename-suffix .field:last-child {
+  margin-right: 0;
+}
+.form-list .customer-name-prefix-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename-suffix .name-lastname {
+  width: 27%;
 }
 .form-list .customer-dob .dob-month,
 .form-list .customer-dob .dob-day,
 .form-list .customer-dob .dob-year {
   float: left;
-  width: 85px;
+  margin-left: 4%;
 }
-.form-list .customer-dob input.input-text {
-  display: block;
-  width: 74px;
+.form-list .customer-dob .dob-month:first-child,
+.form-list .customer-dob .dob-day:first-child,
+.form-list .customer-dob .dob-year:first-child {
+  margin-left: 0;
+}
+.form-list .customer-dob .dob-month:nth-child(3),
+.form-list .customer-dob .dob-day:nth-child(3),
+.form-list .customer-dob .dob-year:nth-child(3) {
+  float: right;
 }
 .form-list .customer-dob label {
   font-size: 11px;
@@ -3027,17 +3012,10 @@ fieldset > .legend,
 }
 .form-list .customer-dob .dob-day,
 .form-list .customer-dob .dob-month {
-  width: 60px;
-}
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text {
-  width: 46px;
+  width: 23%;
 }
 .form-list .customer-dob .dob-year {
-  width: 140px;
-}
-.form-list .customer-dob .dob-year input.input-text {
-  width: 134px;
+  width: 46%;
 }
 .buttons-set {
   *zoom: 1;
@@ -7097,6 +7075,18 @@ header[role="banner"] .welcome-msg {
 }
 .opc .step .tool-tip {
   right: 10px;
+}
+#opc-payment .sp-methods dt input[type="radio"] {
+  display: inline;
+  margin: 0 3px 0 0;
+  position: relative;
+  top: -1px;
+  vertical-align: baseline;
+  line-height: 20px;
+}
+#opc-payment .sp-methods dt label {
+  display: inline;
+  margin: 0;
 }
 .checkout-progress {
   padding: 0 50px;

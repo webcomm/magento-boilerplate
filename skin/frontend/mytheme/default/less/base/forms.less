@@ -159,6 +159,10 @@ fieldset > .legend,
 
 		&:last-child {
 			float: right;
+
+			&:first-child {
+				float: left;
+			}
 		}
 	}
 
@@ -197,6 +201,7 @@ fieldset > .legend,
 	.input-range input.input-text {
 		width: 74px;
 	}
+
 	.customer-name-prefix .input-box,
 	.customer-name-suffix .input-box,
 	.customer-name-prefix-suffix .input-box,
@@ -205,109 +210,96 @@ fieldset > .legend,
 	.customer-name-prefix-middlename-suffix .input-box {
 		width: auto;
 	}
-	.name-prefix {
-		width: 65px;
-	}
-	.name-prefix select {
-		width: 55px;
-	}
-	.name-prefix input.input-text {
-		width: 49px;
-	}
-	.name-suffix {
-		width: 65px;
-	}
-	.name-suffix select {
-		width: 55px;
-	}
-	.name-suffix input.input-text {
-		width: 49px;
-	}
+
+	.name-prefix,
+	.name-suffix,
 	.name-middlename {
-		width: 70px;
+		width: 10%;
 	}
-	.name-middlename input.input-text {
-		width: 49px;
+
+	// Name with just a prefix
+	.customer-name-prefix,
+	.customer-name-middlename,
+	.customer-name-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 2) - 10%) / 2;
+		}
 	}
-	.customer-name-prefix-middlename-suffix .name-firstname,
-	.customer-name-prefix-middlename .name-firstname {
-		width: 140px;
+
+	// Name with a prefix and a suffix
+	.customer-name-prefix-suffix,
+	.customer-name-prefix-middlename,
+	.customer-name-middlename-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 3) - 20%) / 2;
+		}
 	}
-	.customer-name-prefix-middlename-suffix .name-firstname input.input-text,
-	.customer-name-prefix-middlename .name-firstname input.input-text {
-		width: 124px;
+
+	// Name with a prefix, middle and suffix
+	.customer-name-prefix-middlename-suffix {
+		.field {
+			margin-right: @formListGutter;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.name-firstname, .name-lastname {
+			width: (100% - (@formListGutter * 4) - 30%) / 2;
+		}
 	}
-	.customer-name-prefix-middlename-suffix .name-lastname {
-		width: 205px;
+
+	.customer-dob {
+		.dob-month,
+		.dob-day,
+		.dob-year {
+			float: left;
+			margin-left: @formListGutter;
+
+			// We don't know if the day or
+			// the month is first
+			&:first-child {
+				margin-left: 0;
+			}
+
+			// We can't target :last-child
+			&:nth-child(3) {
+				float: right;
+			}
+		}
+		input.input-text {
+		}
+		label {
+			font-size: @baseFontSize - 2;
+			color: #888;
+		}
+		.dob-day,
+		.dob-month {
+			width: (50% - @formListGutter) / 2;
+		}
+		.dob-year {
+			width: (50% - @formListGutter);
+		}
+
 	}
-	.customer-name-prefix-middlename-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix-suffix .name-firstname {
-		width: 210px;
-	}
-	.customer-name-prefix-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix-suffix .name-firstname input.input-text,
-	.customer-name-prefix-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix-suffix .name-firstname {
-		width: 210px;
-	}
-	.customer-name-prefix-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix-suffix .name-firstname input.input-text,
-	.customer-name-prefix-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-name-prefix .name-firstname,
-	.customer-name-middlename .name-firstname {
-		width: 210px;
-	}
-	.customer-name-suffix .name-lastname,
-	.customer-name-middlename .name-firstname,
-	.customer-name-middlename-suffix .name-firstname,
-	.customer-name-middlename-suffix .name-lastname {
-		width: 205px;
-	}
-	.customer-name-prefix .name-firstname input.input-text,
-	.customer-name-suffix .name-lastname input.input-text,
-	.customer-name-middlename .name-firstname input.input-text,
-	.customer-name-middlename-suffix .name-firstname input.input-text,
-	.customer-name-middlename-suffix .name-lastname input.input-text {
-		width: 189px;
-	}
-	.customer-dob .dob-month,
-	.customer-dob .dob-day,
-	.customer-dob .dob-year {
-		float: left;
-		width: 85px;
-	}
-	.customer-dob input.input-text {
-		display: block;
-		width: 74px;
-	}
-	.customer-dob label {
-		font-size: @baseFontSize - 2;
-		color: #888;
-	}
-	.customer-dob .dob-day,
-	.customer-dob .dob-month {
-		width: 60px;
-	}
-	.customer-dob .dob-day input.input-text,
-	.customer-dob .dob-month input.input-text {
-		width: 46px;
-	}
-	.customer-dob .dob-year {
-		width: 140px;
-	}
-	.customer-dob .dob-year input.input-text {
-		width: 134px;
-	}
+
 }
 
 .buttons-set {
