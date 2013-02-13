@@ -91,27 +91,29 @@
 	.order-review .warning-message {}
 }
 
-// Payment step
-#opc-payment {
+// Payment information labels
+.sp-methods {
+	dt {
+		margin-top: @baseLineHeight / 2;
 
-	// Payment information labels
-	.sp-methods dt {
-
-		input[type="radio"] {
-			display: inline;
-			margin: 0 3px 0 0;
-			position: relative;
-			top: -1px;
-
-			vertical-align: baseline;
-
-			line-height: @baseLineHeight;
-		}
-
-		label {
-			display: inline;
-			margin: 0;
+		&:first-child {
+			margin-top: 0;
 		}
 	}
 
+	input[type="radio"] {
+		display: inline;
+		margin: 0 3px 0 0;
+		position: relative;
+		top: -1px;
+
+		vertical-align: baseline;
+
+		line-height: @baseLineHeight;
+	}
+
+	input[type="radio"] + label {
+		display: inline;
+		margin: 0;
+	}
 }
