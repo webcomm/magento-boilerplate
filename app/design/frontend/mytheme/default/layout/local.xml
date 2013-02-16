@@ -16,11 +16,11 @@
 		<reference name="root">
 
 
-			<!-- Start: Add Chrome frame to templates -->
+			<!-- Add Chrome frame to templates -->
 			<block type="core/template" name="chromeframe" template="page/html/chromeframe.phtml"/>
 
 
-			<!-- Start: Move navigation block to root template -->
+			<!-- Move navigation block to root template -->
 			<action method="insert">
 				<block>catalog.topnav</block>
 			</action>
@@ -32,7 +32,7 @@
 		<reference name="head">
 
 
-			<!-- Start: Remove Magento's default assets -->
+			<!-- Remove Magento's default assets -->
 			<action method="removeItem">
 				<type>skin_css</type>
 				<name>css/print.css</name>
@@ -63,7 +63,7 @@
 			</action>
 
 
-			<!-- Start: Add our own HTML5 assets -->
+			<!-- Add our own HTML5 assets -->
 			<action method="addCss">
 				<stylesheet>css/style.css</stylesheet>
 			</action>
@@ -120,7 +120,7 @@
 		<reference name="header">
 
 
-			<!-- Start: Remove the navigation from the header block -->
+			<!-- Remove the navigation from the header block -->
 			<action method="unsetChild">
 				<child>catalog.topnav</child>
 			</action>
@@ -132,7 +132,7 @@
 		<reference name="top.links">
 
 
-			<!-- Start: Set the ID of the top links -->
+			<!-- Set the ID of the top links -->
 			<action method="setName">
 				<name>top-links</name>
 			</action>
@@ -150,7 +150,7 @@
 		<reference name="head">
 
 
-			<!-- Start: Adjust assets -->
+			<!-- Adjust assets -->
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/bootstrap/bootstrap-tab.js</name>
@@ -163,7 +163,7 @@
 		<reference name="product.description">
 
 
-			<!-- Start: Add title -->
+			<!-- Add title -->
 			<action method="setTitle">
 				<title>Details</title>
 			</action>
@@ -175,7 +175,7 @@
 		<reference name="product.attributes">
 
 
-			<!-- Start: Add title -->
+			<!-- Add title -->
 			<action method="setTitle">
 				<title>Specifications</title>
 			</action>
@@ -187,7 +187,7 @@
 		<reference name="product.info.additional">
 
 
-			<!-- Start: Remove items from additional info -->
+			<!-- Remove items from additional info -->
 			<action method="unsetChild">
 				<alias>partof_products</alias>
 			</action>
@@ -202,7 +202,7 @@
 		<reference name="product.info">
 
 
-			<!-- Start: Reinsert additional blocks into product info -->
+			<!-- Reinsert additional blocks into product info -->
 			<action method="insert">
 				<block>product_tag_list</block>
 				<siblingName>product.attributes</siblingName>
@@ -217,7 +217,7 @@
 			</action>
 
 
-			<!-- Start: Add blocks to the product info tabs group -->
+			<!-- Add blocks to the product info tabs group -->
 			<reference name="product.info.partof">
 				<action method="addToParentGroup">
 					<group>detailed_info</group>
@@ -236,7 +236,7 @@
 		<reference name="product_tag_list">
 
 
-			<!-- Start: Add title -->
+			<!-- Add title -->
 			<action method="setTitle">
 				<title>Tags</title>
 			</action>
