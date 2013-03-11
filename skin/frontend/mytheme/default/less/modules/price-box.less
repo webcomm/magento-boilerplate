@@ -9,81 +9,208 @@
 // PRICE BOX
 // ---------
 
-.price { white-space:nowrap !important; }
+.price {
+	white-space: nowrap;
+}
 
-.price-box {}
-.price-box .price { font-weight:bold; }
+// All price boxes
+.price-box {
+
+	.price-label, .label {
+		white-space: nowrap;
+	}
+
+	.price {
+		font-weight: bold;
+	}
+
+}
 
 // Regular price
-.regular-price {}
-.regular-price .price { font-weight:bold; }
+.regular-price {
+
+	.price {
+
+	}
+}
 
 // Old price
-.old-price {}
-.old-price .price-label { white-space:nowrap; }
-.old-price .price { font-weight:bold; text-decoration:line-through; }
+.old-price {
+
+	.price-label {
+
+	}
+
+	.price {
+		text-decoration: line-through;
+	}
+}
 
 // Special price
-.special-price {}
-.special-price .price-label { font-weight:bold; white-space:nowrap; }
-.special-price .price { font-weight:bold; }
+.special-price {
+
+	.price-label {
+		font-weight: bold;
+	}
+
+	.price {
+
+	}
+}
 
 // Minimal price (as low as)
-.minimal-price {}
-.minimal-price .price-label { font-weight:bold; white-space:nowrap; }
+.minimal-price {
 
-.minimal-price-link { display:block; }
-.minimal-price-link .label {}
-.minimal-price-link .price { font-weight:normal; }
+	.price-label {
+		font-weight: bold;
+	}
+
+	.price {
+
+	}
+}
+
+// Minimal price (as low as) with a link
+.minimal-price-link {
+	display: block;
+
+	.price-label {
+
+	}
+
+	.price {
+		font-weight: normal;
+	}
+}
 
 // Excluding tax
-.price-excluding-tax { display:block; }
-.price-excluding-tax .label { white-space:nowrap; }
-.price-excluding-tax .price { font-weight:normal; }
+.price-excluding-tax {
+	display: block;
+
+	.label {
+
+	}
+
+	.price {
+		font-weight: normal;
+	}
+}
 
 // Including tax
-.price-including-tax { display:block; }
-.price-including-tax .label { white-space:nowrap; }
-.price-including-tax .price { font-weight:bold; }
+.price-including-tax {
+	display: block;
+
+	.label {
+
+	}
+
+	.price {
+
+	}
+}
 
 // Configured price
-.configured-price {}
-.configured-price .price-label { font-weight:bold; white-space:nowrap; }
-.configured-price .price { font-weight:bold; }
+.configured-price {
+
+	.price-label {
+		font-weight: bold;
+	}
+
+	.price {
+
+	}
+}
 
 // FPT
-.weee { display:block; font-size:11px; color:#444; }
-.weee .price { font-size:11px; font-weight:normal; }
+.weee {
+	display: block;
+	font-size: @baseFontSize - 2;
+
+	.price {
+		font-weight: normal;
+	}
+}
 
 // Excl tax (for order tables)
-.price-excl-tax  { display:block; }
-.price-excl-tax .label { display:block; white-space:nowrap; }
-.price-excl-tax .price { display:block; }
+.price-excl-tax {
+	display: block;
+
+	.label {
+		display: block;
+	}
+
+	.price {
+		display: block;
+
+		font-weight: bold;
+	}
+}
 
 // Incl tax (for order tables)
-.price-incl-tax { display:block; }
-.price-incl-tax .label { display:block; white-space:nowrap; }
-.price-incl-tax .price { display:block; font-weight:bold; }
+.price-incl-tax {
+	display: block;
+
+	.label {
+		display: block;
+	}
+
+	.price {
+		display: block;
+
+		font-weight: bold;
+	}
+}
 
 // Price range
-.price-from {}
-.price-from .price-label { font-weight:bold; white-space:nowrap; }
+.price-from {
 
-.price-to {}
-.price-to .price-label { font-weight:bold; white-space:nowrap; }
+	.price-label {
+		font-weight: bold;
+	}
+}
+
+.price-to {
+
+	.price-label {
+		font-weight: bold;
+	}
+}
 
 // Price notice next to the options
-.price-notice { padding-left:10px; }
-.price-notice .price { font-weight:bold; }
+.price-notice {
+	padding-left: @baseLineHeight / 2;
+
+	.price {
+		font-weight: bold;
+	}
+}
 
 // Price as configured
-.price-as-configured {}
-.price-as-configured .price-label { font-weight:bold; white-space:nowrap; }
+.price-as-configured {
 
-.price-box-bundle {}
+	.price-label {
+		font-weight: bold;
+	}
+}
 
-// Tier Prices
-.tier-prices .price { font-weight:bold; }
-.tier-prices .benefit {}
+// Bundle specific price box
+.price-box-bundle {
 
-.tier-prices-grouped {}
+}
+
+// Tier prices
+.tier-prices {
+
+	.price {
+		font-weight: bold;
+	}
+
+	.benefit {
+
+	}
+}
+
+// Tier prices for grouped products
+.tier-prices-grouped {
+
+}

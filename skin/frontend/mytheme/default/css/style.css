@@ -1064,6 +1064,9 @@ ul.icons li [class*=" icon-"] {
 .icon-folder-open-alt:before {
   content: "\f115";
 }
+ul.icons {
+  margin-left: 25px;
+}
 article,
 aside,
 details,
@@ -6660,31 +6663,23 @@ header[role="banner"] .welcome-msg {
   cursor: pointer;
 }
 .price {
-  white-space: nowrap !important;
+  white-space: nowrap;
+}
+.price-box .price-label,
+.price-box .label {
+  white-space: nowrap;
 }
 .price-box .price {
   font-weight: bold;
 }
-.regular-price .price {
-  font-weight: bold;
-}
-.old-price .price-label {
-  white-space: nowrap;
-}
 .old-price .price {
-  font-weight: bold;
   text-decoration: line-through;
 }
 .special-price .price-label {
   font-weight: bold;
-  white-space: nowrap;
-}
-.special-price .price {
-  font-weight: bold;
 }
 .minimal-price .price-label {
   font-weight: bold;
-  white-space: nowrap;
 }
 .minimal-price-link {
   display: block;
@@ -6695,35 +6690,20 @@ header[role="banner"] .welcome-msg {
 .price-excluding-tax {
   display: block;
 }
-.price-excluding-tax .label {
-  white-space: nowrap;
-}
 .price-excluding-tax .price {
   font-weight: normal;
 }
 .price-including-tax {
   display: block;
 }
-.price-including-tax .label {
-  white-space: nowrap;
-}
-.price-including-tax .price {
-  font-weight: bold;
-}
 .configured-price .price-label {
-  font-weight: bold;
-  white-space: nowrap;
-}
-.configured-price .price {
   font-weight: bold;
 }
 .weee {
   display: block;
   font-size: 11px;
-  color: #444;
 }
 .weee .price {
-  font-size: 11px;
   font-weight: normal;
 }
 .price-excl-tax {
@@ -6731,17 +6711,16 @@ header[role="banner"] .welcome-msg {
 }
 .price-excl-tax .label {
   display: block;
-  white-space: nowrap;
 }
 .price-excl-tax .price {
   display: block;
+  font-weight: bold;
 }
 .price-incl-tax {
   display: block;
 }
 .price-incl-tax .label {
   display: block;
-  white-space: nowrap;
 }
 .price-incl-tax .price {
   display: block;
@@ -6749,11 +6728,9 @@ header[role="banner"] .welcome-msg {
 }
 .price-from .price-label {
   font-weight: bold;
-  white-space: nowrap;
 }
 .price-to .price-label {
   font-weight: bold;
-  white-space: nowrap;
 }
 .price-notice {
   padding-left: 10px;
@@ -6763,7 +6740,6 @@ header[role="banner"] .welcome-msg {
 }
 .price-as-configured .price-label {
   font-weight: bold;
-  white-space: nowrap;
 }
 .tier-prices .price {
   font-weight: bold;
