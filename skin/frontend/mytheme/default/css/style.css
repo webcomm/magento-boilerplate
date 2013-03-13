@@ -6878,6 +6878,9 @@ header[role="banner"] .welcome-msg {
   border: 1px solid #ddd;
   background-color: #f6f6f6;
 }
+.product-options dt {
+  margin: 20px 0;
+}
 .product-options dt label {
   font-weight: bold;
 }
@@ -6888,16 +6891,28 @@ header[role="banner"] .welcome-msg {
   vertical-align: middle;
 }
 .product-options dt .qty-disabled {
-  background: none;
-  border: 0;
   padding: 3px;
+  border: 0;
+  background: none;
   color: #000;
 }
-.product-options dd {
-  margin: 20px 0;
+.product-options dd input.input-text,
+.product-options dd textarea,
+.product-options dd select {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .product-options dd input.input-text {
-  width: 98%;
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .product-options dd input.datetime-picker {
   width: 150px;
@@ -6909,11 +6924,7 @@ header[role="banner"] .welcome-msg {
   vertical-align: middle;
 }
 .product-options dd textarea {
-  width: 98%;
   height: 8em;
-}
-.product-options dd select {
-  width: 100%;
 }
 .product-options .options-list input.radio {
   float: left;
