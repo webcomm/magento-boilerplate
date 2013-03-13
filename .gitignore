@@ -18,7 +18,7 @@
 #         probably shouldn't be in     #
 #         version control              #
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-# 
+#
 # You shouldn't need to edit these
 # files at all unless a Magento
 # upgrade breaks this. These files are
@@ -73,7 +73,7 @@ publish
 # Part B: Ignore all standard Magento  #
 #         files.                       #
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-# 
+#
 # You shouldn't need to edit these
 # files at all unless a Magento
 # upgrade breaks this. These files are
@@ -284,17 +284,12 @@ publish
 #         theme that should be under   #
 #         version control.             #
 # ==================================== #
-# 
+#
 # You need to include all files for
 # extension. Each extension's files
 # should be kept together so it is
 # easy to find them in future if need
 # be.
-
-
-
-!/app/etc/modules/MyTheme_Template.xml
-
 
 
 # Fontis - Australia
@@ -377,7 +372,7 @@ publish
 # ==================================== #
 # Part D: Setup your theme overrides   #
 # ==================================== #
-# 
+#
 # This is where you include your theme
 # overrides in app/design/frontend and
 # skin/frontend
