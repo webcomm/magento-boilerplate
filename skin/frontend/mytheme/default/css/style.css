@@ -3201,75 +3201,6 @@ tr.summary-details-excluded {
   font-weight: bold;
   padding-right: 8px;
 }
-.product-options {
-  padding: 10px;
-  margin: 10px 0 0;
-  border: 1px solid #ddd;
-  background-color: #f6f6f6;
-}
-.product-options dt label {
-  font-weight: bold;
-}
-.product-options dt .qty-holder {
-  float: right;
-}
-.product-options dt .qty-holder label {
-  vertical-align: middle;
-}
-.product-options dt .qty-disabled {
-  background: none;
-  border: 0;
-  padding: 3px;
-  color: #000;
-}
-.product-options dd {
-  margin: 10px 0;
-}
-.product-options dd input.input-text {
-  width: 98%;
-}
-.product-options dd input.datetime-picker {
-  width: 150px;
-}
-.product-options dd .time-picker {
-  display: -moz-inline-box;
-  display: inline-block;
-  padding: 2px 0;
-  vertical-align: middle;
-}
-.product-options dd textarea {
-  width: 98%;
-  height: 8em;
-}
-.product-options dd select {
-  width: 100%;
-}
-.product-options .options-list input.radio {
-  float: left;
-  margin: 3px -18px 0 0;
-}
-.product-options .options-list input.checkbox {
-  float: left;
-  margin: 3px -20px 0 0;
-}
-.product-options .options-list .label {
-  display: block;
-  margin-left: 20px;
-}
-.product-options ul.validation-failed {
-  padding: 0 7px;
-}
-.product-options p.required {
-  padding: 15px 0 0;
-}
-.product-options-bottom {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-top: 0;
-}
-.product-options-bottom .price-box {
-  margin: 10px 0;
-}
 .product-view .box-up-sell .products-grid td {
   width: 25%;
 }
@@ -6879,7 +6810,7 @@ header[role="banner"] .welcome-msg {
   background-color: #f6f6f6;
 }
 .product-options dt {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .product-options dt label {
   font-weight: bold;
