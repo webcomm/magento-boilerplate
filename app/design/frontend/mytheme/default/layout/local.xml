@@ -22,7 +22,7 @@
 
 			<!-- Move navigation block to root template -->
 			<action method="insert">
-				<block>catalog.topnav</block>
+				<block>top.menu</block>
 			</action>
 
 
@@ -122,7 +122,7 @@
 
 			<!-- Remove the navigation from the header block -->
 			<action method="unsetChild">
-				<child>catalog.topnav</child>
+				<child>top.menu</child>
 			</action>
 
 
