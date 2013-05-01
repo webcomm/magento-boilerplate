@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 - 2013 Webcomm Pty Ltd
+ * @link        http://webcomm.com.au
+ */
+ -->
+<layout version="0.1.0">
+
+
+	<default>
+
+
+		<reference name="root">
+
+
+			<!-- Add Chrome frame to templates -->
+			<block type="core/template" name="chromeframe" template="page/html/chromeframe.phtml"/>
+
+
+			<!-- Move navigation block to root template -->
+			<action method="insert">
+				<block>top.menu</block>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="head">
+
+
+			<!-- Remove Magento's default assets -->
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/print.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles-ie.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/widgets.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_js</type>
+				<name>js/ie6.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>lib/ds-sleight.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>varien/menu.js</name>
+			</action>
+
+
+			<!-- Add our own HTML5 assets -->
+			<action method="addCss">
+				<stylesheet>css/style.css</stylesheet>
+			</action>
+			<action method="addCss">
+				<stylesheet>css/responsive.css</stylesheet>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/html5shiv.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/nwmatcher.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/selectivizr.js</name>
+				<params/>
+				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/modernizr.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-collapse.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-dropdown.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-hover-dropdown.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/script-ck.js</name>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="header">
+
+
+			<!-- Remove the navigation from the header block -->
+			<action method="unsetChild">
+				<child>top.menu</child>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="top.links">
+
+
+			<!-- Set the ID of the top links -->
+			<action method="setName">
+				<name>top-links</name>
+			</action>
+
+
+		</reference>
+
+
+	</default>
+
+
+	<catalog_product_view>
+
+
+		<reference name="head">
+
+
+			<!-- Adjust assets -->
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/bootstrap/bootstrap-tab.js</name>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.description">
+
+
+			<!-- Add title -->
+			<action method="setTitle">
+				<title>Details</title>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.attributes">
+
+
+			<!-- Add title -->
+			<action method="setTitle">
+				<title>Specifications</title>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.info.additional">
+
+
+			<!-- Remove items from additional info -->
+			<action method="unsetChild">
+				<alias>partof_products</alias>
+			</action>
+			<action method="unsetChild">
+				<alias>product_tag_list</alias>
+			</action>
+
+
+		</reference>
+
+
+		<reference name="product.info">
+
+
+			<!-- Reinsert additional blocks into product info -->
+			<action method="insert">
+				<block>product_tag_list</block>
+				<siblingName>product.attributes</siblingName>
+				<after>1</after>
+				<alias>product_tag_list</alias>
+			</action>
+			<action method="insert">
+				<block>product.info.partof</block>
+				<siblingName>product.atrributes</siblingName>
+				<after>1</after>
+				<alias>partof_products</alias>
+			</action>
+
+
+			<!-- Add blocks to the product info tabs group -->
+			<reference name="product.info.partof">
+				<action method="addToParentGroup">
+					<group>detailed_info</group>
+				</action>
+			</reference>
+			<reference name="product_tag_list">
+				<action method="addToParentGroup">
+					<group>detailed_info</group>
+				</action>
+			</reference>
+
+
+		</reference>
+
+
+		<reference name="product_tag_list">
+
+
+			<!-- Add title -->
+			<action method="setTitle">
+				<title>Tags</title>
+			</action>
+
+
+		</reference>
+
+
+	</catalog_product_view>
+
+
+</layout>

@@ -1,0 +1,44 @@
+// ==================================== //
+//       Magento Boilerplate LESS       //
+//                                      //
+//      Copyright (c) 2012 - 2013       //
+//           Webcomm Pty Ltd            //
+//                                      //
+// ==================================== //
+
+// SEARCH FORMS
+// ------------
+
+.form-search {
+
+	.search-autocomplete {
+		z-index: @zindexModal;
+	}
+}
+
+
+.search-autocomplete {
+
+	li {
+		.clearfix();
+		padding: 3px 20px;
+
+		color: @dropdownLinkColor;
+		cursor: pointer;
+
+		.amount {
+			.pull-right();
+
+			font-weight: bold;
+		}
+
+		&.selected {
+			color: @dropdownLinkColorHover;
+			#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 5%));
+		}
+
+		&:hover {
+
+		}
+	}
+}
