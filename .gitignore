@@ -379,9 +379,6 @@ publish
 
 
 
-# Start: App design
-!/app/design/frontend/mytheme
-
-
-# Start: Skin frontend
-!/skin/frontend/mytheme
+# Boilerplate Theme
+!/app/design/frontend/boilerplate
+!/skin/frontend/boilerplate

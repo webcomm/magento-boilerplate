@@ -1,0 +1,47 @@
+<?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 - 2013 Webcomm Pty Ltd
+ * @link        http://webcomm.com.au
+ */
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?=$this->getLang()?>"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="<?=$this->getLang()?>"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="<?=$this->getLang()?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$this->getLang()?>"> <!--<![endif]-->
+<head>
+	<?=$this->getChildHtml('head')?>
+</head>
+<body class="<?=$this->getBodyClass()?>">
+	<?=$this->getChildHtml('after_body_start')?>
+	<?=$this->getChildHtml('chromeframe')?>
+	<?=$this->getChildHtml('global_notices')?>
+
+	<?=$this->getChildHtml('header')?>
+	<?=$this->getChildHtml('top.menu')?>
+
+	<div class="container">
+		<div class="row">
+			<div class="span9">
+				<div role="main" class="main-content with-one-sidebar">
+					<?=$this->getChildHtml('breadcrumbs')?>
+					<?=$this->getChildHtml('global_messages')?>
+					<?=$this->getChildHtml('content')?>
+				</div>
+			</div>
+			<div class="span3">
+				<aside role="complementary" class="main-sidebar">
+					<?=$this->getChildHtml('right')?>
+				</aside>
+			</div>
+		</div>
+	</div>
+
+	<?=$this->getChildHtml('footer')?>
+
+	<?=$this->getChildHtml('before_body_end')?>
+	<?=$this->getAbsoluteFooter()?>
+</body>
+</html>

@@ -1,0 +1,2 @@
+bin/* -crlf -diff -merge
+* eol=lf

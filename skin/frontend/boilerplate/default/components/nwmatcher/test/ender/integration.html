@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>Simple NWMatcher Ender Integration Tests</title>
+  <script src="ender.js"></script>
+  <style type="text/css">
+    body { font-family: 'helvetica neue', helvetica, arial; font-size: 11pt; }
+    p { margin: 5px; }
+    .fail { color: red; }
+    .pass { color: green; }
+  </style>
+</head>
+<body>
+
+<script type="text/javascript">
+  var el = document.createElement('p'), actual
+  el.innerHTML = '<a href="#hoohaa"><span><i>yo!</i></span></a><b>hey!</b>'
+
+  function result (success, msg) {
+    var r = document.createElement('p')
+      s = success ? 'Pass' : 'Fail'
+    r.innerHTML = '<b>' + s + '</b>: ' + msg
+    r.className = s.toLowerCase()
+    document.body.appendChild(r)
+  }
+
+
+  actual = $('[href]', el)
+  result(actual.length === 1 && actual[0] === el.childNodes[0], '$(selector, root) found element (should work in modern browsers regardless of NW)')
+
+  el.querySelectorAll = function() { return []; }
+
+  // sanity check, but we let it pass where qSA isn't present in the browser
+  actual = $('[href]', el)
+  result(!document.querySelectorAll || actual.length === 0, 'Faulty qSA installed, $(selector, root) didn\'t find element (sanity check)')
+
+  result(!!$.configure, '$.configure(options) exists')
+  $.configure({ USE_QSAPI: false });
+
+  actual = $('[href]', el)
+  result(actual.length === 1 && actual[0] === el.childNodes[0], '$(selector, root) without the use of qSA found element (should not work without NW)')
+
+  result(!!$(el).is, '$(el).is(selector) exists')
+  result($(el).is === $(el).match , '$(el).match(slector) exists and is an alias for $(el).is(selector)')
+
+  result($(el).is('p') && !$(el).is('a'), '$(el).is(selector) works correctly')
+
+  result(!!$(el).find, '$(el).find(selector) exists')
+  actual = $(el).find('i')
+  result(actual.length === 1 && actual[0] === el.childNodes[0].childNodes[0].childNodes[0], '$(el).find(selector) works correctly')
+
+  result(!!$(el).and, '$(el).and(selector) exists')
+  actual = $(el).and('body')
+  result(actual.length === 2 && actual[0] === el && actual[1] === document.body, '$(el).and(selector) works correctly')
+
+  actual = []
+  result(!!$.select, '$.select(selector, root, callback) exists')
+  $.select('a,b', el, function (e) { actual.push(e) })
+  result(actual.length === 2, '$.select(selector, root, callback) with callback called once per found element')
+  result(actual[0] === el.childNodes[0] && actual[1] === el.childNodes[1], '$.select(selector, root, callback) found correct elements')
+
+  result(!!$.first, '$.first(selector, root) exists')
+  actual = $.first('b,a', el)
+  result(actual.length === 1, '$.find(selector, root) returned only one element (selector matches more)')
+  result(actual[0] === el.childNodes[0], '$.find(selector, root) found correct element')
+
+</script>
+</body>
+</html>

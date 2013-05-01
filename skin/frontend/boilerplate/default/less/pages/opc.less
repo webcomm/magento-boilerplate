@@ -1,0 +1,119 @@
+// One Page Checkout
+.block-progress {
+
+}
+
+.block-progress dt {
+	font-weight: bold;
+}
+
+.block-progress dt.complete,
+.block-progress dd.complete {
+	background-color: #f6f6f6;
+}
+
+.opc {
+	border-bottom: 1px solid #ddd;
+	position: relative;
+
+	li.section {
+		border: 1px solid #ddd;
+		border-bottom: 0;
+	}
+
+	.buttons-set.disabled button.button {
+		display: none;
+	}
+	.buttons-set .please-wait {
+		height: 21px;
+		line-height: 21px;
+	}
+
+	.step-title {
+		.clearfix();
+
+		background-color: #f6f6f6;
+		padding: 0 5px;
+	}
+
+	.step-title {
+
+		.number, h2 {
+			line-height: @baseLineHeight * 2;
+		}
+
+		.number {
+			float: left;
+			width: 30px;
+			text-align: center;
+		}
+
+		h2 {
+			margin: 0 0 0 30px;
+
+			font-size: @baseFontSize + 2;
+		}
+
+		a {
+			display: none;
+			float: right;
+		}
+	}
+
+	.allow .step-title {
+		cursor: pointer;
+	}
+	//.allow .step-title a { display:block; }
+
+	.active {
+
+	}
+	.active .step-title {
+		background-color: @linkColor;
+
+		color: @white;
+
+		cursor: default;
+	}
+	//.active .step-title a { display:none; }
+
+	.step {
+		border-top: 1px solid #ddd;
+		padding: 10px;
+		position: relative;
+	}
+	.step .tool-tip {
+		right: 10px;
+	}
+
+	.order-review {}
+	.order-review .authentication {}
+	.order-review .warning-message {}
+}
+
+// Payment information labels
+.sp-methods {
+	dt {
+		margin-top: @baseLineHeight / 2;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	input[type="radio"] {
+		display: inline;
+		margin: 0 3px 0 0;
+		position: relative;
+		top: -1px;
+
+		vertical-align: baseline;
+
+		line-height: @baseLineHeight;
+	}
+
+	input[type="radio"] + label {
+		display: inline;
+		margin: 0;
+	}
+}

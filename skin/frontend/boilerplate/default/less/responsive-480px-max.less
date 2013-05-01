@@ -1,0 +1,35 @@
+// ==================================== //
+//       Webcomm Boilerplate LESS       //
+//                                      //
+//  Copyright (c) 2012 Webcomm Pty Ltd  //
+//                                      //
+// ==================================== //
+
+@media (max-width: 480px) {
+
+	.form-list {
+
+		li .input-box,
+		.field {
+			width: 100%;
+		}
+
+		.field, .field:last-child {
+			float: none;
+		}
+
+		[class^="customer-name-"],
+		[class*=" customer-name-"] {
+			.field {
+				width: auto;
+			}
+
+			.name-prefix,
+			.name-suffix,
+			.name-middlename {
+				width: (100% - @formListGutter) / 2;
+			}
+		}
+	}
+
+}
