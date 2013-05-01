@@ -1,4 +1,10 @@
 <?php
+/**
+ * Webcomm Magento Boilerplate
+ *
+ * @copyright   Copyright (c) 2012 - 2013 Webcomm Pty Ltd
+ * @link        http://webcomm.com.au
+ */
 
 class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Block_Html_Topmenu
 {
