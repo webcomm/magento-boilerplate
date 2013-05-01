@@ -72,41 +72,41 @@
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/html5shiv.js</name>
+				<name>components/html5shiv/dist/html5shiv.js</name>
 				<params/>
 				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/nwmatcher.js</name>
+				<name>components/nwmatcher/src/nwmatcher.js</name>
 				<params/>
 				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/selectivizr.js</name>
+				<name>components/selectivizr/selectivizr.js</name>
 				<params/>
 				<if><![CDATA[(gte IE 6)&(lte IE 8)]]></if>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/modernizr.js</name>
+				<name>components/modernizr/modernizr.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/jquery.js</name>
+				<name>components/jquery/jquery.min.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/bootstrap/bootstrap-collapse.js</name>
+				<name>components/bootstrap/js/bootstrap-collapse.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/bootstrap/bootstrap-dropdown.js</name>
+				<name>components/bootstrap/js/bootstrap-dropdown.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/bootstrap/bootstrap-hover-dropdown.js</name>
+				<name>components/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js</name>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
