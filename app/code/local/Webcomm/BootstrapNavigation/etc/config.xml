@@ -16,7 +16,7 @@
 		<blocks>
 
 
-			<!-- Start: Declare model base class -->
+			<!-- Declare model base class -->
 			<bootstrapnavigation>
 				<class>Webcomm_BootstrapNavigation_Block</class>
 			</bootstrapnavigation>
@@ -25,7 +25,7 @@
 			<page>
 
 
-				<!-- Start: Rewrite the topmenu to ours so we can add our custom classes -->
+				<!-- Rewrite the topmenu to ours so we can add our custom classes -->
 				<rewrite>
 					<html_topmenu>Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu</html_topmenu>
 				</rewrite>

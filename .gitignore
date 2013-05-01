@@ -84,23 +84,23 @@ publish
 
 
 
-# Start: .htaccess files
+# .htaccess files
 /.htaccess.sample
 
-# Start: API
+# API
 /api.php
 
-# Start: App
+# App
 /app/*
 
-# Start: App code
+# App code
 !/app/code
 /app/code/*
 !/app/code/community
 /app/code/community/*/*
 !/app/code/local
 
-# Start: App design
+# App design
 !/app/design
 /app/design/*
 !/app/design/adminhtml
@@ -128,14 +128,14 @@ publish
 /app/design/frontend/base/default/template/*
 !/app/design/frontend/base/default/template/webcomm
 
-# Start: App modules
+# App modules
 !/app/etc
 /app/etc/*
 !/app/etc/modules
 /app/etc/modules/*
 !/app/etc/modules/Webcomm_*
 
-# Start: App locale
+# App locale
 !/app/locale
 /app/locale/*
 !/app/locale/en_AU
@@ -146,15 +146,15 @@ publish
 !/app/locale/en_US/template/email
 /app/locale/en_US/template/email/*
 
-# Start: Cron files
+# Cron files
 /cron.php
 /cron.sh
 
-# Start: Downloader
+# Downloader
 /downloader
 
 
-# Start: Errors
+# Errors
 /errors/.htaccess
 /errors/404.php
 /errors/503.php
@@ -165,20 +165,20 @@ publish
 /errors/report.php
 
 
-# Start: Misc files
+# Misc files
 /favicon.ico
 /get.php
 /includes
 
 
-# Start: Index and installer files
+# Index and installer files
 /index.php.sample
 /install.php
 
-# Start: Global javascript
+# Global javascript
 /js/*
 
-# Start: PHP libraries
+# PHP libraries
 /lib/*
 !/lib/Varien
 /lib/Varien/*
@@ -189,29 +189,29 @@ publish
 !/lib/Varien/Data/Form/Element
 /lib/Varien/Data/Form/Element/*
 
-# Start: Licences
+# Licences
 /LICENSE_AFL.txt
 /LICENSE.html
 /LICENSE.txt
 
-# Start: "Mage" shell script
+# "Mage" shell script
 /mage
 
-# Start: Media
+# Media
 /media/*
 
-# Start: Misc files
+# Misc files
 /package.xml
 /php.ini.sample
 /pkginfo/*
 /RELEASE_NOTES.txt
 /shell
 
-# Start: Skin
+# Skin
 !/skin
 /skin/*
 
-# Start: Skin adminhtml
+# Skin adminhtml
 !/skin/adminhtml
 /skin/adminhtml/*
 !/skin/adminhtml/base
@@ -240,7 +240,7 @@ publish
 !/skin/adminhtml/default/default/lib
 /skin/adminhtml/default/default/lib/*
 
-# Start: Skin frontend
+# Skin frontend
 !/skin/frontend
 /skin/frontend/*
 !/skin/frontend/base
@@ -274,7 +274,7 @@ publish
 /skin/frontend/default/default/lib/*
 !/skin/frontend/default/default/lib/webcomm
 
-# Start: Var folder
+# Var folder
 /var
 
 
