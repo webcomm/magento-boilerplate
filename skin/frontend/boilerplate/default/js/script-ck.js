@@ -8833,3 +8833,4 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
      Begin script.js
 ********************************************** */
 
+jQuery.noConflict();
