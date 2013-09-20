@@ -1,8 +1,34 @@
 header[role="banner"] {
+    margin: (@line-height-computed / 2) 0;
+
+    .logo {
+        .make-md-column(5);
+    }
+
+    .quick-access {
+        .make-md-column(7);
+    }
 
     @media (min-width: @screen-tablet) {
+        .form-language {
+            float: left;
+            width: 160px;
+
+            .form-control {
+                width: 120px;
+            }
+        }
+        .links {
+            float: right;
+            line-height: @input-height-small; // Line up with template switcher to left
+        }
         .form-search {
-            width: 300px;
+            .clearfix();
+        }
+    }
+
+    @media (min-width: @screen-md) {
+        .quick-access {
             float: right;
         }
     }
