@@ -1,0 +1,218 @@
+@import "../components/bootstrap/less/forms.less";
+
+p.control input.checkbox,
+p.control input.radio {
+    margin-right: 6px;
+}
+
+.form-list {
+    li {
+        .form-group();
+    }
+    label {
+        position: relative;
+    }
+    label.required em {
+        float: right;
+        font-style: normal;
+        color: #eb340a;
+        position: absolute;
+        top: 0;
+        right: -8px;
+    }
+    li.control label {
+        float: none;
+        display: block;
+    }
+    li.control input.radio,
+    li.control input.checkbox {
+        margin-right: 6px;
+
+        // Reset bootstrap's radio styles
+        display: inline;
+        float: left;
+        margin-top: 2px;
+    }
+    li.control .input-box {
+        clear: none;
+        display: inline;
+        width: auto;
+    }
+    .field {
+        float: left;
+        width: 50%;
+        padding-right: (@grid-gutter-width / 2);
+        padding-left: (@grid-gutter-width / 2);
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    input.input-text,
+    textarea,
+    select {
+        .form-control();
+    }
+    li.additional-row {
+        border-top: 1px solid #ccc;
+        margin-top: 10px;
+        padding-top: 7px;
+    }
+    li.additional-row .btn-remove {
+        float: right;
+        margin: 5px 0 0;
+    }
+    .input-range input.input-text {
+        width: 74px;
+    }
+}
+
+.form-list-narrow {
+    li {
+        margin-bottom: 0;
+    }
+    li .input-box {
+        margin-bottom: 6px;
+    }
+    li.wide .input-box {
+        width: 260px;
+    }
+    li.wide input.input-text,
+    li.wide textarea {
+        width: 254px }
+    li.wide select {
+        width: 260px;
+    }
+}
+
+// Customer
+.form-list {
+
+    // Pattern for combinations below is
+    // prefix-FIRSTNAME-middlename-LASTNAME-suffix
+    // where FIRSTNAME and LASTNAME are more important
+    // than prefix, middlename and suffix. Present
+    // item are represented by a number and a dash.
+    // This ensures we hit every concevable combination
+
+    // 1-1-0-1-0
+    .customer-name-prefix {
+        .name-prefix {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 42%;
+        }
+    }
+
+    // 1-1-1-1-0
+    .customer-name-prefix-middlename {
+        .name-prefix,
+        .name-middlename, {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 34%;
+        }
+    }
+
+    // 1-1-0-1-1
+    .customer-name-prefix-suffix {
+        .name-prefix,
+        .name-suffix {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 34%;
+        }
+    }
+
+    // 1-1-1-1-1
+    .customer-name-prefix-middlename-suffix {
+        .name-prefix,
+        .name-middlename,
+        .name-suffix {
+            width: 12%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 32%;
+        }
+    }
+
+    // 0-1-1-1-0
+    .customer-name-middlename {
+        .name-middlename {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 42%;
+        }
+    }
+
+    // 0-1-1-1-1
+    .customer-name-middlename-suffix {
+        .name-middlename,
+        .name-suffix, {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 34%;
+        }
+    }
+
+    // 0-1-0-1-1
+    .customer-name-suffix {
+        .name-suffix {
+            width: 16%;
+        }
+        .name-firstname,
+        .name-lastname {
+            width: 42%;
+        }
+    }
+
+    // Date of birth is easy,
+    // it's just 30% 30% 40%
+    .customer-dob {
+        .dob-day,
+        .dob-month,
+        .dob-year {
+            float: left;
+            padding-right: (@grid-gutter-width / 2);
+            padding-left: (@grid-gutter-width / 2);
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        // Unfortunately, the last child is not the
+        // last element. However we can use a clever
+        // selector to find this out.
+        .dob-day + .dob-month + .dob-year,
+        .dob-month + .dob-day + .dob-year,
+        .dob-year + .dob-day + .dob-month,
+        .dob-year + .dob-month + .dob-day {
+            padding-right: 0;
+        }
+
+        .dob-day,
+        .dob-month {
+            width: 30%;
+        }
+
+        .dob-year {
+            width: 40%;
+        }
+    }
+}
