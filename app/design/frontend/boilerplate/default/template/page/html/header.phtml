@@ -4,7 +4,7 @@
  */
 ?>
 <div class="container">
-    <div class="header">
+    <header role="banner">
         <?php if ($this->getIsHomePage()):?>
         <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
         <?php else:?>
@@ -17,6 +17,6 @@
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
         <?php echo $this->getChildHtml('topContainer'); ?>
-    </div>
+    </header>
 </div>
 <?php echo $this->getChildHtml('topMenu') ?>
