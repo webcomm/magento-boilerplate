@@ -104,7 +104,7 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
 			if ($item->getLevel() == 0) {
 				$classes[] = 'dropdown';
 			} else {
-				$classes[] = 'dropdown-submenu';
+				$classes[] = 'dropdown-menu';
 			}
 		}
 
