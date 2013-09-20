@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Webcomm_BootstrapNavigation>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
             <depends>
                 <Mage_Page/>
