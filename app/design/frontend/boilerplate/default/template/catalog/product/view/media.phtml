@@ -1,0 +1,121 @@
+<?php
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+
+$product = $this->getProduct();
+$helper  = $this->helper('catalog/output');
+
+// Get the base image path
+$baseImageFile = ($product->getImage() != 'no_selection' and $product->getImage()) ? $product->getImage() : false;
+
+$galleryImages = [];
+
+// Process the gallery images
+foreach ($this->getGalleryImages() as $image) {
+    if ($baseImageFile and $image->getFile() === $baseImageFile) {
+        continue;
+    }
+
+    $galleryImages[] = $image;
+}
+
+$baseImageSize = [
+    'x' => 736,
+    'y' => 460,
+];
+
+$galleryImageSize = [
+    'x' => 95,
+    'y' => 60,
+];
+
+$zoomSize = [
+    'x' => 940,
+    'y' => 587,
+];
+
+$index = 0;
+
+?>
+<?php if ($baseImageFile): ?>
+    <div class="product-image product-image-zoom">
+        <a href="#product-media-modal" data-toggle="media" data-index="<?php echo $index++ ?>">
+            <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" class="img-rounded img-polaroid">
+        </a>
+    </div>
+<?php endif ?>
+
+<?php if ($galleryImages): ?>
+    <div class="more-views">
+        <ul>
+            <?php foreach ($galleryImages as $image): ?>
+                <li>
+                    <a href="#product-media-modal" data-toggle="media" data-index="<?php echo $index++ ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>" class="img-rounded img-polaroid">
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif ?>
+
+<?php if ($baseImageFile || $galleryImages): ?>
+
+    <div class="modal modal-media fade" id="product-media-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div id="product-media-carousel" class="carousel slide">
+
+                        <ol class="carousel-indicators">
+                            <?php $index = 0; ?>
+                            <?php if ($baseImageFile): ?>
+                                <li data-target="#product-media-carousel" class="active" data-slide-to="<?php echo $index++ ?>"></li>
+                            <?php endif ?>
+                            <?php foreach ($galleryImages as $image): ?>
+                                <li data-target="#product-media-carousel" class="<?php if ($index++ == 0): ?>active<?php endif ?>" data-slide-to="<?php echo $index ?>"></li>
+                            <?php endforeach ?>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <?php $index = 0; ?>
+                            <?php if ($baseImageFile): $index++; ?>
+                                <div class="item active">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" class="img-rounded img-polaroid">
+                                </div>
+                            <?php endif ?>
+                            <?php foreach ($galleryImages as $image): ?>
+                                <div class="item <?php if ($index++ == 0): ?>active<?php endif ?>">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>" class="img-rounded img-polaroid">
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#product-media-carousel" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#product-media-carousel" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endif ?>
