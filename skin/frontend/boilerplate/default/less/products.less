@@ -81,3 +81,31 @@
     font-weight: @headings-font-weight;
     line-height: @line-height-computed;
 }
+
+// Availability
+.availability {
+    margin: 0;
+
+    span {
+        font-weight: bold;
+    }
+
+    &.in-stock span {
+        color: @alert-success-text;
+    }
+
+    &.out-of-stock span {
+        color: @alert-danger-text;
+    }
+}
+
+.availability-only {
+    span,
+    a {
+        font-weight: bold;
+    }
+}
+
+.availability-only-details {
+    .table();
+}
