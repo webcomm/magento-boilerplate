@@ -3,7 +3,6 @@
 }
 
 .price-box {
-    margin: 5px 0;
 
     .price-label {
         white-space: nowrap;
@@ -58,114 +57,76 @@
 }
 .minimal-price-link {
     display: block;
-}
-.minimal-price-link .label {color: #1e7ec8;}
-.minimal-price-link .price {
-    font-weight: normal;
-    color: #1e7ec8;
+
+    .price {
+        font-weight: normal;
+    }
 }
 
-// Excluding tax
-.price-excluding-tax {
-    display: block;
-    color: #999;
-}
-.price-excluding-tax .label {
-    white-space: nowrap;
-    color: #999;
-}
-.price-excluding-tax .price {
-    font-weight: normal;
-    color: @brand-primary;
-}
-
-// Including tax
+// Excluding tax & including tax
+.price-excluding-tax,
 .price-including-tax {
     display: block;
-    color: #999;
-}
-.price-including-tax .label {
-    white-space: nowrap;
-    color: #999;
-}
-.price-including-tax .price {
-    font-weight: bold;
-    color: @brand-primary;
+    color: @text-muted;
+
+    .label {
+        white-space: nowrap;
+        color: inherit;
+    }
 }
 
 // Configured price
 .configured-price {
     margin: 0;
-}
-.configured-price .price-label {
-    font-weight: bold;
-    white-space: nowrap;
-}
-.configured-price .price {
-    font-weight: bold;
+
+    .price-label {
+        font-weight: bold;
+    }
 }
 
 // FPT
 .weee {
     display: block;
-    font-size: 11px;
-    color: #444;
-}
-.weee .price {
-    font-size: 11px;
-    font-weight: normal;
+
+    .price {
+        font-weight: normal;
+    }
 }
 
-// Excl tax (for order tables)
-.price-excl-tax  {
-    display: block;
-}
-.price-excl-tax .label {
-    display: block;
-    white-space: nowrap;
-}
-.price-excl-tax .price {
-    display: block;
-}
-
-// Incl tax (for order tables)
+// Excl & incl tax (for order tables)
+.price-excl-tax,
 .price-incl-tax {
     display: block;
-}
-.price-incl-tax .label {
-    display: block;
-    white-space: nowrap;
-}
-.price-incl-tax .price {
-    display: block;
-    font-weight: bold;
+
+    .label {
+        white-space: nowrap;
+        display: block;
+    }
+
+    .price {
+        display: block;
+    }
 }
 
 // Price range
-.price-from {
-    margin: 0;
-}
-.price-from .price-label {
-    font-weight: bold;
-    white-space: nowrap;
-}
-
+.price-from,
 .price-to {
     margin: 0;
-}
-.price-to .price-label {
-    font-weight: bold;
-    white-space: nowrap;
+
+    .price-label {
+        font-weight: bold;
+        white-space: nowrap;
+    }
 }
 
 // Price notice next to the options
 .price-notice {
-    padding-left: 10px;
-    color: #999;
-}
-.price-notice .price {
-    font-weight: bold;
-    color: #2f2f2f;
+    color: @text-color;
+
+    .price {
+        font-weight: bold;
+        color: @text-color;
+    }
 }
 
 // Price as configured
@@ -178,12 +139,37 @@
 }
 
 .price-box-bundle {
-    padding: 0 0 10px 0;
+
+    .price-box {
+        margin: 0;
+        padding: 0;
+    }
+
+    .price {
+        color: @text-color;
+    }
 }
-.price-box-bundle .price-box {
-    margin: 0 !important;
-    padding: 0 !important;
+
+// Tier Prices
+.product-pricing,
+.tier-prices {
+    .well();
+    .well-sm();
 }
-.price-box-bundle .price {
-    color: #555;
+
+.tier-prices {
+    .benefit {
+        font-weight: bold;
+        font-style: italic;
+    }
+    .price {
+        font-weight: bold;
+        color: @text-color;
+    }
+}
+
+.tier-prices-grouped {
+    .price {
+        font-weight: bold;
+    }
 }

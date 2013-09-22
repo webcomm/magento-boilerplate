@@ -39,3 +39,44 @@ header[role="banner"] {
         }
     }
 }
+
+// Footer
+footer[role="contentinfo"] {
+
+}
+
+// Products
+.product-essential {
+    .make-row();
+
+    .product-shop {
+        min-height: 1px;
+        position: relative;
+    }
+
+    .product-img-box {
+        .make-sm-column(7);
+
+        .more-views ul {
+            .make-row();
+
+            li {
+                .make-xs-column(3);
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm) {
+        // Offset for the mocked up column
+        // for .product-shop
+        & {
+            margin-right: 0;
+        }
+
+        // Switch floats around for the ordering
+        .product-shop {
+            float: right;
+            width: percentage((5 / @grid-columns));
+        }
+    }
+}
