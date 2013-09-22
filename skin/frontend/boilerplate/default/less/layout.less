@@ -46,8 +46,14 @@ footer[role="contentinfo"] {
 }
 
 // Products
-.product-essential {
+.product-view {
     .make-row();
+}
+.product-essential,
+.product-collateral {
+    .make-sm-column(12);
+}
+.product-essential {
 
     .product-shop {
         min-height: 1px;
@@ -67,11 +73,6 @@ footer[role="contentinfo"] {
     }
 
     @media (min-width: @screen-sm) {
-        // Offset for the mocked up column
-        // for .product-shop
-        & {
-            margin-right: 0;
-        }
 
         // Switch floats around for the ordering
         .product-shop {
