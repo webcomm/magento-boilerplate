@@ -1,74 +1,361 @@
 // Shipping and Payment methods
 .sp-methods {
-    margin:0 0 8px;
+    margin: 0 0 8px;
 
     dt {
-        padding-top: 10px;
+        padding-top:  10px;
 
         &:first-child {
-            padding-top: 0;
+            padding-top:  0;
         }
     }
     dd {
-        padding: 10px 0;
-        border-bottom: 1px solid @hr-border;
+        padding:  10px 0;
+        border-bottom:  1px solid @hr-border;
 
         &:last-child {
-            padding-bottom: 0;
-            border-bottom: 0;
+            padding-bottom:  0;
+            border-bottom:  0;
         }
     }
-    dd li { margin:5px 0; }
+    dd li { margin: 5px 0; }
     .radio {
-        float: left;
-        margin-top: 3px;
-        margin-right: 6px;
+        float:  left;
+        margin-top:  3px;
+        margin-right:  6px;
     }
     label {
-        margin-bottom: 0;
+        margin-bottom:  0;
     }
 
     .form-list {
-        padding-left:20px;
+        padding-left: 20px;
     }
-    select.month { width:154px; margin-right:10px; }
-    select.year { width:96px; }
-    input.cvv { width:3em !important; }
+    select.month {
+        width:  154px;
+        margin-right:  10px;
+    }
+    select.year {
+        width:  96px;
+    }
+    input.cvv {
+        width:  3em !important;
+    }
 
     .checkmo-list {
-        li { margin:0 0 5px; }
-        label { width:135px; padding-right:10px; text-align:right; }
+        li { margin: 0 0 5px; }
+        label { width: 135px; padding-right: 10px; text-align: right; }
         address { float:left; }
     }
 
     .centinel-logos {
         a {
-            margin-right: 3px;
+            margin-right:  3px;
         }
         img {
-            vertical-align: middle;
+            vertical-align:  middle;
         }
     }
 
     .release-amounts {
-        margin: 0.5em 0;
+        margin:  0.5em 0;
 
         button {
-            float: left; margin: 5px 10px 0 0;
+            float:  left; margin:  5px 10px 0 0;
         }
     }
 }
 
 .please-wait {
-    float: right;
+    float:  right;
 
     img {
-        vertical-align: middle;
+        vertical-align:  middle;
     }
 }
 
 .cvv-what-is-this {
-    font-size: @font-size-small;
-    cursor: help;
-    margin-left: 10px;
+    line-height:  @input-height-base;
+    font-size:  @font-size-small;
+    cursor:  help;
+    margin-left:  10px;
+}
+
+// Tooltip, this ONLY used for CCV in Magento,
+// and the styles don't play nice with mobile,
+// so we'll just embed it as a well.
+.tool-tip {
+    .popover();
+    display:  block;
+
+    .btn-close {
+        .clearfix();
+        padding:  9px 14px;
+
+        a {
+            float:  right;
+            font-size:  0;
+            color:  @close-color;
+            text-shadow:  @close-text-shadow;
+            .opacity(.2);
+
+            // Create a "X" icon
+            &:after {
+                font-size:  (@font-size-base * 1.5);
+                font-weight:  @close-font-weight;
+                line-height:  1;
+                content:  "\00d7";
+            }
+
+            &:hover,
+            &:focus {
+                text-decoration:  none;
+                .opacity(.5);
+            }
+        }
+    }
+}
+.tool-tip-content {
+    .popover-content();
+
+    img {
+        .img-responsive();
+    }
+}
+
+// Gift Messages
+.gift-messages {
+    h3 {
+        font-size:  @font-size-base;
+        font-weight:  bold;
+    }
+
+    p.control {
+        .checkbox {
+            float:  left;
+            margin-top:  4px;
+            margin-right:  6px;
+        }
+        label {
+            margin-bottom:  0;
+        }
+    }
+}
+
+.gift-messages-form {
+    position:  relative;
+
+    label {
+        float:  none !important;
+        position:  static !important;
+    }
+    h4 {
+        padding-top:  (@line-height-computed / 2);
+        border-top:  1px solid @hr-border;
+        font-size:  @font-size-base;
+        font-weight:  bold;
+
+        &:first-child {
+            padding-top:  0;
+            border-top:  0;
+        }
+    }
+    p {
+        > .checkbox {
+            float:  left;
+            margin-top:  4px;
+            margin-right:  6px;
+        }
+        > label {
+            margin-bottom:  0;
+        }
+    }
+    .whole-order {
+        margin:  0 0 25px;
+    }
+    .item {
+        .clearfix();
+        margin:  0 0 10px;
+
+        border-bottom:  1px solid @hr-border;
+
+        &:last-child {
+            border-bottom:  0;
+        }
+
+        .product-img-box {
+            float:  left;
+            width:  75px;
+        }
+        .product-image {
+            margin:  0 0 7px;
+        }
+        .number {
+            margin:  0;
+            text-align:  center;
+        }
+        .details {
+            margin-left:  90px;
+            .product-name {
+                margin:  0 0 10px;
+            }
+        }
+    }
+}
+
+.gift-message-row {
+
+    .btn-close {
+        float:  right;
+        font-size:  0;
+        color:  @close-color;
+        text-shadow:  @close-text-shadow;
+        .opacity(.2);
+
+        // Create a "X" icon
+        &:after {
+            font-size:  (@font-size-base * 1.5);
+            font-weight:  @close-font-weight;
+            line-height:  1;
+            content:  "\00d7";
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration:  none;
+            .opacity(.5);
+        }
+    }
+
+    dl {
+        .clearfix();
+    }
+}
+
+// Checkout Agreements (Terms & Conditions)
+.checkout-agreements {
+    li {
+        margin-bottom:  @line-height-computed;
+
+        &:last-child {
+            margin-bottom:  0;
+        }
+    }
+    .agreement-content {
+        .well();
+        margin-bottom:  0;
+        overflow:  auto;
+        height:  (@line-height-computed * 12);
+    }
+    .agree {
+        margin:  0;
+        padding:  10px;
+
+        input.checkbox {
+            float:  left;
+            margin-top:  4px;
+            margin-right:  6px;
+        }
+    }
+}
+
+.opc .checkout-agreements {
+    padding:  5px 30px;
+}
+
+// Centinel
+.centinel {
+    .authentication {
+        background-color:  #fff;
+        border:  1px solid @panel-default-border;
+
+        iframe {
+            width:  99%;
+            height:  400px;
+            background:  transparent !important;
+            margin:  0 !important;
+            padding:  0 !important;
+            border:  0 !important;
+        }
+    }
+}
+
+.opc .centinel {
+    padding:  10px 30px;
+}
+
+// Generic Info Set (used by PayPal express)
+.info-set {
+    margin:  0 0 25px;
+    padding:  20px;
+
+    h2 {
+        font-size:  @font-size-large;
+    }
+    h3,
+    h4 {
+        font-size:  @font-size-base;
+    }
+    h2 a,
+    h3 a,
+    h4 a {
+        font-weight:  normal;
+    }
+    .divider {
+        margin:  0 -20px;
+        padding:  25px 0;
+        position:  relative;
+    }
+    .box {
+        margin: 0 0 15px;
+    }
+    .data-table .item-options {
+        margin:  5px 0 0;
+    }
+}
+
+// One Page Checkout
+.block-progress {
+    dl {
+        margin: 0;
+    }
+    dt {
+        font-weight: bold;
+        background: #eee;
+        margin: 0 0 6px;
+        padding: 2px 15px;
+        color: #999;
+    }
+    dd {
+        background: #eee;
+        border: 1px solid #a3aeb3;
+        border-top: 0;
+        padding: 8px 13px;
+        margin: 0 0 6px;
+    }
+    dt.complete {
+        margin: 0;
+        background: #d0dce1;
+        color: #5e8ab4;
+    }
+    dd.complete {}
+    p {
+        margin: 0;
+    }
+    .cards-list dt {
+        background: none;
+        border: 0 none;
+        color: inherit;
+        font-size: 12px;
+        margin: 5px 0;
+        padding: 0;
+    }
+    .cards-list dd {
+        border: 0 none;
+        margin: 0;
+        padding: 0;
+    }
+    .cards-list .info-table th {
+        font-weight: normal;
+    }
 }
