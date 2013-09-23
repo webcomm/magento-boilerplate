@@ -49,126 +49,7 @@ tr.summary-details-excluded {
 /* Header ================================================================================ */
 /********** < Navigation */
 /* Sidebar =============================================================================== */
-/* Options Tool Tip */
-.item-options dt {
-  font-weight: bold;
-  font-style: italic;
-}
-.item-options dd {
-  padding-left: 10px;
-  margin: 0 0 6px;
-}
-.truncated {
-  cursor: help;
-}
-.truncated a.dots {
-  cursor: help;
-}
-.truncated a.details {
-  cursor: help;
-}
-.truncated .truncated_full_value {
-  position: relative;
-  z-index: 999;
-}
-.truncated .truncated_full_value .item-options {
-  position: absolute;
-  top: -99999em;
-  left: -99999em;
-  z-index: 999;
-  width: 250px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  background-color: #f6f6f6;
-}
-.truncated .truncated_full_value .item-options > p {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.truncated .show .item-options {
-  top: -20px;
-  left: 50%;
-}
-.col-left .truncated .show .item-options {
-  left: 15px;
-  top: 7px;
-}
-.col-right .truncated .show .item-options {
-  left: -240px;
-  top: 7px;
-}
 /* ======================================================================================= */
-/* Checkout ============================================================================== */
-/********** < Common Checkout Styles */
-/* Shipping and Payment methods */
-.sp-methods {
-  margin: 0 0 8px;
-}
-.sp-methods dt {
-  margin: 13px 0 5px;
-  font-weight: bold;
-}
-.sp-methods dd li {
-  margin: 5px 0;
-}
-.sp-methods label {
-  font-weight: bold;
-  color: #666;
-}
-.sp-methods .price {
-  font-weight: bold;
-}
-.sp-methods .form-list {
-  padding-left: 20px;
-}
-.sp-methods .form-list li {
-  margin: 0 0 8px;
-}
-.sp-methods select.month {
-  width: 154px;
-  margin-right: 10px;
-}
-.sp-methods select.year {
-  width: 96px;
-}
-.sp-methods input.cvv {
-  width: 3em !important;
-}
-.sp-methods .checkmo-list li {
-  margin: 0 0 5px;
-}
-.sp-methods .checkmo-list label {
-  width: 135px;
-  padding-right: 10px;
-  text-align: right;
-}
-.sp-methods .checkmo-list address {
-  float: left;
-}
-.sp-methods .centinel-logos a {
-  margin-right: 3px;
-}
-.sp-methods .centinel-logos img {
-  vertical-align: middle;
-}
-.sp-methods .release-amounts {
-  margin: 0.5em 0;
-}
-.sp-methods .release-amounts button {
-  float: left;
-  margin: 5px 10px 0 0;
-}
-.please-wait {
-  float: right;
-}
-.please-wait img {
-  vertical-align: middle;
-}
-.cvv-what-is-this {
-  font-size: 11px;
-  cursor: help;
-  margin-left: 10px;
-}
 /* Tooltip */
 .tool-tip {
   border: 1px solid #7BA7C9;
@@ -3769,7 +3650,8 @@ textarea.form-list textarea,
 textarea.form-list select {
   height: auto;
 }
-.form-list select[multiple] {
+.form-list select[multiple],
+.form-list textarea {
   height: auto;
 }
 .form-list li.additional-row {
@@ -7953,6 +7835,10 @@ textarea.product-options dd select,
 textarea.product-options dd textarea {
   height: auto;
 }
+.product-options dd select[multiple],
+.product-options dd textarea {
+  height: auto;
+}
 .product-options dl.last dd.last {
   border-bottom: 0;
   margin-bottom: 0;
@@ -8870,6 +8756,11 @@ fieldset[disabled] .btn-checkout.active {
 .cart .crosssell .link-compare {
   font-weight: normal;
 }
+@media (max-width: 992px) {
+  .cart .crosssell {
+    display: none;
+  }
+}
 .cart .discount .discount-form {
   padding: 15px;
 }
@@ -8932,6 +8823,214 @@ fieldset[disabled] .btn-checkout.active {
 }
 .cart .totals .checkout-types li:last-child {
   margin-bottom: 0;
+}
+.item-options {
+  margin-top: 10px;
+}
+.item-options dd {
+  margin-left: 15px;
+}
+.truncated {
+  position: relative;
+  cursor: help;
+}
+.truncated .dots {
+  cursor: inherit;
+  color: inherit;
+}
+.truncated .dots:hover {
+  text-decoration: none;
+}
+.truncated_full_value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 400px;
+  padding: 1px;
+  text-align: left;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+  top: 20px;
+}
+.truncated_full_value.top {
+  margin-top: -10px;
+}
+.truncated_full_value.right {
+  margin-left: 10px;
+}
+.truncated_full_value.bottom {
+  margin-top: 10px;
+}
+.truncated_full_value.left {
+  margin-left: -10px;
+}
+.truncated_full_value.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.truncated_full_value.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+.truncated_full_value.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.truncated_full_value.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+.truncated_full_value.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.truncated_full_value.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+.truncated_full_value.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.truncated_full_value.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
+}
+.truncated_full_value dl {
+  margin: 0;
+}
+.truncated_full_value dt {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.truncated_full_value dd {
+  padding: 9px 14px;
+  margin-left: 0;
+}
+.truncated_full_value dd + dt {
+  border-radius: 0;
+  border-top: 1px solid #ebebeb;
+}
+.truncated_full_value.show {
+  display: block;
+}
+.sp-methods {
+  margin: 0 0 8px;
+}
+.sp-methods dt {
+  padding-top: 10px;
+}
+.sp-methods dt:first-child {
+  padding-top: 0;
+}
+.sp-methods dd {
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.sp-methods dd:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.sp-methods dd li {
+  margin: 5px 0;
+}
+.sp-methods .radio {
+  float: left;
+  margin-top: 3px;
+  margin-right: 6px;
+}
+.sp-methods label {
+  margin-bottom: 0;
+}
+.sp-methods .form-list {
+  padding-left: 20px;
+}
+.sp-methods select.month {
+  width: 154px;
+  margin-right: 10px;
+}
+.sp-methods select.year {
+  width: 96px;
+}
+.sp-methods input.cvv {
+  width: 3em !important;
+}
+.sp-methods .checkmo-list li {
+  margin: 0 0 5px;
+}
+.sp-methods .checkmo-list label {
+  width: 135px;
+  padding-right: 10px;
+  text-align: right;
+}
+.sp-methods .checkmo-list address {
+  float: left;
+}
+.sp-methods .centinel-logos a {
+  margin-right: 3px;
+}
+.sp-methods .centinel-logos img {
+  vertical-align: middle;
+}
+.sp-methods .release-amounts {
+  margin: 0.5em 0;
+}
+.sp-methods .release-amounts button {
+  float: left;
+  margin: 5px 10px 0 0;
+}
+.please-wait {
+  float: right;
+}
+.please-wait img {
+  vertical-align: middle;
+}
+.cvv-what-is-this {
+  font-size: 12px;
+  cursor: help;
+  margin-left: 10px;
 }
 .modal-open {
   overflow: hidden;
@@ -9082,6 +9181,125 @@ body.modal-open,
   .modal-media .modal-dialog {
     width: 940px;
   }
+}
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 400px;
+  padding: 1px;
+  text-align: left;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+}
+.popover.top {
+  margin-top: -10px;
+}
+.popover.right {
+  margin-left: 10px;
+}
+.popover.bottom {
+  margin-top: 10px;
+}
+.popover.left {
+  margin-left: -10px;
+}
+.popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.popover-content {
+  padding: 9px 14px;
+}
+.popover .arrow,
+.popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.popover .arrow {
+  border-width: 11px;
+}
+.popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+.popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.popover.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+.popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+.popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.popover.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+.popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.popover.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
 }
 .carousel {
   position: relative;

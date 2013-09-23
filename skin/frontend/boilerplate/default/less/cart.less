@@ -136,7 +136,15 @@
         }
     }
 
-    .link-compare { font-weight:normal; }
+    .link-compare {
+        font-weight: normal;
+    }
+
+    @media (max-width: @screen-md) {
+        & {
+            display: none;
+        }
+    }
 }
 
 // Discount Codes & Estimate Shipping and Tax Boxes
@@ -176,5 +184,56 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+// Options Tool Tip
+.item-options {
+    margin-top: (@line-height-computed / 2);
+
+    dd {
+        margin-left: 15px;
+    }
+}
+
+.truncated {
+    position: relative;
+    cursor: help;
+
+    .dots {
+        cursor: inherit;
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.truncated_full_value {
+    .popover();
+    top: (@line-height-computed);
+
+    dl {
+        margin: 0;
+    }
+
+    dt {
+        .popover-title();
+    }
+
+    dd {
+        .popover-content();
+        margin-left: 0;
+    }
+
+    // Multiple lists, add a border at the top
+    dd + dt {
+        border-radius: 0;
+        border-top: 1px solid darken(@popover-title-bg, 5%);
+    }
+
+    &.show {
+        display: block;
     }
 }
