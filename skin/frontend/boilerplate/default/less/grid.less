@@ -3,59 +3,39 @@
 .col2-set,
 .col2-set,
 .col4-set {
-    .clearfix();
+    .make-row();
 }
 
 // Content Columns
 .col2-set {
-    .col-1 {
-        float: left;
-        width: 48.5%;
-    }
+
+    .col-1,
     .col-2 {
-        float: right;
-        width: 48.5%;
+        .make-sm-column(6);
     }
     .col-narrow {
-        width: 32%;
+        .make-sm-column(4);
     }
     .col-wide {
-        width: 65%;
+        .make-sm-column(8);
     }
 }
 
 .col3-set {
-    .col-1 {
-        float: left;
-        width: 32%;
-    }
-    .col-2 {
-        float: left;
-        width: 32%;
-        margin-left: 2%;
-    }
+
+    .col-1,
+    .col-2,
     .col-3 {
-        float: right;
-        width: 32%;
+        .make-sm-column(4);
     }
 }
 
 .col4-set {
-    .col-1 {
-        float: left;
-        width: 23.5%;
-    }
-    .col-2 {
-        float: left;
-        width: 23.5%;
-        margin: 0 2%;
-    }
-    .col-3 {
-        float: left;
-        width: 23.5%;
-    }
+
+    .col-1,
+    .col-2,
+    .col-3,
     .col-4 {
-        float: right;
-        width: 23.5%;
+        .make-sm-column(3);
     }
 }
