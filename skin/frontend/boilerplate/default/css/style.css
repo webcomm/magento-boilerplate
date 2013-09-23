@@ -4733,6 +4733,27 @@ header[role="banner"] .quick-access {
     width: 41.66666666666667%;
   }
 }
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../components/bootstrap/fonts/glyphicons-halflings-regular.eot');
@@ -6224,6 +6245,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-link:hover {
   color: #ffffff;
+}
+.navbar-main ul.level0 {
+  display: none;
 }
 .breadcrumb {
   padding: 8px 15px;
@@ -8719,12 +8743,37 @@ textarea.product-options dd textarea {
     width: 16.666666666666664%;
   }
 }
-.page-sitemap .sitemap li.level-0 {
-  margin: 10px 0 0;
+.catalog-seo-sitemap-category .page-sitemap .sitemap li.level-0 {
   font-weight: bold;
+  margin-top: 10px;
 }
-.page-sitemap .sitemap li.level-0 a {
-  color: #1e7ec8;
+.catalog-seo-sitemap-category .page-sitemap .sitemap li.level-0:first-child {
+  margin-top: 0;
+}
+@media (min-width: 992px) {
+  .page-sitemap .sitemap li.level-0,
+  .page-sitemap .sitemap li.level-1,
+  .page-sitemap .sitemap li.level-2,
+  .page-sitemap .sitemap li.level-3,
+  .page-sitemap .sitemap li.level-4 {
+    width: auto;
+    float: none;
+  }
+  .page-sitemap .sitemap li.level-0 {
+    padding-left: 15px !important;
+  }
+  .page-sitemap .sitemap li.level-1 {
+    padding-left: 35px !important;
+  }
+  .page-sitemap .sitemap li.level-2 {
+    padding-left: 55px !important;
+  }
+  .page-sitemap .sitemap li.level-3 {
+    padding-left: 75px !important;
+  }
+  .page-sitemap .sitemap li.level-4 {
+    padding-left: 95px !important;
+  }
 }
 .rss-title h1 {
   background: url(../images/i_rss-big.png) 0 4px no-repeat;
