@@ -8648,14 +8648,7 @@ textarea.product-options dd textarea {
 /* CMS Home Page */
 .page-sitemap .links {
   text-align: right;
-  margin: 0 8px -22px 0;
-}
-.page-sitemap .links a {
-  text-decoration: none;
-  position: relative;
-}
-.page-sitemap .links a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 .catalog-seo-sitemap-product .page-sitemap .sitemap {
   margin-left: -15px;

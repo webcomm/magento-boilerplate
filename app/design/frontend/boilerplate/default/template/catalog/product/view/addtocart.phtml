@@ -33,7 +33,7 @@
                 <span class="input-group-addon">
                     <label for="qty"><?php echo $this->__('Qty:') ?></label>
                 </span>
-                <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text form-control qty" />
+                <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo ($qty = $this->getProductDefaultQty() * 1) ? $qty : 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text form-control qty" />
                 <span class="input-group-btn">
                     <button type="button" title="<?php echo $buttonTitle ?>" class="button btn btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
                 <?php echo $this->getChildHtml('', true, true) ?>
