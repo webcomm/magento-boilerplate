@@ -22,21 +22,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/components\/font-awesome\/src\/_includes\/community\/reporting-bugs.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/community\/reporting-bugs.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/bootstrap\/examples\/jumbotron\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/components\/font-awesome\/src\/_includes\/community\/reporting-bugs.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/community\/reporting-bugs.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -1209,15 +1209,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/components\/bootstrap\/examples\/non-responsive\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/non-responsive\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/bootstrap\/js\/transition.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1228,6 +1219,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/transition-ck.js",
       "fileType" : 64
+    },
+    "\/components\/bootstrap\/examples\/non-responsive\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/non-responsive\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/components\/font-awesome\/src\/_includes\/navbar.html" : {
       "ignoreWasSetByUser" : 0,
@@ -1597,6 +1597,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/components\/font-awesome\/src\/_includes\/examples\/button-groups.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples\/button-groups.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/components\/bootstrap\/assets\/js\/less.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1618,15 +1627,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/scrollspy-ck.js",
       "fileType" : 64
-    },
-    "\/components\/font-awesome\/src\/_includes\/examples\/button-groups.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples\/button-groups.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/pager.less" : {
       "ieCompatibility" : 1,
@@ -1791,10 +1791,10 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/font-awesome\/src\/assets\/less\/lazy.less" : {
+    "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/mixins.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/lazy.less",
-      "outputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/css\/lazy.css",
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/mixins.less",
+      "outputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/css\/mixins.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -1819,10 +1819,10 @@
       "initialSize" : 14035,
       "fileType" : 4096
     },
-    "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/mixins.less" : {
+    "\/components\/font-awesome\/src\/assets\/less\/lazy.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/mixins.less",
-      "outputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/css\/mixins.css",
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/lazy.less",
+      "outputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/css\/lazy.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -2234,15 +2234,6 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/modal-ck.js",
       "fileType" : 64
     },
-    "\/components\/font-awesome\/src\/_layouts\/icon.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_layouts\/icon.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/bootstrap\/examples\/offcanvas\/offcanvas.css" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -2251,6 +2242,15 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/offcanvas\/offcanvas.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/components\/font-awesome\/src\/_layouts\/icon.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_layouts\/icon.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/components\/bootstrap\/_layouts\/home.html" : {
       "ignoreWasSetByUser" : 0,
@@ -2485,17 +2485,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png",
-      "initialSize" : 1577,
-      "fileType" : 8192
-    },
     "\/components\/selectivizr\/tests\/master\/css\/import-quoted-double.css" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -2513,6 +2502,17 @@
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/icons\/video-player.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-57-precomposed.png",
+      "initialSize" : 1577,
+      "fileType" : 8192
     },
     "\/components\/bootstrap\/examples\/jumbotron-narrow\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -3601,23 +3601,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/less\/utilities.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/utilities.less",
-      "outputAbbreviatedPath" : "\/css\/utilities.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
     "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/button-groups.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/button-groups.less",
@@ -3628,6 +3611,23 @@
       "ignore" : 1,
       "strictImports" : 0,
       "ignoreWasSetByUser" : 1,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/less\/utilities.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/utilities.less",
+      "outputAbbreviatedPath" : "\/css\/utilities.css",
+      "outputPathIsSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
       "shouldRunBless" : 0,
       "hidden" : 0,
       "strictMath" : 0,
@@ -3669,17 +3669,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/js\/carousel.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/carousel.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/carousel-ck.js",
-      "fileType" : 64
-    },
     "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/close.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/close.less",
@@ -3696,6 +3685,17 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/components\/bootstrap\/js\/carousel.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/carousel.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/carousel-ck.js",
+      "fileType" : 64
     },
     "\/components\/font-awesome\/less\/core.less" : {
       "ieCompatibility" : 1,
@@ -4062,6 +4062,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/components\/font-awesome\/src\/_includes\/examples.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/images\/media\/col_right_callout.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -4072,15 +4081,6 @@
       "outputAbbreviatedPath" : "\/images\/media\/col_right_callout.jpg",
       "initialSize" : 14703,
       "fileType" : 4096
-    },
-    "\/components\/font-awesome\/src\/_includes\/examples.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/components\/font-awesome\/src\/_includes\/community\/project-milestones.html" : {
       "ignoreWasSetByUser" : 0,
@@ -4211,21 +4211,21 @@
       "initialSize" : 100105,
       "fileType" : 4096
     },
-    "\/components\/font-awesome\/src\/_includes\/stripe-social.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/stripe-social.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/font-awesome\/src\/_includes\/examples\/larger-icons.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples\/larger-icons.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/components\/font-awesome\/src\/_includes\/stripe-social.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/stripe-social.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -4596,14 +4596,14 @@
       "initialSize" : 114822,
       "fileType" : 4096
     },
-    "\/components\/font-awesome\/src\/_includes\/examples\/stacked.html" : {
+    "\/css\/blocks.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples\/stacked.html",
+      "inputAbbreviatedPath" : "\/css\/blocks.css",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "fileType" : 16
     },
     "\/components\/bootstrap\/examples\/grid\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -4691,22 +4691,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/less\/modals.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/modals.less",
-      "outputAbbreviatedPath" : "\/css\/modals.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
+    "\/components\/font-awesome\/src\/_includes\/examples\/stacked.html" : {
       "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
+      "ignore" : 0,
       "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/examples\/stacked.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/images\/media\/furniture_callout_spot.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -4745,14 +4737,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/css\/blocks.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/less\/modals.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/modals.less",
+      "outputAbbreviatedPath" : "\/css\/modals.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/blocks.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/bootstrap\/js\/tests\/phantom.js" : {
       "ignoreWasSetByUser" : 1,
@@ -5067,6 +5067,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/components\/font-awesome\/src\/_includes\/license.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/license.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/components\/font-awesome\/src\/assets\/font-awesome\/less\/font-awesome.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/font-awesome\/less\/font-awesome.less",
@@ -5083,15 +5092,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/components\/font-awesome\/src\/_includes\/license.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/_includes\/license.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/components\/bootstrap\/js\/tests\/vendor\/qunit.js" : {
       "ignoreWasSetByUser" : 1,
@@ -5194,16 +5194,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/assets\/js\/holder.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
+    "\/less\/alerts.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/alerts.less",
+      "outputAbbreviatedPath" : "\/css\/alerts.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/holder.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/holder-ck.js",
-      "fileType" : 64
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/less\/normalize.less" : {
       "ieCompatibility" : 1,
@@ -5222,22 +5228,16 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/less\/alerts.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/alerts.less",
-      "outputAbbreviatedPath" : "\/css\/alerts.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
+    "\/components\/bootstrap\/assets\/js\/holder.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
       "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/holder.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/holder-ck.js",
+      "fileType" : 64
     },
     "\/components\/bootstrap\/examples\/sticky-footer-navbar\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -5274,6 +5274,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/components\/bootstrap\/examples\/screenshots\/theme.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
+      "initialSize" : 95407,
+      "fileType" : 4096
+    },
     "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/breadcrumbs.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/font-awesome\/src\/assets\/less\/bootstrap-2.3.2\/breadcrumbs.less",
@@ -5290,17 +5301,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/components\/bootstrap\/examples\/screenshots\/theme.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
-      "initialSize" : 95407,
-      "fileType" : 4096
     },
     "\/components\/selectivizr\/tests\/master\/html\/iframe-hash.html" : {
       "ignoreWasSetByUser" : 0,
