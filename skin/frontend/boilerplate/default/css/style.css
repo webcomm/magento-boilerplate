@@ -8989,6 +8989,11 @@ fieldset[disabled] .btn-checkout.active {
 .block-progress p + table {
   margin-left: 10px;
 }
+@media (max-width: 768px) {
+  .block-progress {
+    display: none;
+  }
+}
 .opc .buttons-set {
   margin-top: 0;
 }
