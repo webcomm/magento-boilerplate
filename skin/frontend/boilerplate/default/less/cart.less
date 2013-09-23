@@ -1,0 +1,180 @@
+
+// Checkout Types
+.cart {
+    .page-title .checkout-types li {
+        margin: 0 0 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .title-buttons .checkout-types {
+        float: right;
+        margin-bottom: 0;
+
+        li {
+
+        }
+    }
+
+    .checkout-types .paypal-or {
+        margin: 0 8px;
+        line-height: 2.3;
+    }
+    .totals .checkout-types .paypal-or {
+        clear: both;
+        display: block;
+        padding: 8px 55px 0 0;
+        line-height: 1.0;
+        font-size: 11px;
+    }
+
+    > form {
+        margin-bottom: @line-height-computed;
+    }
+
+    @media (max-width: @screen-sm) {
+        > form {
+            width: 100%;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            padding: 15px;
+            border: 1px solid @table-border-color;
+        }
+    }
+}
+
+// Button
+.btn-checkout {
+    .btn-primary();
+
+    @media (min-width: @screen-xs) {
+        & {
+            .btn-lg();
+        }
+    }
+}
+
+// Shopping Cart Table
+.cart-table {
+    margin-bottom: 0;
+
+    .button {
+        .btn-sm();
+    }
+
+    .btn-continue {
+        float: left;
+    }
+}
+
+// Collateral boxes
+.cart .cart-collaterals {
+    .make-row();
+
+    .col2-set {
+        .make-md-column(8);
+    }
+
+    @media (min-width: @screen-sm) {
+        .totals {
+            margin-right: (@grid-gutter-width / 2);
+            float: right;
+            width: percentage((4 / @grid-columns));
+        }
+    }
+}
+
+.cart .crosssell,
+.cart .discount,
+.cart .shipping {
+    .panel();
+    border-color: @panel-default-border;
+
+    > h2 {
+        .panel-heading();
+        border-color: @panel-default-border;
+        background-color: @panel-default-heading-bg;
+        color: @panel-default-text;
+
+        .panel-title();
+        font-weight: @headings-font-weight;
+    }
+}
+
+// Cross-sell
+.cart .crosssell {
+
+    #crosssell-products-list {
+        margin-bottom: 0;
+        padding: 15px;
+    }
+
+    li.item {
+        padding: 10px 0;
+        border-bottom: 1px solid @hr-border;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    }
+
+    .product-image {
+        float: left;
+    }
+    .product-details {
+        margin-left: 100px;
+    }
+    .add-to-links {
+        .separator {
+            display: none;
+        }
+    }
+
+    .link-compare { font-weight:normal; }
+}
+
+// Discount Codes & Estimate Shipping and Tax Boxes
+.cart .discount,
+.cart .shipping {
+
+}
+
+.cart .discount {
+    .discount-form {
+        padding: 15px;
+    }
+}
+
+.cart .shipping {
+    .shipping-form {
+        padding: 15px;
+    }
+}
+
+// Shopping Cart Totals
+.cart .totals {
+    .well();
+
+    table {
+        .table();
+    }
+
+    .checkout-types {
+        margin-bottom: 0;
+        text-align: right;
+
+        li {
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
