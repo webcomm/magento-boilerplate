@@ -40,4 +40,45 @@
 }
 
 
+// Advanced Search
+.advanced-search .form-list {
 
+    .input-range {
+        line-height: @input-height-base;
+        small {
+            float: right;
+        }
+    }
+}
+.advanced-search-amount {
+
+}
+.advanced-search-summary {
+    .well();
+    .well-sm();
+    .clearfix();
+
+    ul {
+        margin-bottom: 0;
+        padding-left: (@grid-gutter-width / 2);
+        padding-right: (@grid-gutter-width / 2);
+    }
+
+    strong {
+        color: @brand-primary;
+    }
+
+    p {
+        clear: both;
+        padding: (@line-height-computed / 2) (@grid-gutter-width / 2) 0;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    @media (min-width: @screen-xs) {
+        ul {
+            float: left;
+            width: 50%;
+        }
+    }
+}

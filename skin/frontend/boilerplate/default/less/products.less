@@ -531,13 +531,72 @@
         }
     }
 
-    .form-add { margin:15px 0 0; }
-    .form-add h3 { font-size:13px; font-weight:normal; }
-    .form-add h3 span { font-weight:bold; }
-    .form-add h4 { font-size:12px; }
-    .form-add .data-table td { text-align:center; }
-    .form-add .form-list { margin:15px 0 0; }
-    .form-add .form-list .input-box { width:360px; }
-    .form-add .form-list input.input-text,
-    .form-add .form-list textarea { width:354px; }
+    .form-add {
+
+        h3 {
+            margin-top: 0;
+            font-size: @font-size-base;
+            font-weight: normal;
+
+            span {
+                font-weight: @headings-font-weight;
+            }
+        }
+
+        // Make the h4 act like a label
+        h4 {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 5px;
+            font-size: @font-size-base;
+            font-weight: bold;
+
+            em {
+                float: right;
+                position: absolute;
+                top: 0;
+                right: -8px;
+                color: @alert-danger-text;
+            }
+        }
+
+        td.value {
+            text-align: center;
+
+            .radio {
+                display: inline;
+                margin: 0;
+                padding: 0;
+                height: (@line-height-computed);
+            }
+        }
+
+        @media (max-width: @screen-sm) {
+            form {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: scroll;
+                padding: 15px;
+                border: 1px solid @table-border-color;
+            }
+        }
+    }
+}
+
+// Proudct name - universal
+.product-name {
+    margin: 0;
+    font-size: @font-size-base;
+    font-weight: normal;
+}
+
+// Product Tags
+.tags-list {
+    margin: 0;
+    padding: 10px;
+
+    li {
+        display: inline !important;
+        margin: 0 3px;
+    }
 }

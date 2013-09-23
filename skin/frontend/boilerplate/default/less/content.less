@@ -1,0 +1,43 @@
+/* CMS Home Page */
+.cms-home,
+.cms-index-index {
+    .subtitle {
+
+    }
+}
+
+// Sitemap
+.page-sitemap {
+    .links { text-align:right; margin:0 8px -22px 0; }
+    .links a { text-decoration:none; position:relative; }
+    .links a:hover { text-decoration:underline; }
+    .sitemap {
+
+        .catalog-seo-sitemap-product & {
+            .make-row();
+
+            li {
+                .make-md-column(6);
+            }
+        }
+
+        .catalog-seo-sitemap-category & {
+            .make-row();
+
+            li {
+                .make-sm-column(3);
+                .make-md-column(2);
+            }
+        }
+
+
+        li.level-0 { margin:10px 0 0; font-weight:bold; }
+        li.level-0 a { color:#1e7ec8; }
+    }
+}
+
+
+
+// RSS
+.rss-title h1 { background:url(../images/i_rss-big.png) 0 4px no-repeat; padding-left:27px; }
+.rss-table .link-rss { display:block; line-height:1.55; background-position:0 4px; }
