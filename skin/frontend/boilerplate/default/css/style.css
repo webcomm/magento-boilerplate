@@ -50,170 +50,6 @@ tr.summary-details-excluded {
 /********** < Navigation */
 /* Sidebar =============================================================================== */
 /* ======================================================================================= */
-.opc .buttons-set {
-  margin-top: 0;
-  padding-top: 2em;
-}
-.opc .buttons-set p.required {
-  margin: 0;
-  padding: 0 0 10px;
-}
-.opc .buttons-set .back-link small {
-  display: none;
-}
-.opc .buttons-set .back-link a {
-  background: url(../images/i_arrow-top.gif) 0 50% no-repeat;
-  padding-left: 16px;
-}
-.opc .buttons-set.disabled button.button {
-  display: none;
-}
-.opc .buttons-set .please-wait {
-  height: 21px;
-  line-height: 21px;
-}
-.opc .ul {
-  list-style: disc outside;
-  padding-left: 18px;
-}
-.opc {
-  position: relative;
-}
-.opc .step-title {
-  border-width: 0 1px;
-  border-style: solid;
-  border-color: #fff #d9dde3 #d9dde3;
-  background: #eeeeee url(../images/bkg_opc-title-off.gif) 0 100% repeat-x;
-  padding: 4px 8px 6px;
-  text-align: right;
-}
-.opc .step-title .number {
-  float: left;
-  background: #fff;
-  border: 1px solid #fff;
-  padding: 0 4px;
-  margin: 0 5px 0 0;
-  font: bold 11px/14px arial, helvetica, sans-serif;
-  color: #999;
-}
-.opc .step-title h2 {
-  float: left;
-  margin: 0;
-  font: bold 13px/16px Arial, Helvetica, sans-serif;
-  color: #999;
-}
-.opc .step-title a {
-  display: none;
-  float: right;
-  font-size: 11px;
-  line-height: 16px;
-}
-.opc .allow .step-title {
-  background: #d0dce1;
-  border: 1px solid #a3aeb3;
-  border-bottom: 0;
-  color: #a4b3b9;
-  cursor: pointer;
-}
-.opc .allow .step-title .number {
-  background: #dbe6eb;
-  border-color: #dbe6eb;
-  color: #a4b3b9;
-}
-.opc .allow .step-title h2 {
-  color: #a4b3b9;
-}
-/*.opc .allow .step-title a { display:block; }*/
-.opc .active .step-title {
-  background: #f9f3e3;
-  border: 1px solid #bbafa0;
-  padding-bottom: 5px;
-  color: #f18200;
-  cursor: default;
-}
-.opc .active .step-title .number {
-  background: #f18200;
-  border-color: #f19900;
-  color: #fff;
-}
-.opc .active .step-title h2 {
-  color: #f18200;
-}
-/*.opc .active .step-title a { display:none; }*/
-.opc .step {
-  border: 1px solid #bbafa0;
-  border-top: 0;
-  background: #fbfaf6 url(../images/bkg_checkout.gif) 0 0 repeat-x;
-  padding: 15px 30px;
-  position: relative;
-}
-.opc .step .tool-tip {
-  right: 30px;
-}
-#opc-login .buttons-set {
-  border-top: 0;
-}
-#opc-login h3 {
-  font-size: 13px;
-  border-bottom: 1px solid #e4e4e4;
-  padding-bottom: 2px;
-  text-transform: uppercase;
-}
-#opc-login h4 {
-  font-size: 1em;
-  font-weight: bold;
-  margin: 0;
-  color: #2f2f2f;
-}
-#opc-shipping_method .buttons-set {
-  border-top: 0;
-}
-.opc .gift-messages-form {
-  margin: 0 -30px;
-  background: #f6f1eb;
-  border: 1px solid #e9e4de;
-  border-width: 1px 0;
-  padding: 22px 24px 22px 30px;
-}
-.opc .gift-messages-form .inner-box {
-  padding: 5px;
-  height: 260px;
-  overflow: auto;
-}
-#opc-review .step {
-  border: 0;
-  padding: 0;
-}
-#opc-review .product-name {
-  font-weight: bold;
-  color: #0a263c;
-}
-#opc-review .item-options {
-  margin: 5px 0 0;
-}
-#opc-review .buttons-set {
-  padding: 20px 30px;
-  border: 1px solid #d9dde3;
-  border-width: 0 1px 1px;
-}
-#opc-review .buttons-set p {
-  margin: 0;
-  line-height: 40px;
-}
-#opc-review .buttons-set .please-wait {
-  height: 40px;
-  line-height: 40px;
-}
-#opc-review .authentication {
-  margin: 0 auto;
-  width: 570px;
-}
-#opc-review .warning-message {
-  color: #222;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px 10px 0;
-}
 /* Multiple Addresses Checkout */
 .checkout-progress {
   padding: 0 90px;
@@ -8714,7 +8550,7 @@ fieldset[disabled] .btn-checkout.active {
   width: 96px;
 }
 .sp-methods input.cvv {
-  width: 3em !important;
+  width: 50px !important;
 }
 .sp-methods .checkmo-list li {
   margin: 0 0 5px;
@@ -9112,22 +8948,21 @@ fieldset[disabled] .btn-checkout.active {
 }
 .block-progress dt {
   font-weight: bold;
-  background: #eee;
   margin: 0 0 6px;
-  padding: 2px 15px;
-  color: #999;
+  padding: 7px 15px;
+  background-color: #f5f5f5;
+  border: solid #dddddd;
+  border-width: 1px 0;
+}
+.block-progress dt:first-child {
+  border-top: 0;
 }
 .block-progress dd {
-  background: #eee;
-  border: 1px solid #a3aeb3;
-  border-top: 0;
   padding: 8px 13px;
   margin: 0 0 6px;
 }
 .block-progress dt.complete {
   margin: 0;
-  background: #d0dce1;
-  color: #5e8ab4;
 }
 .block-progress p {
   margin: 0;
@@ -9147,6 +8982,252 @@ fieldset[disabled] .btn-checkout.active {
 }
 .block-progress .cards-list .info-table th {
   font-weight: normal;
+}
+.block-progress address {
+  margin-bottom: 0;
+}
+.block-progress p + table {
+  margin-left: 10px;
+}
+.opc .buttons-set {
+  margin-top: 0;
+}
+.opc .buttons-set p.required {
+  margin: 0;
+  padding: 0 0 10px;
+}
+.opc .buttons-set .back-link small {
+  display: none;
+}
+.opc .buttons-set .buttons-set.disabled button.button {
+  display: none;
+}
+.opc .buttons-set .buttons-set .please-wait {
+  height: 21px;
+  line-height: 21px;
+}
+.opc .buttons-set .ul {
+  list-style: disc outside;
+  padding-left: 18px;
+}
+.opc {
+  position: relative;
+}
+.opc .section {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+  border-color: #dddddd;
+}
+.opc .section > .list-group {
+  margin-bottom: 0;
+}
+.opc .section > .list-group .list-group-item {
+  border-width: 1px 0;
+}
+.opc .section > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.opc .section > .list-group .list-group-item:last-child {
+  border-bottom: 0;
+}
+.opc .section > .table {
+  margin-bottom: 0;
+}
+.opc .section > .panel-body + .table {
+  border-top: 1px solid #dddddd;
+}
+.opc .step-title {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-color: #dddddd;
+  background-color: #f5f5f5;
+  color: #333333;
+}
+.opc .step-title:before,
+.opc .step-title:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.opc .step-title:after {
+  clear: both;
+}
+.opc .step-title:before,
+.opc .step-title:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.opc .step-title:after {
+  clear: both;
+}
+.opc .step-title strong {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.opc .step-title strong > a {
+  color: inherit;
+}
+.opc .step {
+  padding: 15px;
+}
+.opc .step:before,
+.opc .step:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.opc .step:after {
+  clear: both;
+}
+.opc .step:before,
+.opc .step:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.opc .step:after {
+  clear: both;
+}
+.opc .step-title .number {
+  float: left;
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 0 4px;
+  margin: 0 5px 0 0;
+  font: bold 11px/14px arial, helvetica, sans-serif;
+  color: #999;
+}
+.opc .step-title h2 {
+  float: left;
+  margin: 0;
+  font: bold 13px/16px Arial, Helvetica, sans-serif;
+  color: #999;
+}
+.opc .step-title a {
+  display: none;
+  float: right;
+  font-size: 11px;
+  line-height: 16px;
+}
+.opc .allow .step-title {
+  background: #d0dce1;
+  border: 1px solid #a3aeb3;
+  border-bottom: 0;
+  color: #a4b3b9;
+  cursor: pointer;
+}
+.opc .allow .step-title .number {
+  background: #dbe6eb;
+  border-color: #dbe6eb;
+  color: #a4b3b9;
+}
+.opc .allow .step-title h2 {
+  color: #a4b3b9;
+}
+.opc .active .step-title {
+  background: #f9f3e3;
+  border: 1px solid #bbafa0;
+  padding-bottom: 5px;
+  color: #f18200;
+  cursor: default;
+}
+.opc .active .step-title .number {
+  background: #f18200;
+  border-color: #f19900;
+  color: #fff;
+}
+.opc .active .step-title h2 {
+  color: #f18200;
+}
+.opc .step .tool-tip {
+  right: 30px;
+}
+#opc-login .buttons-set {
+  border-top: 0;
+}
+#opc-login h3 {
+  font-size: 13px;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+#opc-login h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+  color: #2f2f2f;
+}
+#opc-shipping_method .buttons-set {
+  border-top: 0;
+}
+.opc .gift-messages-form {
+  margin: 0 -30px;
+  background: #f6f1eb;
+  border: 1px solid #e9e4de;
+  border-width: 1px 0;
+  padding: 22px 24px 22px 30px;
+}
+.opc .gift-messages-form .inner-box {
+  padding: 5px;
+  height: 260px;
+  overflow: auto;
+}
+#opc-review .step {
+  border: 0;
+  padding: 0;
+}
+#opc-review .product-name {
+  font-weight: bold;
+  color: #0a263c;
+}
+#opc-review .item-options {
+  margin: 5px 0 0;
+}
+#opc-review .buttons-set {
+  padding: 20px 30px;
+  border: 1px solid #d9dde3;
+  border-width: 0 1px 1px;
+}
+#opc-review .buttons-set p {
+  margin: 0;
+  line-height: 40px;
+}
+#opc-review .buttons-set .please-wait {
+  height: 40px;
+  line-height: 40px;
+}
+#opc-review .authentication {
+  margin: 0 auto;
+  width: 570px;
+}
+#opc-review .warning-message {
+  color: #222;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 10px 0;
 }
 .modal-open {
   overflow: hidden;
