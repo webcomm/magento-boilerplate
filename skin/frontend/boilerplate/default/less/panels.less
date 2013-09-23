@@ -344,13 +344,10 @@
 }
 
 // Block:  Tags
-.block-tags .block-title strong {
-    background-image: url(../images/i_block-tags.gif);
-}
 .block-tags .block-content .tags-list {
-    background: none;
-    border: 0;
-    font-size: 12px;
+    padding: 15px !important; // Override .std
+    margin-bottom: 0 !important; // Override .std
+    font-size: @font-size-small;
 }
 .block-tags .actions {
     text-align: right;

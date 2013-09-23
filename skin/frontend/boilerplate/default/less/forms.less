@@ -10,8 +10,11 @@ p.control input.radio {
 }
 
 .form-list {
+    .clearfix();
+
     li {
         .form-group();
+        .clearfix();
     }
     label {
         position: relative;
@@ -48,7 +51,8 @@ p.control input.radio {
         padding-right: (@grid-gutter-width / 2);
         padding-left: (@grid-gutter-width / 2);
 
-        &:first-child {
+        &:first-child,
+        &:first-of-type {
             padding-left: 0;
         }
 
@@ -60,17 +64,33 @@ p.control input.radio {
     select {
         .form-control();
     }
+    select[multiple] {
+        height: auto;
+    }
     li.additional-row {
-        border-top: 1px solid #ccc;
+        border-top: 1px solid @legend-border-color;
         margin-top: 10px;
         padding-top: 7px;
+
+        p {
+            .clearfix();
+        }
+
+        .btn-remove {
+            float: right;
+            margin: 5px 0 0;
+        }
     }
-    li.additional-row .btn-remove {
-        float: right;
-        margin: 5px 0 0;
-    }
-    .input-range input.input-text {
-        width: 74px;
+
+    .input-range {
+        input.input-text,
+        span {
+            display: inline-block;
+        }
+
+        input.input-text {
+            width: 40%;
+        }
     }
 }
 
@@ -221,7 +241,7 @@ p.control input.radio {
 }
 
 .fieldset {
-
+    // .clearfix();
 }
 
 .legend {
@@ -239,10 +259,11 @@ p.control input.radio {
 
 // Button sets
 .buttons-set {
-    clear: both;
+    .clearfix();
     margin: 4em 0 0;
     padding: 8px 0 0;
     border-top: 1px solid @legend-border-color;
+    line-height: @input-height-base;
     text-align: right;
 }
 .buttons-set p.required {
