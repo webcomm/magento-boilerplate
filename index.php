@@ -84,4 +84,8 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
+if (file_exists($autoload = __DIR__.'/vendor/autoload.php')) {
+    require_once $autoload;
+}
+
 Mage::run($mageRunCode, $mageRunType);
