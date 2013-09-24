@@ -4,8 +4,8 @@
 
 header[role="banner"] {
     .make-row();
-    margin-top: (@line-height-computed / 2);
-    margin-bottom: (@line-height-computed / 2);
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
 
     .logo {
         .make-md-column(5);
@@ -40,9 +40,51 @@ header[role="banner"] {
     }
 }
 
+// Main
+div[role="main"] {
+    margin-bottom: @line-height-computed;
+}
+
+// Sidebar(s)
+aside[role="complementary"] {
+    margin-bottom: @line-height-computed;
+}
+
 // Footer
 footer[role="contentinfo"] {
+    margin-bottom: @line-height-computed;
 
+    > ul > li,
+    .links li {
+        display: inline;
+    }
+
+    > ul,
+    .links,
+    .bugs,
+    address {
+        margin-bottom: (@line-height-computed / 2);
+    }
+
+    @media (min-width: @screen-sm) {
+        > ul,
+        .links,
+        .bugs,
+        address {
+            width: 50%;
+        }
+
+        > ul,
+        .bugs {
+            float: left;
+        }
+
+        .links,
+        address {
+            float: right;
+            text-align: right;
+        }
+    }
 }
 
 // Products
