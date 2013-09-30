@@ -6140,6 +6140,9 @@ a.form-search .search-autocomplete li:focus {
 .form-search .search-autocomplete li.active:focus .list-group-item-text {
   color: #fde9e2;
 }
+.form-search .search-autocomplete li .amount {
+  float: right;
+}
 .form-search .search-autocomplete li.first {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
