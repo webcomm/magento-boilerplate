@@ -40,13 +40,23 @@ header[role="banner"] {
     }
 }
 
+.layout {
+    .make-row();
+
+    &.layout-3-cols div[role="main"] {
+        .make-md-column(6);
+    }
+}
+
 // Main
 div[role="main"] {
+    .make-md-column(9);
     margin-bottom: @line-height-computed;
 }
 
 // Sidebar(s)
 aside[role="complementary"] {
+    .make-md-column(3);
     margin-bottom: @line-height-computed;
 }
 
