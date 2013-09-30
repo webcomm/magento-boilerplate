@@ -5865,10 +5865,17 @@ a.list-group-item:focus {
 }
 .block-banner {
   border: 0;
+  background-color: transparent;
 }
 .block-banner .block-content {
   padding: 0;
+  background-color: transparent;
   text-align: center;
+}
+.block-banner .block-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .block-login .block-content {
   padding: 15px 15px 0;
