@@ -93,22 +93,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/less\/input-groups.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/input-groups.less",
-      "outputAbbreviatedPath" : "\/css\/input-groups.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
+    "\/components\/bootstrap\/js\/tests\/unit\/modal.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
       "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/modal.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/modal-ck.js",
+      "fileType" : 64
     },
     "\/less\/customer.less" : {
       "ieCompatibility" : 1,
@@ -127,16 +121,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/js\/tests\/unit\/modal.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
+    "\/less\/input-groups.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/input-groups.less",
+      "outputAbbreviatedPath" : "\/css\/input-groups.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/modal.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/modal-ck.js",
-      "fileType" : 64
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/bootstrap\/less\/popovers.less" : {
       "ieCompatibility" : 1,
@@ -243,17 +243,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/components\/bootstrap\/js\/dropdown.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/dropdown.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/dropdown-ck.js",
-      "fileType" : 64
-    },
     "\/images\/media\/laptop_callout_mid1.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -265,6 +254,17 @@
       "initialSize" : 12145,
       "fileType" : 4096
     },
+    "\/components\/bootstrap\/js\/dropdown.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/dropdown.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/dropdown-ck.js",
+      "fileType" : 64
+    },
     "\/images\/media\/best_selling_img02.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -275,6 +275,17 @@
       "outputAbbreviatedPath" : "\/images\/media\/best_selling_img02.jpg",
       "initialSize" : 3118,
       "fileType" : 4096
+    },
+    "\/components\/bootstrap\/js\/tests\/unit\/tab.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/tab.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/tab-ck.js",
+      "fileType" : 64
     },
     "\/components\/bootstrap\/less\/thumbnails.less" : {
       "ieCompatibility" : 1,
@@ -293,16 +304,14 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/js\/tests\/unit\/tab.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/components\/bootstrap\/_layouts\/default.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/tab.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/tab-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/_layouts\/default.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/components\/bootstrap\/js\/tests\/unit\/tooltip.js" : {
       "ignoreWasSetByUser" : 1,
@@ -315,14 +324,16 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/tooltip-ck.js",
       "fileType" : 64
     },
-    "\/components\/bootstrap\/_layouts\/default.html" : {
+    "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/_layouts\/default.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg",
+      "initialSize" : 79170,
+      "fileType" : 4096
     },
     "\/components\/jquery\/jquery.js" : {
       "ignoreWasSetByUser" : 1,
@@ -334,17 +345,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/components\/jquery\/jquery-ck.js",
       "fileType" : 64
-    },
-    "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/justified-nav.jpg",
-      "initialSize" : 79170,
-      "fileType" : 4096
     },
     "\/less\/tables.less" : {
       "ieCompatibility" : 1,
@@ -363,21 +363,21 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/examples\/jumbotron-narrow\/jumbotron-narrow.css" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron-narrow\/jumbotron-narrow.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/components\/bootstrap\/examples\/sticky-footer\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/sticky-footer\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/components\/bootstrap\/examples\/offcanvas\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/offcanvas\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -410,14 +410,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/components\/bootstrap\/examples\/offcanvas\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/components\/bootstrap\/examples\/jumbotron-narrow\/jumbotron-narrow.css" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/offcanvas\/index.html",
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron-narrow\/jumbotron-narrow.css",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "fileType" : 16
     },
     "\/less\/prices.less" : {
       "ieCompatibility" : 1,
@@ -536,15 +536,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/examples\/jumbotron\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/bootstrap\/less\/tables.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/tables.less",
@@ -561,6 +552,15 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/components\/bootstrap\/examples\/jumbotron\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/components\/bootstrap\/less\/print.less" : {
       "ieCompatibility" : 1,
@@ -638,27 +638,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/components\/bootstrap\/assets\/js\/filesaver.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png",
-      "initialSize" : 2939,
-      "fileType" : 8192
-    },
-    "\/images\/media\/best_selling_img05.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/best_selling_img05.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/best_selling_img05.jpg",
-      "initialSize" : 2799,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/filesaver.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/filesaver-ck.js",
+      "fileType" : 64
     },
     "\/components\/jquery\/jquery.min.js" : {
       "ignoreWasSetByUser" : 1,
@@ -670,6 +659,17 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/components\/jquery\/jquery.min-ck.js",
       "fileType" : 64
+    },
+    "\/images\/media\/best_selling_img05.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/media\/best_selling_img05.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/media\/best_selling_img05.jpg",
+      "initialSize" : 2799,
+      "fileType" : 4096
     },
     "\/components\/bootstrap\/less\/normalize.less" : {
       "ieCompatibility" : 1,
@@ -688,14 +688,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/components\/bootstrap\/less\/utilities.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/utilities.less",
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/utilities.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 1,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/less\/magento.less" : {
       "ieCompatibility" : 1,
@@ -725,6 +733,15 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/application-ck.js",
       "fileType" : 64
     },
+    "\/components\/bootstrap\/examples\/justified-nav\/justified-nav.css" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/justified-nav\/justified-nav.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/components\/bootstrap\/examples\/navbar-fixed-top\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -733,15 +750,6 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/navbar-fixed-top\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/css\/style.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/style.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 16
     },
     "\/less\/carousel.less" : {
       "ieCompatibility" : 1,
@@ -760,28 +768,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/assets\/ico\/favicon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/favicon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/favicon.png",
-      "initialSize" : 889,
-      "fileType" : 8192
-    },
-    "\/components\/bootstrap\/assets\/js\/filesaver.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/filesaver.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/filesaver-ck.js",
-      "fileType" : 64
-    },
     "\/less\/std.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/std.less",
@@ -790,89 +776,6 @@
       "strictUnits" : 0,
       "relativeURLS" : 0,
       "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/images\/media\/404_callout1.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/404_callout1.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/404_callout1.jpg",
-      "initialSize" : 17781,
-      "fileType" : 4096
-    },
-    "\/components\/bootstrap\/less\/utilities.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/utilities.less",
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/utilities.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 1,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/components\/bootstrap\/examples\/justified-nav\/justified-nav.css" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/justified-nav\/justified-nav.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/components\/bootstrap\/_includes\/nav-javascript.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/_includes\/nav-javascript.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/components\/bootstrap\/_includes\/old-bs-docs.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/_includes\/old-bs-docs.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/components\/bootstrap\/js\/tests\/unit\/alert.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/alert.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/alert-ck.js",
-      "fileType" : 64
-    },
-    "\/less\/style.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/style.less",
-      "outputAbbreviatedPath" : "\/css\/style.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 0,
       "strictImports" : 0,
       "ignoreWasSetByUser" : 0,
       "shouldRunBless" : 0,
@@ -899,6 +802,103 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/_includes\/nav-css.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-114-precomposed.png",
+      "initialSize" : 2939,
+      "fileType" : 8192
+    },
+    "\/components\/bootstrap\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/components\/bootstrap\/js\/tests\/unit\/alert.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/alert.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/unit\/alert-ck.js",
+      "fileType" : 64
+    },
+    "\/components\/bootstrap\/_includes\/nav-javascript.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/_includes\/nav-javascript.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/less\/style.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/style.less",
+      "outputAbbreviatedPath" : "\/css\/style.css",
+      "outputPathIsSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 0,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/components\/bootstrap\/_includes\/old-bs-docs.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/_includes\/old-bs-docs.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/images\/media\/404_callout1.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/media\/404_callout1.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/media\/404_callout1.jpg",
+      "initialSize" : 17781,
+      "fileType" : 4096
+    },
+    "\/components\/bootstrap\/assets\/ico\/favicon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/favicon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/favicon.png",
+      "initialSize" : 889,
+      "fileType" : 8192
+    },
+    "\/css\/style.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/style.css",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 16
     },
     "\/components\/bootstrap\/js\/tests\/unit\/button.js" : {
       "ignoreWasSetByUser" : 1,
@@ -1133,23 +1133,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/less\/buttons.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/buttons.less",
-      "outputAbbreviatedPath" : "\/css\/buttons.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
     "\/components\/bootstrap\/examples\/carousel\/carousel.css" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1163,6 +1146,23 @@
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/navbar.less",
       "outputAbbreviatedPath" : "\/css\/navbar.css",
+      "outputPathIsSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/less\/buttons.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/buttons.less",
+      "outputAbbreviatedPath" : "\/css\/buttons.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -1334,16 +1334,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/components\/bootstrap\/less\/buttons.less" : {
+    "\/less\/normalize.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/buttons.less",
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/buttons.css",
+      "inputAbbreviatedPath" : "\/less\/normalize.less",
+      "outputAbbreviatedPath" : "\/css\/normalize.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
       "ignore" : 1,
       "strictImports" : 0,
-      "ignoreWasSetByUser" : 1,
+      "ignoreWasSetByUser" : 0,
       "shouldRunBless" : 0,
       "hidden" : 0,
       "strictMath" : 0,
@@ -1368,10 +1368,10 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/less\/type.less" : {
+    "\/components\/bootstrap\/less\/buttons.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/type.less",
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/type.css",
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/buttons.less",
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/buttons.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -1411,22 +1411,16 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/less\/normalize.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/normalize.less",
-      "outputAbbreviatedPath" : "\/css\/normalize.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
+    "\/images\/media\/col_right_callout.jpg" : {
       "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
+      "ignore" : 0,
       "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/media\/col_right_callout.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/media\/col_right_callout.jpg",
+      "initialSize" : 14703,
+      "fileType" : 4096
     },
     "\/components\/bootstrap\/assets\/js\/customizer.js" : {
       "ignoreWasSetByUser" : 1,
@@ -1439,16 +1433,22 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/customizer-ck.js",
       "fileType" : 64
     },
-    "\/images\/media\/col_right_callout.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/components\/bootstrap\/less\/type.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/type.less",
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/type.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/col_right_callout.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/col_right_callout.jpg",
-      "initialSize" : 14703,
-      "fileType" : 4096
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 1,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/less\/print.less" : {
       "ieCompatibility" : 1,
@@ -1540,6 +1540,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/components\/bootstrap\/examples\/grid\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/grid\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/components\/bootstrap\/examples\/theme\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1575,15 +1584,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/components\/bootstrap\/css.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/css.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/components\/bootstrap\/assets\/css\/docs.css" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1593,12 +1593,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/components\/bootstrap\/examples\/grid\/index.html" : {
+    "\/components\/bootstrap\/css.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/grid\/index.html",
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/css.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -1790,15 +1790,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg" : {
+    "\/images\/media\/electronics_digitalcameras.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg",
+      "inputAbbreviatedPath" : "\/images\/media\/electronics_digitalcameras.jpg",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg",
-      "initialSize" : 39387,
+      "outputAbbreviatedPath" : "\/images\/media\/electronics_digitalcameras.jpg",
+      "initialSize" : 57481,
       "fileType" : 4096
     },
     "\/components\/bootstrap\/less\/component-animations.less" : {
@@ -1818,15 +1818,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/images\/media\/electronics_digitalcameras.jpg" : {
+    "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/electronics_digitalcameras.jpg",
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/electronics_digitalcameras.jpg",
-      "initialSize" : 57481,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sticky-footer-navbar.jpg",
+      "initialSize" : 39387,
       "fileType" : 4096
     },
     "\/components\/bootstrap\/less\/button-groups.less" : {
@@ -1900,6 +1900,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/components\/bootstrap\/dist\/js\/bootstrap.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/dist\/js\/bootstrap.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/dist\/js\/bootstrap-ck.js",
+      "fileType" : 64
+    },
     "\/images\/media\/best_selling_img06.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1919,17 +1930,6 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/tests\/vendor\/qunit.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/components\/bootstrap\/dist\/js\/bootstrap.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/dist\/js\/bootstrap.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/dist\/js\/bootstrap-ck.js",
-      "fileType" : 64
     },
     "\/components\/bootstrap\/less\/labels.less" : {
       "ieCompatibility" : 1,
@@ -2031,6 +2031,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/components\/bootstrap\/examples\/screenshots\/theme.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
+      "initialSize" : 95407,
+      "fileType" : 4096
+    },
     "\/components\/bootstrap\/less\/breadcrumbs.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/breadcrumbs.less",
@@ -2048,6 +2059,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/components\/bootstrap\/examples\/carousel\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/carousel\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/less\/alerts.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/alerts.less",
@@ -2064,26 +2084,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/components\/bootstrap\/examples\/screenshots\/theme.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/theme.jpg",
-      "initialSize" : 95407,
-      "fileType" : 4096
-    },
-    "\/components\/bootstrap\/examples\/carousel\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/carousel\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/less\/checkout.less" : {
       "ieCompatibility" : 1,
@@ -2124,17 +2124,6 @@
       "initialSize" : 77911,
       "fileType" : 4096
     },
-    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png",
-      "initialSize" : 1932,
-      "fileType" : 8192
-    },
     "\/components\/bootstrap\/less\/close.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/close.less",
@@ -2151,6 +2140,17 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/ico\/apple-touch-icon-72-precomposed.png",
+      "initialSize" : 1932,
+      "fileType" : 8192
     },
     "\/components\/bootstrap\/less\/alerts.less" : {
       "ieCompatibility" : 1,
@@ -2206,17 +2206,6 @@
       "initialSize" : 1817,
       "fileType" : 4096
     },
-    "\/components\/bootstrap\/js\/transition.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/transition.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/transition-ck.js",
-      "fileType" : 64
-    },
     "\/components\/bootstrap\/less\/modals.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/modals.less",
@@ -2233,6 +2222,17 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/components\/bootstrap\/js\/transition.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/transition.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/transition-ck.js",
+      "fileType" : 64
     },
     "\/images\/home_main_callout.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -2299,23 +2299,6 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/html5shiv-ck.js",
       "fileType" : 64
     },
-    "\/components\/bootstrap\/less\/code.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/code.less",
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/code.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 1,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
     "\/less\/cart.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/cart.less",
@@ -2341,6 +2324,23 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/getting-started.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/components\/bootstrap\/less\/code.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/less\/code.less",
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/css\/code.css",
+      "outputPathIsSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 1,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/bootstrap\/less\/media.less" : {
       "ieCompatibility" : 1,
@@ -2404,6 +2404,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/images\/media\/shirts_landing_banner1.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/media\/shirts_landing_banner1.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/media\/shirts_landing_banner1.jpg",
+      "initialSize" : 27352,
+      "fileType" : 4096
+    },
     "\/components\/bootstrap\/examples\/jumbotron-narrow\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2422,17 +2433,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/media\/about_us_img.jpg",
       "initialSize" : 11123,
-      "fileType" : 4096
-    },
-    "\/images\/media\/shirts_landing_banner1.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/shirts_landing_banner1.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/shirts_landing_banner1.jpg",
-      "initialSize" : 27352,
       "fileType" : 4096
     },
     "\/components\/bootstrap\/js\/tests\/unit\/affix.js" : {
@@ -2516,33 +2516,16 @@
       "initialSize" : 1577,
       "fileType" : 8192
     },
-    "\/less\/pagination.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/pagination.less",
-      "outputAbbreviatedPath" : "\/css\/pagination.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
+    "\/images\/media\/col_left_callout.jpg" : {
       "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/components\/bootstrap\/assets\/js\/jquery.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/jquery.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/jquery-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/images\/media\/col_left_callout.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/media\/col_left_callout.jpg",
+      "initialSize" : 19102,
+      "fileType" : 4096
     },
     "\/images\/media\/best_selling_img04.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -2555,6 +2538,17 @@
       "initialSize" : 2455,
       "fileType" : 4096
     },
+    "\/components\/bootstrap\/assets\/js\/jquery.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/jquery.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/assets\/js\/jquery-ck.js",
+      "fileType" : 64
+    },
     "\/components\/bootstrap\/examples\/screenshots\/sticky-footer.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2566,16 +2560,14 @@
       "initialSize" : 25056,
       "fileType" : 4096
     },
-    "\/images\/media\/col_left_callout.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/components\/bootstrap\/examples\/jumbotron\/jumbotron.css" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/media\/col_left_callout.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/media\/col_left_callout.jpg",
-      "initialSize" : 19102,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron\/jumbotron.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/components\/bootstrap\/js\/tests\/unit\/carousel.js" : {
       "ignoreWasSetByUser" : 1,
@@ -2644,15 +2636,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/examples\/jumbotron\/jumbotron.css" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/jumbotron\/jumbotron.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/components\/bootstrap\/examples\/sticky-footer-navbar\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2661,6 +2644,23 @@
       "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/sticky-footer-navbar\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/less\/pagination.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/pagination.less",
+      "outputAbbreviatedPath" : "\/css\/pagination.css",
+      "outputPathIsSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/bootstrap\/less\/wells.less" : {
       "ieCompatibility" : 1,
@@ -2679,22 +2679,16 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/less\/type.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/type.less",
-      "outputAbbreviatedPath" : "\/css\/type.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
+    "\/components\/bootstrap\/js\/popover.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
       "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/popover.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/popover-ck.js",
+      "fileType" : 64
     },
     "\/less\/glyphicons.less" : {
       "ieCompatibility" : 1,
@@ -2724,16 +2718,22 @@
       "initialSize" : 2541,
       "fileType" : 4096
     },
-    "\/components\/bootstrap\/js\/popover.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
+    "\/less\/type.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/type.less",
+      "outputAbbreviatedPath" : "\/css\/type.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/js\/popover.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/js\/popover-ck.js",
-      "fileType" : 64
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/bootstrap\/js\/tooltip.js" : {
       "ignoreWasSetByUser" : 1,
@@ -2870,6 +2870,17 @@
       "outputAbbreviatedPath" : "\/components\/bootstrap\/Gruntfile-ck.js",
       "fileType" : 64
     },
+    "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg",
+      "initialSize" : 13648,
+      "fileType" : 4096
+    },
     "\/images\/free_shipping_callout.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2880,23 +2891,6 @@
       "outputAbbreviatedPath" : "\/images\/free_shipping_callout.jpg",
       "initialSize" : 14639,
       "fileType" : 4096
-    },
-    "\/less\/ratings.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/less\/ratings.less",
-      "outputAbbreviatedPath" : "\/css\/ratings.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
-      "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
-      "hidden" : 0,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/less\/misc.less" : {
       "ieCompatibility" : 1,
@@ -2915,16 +2909,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/less\/ratings.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/less\/ratings.less",
+      "outputAbbreviatedPath" : "\/css\/ratings.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/components\/bootstrap\/examples\/screenshots\/sign-in.jpg",
-      "initialSize" : 13648,
-      "fileType" : 4096
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 0,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/components\/jquery\/jquery-migrate.js" : {
       "ignoreWasSetByUser" : 1,
