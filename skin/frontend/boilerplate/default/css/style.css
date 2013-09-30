@@ -3160,11 +3160,71 @@ header[role="banner"] .quick-access {
     float: right;
   }
 }
+.layout {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.layout:before,
+.layout:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.layout:after {
+  clear: both;
+}
+.layout:before,
+.layout:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.layout:after {
+  clear: both;
+}
+.layout.layout-3-cols div[role="main"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .layout.layout-3-cols div[role="main"] {
+    float: left;
+    width: 50%;
+  }
+}
 div[role="main"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-bottom: 20px;
 }
+@media (min-width: 992px) {
+  div[role="main"] {
+    float: left;
+    width: 75%;
+  }
+}
 aside[role="complementary"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-bottom: 20px;
+}
+@media (min-width: 992px) {
+  aside[role="complementary"] {
+    float: left;
+    width: 25%;
+  }
 }
 footer[role="contentinfo"] {
   margin-bottom: 20px;
@@ -6086,6 +6146,53 @@ h1.logo {
 }
 .form-language {
   margin-bottom: 10px;
+}
+.form-language label {
+  display: none;
+}
+.form-language select {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-language select:-moz-placeholder {
+  color: #999999;
+}
+.form-language select::-moz-placeholder {
+  color: #999999;
+}
+.form-language select:-ms-input-placeholder {
+  color: #999999;
+}
+.form-language select::-webkit-input-placeholder {
+  color: #999999;
+}
+.form-language select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-language select[disabled],
+.form-language select[readonly],
+fieldset[disabled] .form-language select {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+textarea.form-language select {
+  height: auto;
 }
 .form-search {
   margin-bottom: 10px;
