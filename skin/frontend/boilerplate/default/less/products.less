@@ -165,52 +165,87 @@
     }
 }
 
-// Base product view page
+// Product view page
 .product-view {
+    .make-row();
+}
+.product-essential,
+.product-collateral {
+    .make-sm-column(12);
+}
+
+// Essential (media + shop)
+.product-essential {
 
     .product-shop {
-        .panel();
-        padding: 15px;
-        border-color: @panel-default-border;
+        min-height: 1px;
+        position: relative;
+    }
 
-        .product-name {
-            .panel-heading();
-            margin: -15px -15px 15px;
-            border-color: @panel-default-border;
-            background-color: @panel-default-heading-bg;
-            color: @panel-default-text;
+    .product-img-box {
+        .make-sm-column(7);
 
-            h1 {
-                .panel-title();
-            }
-        }
+        .more-views ul {
+            .make-row();
 
-        .availability,
-        .price-box,
-        .add-to-box,
-        .short-description {
-            margin-bottom: (@line-height-computed / 2);
-        }
-
-        .product-options-bottom {
-            .price-box,
-            .add-to-cart {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-
-        @media (min-width: @screen-md) {
-            .product-options-bottom {
-                .price-box,
-                .add-to-cart {
-                    float: none;
-                    width: auto;
-                }
+            li {
+                .make-xs-column(3);
             }
         }
     }
 
+    @media (min-width: @screen-sm) {
+
+        // Switch floats around for the ordering
+        .product-shop {
+            float: right;
+            width: percentage((5 / @grid-columns));
+        }
+    }
+}
+
+// Product shop (name, price etc)
+.product-view .product-shop {
+    .panel();
+    padding: 15px;
+    border-color: @panel-default-border;
+
+    .product-name {
+        .panel-heading();
+        margin: -15px -15px 15px;
+        border-color: @panel-default-border;
+        background-color: @panel-default-heading-bg;
+        color: @panel-default-text;
+
+        h1 {
+            .panel-title();
+        }
+    }
+
+    .availability,
+    .price-box,
+    .add-to-box,
+    .short-description {
+        margin-bottom: (@line-height-computed / 2);
+    }
+
+    .product-options-bottom {
+        .price-box,
+        .add-to-cart {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    @media (min-width: @screen-md) {
+        .product-options-bottom {
+            .price-box,
+            .add-to-cart {
+                float: none;
+                width: auto;
+            }
+        }
+    }
 }
 
 // Product images

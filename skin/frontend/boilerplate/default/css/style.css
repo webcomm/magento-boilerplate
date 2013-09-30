@@ -3256,106 +3256,6 @@ footer[role="contentinfo"] address {
     text-align: right;
   }
 }
-.product-view {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.product-view:before,
-.product-view:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.product-view:after {
-  clear: both;
-}
-.product-view:before,
-.product-view:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.product-view:after {
-  clear: both;
-}
-.product-essential,
-.product-collateral {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .product-essential,
-  .product-collateral {
-    float: left;
-    width: 100%;
-  }
-}
-.product-essential .product-shop {
-  min-height: 1px;
-  position: relative;
-}
-.product-essential .product-img-box {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .product-essential .product-img-box {
-    float: left;
-    width: 58.333333333333336%;
-  }
-}
-.product-essential .product-img-box .more-views ul {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.product-essential .product-img-box .more-views ul:before,
-.product-essential .product-img-box .more-views ul:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.product-essential .product-img-box .more-views ul:after {
-  clear: both;
-}
-.product-essential .product-img-box .more-views ul:before,
-.product-essential .product-img-box .more-views ul:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.product-essential .product-img-box .more-views ul:after {
-  clear: both;
-}
-.product-essential .product-img-box .more-views ul li {
-  position: relative;
-  float: left;
-  width: 25%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .product-essential .product-shop {
-    float: right;
-    width: 41.66666666666667%;
-  }
-}
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
@@ -6587,6 +6487,106 @@ a.form-search .search-autocomplete li:focus {
 }
 .add-to-box .add-to-links .separator {
   margin: 0 4px;
+}
+.product-view {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.product-view:before,
+.product-view:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.product-view:after {
+  clear: both;
+}
+.product-view:before,
+.product-view:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.product-view:after {
+  clear: both;
+}
+.product-essential,
+.product-collateral {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .product-essential,
+  .product-collateral {
+    float: left;
+    width: 100%;
+  }
+}
+.product-essential .product-shop {
+  min-height: 1px;
+  position: relative;
+}
+.product-essential .product-img-box {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .product-essential .product-img-box {
+    float: left;
+    width: 58.333333333333336%;
+  }
+}
+.product-essential .product-img-box .more-views ul {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.product-essential .product-img-box .more-views ul:before,
+.product-essential .product-img-box .more-views ul:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.product-essential .product-img-box .more-views ul:after {
+  clear: both;
+}
+.product-essential .product-img-box .more-views ul:before,
+.product-essential .product-img-box .more-views ul:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.product-essential .product-img-box .more-views ul:after {
+  clear: both;
+}
+.product-essential .product-img-box .more-views ul li {
+  position: relative;
+  float: left;
+  width: 25%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .product-essential .product-shop {
+    float: right;
+    width: 41.66666666666667%;
+  }
 }
 .product-view .product-shop {
   margin-bottom: 20px;
