@@ -45,11 +45,6 @@ tr.summary-details-excluded {
 .cart-tax-total-expanded {
   background-position: 100% -52px;
 }
-/* ======================================================================================= */
-/* Header ================================================================================ */
-/********** < Navigation */
-/* Sidebar =============================================================================== */
-/* ======================================================================================= */
 /* Remember Me Popup ===================================================================== */
 .window-overlay {
   background: url(../images/window_overlay.png) repeat;
@@ -113,7 +108,6 @@ tr.summary-details-excluded {
   white-space: nowrap;
   color: #fff;
 }
-/* Remember Me Popup ===================================================================== */
 /* MAP Popup============================================================================== */
 .cart-msrp-totals {
   color: red;
@@ -222,8 +216,6 @@ tr.summary-details-excluded {
 .map-popup-only-text {
   border-top: 1px solid #ddd;
 }
-/* ======================================================================================= */
-/* Clears ================================================================================ */
 /* ======================================================================================= */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
@@ -6809,7 +6801,7 @@ textarea.product-options dd textarea {
 }
 .product-options p.note {
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 .product-options p.required {
   position: absolute;
@@ -7300,8 +7292,7 @@ textarea.product-options dd textarea {
 }
 .ratings {
   margin-bottom: 10px;
-  font-size: 11px;
-  line-height: 1.25;
+  font-size: 12px;
 }
 .ratings strong {
   float: left;
@@ -7333,9 +7324,7 @@ textarea.product-options dd textarea {
 }
 .ratings-table th,
 .ratings-table td {
-  font-size: 11px;
-  line-height: 1.15;
-  padding: 3px 0;
+  font-size: 12px;
 }
 .ratings-table th {
   font-weight: bold;
@@ -7491,8 +7480,7 @@ textarea.product-options dd textarea {
   clear: both;
   display: block;
   padding: 8px 55px 0 0;
-  line-height: 1.0;
-  font-size: 11px;
+  font-size: 12px;
 }
 .cart > form {
   margin-bottom: 20px;
