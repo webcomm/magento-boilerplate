@@ -1,0 +1,411 @@
+.block {
+    .panel();
+    border-color: @panel-default-border;
+
+    .block-title {
+        .panel-heading();
+        border-color: @panel-default-border;
+        background-color: @panel-default-heading-bg;
+        color: @panel-default-text;
+
+        strong {
+            .panel-title();
+            font-weight: @headings-font-weight;
+        }
+    }
+
+    .block-subtitle {
+        margin: 0 15px (@line-height-computed / 2);
+        padding: 10px 0;
+        border-bottom: 1px solid @panel-default-border;
+    }
+
+    .block-content,
+    .actions {
+        .clearfix();
+    }
+
+    .block-content {
+        .clearfix();
+
+        li.item {
+            padding: 10px 15px;
+        }
+    }
+
+    .btn-remove,
+    .btn-edit {
+        float: right;
+        margin: 1px 0 2px 5px;
+    }
+    .actions {
+        padding: 6px 15px;
+        background-color: @panel-footer-bg;
+        border-top: 1px solid @panel-inner-border;
+        text-align: right;
+        line-height: @input-height-small;
+
+        &:last-child {
+            .border-bottom-radius(@panel-border-radius - 1);
+        }
+
+        a {
+            float: left;
+        }
+
+        button.button {
+            float: right;
+            .btn-sm();
+        }
+    }
+
+    .empty {
+        margin: 0;
+        padding: 15px;
+    }
+
+    li.odd {
+        background-color: @table-bg-accent;
+    }
+}
+
+/* Mini Blocks */
+.block-cart,
+.block-wishlist,
+.block-subscribe,
+.block-compare,
+.block-reorder,
+.block-poll,
+.block-viewed,
+.block-compared,
+.block-related,
+.block-tags,
+.block-login {
+    font-size: @font-size-small;
+}
+
+// Mini Products List
+.mini-products-list .product-image {
+    float: left;
+}
+.mini-products-list .product-details {
+    margin-left: 60px;
+}
+.block-cart .mini-products-list .product-details .product-name,
+.block-cart .mini-products-list .product-details .nobr small {
+    word-wrap: break-word;
+}
+.block-cart .mini-products-list .product-details .nobr {
+    white-space: normal !important;
+}
+
+/* Block:  Account */
+.block-account {
+    .panel-primary();
+
+    .block-title {
+        .panel-heading();
+        border-color: @panel-primary-border;
+        background-color: @panel-primary-heading-bg;
+        color: @panel-primary-text;
+
+        strong {
+            .panel-title();
+            font-weight: @headings-font-weight;
+        }
+    }
+
+    .block-content {
+        padding: 15px;
+
+        ul {
+            margin-bottom: 0;
+        }
+        li a {
+            display: block;
+            border-bottom: 1px solid @panel-default-border;
+            padding: 5px 0;
+        }
+        li.last a {
+            border-bottom: 0;
+        }
+        li.current {
+            padding: 5px 0;
+            border-bottom: 1px solid @panel-default-border;
+        }
+        li.current.last {
+            border-bottom: 0;
+        }
+    }
+}
+
+// /* Block:  Currency Switcher */
+// .block-currency {
+//     border: 0;
+//     background: url(../images/bkg_block-currency.gif) 0 0 no-repeat;
+//     padding: 7px 12px 10px;
+//     height: 51px;
+// }
+// .block-currency .block-title {
+//     background: none;
+//     border: 0;
+//     padding: 0;
+//     margin: 0 0 5px;
+// }
+// .block-currency .block-title strong {
+//     font: bold 13px/21px Arial, Helvetica, sans-serif;
+//     background: url(../images/i_block-currency.gif) 0 50% no-repeat;
+//     padding: 0 0 0 21px;
+//     text-transform: none;
+//     color: #fff;
+// }
+// .block-currency .block-content {
+//     background: none;
+//     padding: 0;
+// }
+// .block-currency .block-content select {
+//     width: 100%;
+//     padding: 0;
+// }
+
+// Block:  Layered Navigation
+.block-layered-nav {
+    dl {
+        margin: 0;
+    }
+    dt {
+        padding: 7px 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    dd {
+        padding: 0 15px 0 20px;
+        margin-bottom: (@line-height-computed / 2);
+    }
+    dd.last {
+        background: none;
+    }
+    .currently {
+        li {
+            position: relative;
+            padding: 5px 15px;
+        }
+        .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .value {
+
+        }
+        .btn-previous,
+        .btn-remove {
+            position: absolute;
+            right: 4px;
+            top: 9px;
+            margin: 0;
+        }
+        .btn-previous {
+            right: 17px;
+        }
+    }
+    .actions {
+        text-align: right;
+
+        .actions a {
+            float: none;
+        }
+    }
+}
+
+// Block:  Cart
+.block-cart {
+    .summary {
+        padding: 10px 15px;
+    }
+    .amount {
+
+        a {
+            font-weight: bold;
+        }
+    }
+    .subtotal {
+        .alert();
+        .alert-info();
+        padding: 4px;
+        margin-bottom: 0;
+        text-align: center;
+
+        .price {
+            font-weight: bold;
+        }
+    }
+    .actions {
+        border-bottom: 1px solid @panel-default-border;
+
+        .paypal-logo {
+            float: left;
+            width: 100%;
+            margin: 3px 0 0;
+            text-align: right;
+
+            .paypal-or {
+                clear: both;
+                display: block;
+                padding: 0 55px 8px 0;
+            }
+        }
+    }
+}
+
+// Block:  Wishlist
+.block-wishlist .actions {
+    text-align: right;
+}
+.block-wishlist .actions a {
+    float: none;
+}
+
+// Block:  Related
+.block-related input.checkbox {
+    float: left;
+}
+.block-related .product {
+    margin-left: 20px;
+}
+
+.page-popup .link-print {
+
+}
+.compare-table {
+    .btn-remove {
+        float: right;
+        background-image: url(../images/btn_remove2.gif);
+        width: 72px;
+        height: 15px;
+    }
+    tr.add-to-row td {
+        background: #fffada;
+        text-align: center;
+    }
+    tr.first td {
+        text-align: center;
+    }
+    tr.first td .product-name {
+        font-size: @font-size-small;
+        font-weight: bold;
+        margin: 0 0 5px;
+        color: #203548;
+    }
+    tr.first td .product-name a {
+        color: #203548;
+    }
+    tr.first td .ratings {
+        width: 69px;
+        margin: 0 auto;
+    }
+    tr.first td p,
+    tr.add-to-row td p {
+        margin: 0;
+    }
+}
+
+// Block:  Poll
+.block-poll {
+    label {
+        color: #777;
+        font-weight: bold;
+    }
+    input.radio {
+        float: left;
+        margin: 1px -18px 0 0;
+    }
+    .label {
+        display: block;
+        margin-left: 18px;
+    }
+    li {
+        padding: 10px 15px;
+    }
+    label {
+        margin-bottom: 0;
+    }
+    .actions {
+        margin: 5px 0 0;
+    }
+    .answer {
+        font-weight: bold;
+    }
+    .votes {
+        float: right;
+        margin-left: 10px;
+    }
+}
+
+// Block:  Tags
+.block-tags .block-content .tags-list {
+    padding: 15px !important; // Override .std
+    margin-bottom: 0 !important; // Override .std
+    font-size: @font-size-small;
+}
+.block-tags .actions {
+    text-align: right;
+}
+.block-tags .actions a {
+    float: none;
+}
+
+// Block:  Subscribe
+.block-subscribe .block-content {
+    padding: 15px 15px 0;
+}
+.block-subscribe .actions {
+    margin: 15px -15px 0;
+}
+.block-subscribe .actions button.button {
+    float: none;
+}
+
+// Block:  Reorder
+.block-reorder input.checkbox {
+    float: left;
+    margin: 2px -20px 0 0;
+}
+.block-reorder .product-name {
+    margin-left: 20px;
+}
+.block-reorder .validation-advice {
+    margin: 3px 9px 7px;
+}
+
+// Block:  Banner
+.block-banner {
+    border: 0;
+    background-color: transparent;
+}
+.block-banner .block-content {
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+
+    img {
+        .img-responsive();
+    }
+}
+
+// Block:  Login
+.block-login .block-content {
+    padding: 15px 15px 0;
+}
+.block-login .actions {
+    margin: 15px -15px 0;
+}
+
+// Paypal
+.paypal-logo {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+.paypal-logo a {
+    float: none;
+}
