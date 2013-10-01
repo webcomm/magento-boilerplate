@@ -70,7 +70,7 @@ $index = 0;
 <?php if ($baseImageFile): ?>
     <div class="product-image product-image-zoom">
         <a href="#product-media-modal" data-toggle="media" data-index="<?php echo $index++ ?>">
-            <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" class="img-rounded img-polaroid">
+            <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>">
         </a>
     </div>
 <?php endif ?>
@@ -81,7 +81,7 @@ $index = 0;
             <?php foreach ($galleryImages as $image): ?>
                 <li>
                     <a href="#product-media-modal" data-toggle="media" data-index="<?php echo $index++ ?>">
-                        <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>" class="img-rounded img-polaroid">
+                        <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>">
                     </a>
                 </li>
             <?php endforeach ?>
@@ -117,12 +117,12 @@ $index = 0;
                             <?php $index = 0; ?>
                             <?php if ($baseImageFile): $index++; ?>
                                 <div class="item active">
-                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" class="img-rounded img-polaroid">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>">
                                 </div>
                             <?php endif ?>
                             <?php foreach ($galleryImages as $image): ?>
                                 <div class="item <?php if ($index++ == 0): ?>active<?php endif ?>">
-                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>" class="img-rounded img-polaroid">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($zoomSize['x'], $zoomSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>">
                                 </div>
                             <?php endforeach ?>
                         </div>
