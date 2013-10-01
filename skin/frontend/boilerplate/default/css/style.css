@@ -4761,6 +4761,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-link:hover {
   color: #ffffff;
 }
+@media (min-width: 768px) {
+  .navbar-main .navbar-brand {
+    display: none;
+  }
+}
 .navbar-main ul.level0 {
   display: none;
 }
