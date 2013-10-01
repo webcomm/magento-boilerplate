@@ -707,12 +707,18 @@ aside[role="complementary"] {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  display: none;
   margin-bottom: 20px;
 }
 @media (min-width: 992px) {
   aside[role="complementary"] {
     float: left;
     width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  aside[role="complementary"] {
+    display: block;
   }
 }
 footer[role="contentinfo"] {

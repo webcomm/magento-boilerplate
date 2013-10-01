@@ -59,7 +59,12 @@ div[role="main"] {
 // Sidebar(s)
 aside[role="complementary"] {
     .make-md-column(3);
+    display: none;
     margin-bottom: @line-height-computed;
+
+    @media (min-width: @screen-md) {
+        display: block;
+    }
 }
 
 // Footer
