@@ -184,6 +184,12 @@
 
     .product-img-box {
         .make-sm-column(7);
+        padding-left: 0;
+        padding-right: 0;
+
+        img {
+            .img-thumbnail();
+        }
 
         .more-views ul {
             .make-row();
@@ -195,6 +201,11 @@
     }
 
     @media (min-width: @screen-sm) {
+
+        .product-img-box {
+            padding-left: 0;
+            padding-right: (@grid-gutter-width / 2);
+        }
 
         // Switch floats around for the ordering
         .product-shop {

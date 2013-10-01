@@ -6612,12 +6612,26 @@ a.form-search .search-autocomplete li:focus {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .product-essential .product-img-box {
     float: left;
     width: 58.333333333333336%;
   }
+}
+.product-essential .product-img-box img {
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
 }
 .product-essential .product-img-box .more-views ul {
   margin-left: -15px;
@@ -6656,6 +6670,10 @@ a.form-search .search-autocomplete li:focus {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
+  .product-essential .product-img-box {
+    padding-left: 0;
+    padding-right: 15px;
+  }
   .product-essential .product-shop {
     float: right;
     width: 41.66666666666667%;
