@@ -35,25 +35,25 @@
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 
-<?php echo $this->getChildHtml('after_body_start') ?>
-<?php echo $this->getChildHtml('header') ?>
+    <?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('header') ?>
 
-<div class="container">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <?php echo $this->getChildHtml('breadcrumbs') ?>
+    <div class="container">
+        <?php echo $this->getChildHtml('global_notices') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
 
-    <div class="layout layout-1-col">
-        <div role="main">
-            <?php echo $this->getChildHtml('global_messages') ?>
-            <?php echo $this->getChildHtml('content') ?>
+        <div class="layout layout-1-col">
+            <div role="main">
+                <?php echo $this->getChildHtml('global_messages') ?>
+                <?php echo $this->getChildHtml('content') ?>
+            </div>
         </div>
+
     </div>
 
-</div>
-
-<?php echo $this->getChildHtml('footer') ?>
-<?php echo $this->getChildHtml('before_body_end') ?>
-<?php echo $this->getAbsoluteFooter() ?>
+    <?php echo $this->getChildHtml('footer') ?>
+    <?php echo $this->getChildHtml('before_body_end') ?>
+    <?php echo $this->getAbsoluteFooter() ?>
 
 </body>
 </html>
