@@ -68,7 +68,7 @@
             <li>
                 <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
                     <?php if(!$this->getAnchorTextForPrevious()): ?>
-                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        &laquo;
                     <?php else: ?>
                         <?php echo $this->getAnchorTextForPrevious() ?>
                     <?php endif;?>
@@ -86,7 +86,7 @@
 
         <?php foreach ($this->getFramePages() as $_page): ?>
             <?php if ($this->isPageCurrent($_page)): ?>
-                <li class="current"><?php echo $_page ?></li>
+                <li class="current active"><span><?php echo $_page ?></span></li>
             <?php else: ?>
                 <li><a href="<?php echo $this->getPageUrl($_page) ?>"><?php echo $_page ?></a></li>
             <?php endif;?>
@@ -105,7 +105,7 @@
             <li>
                 <a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
                     <?php if(!$this->getAnchorTextForNext()): ?>
-                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        &raquo;
                     <?php else: ?>
                         <?php echo $this->getAnchorTextForNext() ?>
                     <?php endif;?>
