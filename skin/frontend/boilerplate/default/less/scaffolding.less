@@ -9,7 +9,7 @@ header[role="banner"] {
     margin-top: @line-height-computed;
     margin-bottom: @line-height-computed;
 
-    .logo {
+    > .logo {
         .make-md-column(5);
     }
 
@@ -44,6 +44,10 @@ header[role="banner"] {
 
 .layout {
     .make-row();
+
+    &.layout-1-col div[role="main"] {
+        .make-md-column(12);
+    }
 
     &.layout-3-cols div[role="main"] {
         .make-md-column(6);
