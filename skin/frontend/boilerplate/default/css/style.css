@@ -583,14 +583,14 @@ header[role="banner"]:after {
 header[role="banner"]:after {
   clear: both;
 }
-header[role="banner"] .logo {
+header[role="banner"] > .logo {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  header[role="banner"] .logo {
+  header[role="banner"] > .logo {
     float: left;
     width: 41.66666666666667%;
   }
@@ -677,6 +677,18 @@ header[role="banner"] .quick-access {
 .layout:after {
   clear: both;
 }
+.layout.layout-1-col div[role="main"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .layout.layout-1-col div[role="main"] {
+    float: left;
+    width: 100%;
+  }
+}
 .layout.layout-3-cols div[role="main"] {
   position: relative;
   min-height: 1px;
@@ -723,6 +735,30 @@ aside[role="complementary"] {
 }
 footer[role="contentinfo"] {
   margin-bottom: 20px;
+}
+footer[role="contentinfo"]:before,
+footer[role="contentinfo"]:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer[role="contentinfo"]:after {
+  clear: both;
+}
+footer[role="contentinfo"]:before,
+footer[role="contentinfo"]:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer[role="contentinfo"]:after {
+  clear: both;
 }
 footer[role="contentinfo"] > ul > li,
 footer[role="contentinfo"] .links li {
