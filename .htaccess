@@ -211,7 +211,7 @@
 ###########################################
 ## Set developer mode
 
-    SetEnvIf Host .*\.dev MAGE_IS_DEVELOPER_MODE true
+    SetEnvIf Host .*\.dev MAGE_IS_DEVELOPER_MODE=1
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users
