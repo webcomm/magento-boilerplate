@@ -1,20 +1,24 @@
 {
     "name": "webcomm/magento-boilerplate",
     "type": "magento-module",
-    "description":"HTML5 Twitter Bootstrap 3.0 Magento Boilerplate Template",
-    "authors":[
+    "description": "HTML5 Twitter Bootstrap 3.0 Magento Boilerplate Template",
+    "authors": [
         {
-            "name":"Ben Corlett",
-            "email":"bencorlett@me.com"
+            "name": "Ben Corlett",
+            "email": "bencorlett@me.com"
+        },
+        {
+            "name": "Webcomm Pty Ltd",
+            "email": "contact@webcomm.com.au"
         }
     ],
-    "require": {
-        "magento-hackathon/magento-composer-installer":"*"
-    },
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/magento-hackathon/magento-composer-installer"
         }
-    ]
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
 }
