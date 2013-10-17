@@ -127,6 +127,60 @@ Installation of our theme is very straight-forward. Essentially, there are only 
 
 Merge the folders, and you're good to go.
 
+##### Composer
+
+1. install composer
+  
+  ```
+    cd ~
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/local/bin/composer
+  ```
+
+2. backup you index.php and .htaccess in the root of Magento
+
+	```
+	mv index.php index.php.backup
+	mv .htaccess .htaccess.backup
+	
+	```
+
+
+3. create composer.json in the root of Magento with the content of
+
+  ```
+  {
+      "require":{
+          "magento-hackathon/magento-composer-installer":"*",
+          "webcomm/magento-boilerplate" : "dev-master"
+      },
+      "repositories": [
+          {
+              "type": "vcs",
+              "url": "https://github.com/magento-hackathon/magento-composer-installer"
+          },
+          {
+              "type": "vcs",
+              "url": "git@github.com:webcomm/magento-boilerplate.git"
+          }
+      ],
+      "extra":{
+          "magento-root-dir": "./"
+      }
+  }
+  ```
+
+2. run composer in the root of Magento
+  
+  ```
+  cd var/www/magento
+  composer install
+  
+  ```
+
+Now you should have new symbolic links in Magento and can use this Theme.
+
+
 ----
 
 ### Developing
