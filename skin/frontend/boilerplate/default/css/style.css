@@ -4829,6 +4829,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .breadcrumb > .active {
   color: #999999;
 }
+.breadcrumb strong {
+  font-weight: normal;
+  color: #999999;
+}
 .pagination {
   display: inline-block;
   padding-left: 0;
