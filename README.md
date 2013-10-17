@@ -10,7 +10,7 @@ A demo be found over at [http://magentoboilerplate.webcomm.com.au](http://magent
 #### What This Is
 
 - Boilerplate, "starter" theme for your next Magento site, powered by Twitter Bootstrap 3!
-- Mobile first theme (through Bootstrap 3's CSS3 responsive media queries), to better target the growing market of mobile devices.
+- Mobile first theme (through Bootstrap 3's CSS3 responsive media queries), to better target the growing market of mobile devices.
 
 #### What This Is Not
 
@@ -69,19 +69,19 @@ Firstly, like bootstrap, we follow religiously [SMACSS](https://smacss.com) prin
 
 So, in `style.less`, we may have:
 
-	@import "navbars.less";
+    @import "navbars.less";
 
 Then, in our `navbars.less` module component, we will have:
 
-	@import "../components/bootstrap/less/navbars.less";
-	
-	.navbar {
-		// Any custom navbar overrides specific to your Magento store
-	}
+    @import "../components/bootstrap/less/navbars.less";
+
+    .navbar {
+        // Any custom navbar overrides specific to your Magento store
+    }
 
 This allows us to include only the functionality we require, while utilising the amazing frontend developer environment it establishes.
 
-> Our `variables.less` file inherits from Bootstrap's and therefore your variable configuration will cascade back to Bootstrap; you only include the variable overrides specific to your template! 
+> Our `variables.less` file inherits from Bootstrap's and therefore your variable configuration will cascade back to Bootstrap; you only include the variable overrides specific to your template!
 
 #### Conventions suck
 
@@ -112,7 +112,7 @@ Installation of our theme is very straight-forward. Essentially, there are only 
 ##### Git
 
 1. Clone our repo:
-   
+
         git clone git@github.com:webcomm/magento-boilerplate.git your-project
 2. Merge in the Magento files from your version of choice:
 
@@ -127,6 +127,39 @@ Installation of our theme is very straight-forward. Essentially, there are only 
 
 Merge the folders, and you're good to go.
 
+##### Composer
+
+1. [Install composer](http://getcomposer.org/doc/00-intro.md#installation-nix)
+2. Backup your `index.php` and `.htaccess` in the root of Magento:
+
+        mv index.php index.php.bak
+        mv .htaccess .htaccess.bak
+
+3. Create a `composer.json` in the root of Magento, and ensure it has the following:
+
+        {
+            "repositories": [
+                {
+                   "type": "vcs",
+                   "url": "https://github.com/magento-hackathon/magento-composer-installer"
+                }
+            ],
+            "require": {
+                "magento-hackathon/magento-composer-installer": "*",
+                "webcomm/magento-boilerplate": "dev-master"
+            },
+            "extra": {
+                "magento-root-dir": "./"
+            }
+        }
+
+2. Run composer in the root of Magento:
+
+        cd your-project/
+        php composer.phar install # run "composer install" if you're running Composer globally
+
+Now you should have new symbolic links in Magento and can use our theme.
+
 ----
 
 ### Developing
@@ -135,13 +168,13 @@ Developing in our boilerplate theme is rather easy. To begin, you should either 
 
 To do this, you'll need to either copy or rename:
 
-	app/design/frontend/boilerplate
-	skin/frontend/boilerplate
+    app/design/frontend/boilerplate
+    skin/frontend/boilerplate
 
 Once you've copied or renamed the theme, you will need to add it to the bottom of the `.gitignore` file:
 
-	!/app/design/frontend/mytheme
-	!/skin/frontend/mytheme
+    !/app/design/frontend/mytheme
+    !/skin/frontend/mytheme
 
 From here, you'll want to install the site and enable the theme through Magento's design configuration. Firstly, install your site like any other Magento installation. There's plenty of guides out there on that. Then, visit `System > Configuration > Design > Package` and change the package from `default` to whatever you named your theme (such as `mytheme`).
 
