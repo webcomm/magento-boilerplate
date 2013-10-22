@@ -1,9 +1,9 @@
 app/code/local/Webcomm/BootstrapNavigation/										app/code/local/Webcomm/BootstrapNavigation/
 app/design/frontend/base/default/layout/fontis_australia.xml	app/design/frontend/base/default/layout/fontis_australia.xml
 app/design/frontend/base/default/template/fontis/australia/ 	app/design/frontend/base/default/template/fontis/australia/
-app/design/frontend/boilerplate/															app/design/frontend/boilerplate/
+app/design/frontend/boilerplate/default												app/design/frontend/boilerplate/default
 app/etc/modules/Webcomm_BootstrapNavigation.xml								app/etc/modules/Webcomm_BootstrapNavigation.xml
-skin/frontend/boilerplate/																		skin/frontend/boilerplate/
+skin/frontend/boilerplate/default															skin/frontend/boilerplate/default
 skin/frontend/mytheme/																				skin/frontend/mytheme/
 # index.php																											index.php
 # .htaccess																											.htaccess
