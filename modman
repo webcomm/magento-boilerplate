@@ -5,5 +5,5 @@ app/design/frontend/boilerplate/															app/design/frontend/boilerplate/
 app/etc/modules/Webcomm_BootstrapNavigation.xml								app/etc/modules/Webcomm_BootstrapNavigation.xml
 skin/frontend/boilerplate/																		skin/frontend/boilerplate/
 skin/frontend/mytheme/																				skin/frontend/mytheme/
-index.php																											index.php
-.htaccess																											.htaccess
+# index.php																											index.php
+# .htaccess																											.htaccess
