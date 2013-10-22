@@ -130,12 +130,8 @@ Merge the folders, and you're good to go.
 ##### Composer
 
 1. [Install composer](http://getcomposer.org/doc/00-intro.md#installation-nix)
-2. Backup your `index.php` and `.htaccess` in the root of Magento:
 
-        mv index.php index.php.bak
-        mv .htaccess .htaccess.bak
-
-3. Create a `composer.json` in the root of Magento, and ensure it has the following:
+2. Create a `composer.json` in the root of Magento, and ensure it has the following:
 
         {
             "repositories": [
@@ -153,10 +149,18 @@ Merge the folders, and you're good to go.
             }
         }
 
-2. Run composer in the root of Magento:
+3. Run composer in the root of Magento:
 
         cd your-project/
         php composer.phar install # run "composer install" if you're running Composer globally
+        
+4. Optionally copy or link the `index.php` and/or `.htaccess` in the root of Magento:
+
+        cd your-project/
+        mv index.php index.php.bak
+        mv .htaccess .htaccess.bak
+        cp vendor/webcomm/magento-boilerplate/index.php . # or "ln -s" instead of "cp"
+        cp vendor/webcomm/magento-boilerplate/.htaccess . # or "ln -s" instead of "cp"
 
 Now you should have new symbolic links in Magento and can use our theme.
 
