@@ -91,7 +91,7 @@ Naturally, by providing a boilerplate template, there are conventions present. W
 
 #### Performance
 
-To increase performance, we've concatenated all of our asset files into one CSS file (preprocessed by LESS) and one JavaScript file. We've alse reduced the number of images to just a couple (and remove all those horrible gif icons Magento ships with).
+To increase performance, we've concatenated all of our asset files into one CSS file (preprocessed by LESS) and one JavaScript file. We've also reduced the number of images to just a couple (and remove all those horrible gif icons Magento ships with).
 
 We love [CodeKit](http://incident57.com/codekit/). This theme has been built using CodeKit to compile LESS and concatenate and uglify the JavaScript. We've included our CodeKit config file in the theme's asset directory so that, if you're using CodeKit, everything will be setup for you.
 
