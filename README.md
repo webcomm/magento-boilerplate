@@ -154,15 +154,17 @@ Merge the folders, and you're good to go.
         cd your-project/
         php composer.phar install # run "composer install" if you're running Composer globally
         
-4. Optionally copy or link the `index.php` and/or `.htaccess` in the root of Magento:
+4. Optionally copy `mytheme`, `index.php` and/or `.htaccess` in the root of Magento:
 
         cd your-project/
         mv index.php index.php.bak
         mv .htaccess .htaccess.bak
-        cp vendor/webcomm/magento-boilerplate/index.php . # or "ln -s" instead of "cp"
-        cp vendor/webcomm/magento-boilerplate/.htaccess . # or "ln -s" instead of "cp"
+        cp vendor/webcomm/magento-boilerplate/index.php .
+        cp vendor/webcomm/magento-boilerplate/.htaccess .
+        cd vendor/webcomm/magento-boilerplate/skin/frontend/mytheme skin/frontend/<yourthemename>
 
-Now you should have new symbolic links in Magento and can use our theme.
+Now you should have a new folder "vendor/webcomm/magento-boilerplate" with our repository and new symbolic links in Magento to can use our theme.
+You can update to each new version with ```composer update```.
 
 ----
 
