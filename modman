@@ -1,8 +1,3 @@
-app/design/frontend/base/default/layout/fontis_australia.xml	                      app/design/frontend/base/default/layout/fontis_australia.xml
-app/design/frontend/base/default/template/fontis/australia/postcode.phtml           app/design/frontend/base/default/template/fontis/australia/postcode.phtml
-app/design/frontend/base/default/template/fontis/australia/postcode-checkout.phtml  app/design/frontend/base/default/template/fontis/australia/postcode-checkout.phtml
-app/design/frontend/base/default/template/fontis/australia/payment/bpay/            app/design/frontend/base/default/template/fontis/australia/payment/bpay/
-app/design/frontend/base/default/template/fontis/australia/payment/directdeposit/   app/design/frontend/base/default/template/fontis/australia/payment/directdeposit/
 app/design/frontend/boilerplate/default/layout/                                     app/design/frontend/boilerplate/default/layout/
 app/design/frontend/boilerplate/default/template/                                   app/design/frontend/boilerplate/default/template/
 skin/frontend/boilerplate/default/components/                                       skin/frontend/boilerplate/default/components/
