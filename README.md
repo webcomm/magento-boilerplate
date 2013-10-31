@@ -11,6 +11,7 @@ A demo be found over at [http://magentoboilerplate.webcomm.com.au](http://magent
 
 - Boilerplate, "starter" theme for your next Magento site, powered by Twitter Bootstrap 3!
 - Mobile first theme (through Bootstrap 3's CSS3 responsive media queries), to better target the growing market of mobile devices.
+- Tested with Magento 1.6.x, 1.7.x and 1.8.x. It's probably compatible with as far back as 1.4.x (if you have tested it, please [Let us know](http://github.com/webcomm/magento-boilerplate/pulls)).
 
 #### What This Is Not
 
@@ -116,8 +117,8 @@ Installation of our theme is very straight-forward. Essentially, there are only 
         git clone git@github.com:webcomm/magento-boilerplate.git your-project
 2. Merge in the Magento files from your version of choice:
 
-        wget http://www.magentocommerce.com/downloads/assets/1.7.0.2/magento-1.7.0.2.tar.gz
-        tar -zxvf magento-1.7.0.2.tar.gz
+        wget http://www.magentocommerce.com/downloads/assets/1.8.0.0/magento-1.8.0.0.tar.gz
+        tar -zxvf magento-1.8.0.0.tar.gz
         mv -f magento/* your-project/ # Yes, we skipped on .htaccess as it's already present
 
 ##### ZIP downloads
@@ -153,7 +154,7 @@ Merge the folders, and you're good to go.
 
         cd your-project/
         php composer.phar install # run "composer install" if you're running Composer globally
-        
+
 4. Optionally copy `mytheme`, `index.php` and/or `.htaccess` in the root of Magento:
 
         cd your-project/
