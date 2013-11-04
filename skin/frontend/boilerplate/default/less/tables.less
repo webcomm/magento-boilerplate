@@ -3,5 +3,11 @@
 .data-table {
     .table();
     .table-bordered();
-    .table-striped();
+
+    > tbody > tr:nth-child(odd) {
+        > td,
+        > th {
+            background-color: @table-bg-accent;
+        }
+    }
 }
