@@ -5185,12 +5185,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   display: inline-block;
   margin: 0 2px;
 }
-@media (min-width: 768px) {
-  .pager .pages {
-    float: none;
-    width: auto;
-  }
-}
 .sorter {
   padding: 4px 8px;
   border-top: 1px solid #e5e5e5;
