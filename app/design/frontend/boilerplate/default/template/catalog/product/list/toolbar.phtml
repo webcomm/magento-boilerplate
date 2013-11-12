@@ -86,11 +86,11 @@
             </select>
             <?php if($this->getCurrentDirection() == 'desc'): ?>
                 <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">
-                    <i class="glyphicon glyphicon-chevron-down"></i>
+                    <i class="fa fa-arrow-down"></i>
                 </a>
             <?php else: ?>
                 <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>">
-                    <i class="glyphicon glyphicon-chevron-up"></i>
+                    <i class="fa fa-arrow-up"></i>
                 </a>
             <?php endif; ?>
         </div>

@@ -68,7 +68,7 @@
             <li>
                 <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
                     <?php if(!$this->getAnchorTextForPrevious()): ?>
-                        &laquo;
+                        <i class="fa fa-caret-left"></i>
                     <?php else: ?>
                         <?php echo $this->getAnchorTextForPrevious() ?>
                     <?php endif;?>
@@ -105,7 +105,7 @@
             <li>
                 <a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
                     <?php if(!$this->getAnchorTextForNext()): ?>
-                        &raquo;
+                        <i class="fa fa-caret-right"></i>
                     <?php else: ?>
                         <?php echo $this->getAnchorTextForNext() ?>
                     <?php endif;?>
