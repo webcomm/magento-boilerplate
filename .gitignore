@@ -108,6 +108,16 @@ publish
 /app/design/*
 !/app/design/adminhtml
 /app/design/adminhtml/*
+!/app/design/adminhtml/base
+/app/design/adminhtml/base/*
+!/app/design/adminhtml/base/default
+/app/design/adminhtml/base/default/*
+!/app/design/adminhtml/base/default/layout
+/app/design/adminhtml/base/default/layout/*
+!/app/design/adminhtml/base/default/layout/webcomm_*
+!/app/design/adminhtml/base/default/template
+/app/design/adminhtml/base/default/template/*
+!/app/design/adminhtml/base/default/template/webcomm
 !/app/design/adminhtml/default
 /app/design/adminhtml/default/*
 !/app/design/adminhtml/default/default
