@@ -101,14 +101,15 @@ $index = 0;
                 <div class="modal-body">
 
                     <div id="product-media-carousel" class="carousel slide">
-
                         <ol class="carousel-indicators">
                             <?php $index = 0; ?>
+                            <?php $count = 0; ?>
                             <?php if ($baseImageFile): ?>
                                 <li data-target="#product-media-carousel" class="active" data-slide-to="<?php echo $index++ ?>"></li>
                             <?php endif ?>
                             <?php foreach ($galleryImages as $image): ?>
-                                <li data-target="#product-media-carousel" class="<?php if ($index++ == 0): ?>active<?php endif ?>" data-slide-to="<?php echo $index ?>"></li>
+                                <li data-target="#product-media-carousel" class="<?php if ($index == $count): ?>active<?php endif ?>" data-slide-to="<?php echo $index++; ?>"></li>
+                                <?php $count++; ?>
                             <?php endforeach ?>
                         </ol>
 
