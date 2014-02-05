@@ -6,7 +6,7 @@ tr.summary-total .summary-collapse {
   float: right;
   text-align: right;
   padding-left: 20px;
-  background: url(../images/bkg_collapse.gif) 0 5px no-repeat;
+  background: url(../../images/bkg_collapse.gif) 0 5px no-repeat;
   cursor: pointer;
 }
 tr.show-details .summary-collapse {
@@ -34,7 +34,7 @@ tr.summary-details-excluded {
 .cart-tax-total {
   display: block;
   padding-right: 20px;
-  background: url(../images/bkg_collapse.gif) 100% 5px no-repeat;
+  background: url(../../images/bkg_collapse.gif) 100% 5px no-repeat;
   cursor: pointer;
 }
 .cart-tax-info .price,
@@ -47,7 +47,7 @@ tr.summary-details-excluded {
 }
 /* Remember Me Popup ===================================================================== */
 .window-overlay {
-  background: url(../images/window_overlay.png) repeat;
+  background: url(../../images/window_overlay.png) repeat;
   background: rgba(0, 0, 0, 0.35);
   position: absolute;
   top: 0;
@@ -84,7 +84,7 @@ tr.summary-details-excluded {
   position: relative;
 }
 .remember-me-popup .remember-me-popup-head .remember-me-popup-close {
-  background: url(../images/btn_window_close.gif) no-repeat;
+  background: url(../../images/btn_window_close.gif) no-repeat;
   display: block;
   position: absolute;
   top: 7px;
@@ -156,7 +156,7 @@ tr.summary-details-excluded {
   text-overflow: ellipsis;
 }
 .map-popup-arrow {
-  background: url(../images/map_popup_arrow.gif) no-repeat;
+  background: url(../../images/map_popup_arrow.gif) no-repeat;
   position: absolute;
   left: 50%;
   top: -10px;
@@ -164,7 +164,7 @@ tr.summary-details-excluded {
   width: 19px;
 }
 .map-popup-close {
-  background: url(../images/btn_window_close.gif) no-repeat;
+  background: url(../../images/btn_window_close.gif) no-repeat;
   display: block;
   position: absolute;
   top: 8px;
@@ -6744,7 +6744,7 @@ fieldset[disabled] .btn-cart.active {
   line-height: 0;
   height: 1px;
   margin: 10px 0;
-  background: url(../images/bkg_divider1.gif) 0 50% repeat-x;
+  background: url(../../images/bkg_divider1.gif) 0 50% repeat-x;
   text-indent: -999em;
   overflow: hidden;
 }
@@ -7355,7 +7355,7 @@ textarea.form-language select {
 }
 .compare-table .btn-remove {
   float: right;
-  background-image: url(../images/btn_remove2.gif);
+  background-image: url(../../images/btn_remove2.gif);
   width: 72px;
   height: 15px;
 }
@@ -8673,14 +8673,14 @@ textarea.product-options dd textarea {
   height: 13px;
   font-size: 0;
   line-height: 0;
-  background: url(../images/bkg_rating.gif) 0 0 repeat-x;
+  background: url(../../images/bkg_rating.gif) 0 0 repeat-x;
   text-indent: -999em;
   overflow: hidden;
 }
 .rating-box .rating {
   float: left;
   height: 13px;
-  background: url(../images/bkg_rating.gif) 0 100% repeat-x;
+  background: url(../../images/bkg_rating.gif) 0 100% repeat-x;
 }
 .ratings .rating-box {
   float: left;
@@ -8770,7 +8770,7 @@ textarea.product-options dd textarea {
   }
 }
 .rss-title h1 {
-  background: url(../images/i_rss-big.png) 0 4px no-repeat;
+  background: url(../../images/i_rss-big.png) 0 4px no-repeat;
   padding-left: 27px;
 }
 .rss-table .link-rss {
