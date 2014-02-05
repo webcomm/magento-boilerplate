@@ -192,11 +192,15 @@ The process we like to stick with when developing is have our dependencies manag
 
 The first thing to do this is install [Bower](http://bower.io) and [gulp.js](http://gulpjs.com) (both are NodeJS applications).
 
-> Bower is not required to compile assets with our theme, it is only required if you'd like to automatically add new assets (for example, another JavaScript library you would like). If you'd just prefer to manually download files, that's fine, you won't need Bower.
+To install Bower dependencies (not included in the theme becuase they're simply not required for everybody), you'll need to use Bower.
+
+    cd skin/frontend/mytheme/default
+    bower install
 
 Once you have gulp.js installed globally, open up your terminal and change directory into your theme and execute `gulp`:
 
     cd skin/frontend/mytheme/default
+    npm install
     gulp
 
 That's it. From now on, your changes you make to LESS files will automatically compile into CSS, and the same with JavaScript. Refresh your page to see changes!
