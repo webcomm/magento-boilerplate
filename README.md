@@ -41,7 +41,8 @@ We're massive advocate's of a number of things, here at Webcomm:
 3. Best [coding practices in general](http://www.phptherightway.com).
 4. CSS preprocessors, such as [LESS](http://lesscss.org).
 5. [Twitter Bootstrap 3](http://getbootstrap.com).
-6. Asset [dependency management](http://bower.io).
+6. Asset dependency management with [Bower](http://bower.io).
+7. Automatic asset compilation with [gulp.js](http://gulpjs.com).
 
 When we created our boilerplate theme, we went about incorporating the technologies and methodologies we are so passionate about.
 
@@ -94,9 +95,9 @@ Naturally, by providing a boilerplate template, there are conventions present. W
 
 To increase performance, we've concatenated all of our asset files into one CSS file (preprocessed by LESS) and one JavaScript file. We've also reduced the number of images to just a couple (and remove all those horrible gif icons Magento ships with).
 
-We love [CodeKit](http://incident57.com/codekit/). This theme has been built using CodeKit to compile LESS and concatenate and uglify the JavaScript. We've included our CodeKit config file in the theme's asset directory so that, if you're using CodeKit, everything will be setup for you.
+We recommend using [gulp.js](http://gulpjs.com) for asset management. Gulp is an open-source NodeJS task runner, which we use to compile LESS files and JavaScript files into distribution-ready CSS files. We include a default `gulpfile.js` file inside the theme, which is the instructional file telling gulp.js what to do.
 
-You may also use any other LESS or JavaScript compilers that you choose. We use CodeKit because we're all on macs and it's awesome to deal with. However, there's a number of asset compilation plugins available for [GruntJS](http://gruntjs.com) (a nifty little JavaScript task runner). Feel free to sub that in and send through a pull request with the config file you used!
+Having said that, you are free to use any JavaScript compilers you'd like, for example, [GruntJS](http://gruntjs.com). Feel free to sub that in and send through a pull request with the config file you used!
 
 By removing the number of images Magento ships with, and replacing them with either nothing (giving you the freedom to use the ones needed in your theme) or using Bootstrap 3's Glyphicons (you may also use Font Awesome), we've reduced the number of HTTP requests that will be made with Magento. This will decrease page load time, which is a major concern with any Magento site.
 
@@ -185,13 +186,62 @@ Once you've copied or renamed the theme, you will need to add it to the bottom o
 
 From here, you'll want to install the site and enable the theme through Magento's design configuration. Firstly, install your site like any other Magento installation. There's plenty of guides out there on that. Then, visit `System > Configuration > Design > Package` and change the package from `default` to whatever you named your theme (such as `mytheme`).
 
-You'll then want to setup [CodeKit](http://incident57.com/codekit/) or [GruntJS](http://gruntjs.com) to work with your asset files. We've explaine that above under **Performance**.
+The process we like to stick with when developing is have our dependencies managed for us, and use a task runner to compile them into CSS / JavaScript files which are served to the user. You don't have to do this, however it's a great way to save time down the track, even if there's a bit of a learning curve to begin with.
 
-And develop like you normally would! Happy days!
+#### Asset Dependency Management and Automatic Compilation
+
+The first thing to do this is install [Bower](http://bower.io) and [gulp.js](http://gulpjs.com) (both are NodeJS applications).
+
+> Bower is not required to compile assets with our theme, it is only required if you'd like to automatically add new assets (for example, another JavaScript library you would like). If you'd just prefer to manually download files, that's fine, you won't need Bower.
+
+Once you have gulp.js installed globally, open up your terminal and change directory into your theme and execute `gulp`:
+
+    cd skin/frontend/mytheme/default
+    gulp
+
+That's it. From now on, your changes you make to LESS files will automatically compile into CSS, and the same with JavaScript. Refresh your page to see changes!
+
+#### Adding New Bootstrap Components
+
+This theme does not ship with all Bootstrap CSS and JavaScript. The reason is, most sites don't **need** all the components and therefore you're bloating a site by providing more than required. We're including only the files required to get this boilerplate theme running.
+
+To add new Bootstrap styles, simply open up `less/style.less`. From there, you may directly import Bootstrap files, or your own files which in turn import Bootstrap's. For example, add the following into `less/style.less`:
+
+    @import "media.less"; // Relative to less/style.less
+
+Then, in `less/media.less`:
+
+    // In less/media.less
+    @import "../bower_components/bootstrap/less/media.less"; // Relative to less/media.less
+
+    .media {
+        // Your custom overrides go below the call to Bootstrap's styles
+    }
+
+> You may choose to import more than just Bootstrap's LESS / CSS files. Feel free to import anything this way, it's good practice.
+
+To add new JavaScript files, open up `gulpfile.js`. gulp.js is seperated into a number of tasks. One of them is the `js` task. Inside it, you'll see a bunch of JavaScript files listed out. If you require more Bootstrap files (or indeed any JavaScript files), simply add them to the list.
+
+    // ...
+    .src([
+        'bower_components/jquery/jquery.js',
+        'bower_components/bootstrap/js/transition.js',
+        'bower_components/bootstrap/js/collapse.js',
+        'bower_components/bootstrap/js/carousel.js',
+        'bower_components/bootstrap/js/dropdown.js',
+        'bower_components/bootstrap/js/modal.js',
+        // Add new files here
+        'js/script.js'
+    ])
+    // ...
+
+#### Manual Development (No gulp.js)
+
+Feel free to edit any of the files under `dist/css` and `dist/js` if you'd like to manually develop your site. There's no harm in doing this, if you don't want to use gulp.js in the future. Keep in mind that, if you decide to compile with gulp.js that you will lose your manual changes.
 
 ----
 
-#### Contributing
+### Contributing
 
 The git repo for this project can be found at [http://github.com/webcomm/magento-boilerplate](http://github.com/webcomm/magento-boilerplate), and a demo can be found at [http://magentoboilerplate.webcomm.com.au](http://magentoboilerplate.webcomm.com.au).
 
