@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <navigation>
+                    <fields>
+                        <max_depth>
+                            <label>Show Dropdown Links</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bootstrapnavigation/system_config_source_maxdepth</source_model>
+                            <comment>If no, only top level links will be displayed. Twitter Bootstrap only supports one level of dropdown display.</comment>
+                        </max_depth>
+                        <top_in_dropdown>
+                            <label>Show Top Level Links in Dropdown</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>Twitter Bootstrap's dropdowns do not allow you to click on top level links. By specifying "yes", these links will be placed in each dropdown and separated by a divider.</comment>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </top_in_dropdown>
+                        <top_in_dropdown_prefix>
+                            <label>Prefix for Links in Dropdown</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>You may provide an optional prefix for top level links in dropdowns. HTML code supported.</comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><top_in_dropdown>1</top_in_dropdown></depends>
+                        </top_in_dropdown_prefix>
+                        <top_in_dropdown_suffix>
+                            <label>Suffix for Links in Dropdown</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>You may provide an optional suffix for top level links in dropdowns. HTML code supported.</comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><top_in_dropdown>1</top_in_dropdown></depends>
+                        </top_in_dropdown_suffix>
+                    </fields>
+                </navigation>
+            </groups>
+        </catalog>
+    </sections>
+</config>

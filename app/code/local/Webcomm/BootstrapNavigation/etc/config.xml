@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Webcomm_BootstrapNavigation>
+			<version>0.1.0</version>
+		</Webcomm_BootstrapNavigation>
+	</modules>
+	<global>
+		<blocks>
+			<bootstrapnavigation>
+				<class>Webcomm_BootstrapNavigation_Block</class>
+			</bootstrapnavigation>
+			<page>
+
+				<!-- Rewrite the topmenu to ours so we can add our custom classes -->
+				<rewrite>
+					<html_topmenu>Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu</html_topmenu>
+				</rewrite>
+
+			</page>
+		</blocks>
+		<helpers>
+			<bootstrapnavigation>
+				<class>Webcomm_BootstrapNavigation_Helper</class>
+			</bootstrapnavigation>
+		</helpers>
+		<models>
+			<bootstrapnavigation>
+				<class>Webcomm_BootstrapNavigation_Model</class>
+			</bootstrapnavigation>
+		</models>
+	</global>
+	<default>
+		<catalog>
+			<navigation>
+				<max_depth>2</max_depth>
+				<top_in_dropdown>1</top_in_dropdown>
+				<top_in_dropdown_prefix>All</top_in_dropdown_prefix>
+				<top_in_dropdown_suffix></top_in_dropdown_suffix>
+			</navigation>
+		</catalog>
+	</default>
+</config>

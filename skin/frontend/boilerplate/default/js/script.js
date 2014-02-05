@@ -22,7 +22,26 @@ jQuery.noConflict();
         }
 
         , attach: function() {
+            this.attachBootstrapPrototypeCompatibility();
             this.attachMedia();
+        }
+
+        , attachBootstrapPrototypeCompatibility: function() {
+
+            // Bootstrap and Prototype don't play nice, in the sense that
+            // prototype is a really wacky horrible library. It'll
+            // hard-code CSS to hide an element when a hide() event
+            // is fired. See http://stackoverflow.com/q/19139063
+            // To overcome this with dropdowns that are both
+            // toggle style and hover style, we'll add a CSS
+            // class which has "display: block !important"
+            $('*').on('show.bs.dropdown show.bs.collapse', function(e) {
+                $(e.target).addClass('bs-prototype-override');
+            });
+
+            $('*').on('hidden.bs.collapse', function(e) {
+                $(e.target).removeClass('bs-prototype-override');
+            });
         }
 
         , attachMedia: function() {
