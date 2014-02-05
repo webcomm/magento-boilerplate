@@ -21,15 +21,36 @@
     font-weight: bold;
 }
 
-.link-rss { background:url(../images/i_rss.gif) 0 2px no-repeat; padding-left:18px; line-height:14px; white-space:nowrap; }
-.btn-remove  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(../images/btn_remove.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
-.btn-previous  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(../images/btn_previous.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
-.btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(../images/btn_trash.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
-.btn-edit    { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(../images/btn_edit.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
-
 .btn-remove, .btn-previous,
 .btn-remove2, .btn-edit {
-    background: red;
+    display: inline-block;
+    font-size: 0;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    // Create a "X" icon
+    &:after {
+        font-size: (@font-size-base * 1.0);
+        font-weight: @close-font-weight;
+        font-family: FontAwesome;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.btn-edit:after {
+    content: @fa-var-pencil;
+}
+
+.btn-remove, .btn-remove2 {
+    // Create a "X" icon
+    &:after {
+        content: @fa-var-times;
+    }
 }
 
 .btn-cart {

@@ -112,10 +112,13 @@
 
             // Create a "X" icon
             &:after {
-                font-size: (@font-size-base * 1.5);
+                font-size: @font-size-base;
                 font-weight: @close-font-weight;
+                font-family: FontAwesome;
                 line-height: 1;
-                content: "\00d7";
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: @fa-var-times;
             }
 
             &:hover,
@@ -225,10 +228,13 @@
 
         // Create a "X" icon
         &:after {
-            font-size: (@font-size-base * 1.5);
+            font-size: @font-size-base;
             font-weight: @close-font-weight;
+            font-family: FontAwesome;
             line-height: 1;
-            content: "\00d7";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: @fa-var-times;
         }
 
         &:hover,
