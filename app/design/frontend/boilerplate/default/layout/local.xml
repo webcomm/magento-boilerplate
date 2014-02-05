@@ -39,11 +39,11 @@
 
 			<!-- Add our assets -->
 			<action method="addCss">
-				<stylesheet>css/style.css</stylesheet>
+				<stylesheet>dist/css/style.css</stylesheet>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
-				<name>js/script-ck.js</name>
+				<name>dist/js/script.js</name>
 			</action>
 
 			<!-- Add additioanl child blocks -->

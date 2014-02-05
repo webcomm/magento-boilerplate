@@ -15,7 +15,7 @@ gulp.task('less', function() {
 		.pipe(less().on("error", notify.onError(function (error) {
 			return "Error compiling LESS: " + error.message;
 		})))
-		.pipe(minifycss())
+		// .pipe(minifycss())
 		.pipe(gulp.dest('dist/css'))
 		.pipe(notify({
 			message: 'Successfully compiled LESS'
@@ -36,10 +36,12 @@ gulp.task('js', function() {
 			'bower_components/bootstrap/js/transition.js',
 			'bower_components/bootstrap/js/collapse.js',
 			'bower_components/bootstrap/js/carousel.js',
+			'bower_components/bootstrap/js/dropdown.js',
+			'bower_components/bootstrap/js/modal.js',
 			'js/script.js'
 		])
 		.pipe(concat('script.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(notify({
 			message: 'Successfully compiled JS'
