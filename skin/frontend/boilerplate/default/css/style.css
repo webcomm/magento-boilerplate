@@ -12107,7 +12107,7 @@ header[role="banner"]:after,
   display: block !important;
 }
 .hidden {
-  display: block !important;
+  display: none !important;
   border: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
