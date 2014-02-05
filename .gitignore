@@ -70,11 +70,9 @@ publish
 !/composer.lock
 /vendor
 
-#SEO 
-#i. e. you just want “allow all” in robots.txt on live system
-robots.txt
-#domain specific / propably generated
-sitemap.xml
+# SEO
+/robots.txt
+/sitemap.xml
 
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
 # Part B: Ignore all standard Magento  #
