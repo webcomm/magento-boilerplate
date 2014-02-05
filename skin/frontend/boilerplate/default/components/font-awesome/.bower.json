@@ -9,7 +9,6 @@
     "commit": "dc23a94e16a8daa3cbb3c7fa34d63e2812637b8f"
   },
   "_source": "git://github.com/FortAwesome/Font-Awesome.git",
-  "_target": "~4.0.3",
-  "_originalSource": "font-awesome",
-  "_direct": true
+  "_target": "~4",
+  "_originalSource": "font-awesome"
 }
