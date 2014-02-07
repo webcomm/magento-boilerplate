@@ -128,18 +128,18 @@ This theme does not ship with all Bootstrap CSS and JavaScript. The reason is, m
 
 To add new Bootstrap styles, simply open up `less/style.less`. From there, you may directly import Bootstrap files, or your own files which in turn import Bootstrap's. For example, add the following into `less/style.less`:
 
-```less
-@import "media.less"; // Relative to less/style.less
+```css
+@import "media.less"; /* Relative to less/style.less */
 ```
 
 Then, in `less/media.less`:
 
-```less
-// In less/media.less
-@import "../bower_components/bootstrap/less/media.less"; // Relative to less/media.less
+```css
+/* In less/media.less */
+@import "../bower_components/bootstrap/less/media.less"; /* Relative to less/media.less */
 
 .media {
-    // Your custom overrides go below the call to Bootstrap's styles
+    /* Your custom overrides go below the call to Bootstrap's styles */
 }
 ```
 
