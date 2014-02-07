@@ -1,13 +1,15 @@
 # ==================================== #
 # Magento Boilerplate .gitignore file. #
 #                                      #
-#  Copyright (c) 2012 Webcomm Pty Ltd  #
+#  Copyright (c) 2014 Webcomm Pty Ltd  #
 #                                      #
 # This file is tested on:              #
 #  - Magento CE 1.6.2.0                #
 #  - Magento CE 1.7.0.0                #
 #  - Magento CE 1.7.0.1                #
 #  - Magento CE 1.7.0.2                #
+#  - Magento CE 1.8.0.0                #
+#  - Magento CE 1.8.1.0                #
 #                                      #
 # ==================================== #
 
