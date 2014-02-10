@@ -1,7 +1,7 @@
 {
     "name": "webcomm/magento-boilerplate",
     "type": "magento-module",
-    "description": "HTML5 Twitter Bootstrap 3.0 Magento Boilerplate Template",
+    "description": "HTML5 Twitter Bootstrap 3.1 Magento Boilerplate Template",
     "authors": [
         {
             "name": "Ben Corlett",
