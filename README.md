@@ -25,12 +25,17 @@ Begin by creating a `composer.json` in the root of Magento, and ensure it has th
     ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "webcomm/magento-boilerplate": "dev-master"
+        "webcomm/magento-boilerplate": "1.0.*@dev"
     },
     "extra": {
-        "magento-root-dir": "./"
+        "magento-root-dir": "./",
+        "magento-deploystrategy": "copy"
+    },
+    "config": {
+        "preferred-install": "dist"
     }
 }
+
 ```
 
 Finish by installing Composer dependencies and a couple of optional enhancements:
