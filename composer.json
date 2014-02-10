@@ -20,5 +20,13 @@
     ],
     "require": {
         "magento-hackathon/magento-composer-installer":"*"
+    },
+    "extra": {
+        "map": [
+            ["app/code/local/Webcomm/BootstrapNavigation", "app/code/local/Webcomm/BootstrapNavigation"],
+            ["app/design/frontend/boilerplate/default", "app/design/frontend/boilerplate/default"],
+            ["app/etc/modules/Webcomm_BootstrapNavigation.xml", "app/etc/modules/Webcomm_BootstrapNavigation.xml"],
+            ["skin/frontend/boilerplate/default", "skin/frontend/boilerplate/default"]
+        ]
     }
 }
