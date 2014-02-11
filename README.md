@@ -28,9 +28,14 @@ Begin by creating a `composer.json` in the root of Magento, and ensure it has th
         "webcomm/magento-boilerplate": "dev-master"
     },
     "extra": {
-        "magento-root-dir": "./"
+        "magento-root-dir": "./",
+        "magento-deploystrategy": "copy"
+    },
+    "config": {
+        "preferred-install": "dist"
     }
 }
+
 ```
 
 Finish by installing Composer dependencies and a couple of optional enhancements:
