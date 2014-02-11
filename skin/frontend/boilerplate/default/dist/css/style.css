@@ -4499,7 +4499,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .pager .limiter select {
   display: inline;
-  width: 50px;
+  width: 60px;
 }
 .pager .pages {
   float: left;
