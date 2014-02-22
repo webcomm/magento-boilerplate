@@ -65,7 +65,7 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
      */
     protected function _addToggle($html)
     {
-        return preg_replace('/(<li\s+class="level0.*?<a.*?)(>)/', '$1 data-toggle="dropdown"$2', $html);
+        return preg_replace('/(<li\s+class="level0.*parent.*?<a.*?)(>)/', '$1 data-toggle="dropdown"$2', $html);
     }
 
     /**
@@ -75,7 +75,7 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
      */
     protected function _addCaret($html)
     {
-        return preg_replace('/(<li\s+class="level0.*?)(<\/a>)/', '$1 <b class="caret"></b> $2', $html);
+        return preg_replace('/(<li\s+class="level0.*parent.*?)(<\/a>)/', '$1 <b class="caret"></b> $2', $html);
     }
 
     /**
