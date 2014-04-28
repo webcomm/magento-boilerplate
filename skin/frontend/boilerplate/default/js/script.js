@@ -9,9 +9,9 @@ jQuery.noConflict();
     }
 
     Site.prototype = {
-        constructor: Site
+        constructor: Site,
 
-        , start: function() {
+        start: function() {
             var me = this;
 
             $(window).load(function() {
@@ -19,14 +19,14 @@ jQuery.noConflict();
             });
 
             this.attach();
-        }
+        },
 
-        , attach: function() {
+        attach: function() {
             this.attachBootstrapPrototypeCompatibility();
             this.attachMedia();
-        }
+        },
 
-        , attachBootstrapPrototypeCompatibility: function() {
+        attachBootstrapPrototypeCompatibility: function() {
 
             // Bootstrap and Prototype don't play nice, in the sense that
             // prototype is a really wacky horrible library. It'll
@@ -42,9 +42,9 @@ jQuery.noConflict();
             $('*').on('hidden.bs.collapse', function(e) {
                 $(e.target).removeClass('bs-prototype-override');
             });
-        }
+        },
 
-        , attachMedia: function() {
+        attachMedia: function() {
             var $links = $('[data-toggle="media"]');
             if ( ! $links.length) return;
 
@@ -65,7 +65,7 @@ jQuery.noConflict();
                 return false;
             });
         }
-    }
+    };
 
     jQuery(document).ready(function($) {
         var site = new Site();
