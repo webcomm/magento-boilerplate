@@ -32,7 +32,7 @@ gulp.task('lint', function() {
 gulp.task('js', function() {
 	gulp
 		.src([
-			'bower_components/jquery/jquery.js',
+			'bower_components/jquery/dist/jquery.js',
 			'bower_components/bootstrap/js/transition.js',
 			'bower_components/bootstrap/js/collapse.js',
 			'bower_components/bootstrap/js/carousel.js',
