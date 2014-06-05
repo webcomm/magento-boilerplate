@@ -60,7 +60,10 @@
 
 			<!-- Add our assets -->
 			<action method="addCss">
-				<stylesheet>css/style.css</stylesheet>
+				<stylesheet>dist/css/style-blessed1.css</stylesheet>
+			</action>
+			<action method="addCss">
+				<stylesheet>dist/css/style.css</stylesheet>
 			</action>
 			<action method="addItem">
 				<type>skin_js</type>
