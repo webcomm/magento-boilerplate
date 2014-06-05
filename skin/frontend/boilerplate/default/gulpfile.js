@@ -12,12 +12,14 @@ var clean      = require('gulp-clean');
 var livereload = require('gulp-livereload');
 var lr         = require('tiny-lr');
 var server     = lr();
+var bless      = require('gulp-bless');
 
 gulp.task('less', function() {
     return gulp.src('less/style.less')
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
+        .pipe(bless())
         // .pipe(minifycss())
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload(server))

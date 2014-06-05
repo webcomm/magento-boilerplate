@@ -9,6 +9,7 @@
     "gulp-jshint": "~1.6",
     "gulp-clean": "~0.2",
     "gulp-livereload": "~1.5",
-    "tiny-lr": "~0.0.7"
+    "tiny-lr": "~0.0.7",
+    "gulp-bless": "~1"
   }
 }
