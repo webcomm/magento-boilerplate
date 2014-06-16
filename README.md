@@ -167,6 +167,10 @@ To add new JavaScript files, open up `gulpfile.js`. gulp.js is seperated into a 
 // ...
 ```
 
+### FAQs
+
+1. **Notify isn't working?** - check you are not running `gulp` on a headless (command-line only) server, such as a remote webserver or Vagrant box. Windows may need [modification](https://github.com/webcomm/magento-boilerplate/issues/48) of your `gulpfile.js` and `package.json` files to work properly.
+
 ### Manual Development (No gulp.js)
 
 Feel free to edit any of the files under `dist/css` and `dist/js` if you'd like to manually develop your site. There's no harm in doing this, if you don't want to use gulp.js in the future. Keep in mind that, if you decide to compile with gulp.js that you will lose your manual changes.
