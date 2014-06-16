@@ -324,9 +324,3 @@ publish
 # Boilerplate Theme
 !/app/design/frontend/boilerplate
 !/skin/frontend/boilerplate
-
-# If you want to be very clever, you
-# will duplicate 'mytheme', as it
-# inherits all styling from 'boilerplate'
-# and makes upgrading easier!
-!/skin/frontend/mytheme
