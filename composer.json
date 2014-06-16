@@ -22,6 +22,8 @@
         "magento-hackathon/magento-composer-installer":"*"
     },
     "extra": {
+        "magento-root-dir": "./",
+        "magento-deploystrategy": "copy",
         "map": [
             ["app/code/local/Webcomm/BootstrapNavigation", "app/code/local/Webcomm/BootstrapNavigation"],
             ["app/design/frontend/boilerplate/default", "app/design/frontend/boilerplate/default"],
