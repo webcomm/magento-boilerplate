@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 var less      = require('gulp-less');
 var minifycss = require('gulp-minify-css');
+var bless = require('gulp-bless');
 
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
@@ -10,29 +11,33 @@ var uglify = require('gulp-uglify');
 var notify     = require('gulp-notify');
 var clean      = require('gulp-clean');
 var livereload = require('gulp-livereload');
-var lr         = require('tiny-lr');
-var server     = lr();
 
+// LESS
 gulp.task('less', function() {
     return gulp.src('less/style.less')
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
-        // .pipe(minifycss())
+        .pipe(minifycss())
+        .pipe(bless({
+            imports: true
+        }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(livereload(server))
+        .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled LESS'
         }));
 });
 
+// Linting
 gulp.task('lint', function() {
     return gulp.src('js/script.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-        .pipe(livereload(server));
+        .pipe(livereload());
 });
 
+// JavaScript
 gulp.task('js', function() {
     return gulp.src([
             'bower_components/jquery/dist/jquery.js',
@@ -44,9 +49,9 @@ gulp.task('js', function() {
             'js/script.js'
         ])
         .pipe(concat('script.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
-        .pipe(livereload(server))
+        .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled JS'
         }));
@@ -60,21 +65,15 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('less', 'lint', 'js');
+    gulp.run('less', 'lint', 'js');
 });
 
 // Watch
 gulp.task('watch', function() {
-    // Listen on port 35729
-    server.listen(35729, function (err) {
-        if (err) {
-            return console.log(err);
-        }
 
-        // Watch .less files
-        gulp.watch('less/**/*.less', ['less']);
+    // Watch .less files
+    gulp.watch('less/**/*.less', ['less']);
 
-        // Watch .js files
-        gulp.watch('js/**/*.js', ['lint', 'js']);
-    });
+    // Watch .js files
+    gulp.watch('js/**/*.js', ['lint', 'js']);
 });
