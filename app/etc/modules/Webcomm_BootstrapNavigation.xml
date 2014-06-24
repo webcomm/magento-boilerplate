@@ -4,7 +4,7 @@
     <modules>
         <Webcomm_BootstrapNavigation>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
             <depends>
                 <Mage_Catalog/>
                 <Mage_Page/>
