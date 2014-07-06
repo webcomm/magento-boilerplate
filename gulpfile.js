@@ -101,9 +101,7 @@ gulp.task('clean', function() {
 });
 
 // Init task to have working bootstrap js parts, jquery and bootstrap fonts
-gulp.task('init', ['clean'], function() {
-    gulp.run('jQuery', 'bootstrapFonts', 'bootstrapJs', 'less', 'js');
-});
+gulp.task('init', ['clean', 'jQuery', 'bootstrapFonts', 'bootstrapJs', 'less', 'js']);
 
 // Watch
 gulp.task('watch', function() {
@@ -114,6 +112,4 @@ gulp.task('watch', function() {
 });
 
 // Default task
-gulp.task('default', ['clean'], function() {
-    gulp.run('less', 'js');
-});
+gulp.task('default', ['clean', 'less', 'js']);

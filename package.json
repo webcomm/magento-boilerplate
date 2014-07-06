@@ -8,7 +8,7 @@
     "gulp-less": "~1.2",
     "gulp-livereload": "~1.5",
     "gulp-minify-css": "~0.3",
-    "gulp-notify": "~1.2.6",
+    "gulp-notify": "~1.4",
     "gulp-uglify": "~0.3"
   }
 }
