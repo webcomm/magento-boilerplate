@@ -1,33 +1,34 @@
-var gulp = require('gulp');
+var customTheme = '';
 
-var less       = require('gulp-less');
-var minifycss  = require('gulp-minify-css');
-var bless      = require('gulp-bless');
+var gulp         = require('gulp'),
+    less         = require('gulp-less'),
+    minifycss    = require('gulp-minify-css'),
+    bless        = require('gulp-bless'),
+    jshint       = require('gulp-jshint'),
+    concat       = require('gulp-concat'),
+    uglify       = require('gulp-uglify'),
+    notify       = require('gulp-notify'),
+    clean        = require('gulp-clean'),
+    livereload   = require('gulp-livereload');
 
-var jshint     = require('gulp-jshint');
-var concat     = require('gulp-concat');
-var uglify     = require('gulp-uglify');
+var oPath        = {
+    basePath: "src/skin/frontend/boilerplate/",
+    defaultTheme: "default/",
+    parts: {
+        less: "less/style.less",
+        js: "js/script.js",
+        dist: "dist/"
+    }
+};
 
-var notify     = require('gulp-notify');
-var clean      = require('gulp-clean');
-var livereload = require('gulp-livereload');
-
-var sCustomTheme = 'xyz/';
-var oPath = {
-    sBasePath: "src/skin/frontend/boilerplate/",
-    sDefaultTheme: "default/",
-    sLess: "less/style.less",
-    sJs: "js/script.js"
-}
-
-var getPath = function (sCustomTheme, sPart) {
-    var sTheme = (sCustomTheme !== '') ? sCustomTheme : oPath.sDefaultTheme;
-    return oPath.sBasePath + sTheme + oPath[sPart];
-}
+var getPath = function (part) {
+    var theme = (customTheme !== '') ? customTheme : oPath.defaultTheme;
+    return oPath.basePath + theme + oPath.parts[part];
+};
 
 // LESS
 gulp.task('less', function() {
-    return gulp.src( oPath.sBasePath + oPath.sDefaultTheme + oPath.sLess)
+    return gulp.src(getPath('less'))
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
@@ -35,7 +36,7 @@ gulp.task('less', function() {
         .pipe(bless({
             imports: true
         }))
-        .pipe(gulp.dest(oPath.sBasePath + oPath.sDefaultTheme + 'dist/css'))
+        .pipe(gulp.dest(getPath('dist') + 'css'))
         .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled LESS'
@@ -45,13 +46,13 @@ gulp.task('less', function() {
 // JavaScript
 gulp.task('js', function() {
     return gulp.src([
-            oPath.sBasePath + oPath.sDefaultTheme + oPath.sJs
+            getPath('js')
         ])
         .pipe(concat('script.js'))
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(uglify())
-        .pipe(gulp.dest(oPath.sBasePath + oPath.sDefaultTheme + 'dist/js'))
+        .pipe(gulp.dest(getPath('dist') + 'js'))
         .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled JS'
@@ -85,10 +86,10 @@ gulp.task('jQuery', function(){
 // Bootstrap Fonts
 gulp.task('bootstrapFonts', function(){
     gulp.src('bower_components/bootstrap/fonts/*')
-        .pipe(gulp.dest('src/skin/frontend/boilerplate/default/dist/fonts/bootstrap/'));
+        .pipe(gulp.dest(getPath('dist') + 'fonts/bootstrap/'));
 
     gulp.src('bower_components/bootstrap/fonts/*')
-        .pipe(gulp.dest('src/skin/frontend/boilerplate/default/dist/fonts/font-awesome/'));
+        .pipe(gulp.dest(getPath('dist') + 'fonts/font-awesome/'));
 });
 
 // Task section:
@@ -96,7 +97,7 @@ gulp.task('bootstrapFonts', function(){
 
 // Clean
 gulp.task('clean', function() {
-    return gulp.src(['dist/css', 'dist/js'], {read: false})
+    return gulp.src([getPath('dist') + 'css', getPath('dist') + 'js'], {read: false})
         .pipe(clean());
 });
 
