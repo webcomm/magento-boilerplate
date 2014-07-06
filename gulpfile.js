@@ -27,7 +27,7 @@ var getPath = function (sCustomTheme, sPart) {
 
 // LESS
 gulp.task('less', function() {
-    return gulp.src( oPath.sBasePath + oPath.sDefault + oPath.sLess)
+    return gulp.src( oPath.sBasePath + oPath.sDefaultTheme + oPath.sLess)
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
@@ -35,7 +35,7 @@ gulp.task('less', function() {
         .pipe(bless({
             imports: true
         }))
-        .pipe(gulp.dest(oPath.sDefault + 'dist/css'))
+        .pipe(gulp.dest(oPath.sBasePath + oPath.sDefaultTheme + 'dist/css'))
         .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled LESS'
@@ -45,13 +45,13 @@ gulp.task('less', function() {
 // JavaScript
 gulp.task('js', function() {
     return gulp.src([
-            oPath.sDefault + oPath.sJs
+            oPath.sBasePath + oPath.sDefaultTheme + oPath.sJs
         ])
         .pipe(concat('script.js'))
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(uglify())
-        .pipe(gulp.dest(oPath.sDefault + 'dist/js'))
+        .pipe(gulp.dest(oPath.sBasePath + oPath.sDefaultTheme + 'dist/js'))
         .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled JS'
@@ -115,5 +115,5 @@ gulp.task('watch', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.run('less', 'js', 'watch');
+    gulp.run('less', 'js');
 });
