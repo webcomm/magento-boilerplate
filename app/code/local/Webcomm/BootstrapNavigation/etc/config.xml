@@ -35,7 +35,7 @@
 			<navigation>
 				<max_depth>2</max_depth>
 				<top_in_dropdown>1</top_in_dropdown>
-				<top_in_dropdown_prefix>All</top_in_dropdown_prefix>
+				<top_in_dropdown_prefix>View All</top_in_dropdown_prefix>
 				<top_in_dropdown_suffix></top_in_dropdown_suffix>
 			</navigation>
 		</catalog>
