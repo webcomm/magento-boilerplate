@@ -1,328 +1,189 @@
-# ==================================== #
-# Magento Boilerplate .gitignore file. #
-#                                      #
-#  Copyright (c) 2014 Webcomm Pty Ltd  #
-#                                      #
-# This file is tested on:              #
-#  - Magento CE 1.6.2.0                #
-#  - Magento CE 1.7.0.0                #
-#  - Magento CE 1.7.0.1                #
-#  - Magento CE 1.7.0.2                #
-#  - Magento CE 1.8.0.0                #
-#  - Magento CE 1.8.1.0                #
-#  - Magento CE 1.9.0.0                #
-#  - Magento CE 1.9.0.1                #
-#                                      #
-# ==================================== #
+# ==================================================== #
+#                _                                     #
+#               | |                                    #
+#  __      _____| |__   ___ ___  _ __ ___  _ __ ___    #
+#  \ \ /\ / / _ \ '_ \ / __/ _ \| '_ ` _ \| '_ ` _ \   #
+#   \ V  V /  __/ |_) | (_| (_) | | | | | | | | | | |  #
+#    \_/\_/ \___|_.__/ \___\___/|_| |_| |_|_| |_| |_|  #
+#      Copyright (c) 2011-2014 Webcomm Pty Limited     #
+#                                                      #
+# ==================================================== #
 
+# ==================================================== #
+#                        GLOBAL                        #
+#                          --                          #
+#               See http://goo.gl/EpCdmV               #
+# ==================================================== #
 
-
-# =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-# Part A: Ignore all files that        #
-#         probably shouldn't be in     #
-#         version control              #
-# =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-#
-# You shouldn't need to edit these
-# files at all unless a Magento
-# upgrade breaks this. These files are
-# in alphabetical order.
-
-
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
-*.sass-cache
-*.iml
-
-# OS or Editor folders
 .DS_Store
-Thumbs.db
-.cache
-.project
-.settings
-.tmproj
-*.esproj
-nbproject
+.AppleDouble
+.LSOverride
 
-# Dreamweaver added files
-_notes
-dwsync.xml
+# Icon must end with two \r
+Icon
 
-# Komodo
-*.komodoproject
-.komodotools
 
-# Folders to ignore
-.hg
-.svn
-.CVS
-intermediate
-publish
-.idea
+# Thumbnails
+._*
 
-# Composer
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Hide all files under the root directory
+/*
+
+# Except this file
+!/.gitignore
+
+# And Composer-related resources
 !/composer.json
 !/composer.lock
-/vendor
 
-# SEO
-/robots.txt
-/sitemap.xml
+# ==================================================== #
+#                        MAGENTO                       #
+# ==================================================== #
 
-# =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-# Part B: Ignore all standard Magento  #
-#         files.                       #
-# =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-#
-# You shouldn't need to edit these
-# files at all unless a Magento
-# upgrade breaks this. These files are
-# in alphabetical order. The ignores
-# are setup so that in Part C onwards
-# you usem minimal code to setup
-# your ignores.
-
-
-
-# .htaccess files
-/.htaccess.sample
-
-# API
-/api.php
-
-# App
+# Hide out all code, allowing easy targeting of both
+# community and local modules that can't be
+# installed with Composer.
+!/app/
 /app/*
-
-# App code
-!/app/code
+!/app/code/
 /app/code/*
-!/app/code/community
+!/app/code/community/
 /app/code/community/*/*
-!/app/code/local
+!/app/code/local/
+/app/code/local/*/*
 
-# App design
-!/app/design
+# Same concept for code will apply to the adminhtml
+# design files.
+!/app/design/
 /app/design/*
-!/app/design/adminhtml
-/app/design/adminhtml/*
-!/app/design/adminhtml/base
-/app/design/adminhtml/base/*
-!/app/design/adminhtml/base/default
-/app/design/adminhtml/base/default/*
-!/app/design/adminhtml/base/default/layout
-/app/design/adminhtml/base/default/layout/*
-!/app/design/adminhtml/base/default/layout/webcomm_*
-!/app/design/adminhtml/base/default/template
-/app/design/adminhtml/base/default/template/*
-!/app/design/adminhtml/base/default/template/webcomm
-!/app/design/adminhtml/default
-/app/design/adminhtml/default/*
-!/app/design/adminhtml/default/default
-/app/design/adminhtml/default/default/*
-!/app/design/adminhtml/default/default/layout
+!/app/design/adminhtml/
+/app/design/adminhtml/default/default/etc/*
 /app/design/adminhtml/default/default/layout/*
-!/app/design/adminhtml/default/default/layout/webcomm_*
-!/app/design/adminhtml/default/default/template
+/app/design/adminhtml/default/default/locale/*
 /app/design/adminhtml/default/default/template/*
-!/app/design/adminhtml/default/default/template/webcomm
-!/app/design/frontend
+
+# With frontend design files, we need to structure
+# the ignore rules so people running their own
+# packages or a package under default are
+# covered.
+!/app/design/frontend/
 /app/design/frontend/*
-!/app/design/frontend/base
-/app/design/frontend/base/*
-!/app/design/frontend/base/default
-/app/design/frontend/base/default/*
-!/app/design/frontend/base/default/layout
+!/app/design/frontend/base/
+/app/design/frontend/base/default/etc/*
 /app/design/frontend/base/default/layout/*
-!/app/design/frontend/base/default/layout/webcomm_*
-!/app/design/frontend/base/default/template
 /app/design/frontend/base/default/template/*
-!/app/design/frontend/base/default/template/webcomm
+!/app/design/frontend/default/
+/app/design/frontend/default/*
 
-# App modules
-!/app/etc
+# You must opt-in to module declaration files
+!/app/etc/
 /app/etc/*
-!/app/etc/modules
+!/app/etc/modules/
 /app/etc/modules/*
-!/app/etc/modules/Webcomm_*
 
-# App locale
-!/app/locale
-/app/locale/*
-!/app/locale/en_AU
-!/app/locale/en_US
-/app/locale/en_US/*
-!/app/locale/en_US/template
-/app/locale/en_US/template/*
-!/app/locale/en_US/template/email
-/app/locale/en_US/template/email/*
+# In addition to allowing translation files, we
+# need to structure the ignore rules for easy
+# inclusion of email templates.
+!/app/locale/
+/app/locale/*/*
+!/app/locale/*/template
+/app/locale/*/template/email/*
 
-# Cron files
-/cron.php
-/cron.sh
+# An often overlooked design component of a Magento
+# website is overriding the fatal error handling,
+# consider making your own error skin.
+!/errors/
+/errors/*
 
-# Downloader
-/downloader
-
-
-# Errors
-/errors/.htaccess
-/errors/404.php
-/errors/503.php
-/errors/default
-/errors/design.xml
-/errors/local.xml.sample
-/errors/processor.php
-/errors/report.php
-
-
-# Misc files
-/favicon.ico
-/get.php
-/includes
-
-
-# Index and installer files
-/index.php.sample
-/install.php
-
-# Global javascript
+# Some modules add their JavaScript files to the
+# root "js" directory.
+!/js/
 /js/*
 
-# PHP libraries
+# Many modules will include autoloaded libraries
+# under the root "lib" directory. In particular,
+# many modules will override or add new form
+# element objects.
+!/lib/
 /lib/*
-!/lib/Varien
+!/lib/Varien/
 /lib/Varien/*
-!/lib/Varien/Data
+!/lib/Varien/Data/
 /lib/Varien/Data/*
-!/lib/Varien/Data/Form
+!/lib/Varien/Data/Form/
 /lib/Varien/Data/Form/*
-!/lib/Varien/Data/Form/Element
+!/lib/Varien/Data/Form/Element/
 /lib/Varien/Data/Form/Element/*
 
-# Licences
-/LICENSE_AFL.txt
-/LICENSE.html
-/LICENSE.txt
-
-# "Mage" shell script
-/mage
-
-# Media
+# Many people choose to opt-in their "wysiwyg"
+# directory into version control,
+# but not all.
+!/media/
 /media/*
 
-# Misc files
-/package.xml
-/php.ini.sample
-/pkginfo/*
-/RELEASE_NOTES.txt
-/shell
-
-# Skin
-!/skin
+# The same principle applied to design files
+# needs to be applied to their "skin"
+# counterparts.
+!/skin/
 /skin/*
-
-# Skin adminhtml
-!/skin/adminhtml
-/skin/adminhtml/*
-!/skin/adminhtml/base
-/skin/adminhtml/base/*
-!/skin/adminhtml/base/default
-/skin/adminhtml/base/default/*
-!/skin/adminhtml/base/default/css
-/skin/adminhtml/base/default/css/*
-!/skin/adminhtml/base/default/images
-/skin/adminhtml/base/default/images/*
-!/skin/adminhtml/base/default/js
-/skin/adminhtml/base/default/js/*
-!/skin/adminhtml/base/default/lib
-/skin/adminhtml/base/default/lib/*
-!/skin/adminhtml/base/default/webcomm
-!/skin/adminhtml/default
-/skin/adminhtml/default/*
-!/skin/adminhtml/default/default
+!/skin/adminhtml/
 /skin/adminhtml/default/default/*
-!/skin/adminhtml/default/default/css
-/skin/adminhtml/default/default/css/*
-!/skin/adminhtml/default/default/images
+!/skin/adminhtml/default/default/images/
 /skin/adminhtml/default/default/images/*
-!/skin/adminhtml/default/default/js
-/skin/adminhtml/default/default/js/*
-!/skin/adminhtml/default/default/lib
-/skin/adminhtml/default/default/lib/*
-
-# Skin frontend
-!/skin/frontend
+!/skin/frontend/
 /skin/frontend/*
-!/skin/frontend/base
-/skin/frontend/base/*
-!/skin/frontend/base/default
+!/skin/frontend/base/
 /skin/frontend/base/default/*
-!/skin/frontend/base/default/css
+!/skin/frontend/base/default/css/
 /skin/frontend/base/default/css/*
-!/skin/frontend/base/default/fonts
-/skin/frontend/base/default/fonts/*
-!/skin/frontend/base/default/images
+!/skin/frontend/base/default/images/
 /skin/frontend/base/default/images/*
-!/skin/frontend/base/default/js
+!/skin/frontend/base/default/js/
 /skin/frontend/base/default/js/*
-!/skin/frontend/base/default/lib
-/skin/frontend/base/default/lib/*
-!/skin/frontend/base/default/webcomm
-!/skin/frontend/default
+!/skin/frontend/default/
 /skin/frontend/default/*
-!/skin/frontend/default/default
-/skin/frontend/default/default/*
-!/skin/frontend/default/default/css
-/skin/frontend/default/default/css/*
-!/skin/frontend/default/default/fonts
-/skin/frontend/default/default/fonts/*
-!/skin/frontend/default/default/images
-/skin/frontend/default/default/images/*
-!/skin/frontend/default/default/js
-/skin/frontend/default/default/js/*
-!/skin/frontend/default/default/lib
-/skin/frontend/default/default/lib/*
-!/skin/frontend/default/default/lib/webcomm
 
-# Var folder
-/var
+# ==================================================== #
+#    INCLUDE YOUR THEME DECLARATION AS A EXCLUSIONS    #
+#                          --                          #
+#           This works for whole packages or           #
+#          varients under "default". Consider          #
+#           putting supporting modules here.           #
+# ==================================================== #
 
+# !/app/design/frontend/mytheme
+# !/skin/frontend/mytheme
 
-# ==================================== #
-# Part C: Reference all extensions     #
-#         that are required by this    #
-#         theme that should be under   #
-#         version control.             #
-# ==================================== #
-#
-# You need to include all files for
-# extension. Each extension's files
-# should be kept together so it is
-# easy to find them in future if need
-# be.
+!/app/design/frontend/boilerplate/
+!/skin/frontend/boilerplate/
 
+!/app/code/local/Webcomm/MagentoBoilerplate/
+!/app/etc/modules/Webcomm_MagentoBoilerplate.xml
 
+# ==================================================== #
+#          INCLUDE MODULE FILES AS EXCLUSIONS          #
+#                          --                          #
+#        Ideally you would install via Composer        #
+#          and not as ignore rule exclusions.          #
+# ==================================================== #
 
-
-# ==================================== #
-# Part D: Setup your theme overrides   #
-# ==================================== #
-#
-# This is where you include your theme
-# overrides in app/design/frontend and
-# skin/frontend
-
-
-
-# Boilerplate Theme
-!/app/design/frontend/boilerplate
-!/skin/frontend/boilerplate
+# !/app/code/local/Foo/Bar
+# !/app/design/frontend/base/default/layout/foo_bar.xml
+# !/app/design/frontend/base/default/template/foo_bar/
+# !/app/etc/modules/Foo_Bar.xml
+# !/app/locale/en_US/Foo_Bar.csv
+# !/app/locale/en_US/template/email/foo_bar.html
+# !/js/foo_bar/
+# !/skin/frontend/base/default/css/foo_bar.css
+# !/skin/frontend/base/default/images/foo_bar/
