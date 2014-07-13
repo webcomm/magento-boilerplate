@@ -1,8 +1,8 @@
 {
   "name": "boilerplate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
-    "Webcomm <contact@webcomm.com.au>"
+    "Sitewards <info@sitewards.com>"
   ],
   "private": true,
   "ignore": [
@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3",
-    "font-awesome": "~4"
+    "font-awesome": "~4",
+    "modernizr": "~2.8.3"
   }
 }

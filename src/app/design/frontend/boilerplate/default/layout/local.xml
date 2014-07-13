@@ -43,11 +43,15 @@
 			</action>
             <action method="addItem">
                 <type>js</type>
+                <name>modernizr/modernizr.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
                 <name>jquery/jquery.min.js</name>
             </action>
 			<action method="addItem">
 				<type>js</type>
-				<name>bootstrap/bootstrap.js</name>
+				<name>bootstrap/bootstrap.min.js</name>
 			</action>
             <action method="addItem">
 				<type>skin_js</type>

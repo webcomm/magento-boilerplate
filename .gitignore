@@ -67,11 +67,6 @@ intermediate
 publish
 .idea
 
-# Composer
-!/composer.json
-!/composer.lock
-/vendor
-
 # Bower and Node
 /bower_components
 /node_modules
