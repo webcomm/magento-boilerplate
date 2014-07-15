@@ -1,15 +1,15 @@
 # DON'T BE A DICK PUBLIC LICENSE
 
-> Version 1, December 2009
+Version 1, December 2009
 
-> Copyright (C) 2012 - 2013 Webcomm Pty Ltd <contact@webcomm.com.au>
+Copyright (C) 2012 - 2014 Webcomm Pty Ltd <contact@webcomm.com.au>
 
  Everyone is permitted to copy and distribute verbatim or modified
  copies of this license document, and changing it is allowed as long
  as the name is changed.
 
-> DON'T BE A DICK PUBLIC LICENSE
-> TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+DON'T BE A DICK PUBLIC LICENSE
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
  1. Do whatever you like with the original work, just don't be a dick.
 
