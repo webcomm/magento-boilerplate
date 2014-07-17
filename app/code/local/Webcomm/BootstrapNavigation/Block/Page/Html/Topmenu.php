@@ -50,7 +50,7 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
                     $html .= '<div class="' . $childrenWrapClass . '">';
                 }
                 $html .= '<ul class="level' . $childLevel . ' dropdown-menu">';
-                if ($level == 0) {
+                if ($childLevel == 0) {
                     $prefix = Mage::getStoreConfig('catalog/navigation/top_in_dropdown_prefix');
                     $suffix = Mage::getStoreConfig('catalog/navigation/top_in_dropdown_suffix');
                     $html .= '<li class="level1 level-top-in-dropdown">';
