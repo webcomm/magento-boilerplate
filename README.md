@@ -32,11 +32,12 @@ TODO: Add detailed information
 
 Run ` gulp init ` and ` gulp watch `
 
+### Add custom theme (skin):
+TODO: explain how to add custom theme skin
+
 ---
 
 ## Installation
-
-There are three ways to install this boilerplate.
 
 ### Git
 
