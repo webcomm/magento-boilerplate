@@ -1,0 +1,47 @@
+@import "../../bower_components/bootstrap/less/grid.less";
+
+.col2-set,
+.col2-set,
+.col4-set {
+    .make-row();
+}
+
+// Content Columns
+.col2-set {
+
+    > .legend {
+        margin-left: (@grid-gutter-width / 2);
+        margin-right: (@grid-gutter-width / 2);
+        width: auto;
+    }
+
+    .col-1,
+    .col-2 {
+        .make-sm-column(6);
+    }
+    .col-narrow {
+        .make-sm-column(4);
+    }
+    .col-wide {
+        .make-sm-column(8);
+    }
+}
+
+.col3-set {
+
+    .col-1,
+    .col-2,
+    .col-3 {
+        .make-sm-column(4);
+    }
+}
+
+.col4-set {
+
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        .make-sm-column(3);
+    }
+}

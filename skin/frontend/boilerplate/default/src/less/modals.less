@@ -1,0 +1,22 @@
+@import "../../bower_components/bootstrap/less/modals.less";
+
+// Fix Bootstrap's dumb behaviour
+.modal-open {
+    overflow: hidden;
+
+    // Bootstrap is stupid, adds a margin
+    // because some browsers have a scrollbar.
+    body&,
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: @screen-md) {
+
+    .modal-media .modal-dialog {
+        width: 940px;
+    }
+
+}

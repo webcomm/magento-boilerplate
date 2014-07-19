@@ -1,0 +1,13 @@
+@import "../../bower_components/bootstrap/less/tables.less";
+
+.data-table {
+    .table();
+    .table-bordered();
+
+    > tbody > tr:nth-child(odd) {
+        > td,
+        > th {
+            background-color: @table-bg-accent;
+        }
+    }
+}
