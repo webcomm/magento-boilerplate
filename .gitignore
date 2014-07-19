@@ -37,6 +37,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Misc
+.sass-cache
+
 # Hide all files under the root directory
 /*
 
