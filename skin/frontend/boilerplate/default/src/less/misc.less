@@ -1,16 +1,16 @@
 // Misc
 .links {
-    li {
-        display: inline;
+  li {
+    display: inline;
 
-        &:first-child {
-            padding-left: 0;
-        }
-
-        &:last-child {
-            padding-right: 0;
-        }
+    &:first-child {
+      padding-left: 0;
     }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
 }
 
 .link-cart,
@@ -18,43 +18,43 @@
 .link-reorder,
 .link-compare,
 .link-print {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .btn-remove, .btn-previous,
 .btn-remove2, .btn-edit {
-    display: inline-block;
-    font-size: 0;
+  display: inline-block;
+  font-size: 0;
 
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 
-    // Create a "X" icon
-    &:after {
-        font-size: (@font-size-base * 1.0);
-        font-weight: @close-font-weight;
-        font-family: FontAwesome;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  // Create a "X" icon
+  &:after {
+    font-size: (@font-size-base * 1.0);
+    font-weight: @close-font-weight;
+    font-family: FontAwesome;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 .btn-edit:after {
-    content: @fa-var-pencil;
+  content: @fa-var-pencil;
 }
 
 .btn-remove, .btn-remove2 {
-    // Create a "X" icon
-    &:after {
-        content: @fa-var-times;
-    }
+  // Create a "X" icon
+  &:after {
+    content: @fa-var-times;
+  }
 }
 
 .btn-cart {
-    .btn-primary();
+  .btn-primary();
 }
 
 .cards-list dt { margin:5px 0 0; }

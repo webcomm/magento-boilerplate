@@ -1,13 +1,7 @@
-@import "../../bower_components/bootstrap/less/navbar.less";
+@import "@{bootstrap-path}/navbar.less";
 
-.navbar-main {
-
-    .navbar-brand {
-
-        @media (min-width: @grid-float-breakpoint) {
-            & {
-                display: none;
-            }
-        }
-    }
+.navbar-main .navbar-brand {
+	@media (min-width: @grid-float-breakpoint) {
+		display: none;
+	}
 }

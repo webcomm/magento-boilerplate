@@ -1,4 +1,4 @@
-@import "../../bower_components/bootstrap/less/type.less";
+@import "@{bootstrap-path}/type.less";
 
 h1, .h1 { font-size: floor(@font-size-base * 1.8); }
 h2, .h2 { font-size: floor(@font-size-base * 1.6); }
@@ -8,30 +8,30 @@ h5, .h5 { font-size:  @font-size-base; }
 h6, .h6 { font-size: ceil(@font-size-base * 0.85); }
 
 .page-title {
-    .clearfix();
-    .page-header();
-    margin-top: 0;
+  .clearfix();
+  .page-header();
+  margin-top: 0;
 
-    .separator {
-        margin: 0 3px;
-    }
+  .separator {
+    margin: 0 3px;
+  }
 
-    .link-rss {
-        float: right;
-        margin: 7px 0 0;
-    }
+  .link-rss {
+    float: right;
+    margin: 7px 0 0;
+  }
 }
 
 .title-buttons {
-    text-align: right;
+  text-align: right;
 
-    h1, h2, h3,
-    h4, h5, h6 {
-        float: left;
-    }
+  h1, h2, h3,
+  h4, h5, h6 {
+    float: left;
+  }
 }
 
 .subtitle,
 .sub-title {
-    color: @headings-small-color;
+  color: @headings-small-color;
 }

@@ -1,3 +1,13 @@
+// This variable must be declared here rather
+// than in an included file. This is the path
+// to Bootstrap's LESS files, relative to
+// this file.
+@bootstrap-path: "../../bower_components/bootstrap/less";
+
+// Core variables and mixins
+@import "mixins.less";
+@import "variables.less";
+
 // Magento
 @import "magento.less";
 
@@ -51,7 +61,3 @@
 // Utility classes
 @import "utilities.less";
 @import "responsive-utilities.less";
-
-// Core variables and mixins
-@import "mixins.less";
-@import "variables.less";

@@ -1,45 +1,45 @@
-@import "../../bower_components/bootstrap/less/alerts.less";
+@import "@{bootstrap-path}/alerts.less";
 
 .success {
-    color: @state-success-text;
+  color: @state-success-text;
 }
 .error {
-    color: @state-danger-text;
+  color: @state-danger-text;
 }
 .notice {
-    color: @state-info-text;
+  color: @state-info-text;
 }
 
 .messages > li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .error-msg,
 .success-msg,
 .note-msg,
 .notice-msg {
-    .alert();
+  .alert();
 }
 
 .error-msg {
-    .alert-danger();
+  .alert-danger();
 }
 
 .success-msg {
-    .alert-success();
+  .alert-success();
 }
 
 .note-msg,
 .notice-msg {
-    .alert-info();
+  .alert-info();
 }
 
 // Global notices
 .global-site-notice {
-    .alert();
-    .alert-warning();
+  .alert();
+  .alert-warning();
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }
