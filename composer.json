@@ -2,6 +2,7 @@
     "name": "webcomm/magento-boilerplate",
     "type": "magento-module",
     "description": "HTML5 Twitter Bootstrap 3.1 Magento Boilerplate Template",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ben Corlett",

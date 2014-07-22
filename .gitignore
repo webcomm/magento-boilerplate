@@ -50,6 +50,9 @@ Temporary Items
 !/composer.json
 !/composer.lock
 
+# License scheme is important
+!/LICENSE
+
 # ==================================================== #
 #                        MAGENTO                       #
 # ==================================================== #
