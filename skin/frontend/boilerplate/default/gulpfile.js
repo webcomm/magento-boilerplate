@@ -4,7 +4,6 @@ var
   less         = require('gulp-less'),
   minifycss    = require('gulp-minify-css'),
   uglify       = require('gulp-uglify'),
-  imagemin     = require('gulp-imagemin'),
   rimraf       = require('gulp-rimraf'),
   concat       = require('gulp-concat'),
   notify       = require('gulp-notify'),
@@ -14,21 +13,30 @@ var
 var config = {
 
   // If you do not have the live reload extension installed,
-  // set this to false. We will include the script for you,
+  // set this to true. We will include the script for you,
   // just to aid with development.
-  liveReloadPlugin: false
+  appendLiveReload: true,
+
+  // Should CSS & JS be compressed?
+  minifyCss: true,
+  uglifyJS: true
 
 }
 
 // CSS
 gulp.task('css', function() {
-  return gulp
+  var stream = gulp
     .src('src/less/style.less')
     .pipe(less().on('error', notify.onError(function (error) {
       return 'Error compiling LESS: ' + error.message;
     })))
-    .pipe(gulp.dest('css'))
-    .pipe(minifycss())
+    .pipe(gulp.dest('css'));
+
+  if (config.minifyCss === true) {
+    stream.pipe(minifycss());
+  }
+
+  return stream
     .pipe(gulp.dest('css'))
     .pipe(notify({ message: 'Successfully compiled LESS' }));
 });
@@ -45,14 +53,19 @@ gulp.task('js', function() {
     'src/js/script.js'
   ];
 
-  if (config.liveReloadPlugin === false) {
+  if (config.appendLiveReload === true) {
     scripts.push('src/js/livereload.js');
   }
 
-  return gulp
+  var stream = gulp
     .src(scripts)
-    .pipe(concat('script.js'))
-    .pipe(uglify())
+    .pipe(concat('script.js'));
+
+  if (config.uglifyJS === true) {
+    stream.pipe(uglify());
+  }
+
+  return stream
     .pipe(gulp.dest('js'))
     .pipe(notify({ message: 'Successfully compiled JavaScript' }));
 });
@@ -61,9 +74,8 @@ gulp.task('js', function() {
 gulp.task('images', function() {
   return gulp
     .src('src/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('images'))
-    .pipe(notify({ message: 'Successfully processed images' }));
+    .pipe(notify({ message: 'Successfully processed image' }));
 });
 
 // Fonts
@@ -74,7 +86,7 @@ gulp.task('fonts', function() {
       'bower_components/font-awesome/fonts/**/*'
     ])
     .pipe(gulp.dest('fonts'))
-    .pipe(notify({ message: 'Successfully processed fonts' }));
+    .pipe(notify({ message: 'Successfully processed font' }));
 })
 
 // Rimraf
