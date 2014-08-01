@@ -16,6 +16,9 @@ There are some TODO left so feel free to contribute.
 - All Magento stuff is now located under src folder
 - Gitignore files are now smaller
 - Added [modernizr](http://modernizr.com/) for feature detection
+- Added config file for theme, bootstrap and modernizr
+- Removed gulp-clean because it's outdated and added gulp-rimraf
+- Removed live gulp livereload
 
 ---
 
@@ -28,12 +31,20 @@ Go to root dir and make sure that npm is installed on you machine ` npm -v ` if 
 Still in the root dir make sure that you've bower installed by ` bower -v `. If you have no global bower installed don't worry it was installed local by step 1. Once you're ready with bower write ` bower install ` if global installed or ` node_modules/bower/bin/bower install ` to install dependencies listed in bower.json.
 
 ### Step 3:
-TODO: Add detailed information
-
-Run ` gulp init ` and ` gulp watch `
+Run ` gulp init ` to initialize bootstrap js-components, bootstrap font-components, modernizr, jQuery and an initial compile of theme less and js scripts.
+Run ` gulp watch ` to watch changes in theme less and js files to compile them automatically.
 
 ### Add custom theme (skin):
-TODO: explain how to add custom theme skin
+Therefore pls check ` boilerplate.json ` here you're able to configure your bootstrap components, modernizr detects and your theme name.
+So if you want to create a custom theme based on boilerplate you should add you theme name in ` boilerplate.json "theme" `, that's all to start.
+
+#### Hint for less files:
+- You first less file has to be named ` style.less `
+- If you want to use the boilerplate styles than simply do an import in your custom less file like below. The default theme ` style.less ` includes also imports for bootstrap less files.
+`
+// import style file from boilerplate/default
+@import "../../default/less/style.less";
+`
 
 ---
 
@@ -102,6 +113,6 @@ To add new JavaScript files, open up `gulpfile.js`. gulp.js is seperated into a 
 // ...
 ```
 
-### FAQs
-
-1. **Notify isn't working?** - check you are not running `gulp` on a headless (command-line only) server, such as a remote webserver or Vagrant box. Windows may need [modification](https://github.com/webcomm/magento-boilerplate/issues/48) of your `gulpfile.js` and `package.json` files to work properly.
+## TODO:
+- Make minifycss and uglify configurable with boilerplate.json
+- Change description "Adding New Bootstrap Components"

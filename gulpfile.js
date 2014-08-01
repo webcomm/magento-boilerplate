@@ -1,5 +1,4 @@
-// TODO: build json file for theme setting such as theme name and bootstrap components
-var customTheme  = '';
+var config       = require('./boilerplate.json');
 
 var gulp         = require('gulp'),
     less         = require('gulp-less'),
@@ -9,37 +8,61 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglify'),
     notify       = require('gulp-notify'),
-    clean        = require('gulp-clean'),
-    livereload   = require('gulp-livereload');
+    rimraf       = require('gulp-rimraf');
 
 var oPath        = {
     basePath: "src/skin/frontend/boilerplate/",
     defaultTheme: "default/",
     parts: {
         less: "less/style.less",
-        js: "js/script.js",
+        js: "js/*.js",
         dist: "dist/"
     }
 };
 
 /**
+ * custom reporter for notify to get rid
+ * of errors if to growl is used
+ */
+var customNotify = notify.withReporter(function (options, callback) {
+    callback();
+});
+
+/**
  * function to deliver correct file paths to tasks
  * according to path object oPath
  *
- * TODO: if custom theme is set and asked for js deliver path to theme js folder, too.
- *
  * @param {string} part - choose between less, js and dist
+ * @return {array}
  */
 var getPath = function (part) {
-    var theme = (customTheme !== '') ? customTheme : oPath.defaultTheme;
-    return oPath.basePath + theme + oPath.parts[part];
+    var theme = (config.theme !== '') ? config.theme : oPath.defaultTheme;
+
+    // for part js we have to return custom theme and default theme folder
+    if(config.theme !== '' && part === 'js') {
+        return [
+            oPath.basePath + theme + '/' + oPath.parts[part],
+            oPath.basePath + oPath.defaultTheme + oPath.parts[part]
+        ];
+    }
+
+    return [oPath.basePath + theme + '/' + oPath.parts[part]];
 };
 
+console.log(getPath('dist'));
+
+// LINT
+gulp.task('lint', function() {
+    return gulp.src(getPath('js'))
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
+
 // LESS
-// TODO: check if it's possible to have default and theme path to join less files
 gulp.task('less', function() {
+    console.log(getPath('less'));
     return gulp.src(getPath('less'))
-        .pipe(less().on('error', notify.onError(function (error) {
+        .pipe(less().on('error', customNotify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
         .pipe(minifycss())
@@ -47,59 +70,41 @@ gulp.task('less', function() {
             imports: true
         }))
         .pipe(gulp.dest(getPath('dist') + 'css'))
-        .pipe(livereload())
-        .pipe(notify({
+        .pipe(customNotify({
             message: 'Successfully compiled LESS'
         }));
 });
 
 // JavaScript
 gulp.task('js', function() {
-    return gulp.src([
-            getPath('js')
-        ])
+    return gulp.src(getPath('js'))
         .pipe(concat('script.js'))
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
         .pipe(uglify())
         .pipe(gulp.dest(getPath('dist') + 'js'))
-        .pipe(livereload())
-        .pipe(notify({
+        .pipe(customNotify({
             message: 'Successfully compiled JS'
         }));
 });
 
 // Bootstrap JavaScript
 gulp.task('bootstrapJs', function() {
-    return gulp.src([
-            'bower_components/bootstrap/js/transition.js',
-            'bower_components/bootstrap/js/collapse.js',
-            'bower_components/bootstrap/js/carousel.js',
-            'bower_components/bootstrap/js/dropdown.js',
-            'bower_components/bootstrap/js/modal.js'
-        ])
+    return gulp.src(config.bootstrap.js)
         .pipe(concat('bootstrap.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('src/js/bootstrap'))
-        .pipe(livereload())
-        .pipe(notify({
+        .pipe(customNotify({
             message: 'Successfully compiled Bootstrap JS'
         }));
 });
 
 // modernizr
+var modernizrModules = ['bower_components/modernizr/modernizr.js'];
 gulp.task('modernizr', function () {
-    gulp.src([
-            'bower_components/modernizr/modernizr.js',
-
-            // add here feature detects:
-            'bower_components/modernizr/feature-detects/css-filters.js'
-        ])
+    gulp.src(modernizrModules.concat(config.modernizr.detectors))
         .pipe(concat('modernizr.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('src/js/modernizr'))
-        .pipe(livereload())
-        .pipe(notify({
+        .pipe(customNotify({
             message: 'Successfully compiled Modernizr JS'
         }));
 });
@@ -124,12 +129,11 @@ gulp.task('bootstrapFonts', function(){
 
 // Clean
 gulp.task('clean', function() {
-    return  gulp.src([
-                getPath('dist') + 'css',
-                getPath('dist') + 'js'
-                ],{read: false}
+    return  gulp.src(
+                getPath('dist/*')
+                ,{read: false}
             )
-            .pipe(clean());
+            .pipe(rimraf({force: true}));
 });
 
 // Init task to have working bootstrap js parts, jquery and bootstrap fonts
@@ -138,10 +142,10 @@ gulp.task('init', ['clean', 'jQuery', 'bootstrapFonts', 'bootstrapJs', 'less', '
 // Watch
 gulp.task('watch', function() {
     // Watch .less files
-    gulp.watch('less/**/*.less', ['less']);
+    gulp.watch('less/**/*.less', ['clean','less']);
     // Watch .js files
-    gulp.watch('js/**/*.js', ['js']);
+    gulp.watch('js/**/*.js', ['clean','lint','js']);
 });
 
 // Default task
-gulp.task('default', ['clean', 'less', 'js']);
+gulp.task('default', ['clean', 'less', 'lint', 'js']);
