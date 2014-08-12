@@ -49,8 +49,6 @@ var getPath = function (part) {
     return [oPath.basePath + theme + '/' + oPath.parts[part]];
 };
 
-console.log(getPath('dist'));
-
 // LINT
 gulp.task('lint', function() {
     return gulp.src(getPath('js'))
@@ -60,7 +58,6 @@ gulp.task('lint', function() {
 
 // LESS
 gulp.task('less', function() {
-    console.log(getPath('less'));
     return gulp.src(getPath('less'))
         .pipe(less().on('error', customNotify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
