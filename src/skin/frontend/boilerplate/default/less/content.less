@@ -1,78 +1,100 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 /* CMS Home Page */
 .cms-home,
 .cms-index-index {
-    .subtitle {
+  .subtitle {
 
-    }
+  }
 }
 
 // Sitemap
 .page-sitemap {
-    .links {
-        text-align: right;
-        font-weight: bold;
+  .links {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .sitemap {
+
+    .catalog-seo-sitemap-product & {
+      .make-row();
+
+      li {
+        .make-md-column(6);
+      }
     }
 
-    .sitemap {
+    .catalog-seo-sitemap-category & {
+      .make-row();
 
-        .catalog-seo-sitemap-product & {
-            .make-row();
+      li {
+        .make-sm-column(3);
+        .make-md-column(2);
 
-            li {
-                .make-md-column(6);
-            }
+        &.level-0 {
+          font-weight: bold;
+          margin-top: (@line-height-computed / 2);
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    @media (min-width: @screen-md) {
+
+      li {
+        &.level-0,
+        &.level-1,
+        &.level-2,
+        &.level-3,
+        &.level-4 {
+          width: auto;
+          float: none;
         }
 
-        .catalog-seo-sitemap-category & {
-            .make-row();
-
-            li {
-                .make-sm-column(3);
-                .make-md-column(2);
-
-                &.level-0 {
-                    font-weight: bold;
-                    margin-top: (@line-height-computed / 2);
-
-                    &:first-child {
-                        margin-top: 0;
-                    }
-                }
-            }
+        &.level-0 {
+          padding-left: (@grid-gutter-width / 2) !important;
         }
-
-        @media (min-width: @screen-md) {
-
-            li {
-                &.level-0,
-                &.level-1,
-                &.level-2,
-                &.level-3,
-                &.level-4 {
-                    width: auto;
-                    float: none;
-                }
-
-                &.level-0 {
-                    padding-left: (@grid-gutter-width / 2) !important;
-                }
-                &.level-1 {
-                    padding-left: (@grid-gutter-width / 2) + 20px !important;
-                }
-                &.level-2 {
-                    padding-left: (@grid-gutter-width / 2) + 40px !important;
-                }
-                &.level-3 {
-                    padding-left: (@grid-gutter-width / 2) + 60px !important;
-                }
-                &.level-4 {
-                    padding-left: (@grid-gutter-width / 2) + 80px !important;
-                }
-            }
-
+        &.level-1 {
+          padding-left: (@grid-gutter-width / 2) + 20px !important;
         }
+        &.level-2 {
+          padding-left: (@grid-gutter-width / 2) + 40px !important;
+        }
+        &.level-3 {
+          padding-left: (@grid-gutter-width / 2) + 60px !important;
+        }
+        &.level-4 {
+          padding-left: (@grid-gutter-width / 2) + 80px !important;
+        }
+      }
 
     }
+
+  }
 }
 
 

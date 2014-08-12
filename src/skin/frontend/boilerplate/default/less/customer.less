@@ -1,420 +1,442 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 // Login
 .account-login .content {
-    min-height: 242px; // Height of the larger side
+  min-height: 242px; // Height of the larger side
 }
 
 // Captcha
 .captcha-image {
-    position: relative;
-    width: 258px;
+  position: relative;
+  width: 258px;
 }
 .captcha-note {
-    clear: left;
-    padding-top: 5px;
+  clear: left;
+  padding-top: 5px;
 }
 .captcha-image .captcha-img {
-    border-radius: @input-border-radius;
-    border: 1px solid @input-border;
-    width: 100%;
+  border-radius: @input-border-radius;
+  border: 1px solid @input-border;
+  width: 100%;
 }
 .registered-users .captcha-image {
-    margin: 0;
+  margin: 0;
 }
 .captcha-reload {
-    cursor: pointer;
-    position: absolute;
-    top: 2px;
-    right: 2px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 
-    .refreshing {
-        -webkit-animation: captcha-rotate 1.5s infinite linear;
-           -moz-animation: captcha-rotate 1.5s infinite linear;
-                animation: captcha-rotate 1.5s infinite linear;
-    }
+  .refreshing {
+    -webkit-animation: captcha-rotate 1.5s infinite linear;
+       -moz-animation: captcha-rotate 1.5s infinite linear;
+        animation: captcha-rotate 1.5s infinite linear;
+  }
 }
 
 @-webkit-keyframes captcha-rotate {
-    0% { -webkit-transform: rotate(0); }
-    0% { -webkit-transform: rotate(-360deg); }
+  0% { -webkit-transform: rotate(0); }
+  0% { -webkit-transform: rotate(-360deg); }
 }
 @-moz-keyframes captcha-rotate {
-    0% { -moz-transform: rotate(0); }
-    0% { -moz-transform: rotate(-360deg); }
+  0% { -moz-transform: rotate(0); }
+  0% { -moz-transform: rotate(-360deg); }
 }
 @keyframes captcha-rotate {
-    0% { transform: rotate(0); }
-    0% { transform: rotate(-360deg); }
+  0% { transform: rotate(0); }
+  0% { transform: rotate(-360deg); }
 }
 
 // General Account Box
 .box-account {
-    .panel();
-    padding: 15px;
+  .panel();
+  padding: 15px;
+  border-color: @panel-default-border;
+
+  .box-head {
+    margin: -15px -15px 15px;
+    .clearfix();
+    .panel-heading();
     border-color: @panel-default-border;
+    background-color: @panel-default-heading-bg;
+    color: @panel-default-text;
 
-    .box-head {
-        margin: -15px -15px 15px;
-        .clearfix();
-        .panel-heading();
-        border-color: @panel-default-border;
-        background-color: @panel-default-heading-bg;
-        color: @panel-default-text;
-
-        h2 {
-            float: left;
-            .panel-title();
-        }
-
-        a {
-            float: right;
-        }
+    h2 {
+      float: left;
+      .panel-title();
     }
 
-    @media (max-width: @screen-sm) {
-        width: 100%;
-        overflow-y: hidden;
-        overflow-x: scroll;
+    a {
+      float: right;
     }
+  }
+
+  @media (max-width: @screen-sm) {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
 }
 
 // Dashboard
 .dashboard {
-    .box .box-title {
-        .clearfix();
-        padding: 0 0 (@line-height-computed / 2);
-        margin: 0 0 (@line-height-computed / 2);
-        border-bottom: 1px solid @panel-default-border;
+  .box .box-title {
+    .clearfix();
+    padding: 0 0 (@line-height-computed / 2);
+    margin: 0 0 (@line-height-computed / 2);
+    border-bottom: 1px solid @panel-default-border;
 
-        text-align: right;
+    text-align: right;
 
-        h3,
-        h4 {
-            margin: 0;
-            float: left;
-            font-size: @font-size-large;
-        }
+    h3,
+    h4 {
+      margin: 0;
+      float: left;
+      font-size: @font-size-large;
     }
+  }
 
-    // Fix for the spacing when a box is nested in a column set.
-    .col2-set > .box > .box-title {
-        margin-left: (@grid-gutter-width / 2);
-        margin-right: (@grid-gutter-width / 2);
-    }
+  // Fix for the spacing when a box is nested in a column set.
+  .col2-set > .box > .box-title {
+    margin-left: (@grid-gutter-width / 2);
+    margin-right: (@grid-gutter-width / 2);
+  }
 }
 
 // Recent orders
 .dashboard .box-recent {
 
-    .data-table {
-        margin-bottom: 0;
-    }
+  .data-table {
+    margin-bottom: 0;
+  }
 }
 
 // Account information
 .dashboard .box-info {
-    p,
-    address {
-        margin: 0;
-    }
-    .box {
-        margin-bottom: (@line-height-computed * 1.5);
-    }
+  p,
+  address {
+    margin: 0;
+  }
+  .box {
+    margin-bottom: (@line-height-computed * 1.5);
+  }
 }
 
 // Block: Reviews
 .dashboard .box-reviews {
-    ol {
-        margin-bottom: 0;
-    }
-    .number {
-        float: left;
-    }
-    .details {
-        margin-left: 20px;
-    }
-    li.item {
-        .clearfix();
-        margin-bottom: (@line-height-computed / 2);
+  ol {
+    margin-bottom: 0;
+  }
+  .number {
+    float: left;
+  }
+  .details {
+    margin-left: 20px;
+  }
+  li.item {
+    .clearfix();
+    margin-bottom: (@line-height-computed / 2);
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
-    .ratings {
-        margin-top: (@line-height-computed / 4);
-    }
+  }
+  .ratings {
+    margin-top: (@line-height-computed / 4);
+  }
 }
 
 /* Block: Tags */
 .dashboard .box-tags {
-    .number {
-        float: left;
-    }
-    .details {
-        margin-left: 20px;
-    }
-    li.item {
-        margin-bottom: (@line-height-computed / 2);
+  .number {
+    float: left;
+  }
+  .details {
+    margin-left: 20px;
+  }
+  li.item {
+    margin-bottom: (@line-height-computed / 2);
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
-    .tags {
-        strong,
-        ul,
-        ul li {
-            display: inline;
-        }
+  }
+  .tags {
+    strong,
+    ul,
+    ul li {
+      display: inline;
     }
+  }
 }
 
 // Address Book
 .addresses-list {
-    h2 {
-        font-size: @font-size-large;
-    }
+  h2 {
+    font-size: @font-size-large;
+  }
+  h3 {
+    margin-top: 0;
+    font-size: @font-size-base;
+  }
+  address {
+    margin: 0 0 3px;
+  }
+  p {
+    margin: 0;
+  }
+  .link-remove {
+    color: @alert-danger-text;
+  }
+  .separator {
+    margin: 0 3px;
+  }
+
+  li.item {
+    .panel();
+    padding: 15px;
+    border-color: @panel-default-border;
+
     h3 {
-        margin-top: 0;
-        font-size: @font-size-base;
+      margin: -15px -15px 15px;
+      .panel-heading();
+      border-color: @panel-default-border;
+      background-color: @panel-default-heading-bg;
+      color: @panel-default-text;
     }
-    address {
-        margin: 0 0 3px;
-    }
-    p {
-        margin: 0;
-    }
-    .link-remove {
-        color: @alert-danger-text;
-    }
-    .separator {
-        margin: 0 3px;
-    }
+  }
+  li.empty {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .addresses-additional li.item {
 
-    li.item {
-        .panel();
-        padding: 15px;
-        border-color: @panel-default-border;
-
-        h3 {
-            margin: -15px -15px 15px;
-            .panel-heading();
-            border-color: @panel-default-border;
-            background-color: @panel-default-heading-bg;
-            color: @panel-default-text;
-        }
-    }
-    li.empty {
-        background: none;
-        border: 0;
-        padding: 0;
-    }
-    .addresses-additional li.item {
-
-    }
+  }
 }
 
 // Order View
 .order-info {
-    margin-bottom: (@line-height-computed / 2);
-    border-bottom: 1px solid @hr-border;
+  margin-bottom: (@line-height-computed / 2);
+  border-bottom: 1px solid @hr-border;
 
-    dd {
-        padding-left: 10px;
+  dd {
+    padding-left: 10px;
+  }
+
+  li {
+    display: inline;
+    margin: 0 3px;
+
+    &:first-child {
+      margin-left: 0;
     }
 
-    li {
-        display: inline;
-        margin: 0 3px;
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
+    &:last-child {
+      margin-right: 0;
     }
-    .current {
-        font-weight: bold;
-    }
+  }
+  .current {
+    font-weight: bold;
+  }
 }
 
 .order-date {
-    margin-bottom: (@line-height-computed / 2);
+  margin-bottom: (@line-height-computed / 2);
 }
 
 .order-info-box {
-    .panel();
-    margin-left: 0;
-    margin-right: 0;
-    border-color: @panel-default-border;
-    padding-top: 15px;
+  .panel();
+  margin-left: 0;
+  margin-right: 0;
+  border-color: @panel-default-border;
+  padding-top: 15px;
 
-    .box {
-        margin-bottom: 15px;
-    }
+  .box {
+    margin-bottom: 15px;
+  }
 
-    h2 {
-        margin-top: 0;
-        font-size: @font-size-base;
-    }
+  h2 {
+    margin-top: 0;
+    font-size: @font-size-base;
+  }
 
-    address {
-        margin-bottom: 0;
-    }
+  address {
+    margin-bottom: 0;
+  }
 }
 
 .order-items {
-    h2 {
-        font-size: @font-size-large;
-    }
-    h3 {
-        font-size: @font-size-small;
-    }
+  h2 {
+    font-size: @font-size-large;
+  }
+  h3 {
+    font-size: @font-size-small;
+  }
 
-    .order-links {
-        text-align: right;
-    }
+  .order-links {
+    text-align: right;
+  }
 }
 
 .order-additional {
-    margin: (@line-height-computed / 2) 0;
+  margin: (@line-height-computed / 2) 0;
 }
 
 // Order Gift Message
 .gift-message {
-    .panel();
-    padding: 15px;
-    border-color: @panel-default-border;
+  .panel();
+  padding: 15px;
+  border-color: @panel-default-border;
 
-    dt {
-        padding-left: 10px;
+  dt {
+    padding-left: 10px;
 
-        strong {
-            display: block;
-            margin-left: -10px;
-        }
+    strong {
+      display: block;
+      margin-left: -10px;
     }
-    dd {
-        margin-top: (@line-height-computed / 2);
-    }
+  }
+  dd {
+    margin-top: (@line-height-computed / 2);
+  }
 }
 
 // Inside the table
 .gift-message-row .gift-message {
-    padding: 0;
-    margin: 0;
-    border: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 // Order Comments
 .order-about {
-    .panel();
-    padding: 15px;
-    border-color: @panel-default-border;
+  .panel();
+  padding: 15px;
+  border-color: @panel-default-border;
 
-    dd {
-        margin-bottom: (@line-height-computed / 2);
-        padding-left: 10px;
+  dd {
+    margin-bottom: (@line-height-computed / 2);
+    padding-left: 10px;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 }
 
 // My Wishlist
 .my-wishlist {
-    textarea {
-        .form-control();
-        height: auto;
-    }
+  textarea {
+    .form-control();
+    height: auto;
+  }
 
-    .price-box {
-        margin-bottom: (@line-height-computed / 4);
-    }
+  .price-box {
+    margin-bottom: (@line-height-computed / 4);
+  }
 
-    .add-to-cart-alt {
-        input.input-text {
-            margin-bottom: (@line-height-computed / 4);
-        }
-        .btn-cart {
-            display: block;
-            margin-bottom: (@line-height-computed / 4);
-            width: 100%;
-        }
+  .add-to-cart-alt {
+    input.input-text {
+      margin-bottom: (@line-height-computed / 4);
     }
+    .btn-cart {
+      display: block;
+      margin-bottom: (@line-height-computed / 4);
+      width: 100%;
+    }
+  }
 
-    p {
-        margin-bottom: 0;
-    }
+  p {
+    margin-bottom: 0;
+  }
 
-    .link-edit {
-        .btn();
-        .btn-default();
-        width: 100%;
-        display: block;
-    }
+  .link-edit {
+    .btn();
+    .btn-default();
+    width: 100%;
+    display: block;
+  }
 
-    .btn-add {
-        .btn-primary();
-    }
+  .btn-add {
+    .btn-primary();
+  }
 }
 
 .product-review {
-    .product-img-box {
-        float: left;
-        width: 140px;
+  .product-img-box {
+    float: left;
+    width: 140px;
 
-        .product-image {
-            .img-responsive();
-        }
-
-        .label {
-            font-size: @font-size-small;
-        }
-
-        .ratings .rating-box {
-            display: block;
-            float: none;
-            margin-bottom: (@line-height-computed / 4);
-        }
+    .product-image {
+      .img-responsive();
     }
 
-    .product-details {
-        margin-left: 150px;
-    }
-    .product-name {
-        margin-bottom: (@line-height-computed / 2);
-        font-size: @font-size-large;
-    }
-    h3 {
-        font-size: @font-size-base;
+    .label {
+      font-size: @font-size-small;
     }
 
-    .ratings-table { margin:0 0 10px; }
-
-    dt {
-        margin-bottom: (@line-height-computed / 4);
+    .ratings .rating-box {
+      display: block;
+      float: none;
+      margin-bottom: (@line-height-computed / 4);
     }
+  }
+
+  .product-details {
+    margin-left: 150px;
+  }
+  .product-name {
+    margin-bottom: (@line-height-computed / 2);
+    font-size: @font-size-large;
+  }
+  h3 {
+    font-size: @font-size-base;
+  }
+
+  .ratings-table { margin:0 0 10px; }
+
+  dt {
+    margin-bottom: (@line-height-computed / 4);
+  }
 }
 
 // Billing Agreements
 .billing-agreements {
-    .info-box {
-        margin: (@line-height-computed / 2) 0;
+  .info-box {
+    margin: (@line-height-computed / 2) 0;
+  }
+  .form-list li {
+    select {
+      float: left;
     }
-    .form-list li {
-        select {
-            float: left;
-        }
-        button.button {
-            float: left;
-            margin-left: 10px;
-        }
+    button.button {
+      float: left;
+      margin-left: 10px;
     }
-    .table-caption {
-        font-weight: bold;
-    }
+  }
+  .table-caption {
+    font-weight: bold;
+  }
 }

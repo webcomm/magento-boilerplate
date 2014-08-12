@@ -1,648 +1,666 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 // Shipping and Payment methods
 .sp-methods {
-    margin: 0 0 8px;
+  margin: 0 0 8px;
 
-    dt {
-        padding-top: 10px;
+  dt {
+    padding-top: 10px;
 
-        &:first-child {
-            padding-top: 0;
-        }
+    &:first-child {
+      padding-top: 0;
     }
-    dd {
-        padding: 10px 0;
-        border-bottom: 1px solid @hr-border;
+  }
+  dd {
+    padding: 10px 0;
+    border-bottom: 1px solid @hr-border;
 
-        &:last-child {
-            padding-bottom: 0;
-            border-bottom: 0;
-        }
-
-        ul {
-            margin-bottom: 0;
-        }
-
-        li {
-            margin: 5px 0;
-        }
-    }
-    .radio {
-        float: left;
-        margin-top: 3px;
-        margin-right: 6px;
-    }
-    label {
-        margin-bottom: 0;
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
     }
 
-    .form-list {
-        padding-left: 20px;
-    }
-    select.month {
-        width: 154px;
-        margin-right: 10px;
-    }
-    select.year {
-        width: 96px;
-    }
-    input.cvv {
-        width: 50px !important;
+    ul {
+      margin-bottom: 0;
     }
 
-    .checkmo-list {
-        li { margin: 0 0 5px; }
-        label { width: 135px; padding-right: 10px; text-align: right; }
-        address { float:left; }
+    li {
+      margin: 5px 0;
     }
+  }
+  .radio {
+    float: left;
+    margin-top: 3px;
+    margin-right: 6px;
+  }
+  label {
+    margin-bottom: 0;
+  }
 
-    .centinel-logos {
-        a {
-            margin-right: 3px;
-        }
-        img {
-            vertical-align: middle;
-        }
+  .form-list {
+    padding-left: 20px;
+  }
+  select.month {
+    width: 154px;
+    margin-right: 10px;
+  }
+  select.year {
+    width: 96px;
+  }
+  input.cvv {
+    width: 50px !important;
+  }
+
+  .checkmo-list {
+    li { margin: 0 0 5px; }
+    label { width: 135px; padding-right: 10px; text-align: right; }
+    address { float:left; }
+  }
+
+  .centinel-logos {
+    a {
+      margin-right: 3px;
     }
-
-    .release-amounts {
-        margin: 0.5em 0;
-
-        button {
-            float: left; margin: 5px 10px 0 0;
-        }
+    img {
+      vertical-align: middle;
     }
+  }
+
+  .release-amounts {
+    margin: 0.5em 0;
+
+    button {
+      float: left; margin: 5px 10px 0 0;
+    }
+  }
 }
 
 .please-wait {
-    float: right;
-    margin-right: 10px;
-    font-size: @font-size-small;
-    color: @text-muted;
+  float: right;
+  margin-right: 10px;
+  font-size: @font-size-small;
+  color: @text-muted;
 
-    img {
-        vertical-align: middle;
-        margin-right: 10px;
-    }
+  img {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
 }
 
 .cvv-what-is-this {
-    line-height: @input-height-base;
-    font-size: @font-size-small;
-    cursor: help;
-    margin-left: 10px;
+  line-height: @input-height-base;
+  font-size: @font-size-small;
+  cursor: help;
+  margin-left: 10px;
 }
 
 // Tooltip, this ONLY used for CCV in Magento,
 // and the styles don't play nice with mobile,
 // so we'll just embed it as a well.
 .tool-tip {
-    .popover();
-    display: block;
+  .popover();
+  display: block;
 
-    .btn-close {
-        .clearfix();
-        padding: 9px 14px;
+  .btn-close {
+    .clearfix();
+    padding: 9px 14px;
 
-        a {
-            float: right;
-            font-size: 0;
-            color: @close-color;
-            text-shadow: @close-text-shadow;
-            .opacity(.2);
+    a {
+      float: right;
+      font-size: 0;
+      color: @close-color;
+      text-shadow: @close-text-shadow;
+      .opacity(.2);
 
-            // Create a "X" icon
-            &:after {
-                font-size: @font-size-base;
-                font-weight: @close-font-weight;
-                font-family: FontAwesome;
-                line-height: 1;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                content: @fa-var-times;
-            }
+      // Create a "X" icon
+      &:after {
+        font-size: @font-size-base;
+        font-weight: @close-font-weight;
+        font-family: FontAwesome;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: @fa-var-times;
+      }
 
-            &:hover,
-            &:focus {
-                text-decoration: none;
-                .opacity(.5);
-            }
-        }
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        .opacity(.5);
+      }
     }
+  }
 }
 .tool-tip-content {
-    .popover-content();
+  .popover-content();
 
-    img {
-        .img-responsive();
-    }
+  img {
+    .img-responsive();
+  }
 }
 
 // Gift Messages
 .gift-messages {
-    h3 {
-        font-size: @font-size-base;
-        font-weight: bold;
-    }
+  h3 {
+    font-size: @font-size-base;
+    font-weight: bold;
+  }
 
-    p.control {
-        .checkbox {
-            float: left;
-            margin-top: 4px;
-            margin-right: 6px;
-        }
-        label {
-            margin-bottom: 0;
-        }
+  p.control {
+    .checkbox {
+      float: left;
+      margin-top: 4px;
+      margin-right: 6px;
     }
+    label {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .gift-messages-form {
-    position: relative;
+  position: relative;
 
-    label {
-        float: none !important;
-        position: static !important;
-    }
-    h4 {
-        padding-top: (@line-height-computed / 2);
-        border-top: 1px solid @hr-border;
-        font-size: @font-size-base;
-        font-weight: bold;
+  label {
+    float: none !important;
+    position: static !important;
+  }
+  h4 {
+    padding-top: (@line-height-computed / 2);
+    border-top: 1px solid @hr-border;
+    font-size: @font-size-base;
+    font-weight: bold;
 
-        &:first-child {
-            padding-top: 0;
-            border-top: 0;
-        }
+    &:first-child {
+      padding-top: 0;
+      border-top: 0;
     }
-    p {
-        > .checkbox {
-            float: left;
-            margin-top: 4px;
-            margin-right: 6px;
-        }
-        > label {
-            margin-bottom: 0;
-        }
+  }
+  p {
+    > .checkbox {
+      float: left;
+      margin-top: 4px;
+      margin-right: 6px;
     }
-    .whole-order {
-        margin: 0 0 25px;
+    > label {
+      margin-bottom: 0;
     }
-    .item {
-        .clearfix();
+  }
+  .whole-order {
+    margin: 0 0 25px;
+  }
+  .item {
+    .clearfix();
+    margin: 0 0 10px;
+
+    border-bottom: 1px solid @hr-border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .product-img-box {
+      float: left;
+      width: 75px;
+    }
+    .product-image {
+      margin: 0 0 7px;
+    }
+    .number {
+      margin: 0;
+      text-align: center;
+    }
+    .details {
+      margin-left: 90px;
+      .product-name {
         margin: 0 0 10px;
-
-        border-bottom: 1px solid @hr-border;
-
-        &:last-child {
-            border-bottom: 0;
-        }
-
-        .product-img-box {
-            float: left;
-            width: 75px;
-        }
-        .product-image {
-            margin: 0 0 7px;
-        }
-        .number {
-            margin: 0;
-            text-align: center;
-        }
-        .details {
-            margin-left: 90px;
-            .product-name {
-                margin: 0 0 10px;
-            }
-        }
+      }
     }
+  }
 }
 
 .gift-message-row {
 
-    .btn-close {
-        float: right;
-        font-size: 0;
-        color: @close-color;
-        text-shadow: @close-text-shadow;
-        .opacity(.2);
+  .btn-close {
+    float: right;
+    font-size: 0;
+    color: @close-color;
+    text-shadow: @close-text-shadow;
+    .opacity(.2);
 
-        // Create a "X" icon
-        &:after {
-            font-size: @font-size-base;
-            font-weight: @close-font-weight;
-            font-family: FontAwesome;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            content: @fa-var-times;
-        }
-
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            .opacity(.5);
-        }
+    // Create a "X" icon
+    &:after {
+      font-size: @font-size-base;
+      font-weight: @close-font-weight;
+      font-family: FontAwesome;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: @fa-var-times;
     }
 
-    dl {
-        .clearfix();
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      .opacity(.5);
     }
+  }
+
+  dl {
+    .clearfix();
+  }
 }
 
 // Checkout Agreements (Terms & Conditions)
 .checkout-agreements {
-    li {
-        margin-bottom: @line-height-computed;
+  li {
+    margin-bottom: @line-height-computed;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
-    .agreement-content {
-        .well();
-        margin-bottom: 0;
-        overflow: auto;
-        height: (@line-height-computed * 12);
-    }
-    .agree {
-        margin: 0;
-        padding: 10px;
+  }
+  .agreement-content {
+    .well();
+    margin-bottom: 0;
+    overflow: auto;
+    height: (@line-height-computed * 12);
+  }
+  .agree {
+    margin: 0;
+    padding: 10px;
 
-        input.checkbox {
-            float: left;
-            margin-top: 4px;
-            margin-right: 6px;
-        }
+    input.checkbox {
+      float: left;
+      margin-top: 4px;
+      margin-right: 6px;
     }
+  }
 }
 
 .opc .checkout-agreements {
-    padding: 5px 30px;
+  padding: 5px 30px;
 }
 
 // Centinel
 .centinel {
-    .authentication {
-        background-color: #fff;
-        border: 1px solid @panel-default-border;
+  .authentication {
+    background-color: #fff;
+    border: 1px solid @panel-default-border;
 
-        iframe {
-            width: 99%;
-            height: 400px;
-            background: transparent !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: 0 !important;
-        }
+    iframe {
+      width: 99%;
+      height: 400px;
+      background: transparent !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
     }
+  }
 }
 
 .opc .centinel {
-    padding: 10px 30px;
+  padding: 10px 30px;
 }
 
 // Generic Info Set (used by PayPal express)
 .info-set {
-    margin: 0 0 25px;
-    padding: 20px;
+  margin: 0 0 25px;
+  padding: 20px;
 
-    h2 {
-        font-size: @font-size-large;
-    }
-    h3,
-    h4 {
-        font-size: @font-size-base;
-    }
-    h2 a,
-    h3 a,
-    h4 a {
-        font-weight: normal;
-    }
-    .divider {
-        margin: 0 -20px;
-        padding: 25px 0;
-        position: relative;
-    }
-    .box {
-        margin: 0 0 15px;
-    }
-    .data-table .item-options {
-        margin: 5px 0 0;
-    }
+  h2 {
+    font-size: @font-size-large;
+  }
+  h3,
+  h4 {
+    font-size: @font-size-base;
+  }
+  h2 a,
+  h3 a,
+  h4 a {
+    font-weight: normal;
+  }
+  .divider {
+    margin: 0 -20px;
+    padding: 25px 0;
+    position: relative;
+  }
+  .box {
+    margin: 0 0 15px;
+  }
+  .data-table .item-options {
+    margin: 5px 0 0;
+  }
 }
 
 // One Page Checkout
 .block-progress {
-    dl {
-        margin: 0;
-    }
-    dt {
-        font-weight: bold;
-        margin: 0 0 6px;
-        padding: 7px 15px;
-        background-color: @panel-footer-bg;
-        border: solid @panel-inner-border;
-        border-width: 1px 0;
+  dl {
+    margin: 0;
+  }
+  dt {
+    font-weight: bold;
+    margin: 0 0 6px;
+    padding: 7px 15px;
+    background-color: @panel-footer-bg;
+    border: solid @panel-inner-border;
+    border-width: 1px 0;
 
-        &:first-child {
-            border-top: 0;
-        }
+    &:first-child {
+      border-top: 0;
     }
-    dd {
-        padding: 8px 13px;
-        margin: 0 0 6px;
-    }
-    dt.complete {
-        margin: 0;
-    }
-    dd.complete {}
-    p {
-        margin: 0;
-    }
-    .cards-list dt {
-        background: none;
-        border: 0 none;
-        color: inherit;
-        font-size: @font-size-small;
-        margin: 5px 0;
-        padding: 0;
-    }
-    .cards-list dd {
-        border: 0 none;
-        margin: 0;
-        padding: 0;
-    }
-    .cards-list .info-table th {
-        font-weight: normal;
-    }
+  }
+  dd {
+    padding: 8px 13px;
+    margin: 0 0 6px;
+  }
+  dt.complete {
+    margin: 0;
+  }
+  dd.complete {}
+  p {
+    margin: 0;
+  }
+  .cards-list dt {
+    background: none;
+    border: 0 none;
+    color: inherit;
+    font-size: @font-size-small;
+    margin: 5px 0;
+    padding: 0;
+  }
+  .cards-list dd {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+  }
+  .cards-list .info-table th {
+    font-weight: normal;
+  }
 
-    // Address'
-    address {
-        margin-bottom: 0;
-    }
+  // Address'
+  address {
+    margin-bottom: 0;
+  }
 
-    // Credit card
-    p + table {
-        margin-left: 10px;
-    }
+  // Credit card
+  p + table {
+    margin-left: 10px;
+  }
 
-    @media (max-width: @screen-sm) {
-        & {
-            display: none;
-        }
-    }
+  @media (max-width: @screen-sm) {
+    display: none;
+  }
 }
 
 
 .opc .buttons-set {
-    margin-top: (@line-height-computed / 2);
+  margin-top: (@line-height-computed / 2);
 
-    p.required {
-        margin: 0;
-        padding: 0 0 10px;
-    }
-    .back-link small {
-        display: none;
-    }
-    .buttons-set.disabled button.button {
-        display: none;
-    }
-    .ul {
-        list-style: disc outside;
-        padding-left: 18px;
-    }
+  p.required {
+    margin: 0;
+    padding: 0 0 10px;
+  }
+  .back-link small {
+    display: none;
+  }
+  .buttons-set.disabled button.button {
+    display: none;
+  }
+  .ul {
+    list-style: disc outside;
+    padding-left: 18px;
+  }
 }
 
 .opc {
-    position: relative;
+  position: relative;
 
-    .section {
+  .section {
+  }
+
+  .step-title {
+    .clearfix();
+    padding: 10px 15px;
+    border: solid @panel-default-border;
+    border-width: 0 1px 1px;
+    background-color: @panel-default-heading-bg;
+    color: @panel-default-text;
+
+    .number,
+    h2,
+    a {
+      line-height: @line-height-computed;
     }
 
+    .number,
+    h2 {
+      float: left;
+    }
+
+    .number {
+      display: block;
+      background: #fff;
+      padding: 0 6px;
+      margin-right: 10px;
+    }
+    h2 {
+      margin: 0;
+      font-size: ceil((@font-size-base * 1.125));
+    }
+    a {
+      display: none;
+      float: right;
+    }
+  }
+
+  // The first step should have a border radius up the top
+  .section:first-child {
     .step-title {
-        .clearfix();
-        padding: 10px 15px;
-        border: solid @panel-default-border;
-        border-width: 0 1px 1px;
-        background-color: @panel-default-heading-bg;
-        color: @panel-default-text;
+      .border-top-radius(@panel-border-radius);
+      border-top-width: 1px;
+    }
+  }
 
-        .number,
-        h2,
-        a {
-            line-height: @line-height-computed;
-        }
-
-        .number,
-        h2 {
-            float: left;
-        }
-
-        .number {
-            display: block;
-            background: #fff;
-            padding: 0 6px;
-            margin-right: 10px;
-        }
-        h2 {
-            margin: 0;
-            font-size: ceil((@font-size-base * 1.125));
-        }
-        a {
-            display: none;
-            float: right;
-        }
+  // The last step should have a border radius at the bottom,
+  // but we need to be careful for when the step is active.
+  .section:last-child {
+    .step-title {
+      .border-bottom-radius(@panel-border-radius);
     }
 
-    // The first step should have a border radius up the top
-    .section:first-child {
-        .step-title {
-            .border-top-radius(@panel-border-radius);
-            border-top-width: 1px;
-        }
+    &.active {
+      .step-title {
+        .border-bottom-radius(0);
+      }
+      .step {
+        padding-bottom: 10px;
+        .border-bottom-radius(@panel-border-radius);
+      }
     }
+  }
 
-    // The last step should have a border radius at the bottom,
-    // but we need to be careful for when the step is active.
-    .section:last-child {
-        .step-title {
-            .border-bottom-radius(@panel-border-radius);
-        }
+  .step {
+    padding: 15px;
+    border: solid @panel-default-border;
+    border-width: 0 1px 1px;
 
-        &.active {
-            .step-title {
-                .border-bottom-radius(0);
-            }
-            .step {
-                padding-bottom: 10px;
-                .border-bottom-radius(@panel-border-radius);
-            }
-        }
+    .tool-tip {
+      right: 30px;
     }
+  }
 
-    .step {
-        padding: 15px;
-        border: solid @panel-default-border;
-        border-width: 0 1px 1px;
+  .allow .step-title a {
+    display: block;
+  }
 
-        .tool-tip {
-            right: 30px;
-        }
-    }
-
-    .allow .step-title a {
-        display: block;
-    }
-
-    // The active step receives a class
-    // of "allow", so we need to remove
-    // the edit link, because that is
-    // the curent step they're up to.
-    .active .step-title a {
-        display: none;
-    }
+  // The active step receives a class
+  // of "allow", so we need to remove
+  // the edit link, because that is
+  // the curent step they're up to.
+  .active .step-title a {
+    display: none;
+  }
 }
 
 // Multiple Addresses Checkout
 .checkout-progress {
-    .clearfix();
+  .clearfix();
 
+  li {
+    .list-group-item();
+  }
+
+  @media (min-width: @screen-md) {
     li {
-        .list-group-item();
+      float: left;
+      width: 20%;
+      margin-bottom: 0;
+      border-left-width: 0;
+      text-align: center;
+
+      &:first-child,
+      &:last-child {
+        border-radius: 0;
+      }
+
+      &:first-child {
+        border-left-width: 1px;
+        .border-left-radius(@list-group-border-radius);
+      }
+
+      &:last-child {
+        .border-right-radius(@list-group-border-radius);
+      }
     }
-
-    @media (min-width: @screen-md) {
-        li {
-            float: left;
-            width: 20%;
-            margin-bottom: 0;
-            border-left-width: 0;
-            text-align: center;
-
-            &:first-child,
-            &:last-child {
-                border-radius: 0;
-            }
-
-            &:first-child {
-                border-left-width: 1px;
-                .border-left-radius(@list-group-border-radius);
-            }
-
-            &:last-child {
-                .border-right-radius(@list-group-border-radius);
-            }
-        }
-    }
+  }
 }
 
 .multiple-checkout {
 
-    @media (max-width: @screen-md) {
-        & {
-            width: 100%;
-            overflow-y: hidden;
-            overflow-x: scroll;
-            padding: 15px;
-            border: 1px solid @table-border-color;
-        }
+  @media (max-width: @screen-md) {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 15px;
+    border: 1px solid @table-border-color;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: @font-size-large;
+  }
+  h3,
+  h4 {
+    margin-top: 0;
+    font-size: @font-size-base;
+  }
+  h2,
+  h3,
+  h4 {
+    a {
+      font-weight: normal;
     }
+  }
+  .data-table {
+    .product-name {
+      line-height: @input-height-base;
+    }
+
+    select {
+      .form-control();
+      width: auto;
+    }
+
+    .item-options {
+      margin-top: (@line-height-computed / 2);
+    }
+  }
+
+  .gift-messages { margin:15px 0 0; }
+
+  .tool-tip { top:50%; margin-top:-120px; right:20px; }
+
+  // .col2-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
+  // .col2-set h3.legend { margin:0 0 10px; color:#0a263c; }
+  // .col2-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
+  .box {
+    .well();
+    .well-sm();
 
     h2 {
-        margin-top: 0;
+
+    }
+
+    .box-title h3 {
+      margin-top: 0;
+    }
+
+    address {
+      margin-bottom: 0;
+    }
+  }
+
+  .place-order {
+    .clearfix();
+
+    .please-wait {
+      float: right;
+      padding: 27px 7px 0 0;
+    }
+    .grand-total {
+      text-align: right;
+      big {
         font-size: @font-size-large;
+        font-weight: @headings-font-weight;
+      }
+
+      .price {
+        color: @brand-primary;
+      }
     }
-    h3,
-    h4 {
-        margin-top: 0;
-        font-size: @font-size-base;
-    }
-    h2,
-    h3,
-    h4 {
-        a {
-            font-weight: normal;
-        }
-    }
-    .data-table {
-        .product-name {
-            line-height: @input-height-base;
-        }
-
-        select {
-            .form-control();
-            width: auto;
-        }
-
-        .item-options {
-            margin-top: (@line-height-computed / 2);
-        }
-    }
-
-    .gift-messages { margin:15px 0 0; }
-
-    .tool-tip { top:50%; margin-top:-120px; right:20px; }
-
-    // .col2-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
-    // .col2-set h3.legend { margin:0 0 10px; color:#0a263c; }
-    // .col2-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
-    .box {
-        .well();
-        .well-sm();
-
-        h2 {
-
-        }
-
-        .box-title h3 {
-            margin-top: 0;
-        }
-
-        address {
-            margin-bottom: 0;
-        }
-    }
-
-    .place-order {
-        .clearfix();
-
-        .please-wait {
-            float: right;
-            padding: 27px 7px 0 0;
-        }
-        .grand-total {
-            text-align: right;
-            big {
-                font-size: @font-size-large;
-                font-weight: @headings-font-weight;
-            }
-
-            .price {
-                color: @brand-primary;
-            }
-        }
-    }
+  }
 }
 
 // Step 1
 #multiship-addresses-table {
-    .qty {
-        width: auto;
-        text-align: center;
-    }
+  .qty {
+    width: auto;
+    text-align: center;
+  }
 
-    tfoot .button {
-        .btn-sm();
-    }
+  tfoot .button {
+    .btn-sm();
+  }
 }
 
 // Step 2
 .checkout-multishipping-shipping .box-sp-methods {
-    .well();
-    .well-sm();
+  .well();
+  .well-sm();
 }
 
 // Step 3
 .checkout-multishipping-billing .multiple-checkout {
-    position: relative;
+  position: relative;
 }

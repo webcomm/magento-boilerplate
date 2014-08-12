@@ -1,154 +1,171 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 // Checkout Types
 .cart {
-    .page-title .checkout-types li {
-        margin: 0 0 5px;
+  .page-title .checkout-types li {
+    margin: 0 0 5px;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
-    .title-buttons .checkout-types {
-        float: right;
-        margin-bottom: 0;
+  }
+  .title-buttons .checkout-types {
+    float: right;
+    margin-bottom: 0;
 
-        li {
+    li {
 
-        }
     }
+  }
 
-    .checkout-types .paypal-or {
-        margin: 0 8px;
-    }
-    .totals .checkout-types .paypal-or {
-        clear: both;
-        display: block;
-        padding: 8px 55px 0 0;
-        font-size: @font-size-small;
-    }
+  .checkout-types .paypal-or {
+    margin: 0 8px;
+  }
+  .totals .checkout-types .paypal-or {
+    clear: both;
+    display: block;
+    padding: 8px 55px 0 0;
+    font-size: @font-size-small;
+  }
 
+  > form {
+    margin-bottom: @line-height-computed;
+  }
+
+  @media (max-width: @screen-sm) {
     > form {
-        margin-bottom: @line-height-computed;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 15px;
+      border: 1px solid @table-border-color;
     }
-
-    @media (max-width: @screen-sm) {
-        > form {
-            width: 100%;
-            overflow-y: hidden;
-            overflow-x: scroll;
-            padding: 15px;
-            border: 1px solid @table-border-color;
-        }
-    }
+  }
 }
 
 // Button
 .btn-checkout {
-    .btn-primary();
+  .btn-primary();
 
-    @media (min-width: @screen-xs) {
-        & {
-            .btn-lg();
-        }
-    }
+  @media (min-width: @screen-xs) {
+    .btn-lg();
+  }
 }
 
 // Shopping Cart Table
 .cart-table {
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    .qty {
-        .input-sm();
-        width: auto;
-        text-align: center;
-    }
+  .qty {
+    .input-sm();
+    width: auto;
+    text-align: center;
+  }
 
-    .button {
-        .btn-sm();
-    }
+  .button {
+    .btn-sm();
+  }
 
-    .btn-continue {
-        float: left;
-    }
+  .btn-continue {
+    float: left;
+  }
 }
 
 // Collateral boxes
 .cart .cart-collaterals {
-    .make-row();
+  .make-row();
 
-    .col2-set {
-        .make-md-column(8);
-    }
+  .col2-set {
+    .make-md-column(8);
+  }
 
-    @media (min-width: @screen-sm) {
-        .totals {
-            margin-right: (@grid-gutter-width / 2);
-            float: right;
-            width: percentage((4 / @grid-columns));
-        }
+  @media (min-width: @screen-sm) {
+    .totals {
+      margin-right: (@grid-gutter-width / 2);
+      float: right;
+      width: percentage((4 / @grid-columns));
     }
+  }
 }
 
 .cart .crosssell,
 .cart .discount,
 .cart .shipping {
-    .panel();
+  .panel();
+  border-color: @panel-default-border;
+
+  > h2 {
+    .panel-heading();
     border-color: @panel-default-border;
+    background-color: @panel-default-heading-bg;
+    color: @panel-default-text;
 
-    > h2 {
-        .panel-heading();
-        border-color: @panel-default-border;
-        background-color: @panel-default-heading-bg;
-        color: @panel-default-text;
-
-        .panel-title();
-        font-weight: @headings-font-weight;
-    }
+    .panel-title();
+    font-weight: @headings-font-weight;
+  }
 }
 
 // Cross-sell
 .cart .crosssell {
 
-    #crosssell-products-list {
-        margin-bottom: 0;
-        padding: 15px;
+  #crosssell-products-list {
+    margin-bottom: 0;
+    padding: 15px;
+  }
+
+  li.item {
+    padding: 10px 0;
+    border-bottom: 1px solid @hr-border;
+
+    &:first-child {
+      padding-top: 0;
     }
 
-    li.item {
-        padding: 10px 0;
-        border-bottom: 1px solid @hr-border;
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
 
-        &:first-child {
-            padding-top: 0;
-        }
+  .product-image {
+    float: left;
+  }
+  .product-details {
+    margin-left: 100px;
+  }
+  .add-to-links {
+    .separator {
+      display: none;
+    }
+  }
 
-        &:last-child {
-            padding-bottom: 0;
-            border-bottom: 0;
-        }
-    }
+  .link-compare {
+    font-weight: normal;
+  }
 
-    .product-image {
-        float: left;
-    }
-    .product-details {
-        margin-left: 100px;
-    }
-    .add-to-links {
-        .separator {
-            display: none;
-        }
-    }
-
-    .link-compare {
-        font-weight: normal;
-    }
-
-    @media (max-width: @screen-md) {
-        & {
-            display: none;
-        }
-    }
+  @media (max-width: @screen-md) {
+    display: none;
+  }
 }
 
 // Discount Codes & Estimate Shipping and Tax Boxes
@@ -158,86 +175,86 @@
 }
 
 .cart .discount {
-    .discount-form {
-        padding: 15px;
-    }
+  .discount-form {
+    padding: 15px;
+  }
 }
 
 .cart .shipping {
-    .shipping-form {
-        padding: 15px;
-    }
+  .shipping-form {
+    padding: 15px;
+  }
 }
 
 // Shopping Cart Totals
 .cart .totals {
-    .well();
+  .well();
 
-    table {
-        .table();
-    }
+  table {
+    .table();
+  }
 
-    .checkout-types {
+  .checkout-types {
+    margin-bottom: 0;
+    text-align: right;
+
+    li {
+      margin-bottom: 5px;
+
+      &:last-child {
         margin-bottom: 0;
-        text-align: right;
-
-        li {
-            margin-bottom: 5px;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+      }
     }
+  }
 }
 
 // Options Tool Tip
 .item-options {
-    margin-top: (@line-height-computed / 2);
+  margin-top: (@line-height-computed / 2);
 
-    dd {
-        margin-left: 15px;
-    }
+  dd {
+    margin-left: 15px;
+  }
 }
 
 .truncated {
-    position: relative;
-    cursor: help;
+  position: relative;
+  cursor: help;
 
-    .dots {
-        cursor: inherit;
-        color: inherit;
+  .dots {
+    cursor: inherit;
+    color: inherit;
 
-        &:hover {
-            text-decoration: none;
-        }
+    &:hover {
+      text-decoration: none;
     }
+  }
 }
 
 .truncated_full_value {
-    .popover();
-    top: (@line-height-computed);
+  .popover();
+  top: (@line-height-computed);
 
-    dl {
-        margin: 0;
-    }
+  dl {
+    margin: 0;
+  }
 
-    dt {
-        .popover-title();
-    }
+  dt {
+    .popover-title();
+  }
 
-    dd {
-        .popover-content();
-        margin-left: 0;
-    }
+  dd {
+    .popover-content();
+    margin-left: 0;
+  }
 
-    // Multiple lists, add a border at the top
-    dd + dt {
-        border-radius: 0;
-        border-top: 1px solid darken(@popover-title-bg, 5%);
-    }
+  // Multiple lists, add a border at the top
+  dd + dt {
+    border-radius: 0;
+    border-top: 1px solid darken(@popover-title-bg, 5%);
+  }
 
-    &.show {
-        display: block;
-    }
+  &.show {
+    display: block;
+  }
 }

@@ -1,45 +1,67 @@
-@import "/bower_components/bootstrap/less/alerts.less";
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+@import "@{bootstrap-path}/alerts.less";
 
 .success {
-    color: @state-success-text;
+  color: @state-success-text;
 }
 .error {
-    color: @state-danger-text;
+  color: @state-danger-text;
 }
 .notice {
-    color: @state-info-text;
+  color: @state-info-text;
 }
 
 .messages > li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .error-msg,
 .success-msg,
 .note-msg,
 .notice-msg {
-    .alert();
+  .alert();
 }
 
 .error-msg {
-    .alert-danger();
+  .alert-danger();
 }
 
 .success-msg {
-    .alert-success();
+  .alert-success();
 }
 
 .note-msg,
 .notice-msg {
-    .alert-info();
+  .alert-info();
 }
 
 // Global notices
 .global-site-notice {
-    .alert();
-    .alert-warning();
+  .alert();
+  .alert-warning();
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }

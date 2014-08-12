@@ -1,72 +1,94 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 .block {
-    .panel();
+  .panel();
+  border-color: @panel-default-border;
+
+  .block-title {
+    .panel-heading();
     border-color: @panel-default-border;
+    background-color: @panel-default-heading-bg;
+    color: @panel-default-text;
 
-    .block-title {
-        .panel-heading();
-        border-color: @panel-default-border;
-        background-color: @panel-default-heading-bg;
-        color: @panel-default-text;
+    strong {
+      .panel-title();
+      font-weight: @headings-font-weight;
+    }
+  }
 
-        strong {
-            .panel-title();
-            font-weight: @headings-font-weight;
-        }
+  .block-subtitle {
+    margin: 0 15px (@line-height-computed / 2);
+    padding: 10px 0;
+    border-bottom: 1px solid @panel-default-border;
+  }
+
+  .block-content,
+  .actions {
+    .clearfix();
+  }
+
+  .block-content {
+    .clearfix();
+
+    li.item {
+      padding: 10px 15px;
+    }
+  }
+
+  .btn-remove,
+  .btn-edit {
+    float: right;
+    margin: 1px 0 2px 5px;
+  }
+  .actions {
+    padding: 6px 15px;
+    background-color: @panel-footer-bg;
+    border-top: 1px solid @panel-inner-border;
+    text-align: right;
+    line-height: @input-height-small;
+
+    &:last-child {
+      .border-bottom-radius(@panel-border-radius - 1);
     }
 
-    .block-subtitle {
-        margin: 0 15px (@line-height-computed / 2);
-        padding: 10px 0;
-        border-bottom: 1px solid @panel-default-border;
+    a {
+      float: left;
     }
 
-    .block-content,
-    .actions {
-        .clearfix();
+    button.button {
+      float: right;
+      .btn-sm();
     }
+  }
 
-    .block-content {
-        .clearfix();
+  .empty {
+    margin: 0;
+    padding: 15px;
+  }
 
-        li.item {
-            padding: 10px 15px;
-        }
-    }
-
-    .btn-remove,
-    .btn-edit {
-        float: right;
-        margin: 1px 0 2px 5px;
-    }
-    .actions {
-        padding: 6px 15px;
-        background-color: @panel-footer-bg;
-        border-top: 1px solid @panel-inner-border;
-        text-align: right;
-        line-height: @input-height-small;
-
-        &:last-child {
-            .border-bottom-radius(@panel-border-radius - 1);
-        }
-
-        a {
-            float: left;
-        }
-
-        button.button {
-            float: right;
-            .btn-sm();
-        }
-    }
-
-    .empty {
-        margin: 0;
-        padding: 15px;
-    }
-
-    li.odd {
-        background-color: @table-bg-accent;
-    }
+  li.odd {
+    background-color: @table-bg-accent;
+  }
 }
 
 /* Mini Blocks */
@@ -81,62 +103,62 @@
 .block-related,
 .block-tags,
 .block-login {
-    font-size: @font-size-small;
+  font-size: @font-size-small;
 }
 
 // Mini Products List
 .mini-products-list .product-image {
-    float: left;
+  float: left;
 }
 .mini-products-list .product-details {
-    margin-left: 60px;
+  margin-left: 60px;
 }
 .block-cart .mini-products-list .product-details .product-name,
 .block-cart .mini-products-list .product-details .nobr small {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 .block-cart .mini-products-list .product-details .nobr {
-    white-space: normal !important;
+  white-space: normal !important;
 }
 
 /* Block:  Account */
 .block-account {
-    .panel-primary();
+  .panel-primary();
 
-    .block-title {
-        .panel-heading();
-        border-color: @panel-primary-border;
-        background-color: @panel-primary-heading-bg;
-        color: @panel-primary-text;
+  .block-title {
+    .panel-heading();
+    border-color: @panel-primary-border;
+    background-color: @panel-primary-heading-bg;
+    color: @panel-primary-text;
 
-        strong {
-            .panel-title();
-            font-weight: @headings-font-weight;
-        }
+    strong {
+      .panel-title();
+      font-weight: @headings-font-weight;
     }
+  }
 
-    .block-content {
-        padding: 15px;
+  .block-content {
+    padding: 15px;
 
-        ul {
-            margin-bottom: 0;
-        }
-        li a {
-            display: block;
-            border-bottom: 1px solid @panel-default-border;
-            padding: 5px 0;
-        }
-        li.last a {
-            border-bottom: 0;
-        }
-        li.current {
-            padding: 5px 0;
-            border-bottom: 1px solid @panel-default-border;
-        }
-        li.current.last {
-            border-bottom: 0;
-        }
+    ul {
+      margin-bottom: 0;
     }
+    li a {
+      display: block;
+      border-bottom: 1px solid @panel-default-border;
+      padding: 5px 0;
+    }
+    li.last a {
+      border-bottom: 0;
+    }
+    li.current {
+      padding: 5px 0;
+      border-bottom: 1px solid @panel-default-border;
+    }
+    li.current.last {
+      border-bottom: 0;
+    }
+  }
 }
 
 // /* Block:  Currency Switcher */
@@ -170,242 +192,242 @@
 
 // Block:  Layered Navigation
 .block-layered-nav {
-    dl {
-        margin: 0;
+  dl {
+    margin: 0;
+  }
+  dt {
+    padding: 7px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  dd {
+    padding: 0 15px 0 20px;
+    margin-bottom: (@line-height-computed / 2);
+  }
+  dd.last {
+    background: none;
+  }
+  .currently {
+    li {
+      position: relative;
+      padding: 5px 15px;
     }
-    dt {
-        padding: 7px 15px;
-        font-weight: bold;
-        text-transform: uppercase;
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
     }
-    dd {
-        padding: 0 15px 0 20px;
-        margin-bottom: (@line-height-computed / 2);
-    }
-    dd.last {
-        background: none;
-    }
-    .currently {
-        li {
-            position: relative;
-            padding: 5px 15px;
-        }
-        .label {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .value {
+    .value {
 
-        }
-        .btn-previous,
-        .btn-remove {
-            position: absolute;
-            right: 4px;
-            top: 9px;
-            margin: 0;
-        }
-        .btn-previous {
-            right: 17px;
-        }
     }
-    .actions {
-        text-align: right;
+    .btn-previous,
+    .btn-remove {
+      position: absolute;
+      right: 4px;
+      top: 9px;
+      margin: 0;
+    }
+    .btn-previous {
+      right: 17px;
+    }
+  }
+  .actions {
+    text-align: right;
 
-        .actions a {
-            float: none;
-        }
+    .actions a {
+      float: none;
     }
+  }
 }
 
 // Block:  Cart
 .block-cart {
-    .summary {
-        padding: 10px 15px;
-    }
-    .amount {
+  .summary {
+    padding: 10px 15px;
+  }
+  .amount {
 
-        a {
-            font-weight: bold;
-        }
+    a {
+      font-weight: bold;
     }
-    .subtotal {
-        .alert();
-        .alert-info();
-        padding: 4px;
-        margin-bottom: 0;
-        text-align: center;
+  }
+  .subtotal {
+    .alert();
+    .alert-info();
+    padding: 4px;
+    margin-bottom: 0;
+    text-align: center;
 
-        .price {
-            font-weight: bold;
-        }
+    .price {
+      font-weight: bold;
     }
-    .actions {
-        border-bottom: 1px solid @panel-default-border;
+  }
+  .actions {
+    border-bottom: 1px solid @panel-default-border;
 
-        .paypal-logo {
-            float: left;
-            width: 100%;
-            margin: 3px 0 0;
-            text-align: right;
+    .paypal-logo {
+      float: left;
+      width: 100%;
+      margin: 3px 0 0;
+      text-align: right;
 
-            .paypal-or {
-                clear: both;
-                display: block;
-                padding: 0 55px 8px 0;
-            }
-        }
+      .paypal-or {
+        clear: both;
+        display: block;
+        padding: 0 55px 8px 0;
+      }
     }
+  }
 }
 
 // Block:  Wishlist
 .block-wishlist .actions {
-    text-align: right;
+  text-align: right;
 }
 .block-wishlist .actions a {
-    float: none;
+  float: none;
 }
 
 // Block:  Related
 .block-related input.checkbox {
-    float: left;
+  float: left;
 }
 .block-related .product {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .page-popup .link-print {
 
 }
 .compare-table {
-    .btn-remove {
-        float: right;
-        background-image: url(../../images/btn_remove2.gif);
-        width: 72px;
-        height: 15px;
-    }
-    tr.add-to-row td {
-        background: #fffada;
-        text-align: center;
-    }
-    tr.first td {
-        text-align: center;
-    }
-    tr.first td .product-name {
-        font-size: @font-size-small;
-        font-weight: bold;
-        margin: 0 0 5px;
-        color: #203548;
-    }
-    tr.first td .product-name a {
-        color: #203548;
-    }
-    tr.first td .ratings {
-        width: 69px;
-        margin: 0 auto;
-    }
-    tr.first td p,
-    tr.add-to-row td p {
-        margin: 0;
-    }
+  .btn-remove {
+    float: right;
+    background-image: url(../../images/btn_remove2.gif);
+    width: 72px;
+    height: 15px;
+  }
+  tr.add-to-row td {
+    background: #fffada;
+    text-align: center;
+  }
+  tr.first td {
+    text-align: center;
+  }
+  tr.first td .product-name {
+    font-size: @font-size-small;
+    font-weight: bold;
+    margin: 0 0 5px;
+    color: #203548;
+  }
+  tr.first td .product-name a {
+    color: #203548;
+  }
+  tr.first td .ratings {
+    width: 69px;
+    margin: 0 auto;
+  }
+  tr.first td p,
+  tr.add-to-row td p {
+    margin: 0;
+  }
 }
 
 // Block:  Poll
 .block-poll {
-    label {
-        color: #777;
-        font-weight: bold;
-    }
-    input.radio {
-        float: left;
-        margin: 1px -18px 0 0;
-    }
-    .label {
-        display: block;
-        margin-left: 18px;
-    }
-    li {
-        padding: 10px 15px;
-    }
-    label {
-        margin-bottom: 0;
-    }
-    .actions {
-        margin: 5px 0 0;
-    }
-    .answer {
-        font-weight: bold;
-    }
-    .votes {
-        float: right;
-        margin-left: 10px;
-    }
+  label {
+    color: #777;
+    font-weight: bold;
+  }
+  input.radio {
+    float: left;
+    margin: 1px -18px 0 0;
+  }
+  .label {
+    display: block;
+    margin-left: 18px;
+  }
+  li {
+    padding: 10px 15px;
+  }
+  label {
+    margin-bottom: 0;
+  }
+  .actions {
+    margin: 5px 0 0;
+  }
+  .answer {
+    font-weight: bold;
+  }
+  .votes {
+    float: right;
+    margin-left: 10px;
+  }
 }
 
 // Block:  Tags
 .block-tags .block-content .tags-list {
-    padding: 15px !important; // Override .std
-    margin-bottom: 0 !important; // Override .std
-    font-size: @font-size-small;
+  padding: 15px !important; // Override .std
+  margin-bottom: 0 !important; // Override .std
+  font-size: @font-size-small;
 }
 .block-tags .actions {
-    text-align: right;
+  text-align: right;
 }
 .block-tags .actions a {
-    float: none;
+  float: none;
 }
 
 // Block:  Subscribe
 .block-subscribe .block-content {
-    padding: 15px 15px 0;
+  padding: 15px 15px 0;
 }
 .block-subscribe .actions {
-    margin: 15px -15px 0;
+  margin: 15px -15px 0;
 }
 .block-subscribe .actions button.button {
-    float: none;
+  float: none;
 }
 
 // Block:  Reorder
 .block-reorder input.checkbox {
-    float: left;
-    margin: 2px -20px 0 0;
+  float: left;
+  margin: 2px -20px 0 0;
 }
 .block-reorder .product-name {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .block-reorder .validation-advice {
-    margin: 3px 9px 7px;
+  margin: 3px 9px 7px;
 }
 
 // Block:  Banner
 .block-banner {
-    border: 0;
-    background-color: transparent;
+  border: 0;
+  background-color: transparent;
 }
 .block-banner .block-content {
-    padding: 0;
-    background-color: transparent;
-    text-align: center;
+  padding: 0;
+  background-color: transparent;
+  text-align: center;
 
-    img {
-        .img-responsive();
-    }
+  img {
+    .img-responsive();
+  }
 }
 
 // Block:  Login
 .block-login .block-content {
-    padding: 15px 15px 0;
+  padding: 15px 15px 0;
 }
 .block-login .actions {
-    margin: 15px -15px 0;
+  margin: 15px -15px 0;
 }
 
 // Paypal
 .paypal-logo {
-    display: block;
-    margin: 10px 0;
-    text-align: center;
+  display: block;
+  margin: 10px 0;
+  text-align: center;
 }
 .paypal-logo a {
-    float: none;
+  float: none;
 }

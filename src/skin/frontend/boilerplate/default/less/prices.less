@@ -1,175 +1,197 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 .price {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .price-box {
 
-    .price-label {
-        white-space: nowrap;
-    }
+  .price-label {
+    white-space: nowrap;
+  }
 
-    .price {
-        font-weight: bold;
-        color: @brand-primary;
-    }
+  .price {
+    font-weight: bold;
+    color: @brand-primary;
+  }
 }
 
 // Regular price
 .regular-price {
-    color: @brand-primary;
+  color: @brand-primary;
 
-    .price {
-        font-weight: bold;
-        color: @brand-primary;
-    }
+  .price {
+    font-weight: bold;
+    color: @brand-primary;
+  }
 }
 
 // Old price
 .old-price {
-    margin: 0;
+  margin: 0;
 
-    color: @text-muted;
+  color: @text-muted;
 
-    .price {
-        color: inherit;
-        font-weight: normal;
-        text-decoration: line-through;
-    }
+  .price {
+    color: inherit;
+    font-weight: normal;
+    text-decoration: line-through;
+  }
 }
 
 // Special price
 .special-price {
-    margin: 0;
+  margin: 0;
 
-    .price-label {
-        font-weight: bold;
-        color: @brand-primary;
-    }
+  .price-label {
+    font-weight: bold;
+    color: @brand-primary;
+  }
 }
 
 // Minimal price (as low as)
 .minimal-price {
-    margin: 0;
+  margin: 0;
 
-    .price-label {
-        font-weight: bold;
-    }
+  .price-label {
+    font-weight: bold;
+  }
 }
 .minimal-price-link {
-    display: block;
+  display: block;
 
-    .price {
-        font-weight: normal;
-    }
+  .price {
+    font-weight: normal;
+  }
 }
 
 // Excluding tax & including tax
 .price-excluding-tax,
 .price-including-tax {
-    display: block;
-    color: @text-muted;
+  display: block;
+  color: @text-muted;
 
-    .label {
-        white-space: nowrap;
-        color: inherit;
-    }
+  .label {
+    white-space: nowrap;
+    color: inherit;
+  }
 }
 
 // Configured price
 .configured-price {
-    margin: 0;
+  margin: 0;
 
-    .price-label {
-        font-weight: bold;
-    }
+  .price-label {
+    font-weight: bold;
+  }
 }
 
 // FPT
 .weee {
-    display: block;
+  display: block;
 
-    .price {
-        font-weight: normal;
-    }
+  .price {
+    font-weight: normal;
+  }
 }
 
 // Excl & incl tax (for order tables)
 .price-excl-tax,
 .price-incl-tax {
+  display: block;
+
+  .label {
+    white-space: nowrap;
     display: block;
+  }
 
-    .label {
-        white-space: nowrap;
-        display: block;
-    }
-
-    .price {
-        display: block;
-    }
+  .price {
+    display: block;
+  }
 }
 
 // Price range
 .price-from,
 .price-to {
-    margin: 0;
+  margin: 0;
 
-    .price-label {
-        font-weight: bold;
-        white-space: nowrap;
-    }
+  .price-label {
+    font-weight: bold;
+    white-space: nowrap;
+  }
 }
 
 // Price notice next to the options
 .price-notice {
-    color: @text-color;
+  color: @text-color;
 
-    .price {
-        font-weight: bold;
-        color: @text-color;
-    }
+  .price {
+    font-weight: bold;
+    color: @text-color;
+  }
 }
 
 // Price as configured
 .price-as-configured {
-    margin: 0;
+  margin: 0;
 }
 .price-as-configured .price-label {
-    font-weight: bold;
-    white-space: nowrap;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .price-box-bundle {
 
-    .price-box {
-        margin: 0;
-        padding: 0;
-    }
+  .price-box {
+    margin: 0;
+    padding: 0;
+  }
 
-    .price {
-        color: @text-color;
-    }
+  .price {
+    color: @text-color;
+  }
 }
 
 // Tier Prices
 .product-pricing,
 .tier-prices {
-    .well();
-    .well-sm();
+  .well();
+  .well-sm();
 }
 
 .tier-prices {
-    .benefit {
-        font-weight: bold;
-        font-style: italic;
-    }
-    .price {
-        font-weight: bold;
-        color: @text-color;
-    }
+  .benefit {
+    font-weight: bold;
+    font-style: italic;
+  }
+  .price {
+    font-weight: bold;
+    color: @text-color;
+  }
 }
 
 .tier-prices-grouped {
-    .price {
-        font-weight: bold;
-    }
+  .price {
+    font-weight: bold;
+  }
 }

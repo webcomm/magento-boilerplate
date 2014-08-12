@@ -1,110 +1,132 @@
-@import "/bower_components/bootstrap/less/scaffolding.less";
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+@import "@{bootstrap-path}/scaffolding.less";
 
 .page-popup {
-    padding: @grid-gutter-width;
+  padding: @grid-gutter-width;
 }
 
 header[role="banner"] {
-    .make-row();
-    margin-top: @line-height-computed;
-    margin-bottom: @line-height-computed;
+  .make-row();
+  margin-top: @line-height-computed;
+  margin-bottom: @line-height-computed;
 
-    > .logo {
-        .make-md-column(5);
+  > .logo {
+    .make-md-column(5);
+  }
+
+  .quick-access {
+    .make-md-column(7);
+  }
+
+  @media (min-width: @screen-sm) {
+    .form-language {
+      float: left;
+      width: 160px;
+
+      .form-control {
+        width: 120px;
+      }
     }
+    .links {
+      float: right;
+      line-height: @input-height-small; // Line up with template switcher to left
+    }
+    .form-search {
+      .clearfix();
+    }
+  }
 
+  @media (min-width: @screen-md) {
     .quick-access {
-        .make-md-column(7);
+      float: right;
     }
-
-    @media (min-width: @screen-sm) {
-        .form-language {
-            float: left;
-            width: 160px;
-
-            .form-control {
-                width: 120px;
-            }
-        }
-        .links {
-            float: right;
-            line-height: @input-height-small; // Line up with template switcher to left
-        }
-        .form-search {
-            .clearfix();
-        }
-    }
-
-    @media (min-width: @screen-md) {
-        .quick-access {
-            float: right;
-        }
-    }
+  }
 }
 
 .layout {
-    .make-row();
+  .make-row();
 
-    &.layout-1-col div[role="main"] {
-        .make-md-column(12);
-    }
+  &.layout-1-col div[role="main"] {
+    .make-md-column(12);
+  }
 
-    &.layout-3-cols div[role="main"] {
-        .make-md-column(6);
-    }
+  &.layout-3-cols div[role="main"] {
+    .make-md-column(6);
+  }
 }
 
 // Main
 div[role="main"] {
-    .make-md-column(9);
-    margin-bottom: @line-height-computed;
+  .make-md-column(9);
+  margin-bottom: @line-height-computed;
 }
 
 // Sidebar(s)
 aside[role="complementary"] {
-    .make-md-column(3);
-    display: none;
-    margin-bottom: @line-height-computed;
+  .make-md-column(3);
+  display: none;
+  margin-bottom: @line-height-computed;
 
-    @media (min-width: @screen-md) {
-        display: block;
-    }
+  @media (min-width: @screen-md) {
+    display: block;
+  }
 }
 
 // Footer
 footer[role="contentinfo"] {
-    .clearfix();
-    margin-bottom: @line-height-computed;
+  .clearfix();
+  margin-bottom: @line-height-computed;
 
-    > ul > li,
-    .links li {
-        display: inline;
-    }
+  > ul > li,
+  .links li {
+    display: inline;
+  }
 
+  > ul,
+  .links,
+  .bugs,
+  address {
+    margin-bottom: (@line-height-computed / 2);
+  }
+
+  @media (min-width: @screen-sm) {
     > ul,
     .links,
     .bugs,
     address {
-        margin-bottom: (@line-height-computed / 2);
+      width: 50%;
     }
 
-    @media (min-width: @screen-sm) {
-        > ul,
-        .links,
-        .bugs,
-        address {
-            width: 50%;
-        }
-
-        > ul,
-        .bugs {
-            float: left;
-        }
-
-        .links,
-        address {
-            float: right;
-            text-align: right;
-        }
+    > ul,
+    .bugs {
+      float: left;
     }
+
+    .links,
+    address {
+      float: right;
+      text-align: right;
+    }
+  }
 }
