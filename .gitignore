@@ -176,6 +176,8 @@ Temporary Items
 
 !/app/code/community/Webcomm/BootstrapNavigation/
 !/app/etc/modules/Webcomm_BootstrapNavigation.xml
+!/app/code/community/Webcomm/MagentoBoilerplate/
+!/app/etc/modules/Webcomm_MagentoBoilerplate.xml
 
 # ==================================================== #
 #          INCLUDE MODULE FILES AS EXCLUSIONS          #
