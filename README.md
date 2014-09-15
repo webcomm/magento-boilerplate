@@ -86,9 +86,16 @@ Merge the folders, and you're good to go.
 
 ## Developing
 
-Developing in our boilerplate theme is rather easy. To begin, you should either copy our theme or rename our theme to something useful.
+Developing in our boilerplate theme is rather easy. There are basically two general possibilities:
 
-To do this, you'll need to either copy or rename:
+1. Copy or rename the boilerplate theme and start editing it.
+2. Build a new "child" theme under the `boilerplate` package and only edit the things you need to edit.
+
+The second approach has the advantage that updating the boilerplate theme is quite easy. You would just replace the files under `boilerplate/default` with the new ones and check if you need to copy some changes to the files you edited. Updating the theme with the first approach is a nightmare. The advantage of the first approach is that you can still build custom child themes like `mytheme/xmas`. Anyway, this is also still possible with the second approach by using [Aoe_DesignFallback](https://github.com/fbrnc/Aoe_DesignFallback).
+
+### Copy / Rename the Boilerplate Theme
+
+To begin, you should either copy our theme or rename our theme to something useful by doing:
 
 ```bash
 cp -Rf app/design/frontend/boilerplate app/design/frontend/mytheme
@@ -103,6 +110,14 @@ Once you've copied or renamed the theme, you will need to add it to the bottom o
 ```
 
 From here, you'll want to install the site and enable the theme through Magento's design configuration. Firstly, install your site like any other Magento installation. There's plenty of guides out there on that. Then, visit `System > Configuration > Design > Package` and change the package from `default` to whatever you named your theme (such as `mytheme`).
+
+### Build a New "Child" Theme under the `boilerplate` Package
+
+To begin, you should create a new folder with your new theme name (e.g. `mytheme`) under `app/design/frontend/boilerplate/mytheme` and `skin/frontend/boilerplate/mytheme`.
+
+From here, you'll want to install the site and enable the theme through Magento's design configuration. Firstly, install your site like any other Magento installation. There's plenty of guides out there on that. Then, visit `System > Configuration > Design` and change the package from `default` to `boilerplate`. Additionally, change the translations, templates, skin, layout and default to  whatever you named your theme (such as `mytheme`).
+
+----
 
 The process we like to stick with when developing is have our dependencies managed for us, and use a task runner to compile them into CSS / JavaScript files which are served to the user. You don't have to do this, however it's a great way to save time down the track, even if there's a bit of a learning curve to begin with.
 
