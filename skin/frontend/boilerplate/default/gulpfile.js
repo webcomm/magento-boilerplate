@@ -111,7 +111,7 @@ gulp.task('fonts', function() {
     ])
     .pipe(gulp.dest('fonts'))
     .pipe(notify({ message: 'Successfully processed font' }));
-})
+});
 
 // Rimraf
 gulp.task('rimraf', function() {
