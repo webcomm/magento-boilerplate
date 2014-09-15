@@ -71,7 +71,7 @@
 				<name>js/script.js</name>
 			</action>
 
-			<!-- Add additioanl child blocks -->
+			<!-- Add additional child blocks -->
 			<block type="core/template" name="boilerplate.head.meta" template="boilerplate/page/html/head/meta.phtml"/>
 			<block type="core/template" name="boilerplate.head.ie8" template="boilerplate/page/html/head/ie8.phtml"/>
 
