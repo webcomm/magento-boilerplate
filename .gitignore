@@ -145,8 +145,12 @@ Temporary Items
 /skin/*
 !/skin/adminhtml/
 /skin/adminhtml/default/default/*
+!/skin/adminhtml/default/default/css/
+/skin/adminhtml/default/default/css/*
 !/skin/adminhtml/default/default/images/
 /skin/adminhtml/default/default/images/*
+!/skin/adminhtml/default/default/js/
+/skin/adminhtml/default/default/js/*
 !/skin/frontend/
 /skin/frontend/*
 !/skin/frontend/base/
