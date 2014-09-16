@@ -27,8 +27,10 @@
         "magento-deploystrategy": "copy",
         "map": [
             ["app/code/community/Webcomm/BootstrapNavigation", "app/code/community/Webcomm/BootstrapNavigation"],
+            ["app/code/community/Webcomm/MagentoBoilerplate", "app/code/community/Webcomm/MagentoBoilerplate"],
             ["app/design/frontend/boilerplate/default", "app/design/frontend/boilerplate/default"],
             ["app/etc/modules/Webcomm_BootstrapNavigation.xml", "app/etc/modules/Webcomm_BootstrapNavigation.xml"],
+            ["app/etc/modules/Webcomm_MagentoBoilerplate.xml", "app/etc/modules/Webcomm_MagentoBoilerplate.xml"],
             ["skin/frontend/boilerplate/default", "skin/frontend/boilerplate/default"]
         ]
     },
