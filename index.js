@@ -163,13 +163,13 @@ module.exports = function (config, callback) {
           'bower_components/magento-boilerplate/assets/images/**/*',
           skinPath(site)+'/assets/images/**/*',
         ])
-        .pipe($.cache($.imagemin({
+        .pipe($.imagemin({
           optimizationLevel: 3,
           progressive: true,
           interlaced: true
-        })))
+        }))
         .pipe(gulp.dest(skinPath(site)+'/images'))
-        .pipe(reload({stream:true}));
+        .pipe(reload({stream:true, once:true}));
     });
   });
 
