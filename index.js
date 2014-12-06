@@ -12,6 +12,13 @@ module.exports = function (config, callback) {
   // Gulp plugins
   var $ = require('gulp-load-plugins')();
 
+  // Prepare configuration (defaults plus user overrides).
+  // See config.example.json for documentation.
+  config = _.extend({
+    production: false,
+    sites: []
+  }, config);
+
   // A list of all available components, mapping any additional assets required.
   // It's a simple way of ensuring only required assets are loaded.
   var availableComponents = {
@@ -62,45 +69,6 @@ module.exports = function (config, callback) {
     'forms'
   ];
 
-  // Prepare configuration (defaults plus user overrides)
-  config = _.extend({
-
-    // Whether we are in production mode or not
-    production: false,
-
-    // Each frontend separation of Magento is just considered
-    // a site within the context of the Boilerplate
-    sites: [
-      {
-        // The package and theme respectively represent the
-        // location of both template files and skin files
-        package: 'boilerplate',
-        theme: 'default',
-
-        // Below you may specify any components that you would like to include
-        // with your site. This will ensure that the required JavaScripts and
-        // stylesheets are available. Only choose the ones you need to
-        // include, and no more. There are a number of required
-        // components which, whether you include or not,
-        // will be compiled.
-        //
-        // Available:
-        //     accordion, alert-boxes, breadcrumbs, button-groups, buttons, clearing, dropdown, dropdown-buttons, equalizer, flex-video, icon-bar, inline-lists, joyride, keystrokes, labels, magellan, orbit, pagination, panels, pricing-tables, progress-bars, range-slider, reveal, side-nav, split-buttons, sub-nav, switches, tables, tabs, thumbs, tooltips, top-bar, type, offcanvas, visibility.
-        //
-        // Required:
-        //     grid, block-grid, forms
-        components: [],
-
-        // BrowserSync server configuration details. These
-        // options are passed directly into BrowserSync.
-        browserSync: {
-          proxy: 'magentoboilerplate.dev',
-          port: 3000
-        }
-      }
-    ]
-  }, config);
-
   function templatePath(site) {
     return 'app/design/frontend/'+site.package+'/'+site.theme;
   }
@@ -142,7 +110,7 @@ module.exports = function (config, callback) {
           outputStyle: config.production ? 'compressed' : 'nested',
           includePaths: [
             'bower_components/foundation/scss',
-            'bower_components/magento-boilerplate/stylesheets'
+            'bower_components/magento-boilerplate/assets/stylesheets'
           ]
         }))
         .on('error', $.notify.onError())
@@ -192,7 +160,7 @@ module.exports = function (config, callback) {
     _.each(config.sites, function (site) {
       gulp
         .src([
-          'bower_components/magento-boilerplate/images/**/*',
+          'bower_components/magento-boilerplate/assets/images/**/*',
           skinPath(site)+'/assets/images/**/*',
         ])
         .pipe($.cache($.imagemin({
@@ -220,7 +188,7 @@ module.exports = function (config, callback) {
   // Serve the website with live reloading
   gulp.task('serve', function() {
     _.each(config.sites, function (site) {
-      browserSync(site.browserSync);
+      browserSync(site.server);
     });
   });
 
@@ -252,8 +220,8 @@ module.exports = function (config, callback) {
       gulp.watch(skinPath(site)+'/assets/javascripts/**/*.js', ['javascripts']);
 
       // @todo Remove once initial development is concluded
-      gulp.watch('bower_components/magento-boilerplate/stylesheets/**/*.scss', ['stylesheets']);
-      gulp.watch('bower_components/magento-boilerplate/images/**/*', ['images']);
+      gulp.watch('bower_components/magento-boilerplate/assets/stylesheets/**/*.scss', ['stylesheets']);
+      gulp.watch('bower_components/magento-boilerplate/assets/images/**/*', ['images']);
     });
   });
 };

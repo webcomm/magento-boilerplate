@@ -1,0 +1,36 @@
+{
+  // Whether we are in production mode or not
+  "production": false,
+
+  // Each frontend separation of Magento is just considered
+  // a site within the context of the Boilerplate
+  "sites": [
+    {
+      // The package and theme respectively represent the
+      // location of both template files and skin files
+      "package": "boilerplate",
+      "theme": "default",
+
+      // Below you may specify any components that you would like to include
+      // with your site. This will ensure that the required JavaScripts and
+      // stylesheets are available. Only choose the ones you need to
+      // include, and no more. There are a number of required
+      // components which, whether you include or not,
+      // will be compiled.
+      //
+      // Available:
+      //     accordion, alert-boxes, breadcrumbs, button-groups, buttons, clearing, dropdown, dropdown-buttons, equalizer, flex-video, icon-bar, inline-lists, joyride, keystrokes, labels, magellan, orbit, pagination, panels, pricing-tables, progress-bars, range-slider, reveal, side-nav, split-buttons, sub-nav, switches, tables, tabs, thumbs, tooltips, top-bar, type, offcanvas, visibility.
+      //
+      // Required:
+      //     grid, block-grid, forms
+      "components": [],
+
+      // BrowserSync server configuration details. These
+      // options are passed directly into BrowserSync.
+      "server": {
+        "proxy": "magentoboilerplate.dev",
+        "port": 3000
+      }
+    }
+  ]
+}
