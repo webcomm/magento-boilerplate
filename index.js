@@ -183,8 +183,8 @@ module.exports = function (config, callback) {
           skinPath(site)+'/js'
         ], { read: false })
         .pipe($.rimraf());
-    })
-  })
+    });
+  });
 
   // Serve the website with live reloading
   gulp.task('serve', function() {
