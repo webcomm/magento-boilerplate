@@ -179,6 +179,7 @@ module.exports = function (config, callback) {
       gulp
         .src([
           skinPath(site)+'/css',
+          skinPath(site)+'/images',
           skinPath(site)+'/js'
         ], { read: false })
         .pipe($.rimraf());
