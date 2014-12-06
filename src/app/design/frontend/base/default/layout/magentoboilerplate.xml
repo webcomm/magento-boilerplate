@@ -65,5 +65,10 @@
             <block type="core/template" name="magentoboilerplate.scripts" template="magentoboilerplate/page/html/scripts.phtml"/>
 
         </reference>
+        <reference name="catalog.topnav">
+            <action method="setTemplate">
+                <template>magentoboilerplate/page/html/topmenu.phtml</template>
+            </action>
+        </reference>
     </default>
 </layout>
