@@ -1,0 +1,12 @@
+.form-language {
+  label {
+    display: none;
+  }
+
+  select {
+    min-width: rem-calc(60);
+    font-size: rem-calc(11);
+    padding-right: $form-spacing;
+    height: auto;
+  }
+}

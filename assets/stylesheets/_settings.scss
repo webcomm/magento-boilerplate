@@ -19,3 +19,97 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+
+// Table of Contents
+// Foundation Settings
+//
+// a. Base
+// b. Grid
+// c. Global
+// d. Media Query Ranges
+// e. Typography
+// 01. Accordion
+// 02. Alert Boxes
+// 03. Block Grid
+// 04. Breadcrumbs
+// 05. Buttons
+// 06. Button Groups
+// 07. Clearing
+// 08. Dropdown
+// 09. Dropdown Buttons
+// 10. Flex Video
+// 11. Forms
+// 12. Icon Bar
+// 13. Inline Lists
+// 14. Joyride
+// 15. Keystrokes
+// 16. Labels
+// 17. Magellan
+// 18. Off-canvas
+// 19. Orbit
+// 20. Pagination
+// 21. Panels
+// 22. Pricing Tables
+// 23. Progress Bar
+// 24. Range Slider
+// 25. Reveal
+// 26. Side Nav
+// 27. Split Buttons
+// 28. Sub Nav
+// 29. Switch
+// 30. Tables
+// 31. Tabs
+// 32. Thumbnails
+// 33. Tooltips
+// 34. Top Bar
+// 36. Visibility Classes
+
+// Table of Contents
+// Boilerplate Settings
+//
+// x. Page Header (due to name conflict with  "header", part of Foundation's type component)
+// x. Logo
+// x. Search
+
+// b. Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$row-width: rem-calc(1280);
+$column-gutter: rem-calc(30);
+
+// c. Global
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$smoke       : #EEEEEE;
+$jumbo       : #888888;
+
+
+$primary-color: #008CBA;
+
+// x. Page Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$page-header-top-padding: 1em;
+$page-header-bottom-padding: $page-header-top-padding;
+$page-header-bg-color: $jumbo;
+$page-header-color: $white;
+$page-header-link-color: $ghost;
+$page-header-link-color-hover: $smoke;
+
+
+// x. Logo
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$logo-width: rem-calc(100);
+$logo-top-margin: rem-calc(40 + 0.5em);
+$logo-bottom-margin: rem-calc(40);
+
+$logo-float: left;
+$medium-up-logo-width: rem-calc(250);
+
+// x. Search
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$search-button-width: rem-calc(80);

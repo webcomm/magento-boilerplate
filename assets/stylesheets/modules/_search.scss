@@ -1,0 +1,22 @@
+.form-search {
+  position: relative;
+  height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); // Taken from @mixin form-element()
+
+  label {
+    display: none;
+  }
+
+  .input-text {
+    position: absolute;
+    left: 0;
+    right: $search-button-width;
+    width: auto;
+  }
+
+  .button {
+    @include prefix-postfix-base();
+    @include postfix($is-button: true);
+    float: right;
+    width: $search-button-width;
+  }
+}
