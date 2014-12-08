@@ -20,6 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+// Magento wraps CMS-based content in a special class so that styles may
+// be applied directly to it.
+.std {
+  ul.disc {
+    margin-left: $list-side-margin;
+    list-style: disc outside;
+  }
+
+  ol.ol {
+    margin-left: $list-ordered-side-margin;
+    list-style: decimal outside;
+  }
 }

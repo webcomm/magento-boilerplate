@@ -20,6 +20,61 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+// Block actions
+.block-content .actions {
+  @include clearfix();
+  text-align: right;
+
+  a {
+    float: left;
+  }
+}
+
+// Mini products list (used in Wishlist, etc)
+.mini-products-list {
+  .product-image {
+    float: left;
+  }
+
+  .product-details {
+    margin-left: 60px;
+  }
+}
+
+// Polls
+.block-poll {
+  label {
+    @include inline-control-label();
+  }
+}
+
+// Related
+.block-related {
+  .checkbox {
+    float: left;
+  }
+  .product {
+    margin-left: rem-calc(20);
+  }
+}
+
+// Reorder
+.block-reorder {
+  .checkbox {
+    float: left;
+  }
+  .product-name {
+    margin-left: rem-calc(20);
+  }
+}
+
+// Tags
+.block-tags {
+  .tags-list {
+    text-align: center;
+
+    li {
+      display: inline;
+    }
+  }
 }

@@ -1,0 +1,27 @@
+// Basic info + images
+.product-essential {
+  @include grid-row($behavior: nest);
+
+  .product-shop,
+  .product-img-box {
+    @include grid-column(12);
+  }
+
+  .product-shop {
+    @media #{$medium-only} {
+      @include grid-column($columns: 7, $push: 5);
+    }
+    @media #{$large-up} {
+      @include grid-column($columns: 4, $push: 8);
+    }
+  }
+
+  .product-img-box {
+    @media #{$medium-only} {
+      @include grid-column($columns: 5, $pull: 7);
+    }
+    @media #{$large-up} {
+      @include grid-column($columns: 8, $pull: 4);
+    }
+  }
+}

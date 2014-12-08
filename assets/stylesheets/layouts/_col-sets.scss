@@ -20,6 +20,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+// Column sets could arguably be part of layouts or modules. Because we have
+// responsive grid changes occuring, I feel they're best living in layouts.
+.col2-set,
+.col3-set,
+.col4-set {
+  @include grid-row($behavior: nest);
+
+  [class^="col-"] {
+    @include grid-column(12);
+  }
+}
+
+// Two columns
+.col2-set [class^="col-"] {
+  @media #{$medium-up} {
+    @include grid-column(6);
+  }
+}
+
+// Three columns
+.col3-set [class^="col-"] {
+  @media #{$medium-up} {
+    @include grid-column(4);
+  }
+}
+
+// Four columns
+.col4-set [class^="col-"] {
+  @media #{$medium-up} {
+    @include grid-column(3);
+  }
 }

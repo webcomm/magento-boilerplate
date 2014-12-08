@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.4.7"
+    "foundation": "~5.4.7",
+    "font-awesome": "~4.2.0"
   }
 }

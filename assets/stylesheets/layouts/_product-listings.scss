@@ -20,6 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+// Grid of products
+.category-products {
+  @include grid-row($behavior: nest);
+
+  > [class^="toolbar"] {
+    margin-left: $column-gutter / 2;
+    margin-right: $column-gutter / 2;
+    clear: left;
+  }
+
+  .item {
+    @include grid-column(6);
+
+    @media #{$medium-only} {
+      @include grid-column(4);
+    }
+    @media #{$large-up} {
+      @include grid-column(3);
+    }
+  }
 }
+
+// Between medium and large screens in a three column layout, the sidebars
+// take up too much room to stack three columns of products. We'll stick to
+// a single layout in that case
+.col3-layout .category-products .item {
+  @media #{$medium-only} {
+    @include grid-column(6);
+  }
+  @media #{$large-up} {
+    @include grid-column(4);
+  }
+}
+

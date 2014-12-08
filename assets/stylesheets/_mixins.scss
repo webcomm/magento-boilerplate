@@ -20,6 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+// Mixin to create an inline form select
+@mixin inline-form-select {
+  width: auto;
+  height: auto;
+  padding-right: $form-spacing;
+  font-size: rem-calc(11);
+}
+
+@mixin inline-control-label {
+  display: inline-block;
+  margin-#{$default-float}: $form-spacing * .2;
+  margin-#{$opposite-direction}: $form-spacing;
+  margin-bottom: 0;
+  vertical-align: baseline;
 }

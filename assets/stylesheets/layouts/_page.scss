@@ -20,84 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// .header-container,
-// .nav-container,
-// .footer-container {
-//   @include grid-row();
-// }
-
-// Header
-.header-container {
-  padding-top: $page-header-top-padding;
-  padding-bottom: $page-header-bottom-padding;
-  background-color: $page-header-bg-color;
-  color: $page-header-color;
-
-  a {
-    color: $page-header-link-color;
-
-    &:hover {
-      color: $page-header-link-color-hover;
-    }
-  }
-
-  .header {
-    @include grid-row();
-    position: relative;
-    padding: 0 $column-gutter / 2;
-  }
-
-  .header > .logo {
-    width: $logo-width;
-    float: $logo-float;
-
-    @media #{$medium-up} {
-      width: $medium-up-logo-width;
-    }
-  }
-
-  .quick-access {
-    margin-left: $logo-width + $column-gutter;
-    padding-bottom: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
-
-    @media #{$medium-up} {
-      margin-left: $medium-up-logo-width + $column-gutter;
-    }
-  }
-
-  @media #{$medium-up} {
-    .welcome-msg {
-      float: left;
-    }
-
-    .links,
-    .form-language {
-      float: right;
-    }
-
-    .form-language {
-      margin: -3px 20px 0 0;
-    }
-  }
-
-  .form-search {
-    position: absolute;
-    bottom: 0;
-    left: $column-gutter / 2;
-    right: $column-gutter / 2;
-
-    @media #{$medium-up} {
-      left: $medium-up-logo-width + $column-gutter * 1.5;
-    }
-  }
-}
-
-// Default, single column layouts are consisted of a full-width column
-.main {
+.header-container,
+.main,
+.footer-container {
   @include grid-row();
 }
-.col-main {
+
+// Header, main and footer are all full width columns by default
+.header,
+.col-main,
+.footer {
   @include grid-column(12);
+}
+
+// Breadcrumbs will need margins equvilent to the grid system's padding
+.main > .breadcrumbs { // Specificity win
+  margin-left: $column-gutter / 2;
+  margin-right: $column-gutter / 2;
 }
 
 // Setup sidebars to show on larger screens only

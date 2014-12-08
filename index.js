@@ -5,6 +5,7 @@ module.exports = function (config, callback) {
   // Load modules
   var gulp = require('gulp');
   var browserSync = require('browser-sync');
+  var del = require('del');
   var reload = browserSync.reload;
   var tempWrite = require('temp-write');
   var _ = require('underscore');
@@ -65,8 +66,15 @@ module.exports = function (config, callback) {
   // Components which are required for the boilerplate and must be included at all times
   var requiredComponents = [
     'grid',
-    'block-grid',
-    'forms'
+    'alert-boxes',
+    'breadcrumbs',
+    'equalizer',
+    'forms',
+    'inline-lists',
+    'pagination',
+    'tables',
+    'top-bar',
+    'type'
   ];
 
   function templatePath(site) {
@@ -89,7 +97,7 @@ module.exports = function (config, callback) {
 
       // We begin by declaring all of our included components (both required and user-defined)
       _.each(requiredComponents.slice(0).concat(site.components), function (component) {
-        sassVariables.push('$include-'+component+': true !default;');
+        sassVariables.push('$include-foundation-'+component+': true !default;');
       });
 
       // We then declare all components are not included, but because of the "!default" flag,
@@ -97,7 +105,7 @@ module.exports = function (config, callback) {
       // means that we're effectively making sure all the variables are defined
       // so that the SASS file does not error out (see magento-boilerplate.scss)
       _.each(availableComponents, function (noop, component) {
-        sassVariables.push('$include-'+component+': false !default;');
+        sassVariables.push('$include-foundation-'+component+': false !default;');
       });
 
       gulp
@@ -110,6 +118,7 @@ module.exports = function (config, callback) {
           outputStyle: config.production ? 'compressed' : 'nested',
           includePaths: [
             'bower_components/foundation/scss',
+            'bower_components/font-awesome/scss',
             'bower_components/magento-boilerplate/assets/stylesheets'
           ]
         }))
@@ -128,11 +137,9 @@ module.exports = function (config, callback) {
       // By default, we will load jQuery and the core Foundation library
       var javascripts = [
         'bower_components/jquery/dist/jquery.js',
+        'bower_components/magento-boilerplate/assets/javascripts/no-conflict.js',
         'bower_components/foundation/js/foundation/foundation.js'
       ];
-
-      // Because Magento uses Prototype, we need to put jQuery into noconflict mode
-      javascripts.push(tempWrite.sync('jQuery.noConflict();'));
 
       // Now we will loop through all required components as well as user-defined
       // components to create a list of JavaScripts that we need to include.
@@ -143,6 +150,7 @@ module.exports = function (config, callback) {
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
+      javascripts.push('bower_components/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
       javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
 
       gulp
@@ -173,16 +181,24 @@ module.exports = function (config, callback) {
     });
   });
 
-  // Clean out compiled files
-  gulp.task('clean', function () {
+  gulp.task('fonts', function () {
     _.each(config.sites, function (site) {
       gulp
-        .src([
-          skinPath(site)+'/css',
-          skinPath(site)+'/images',
-          skinPath(site)+'/js'
-        ], { read: false })
-        .pipe($.rimraf());
+        .src('bower_components/font-awesome/fonts/*.{eot,svg,ttf,woff}')
+        .pipe(gulp.dest(skinPath(site)+'/fonts'))
+        .pipe(reload({stream:true}));
+    });
+  });
+
+  // Clean out compiled files synchronously (so errors are not raised in other tasks)
+  gulp.task('clean', function () {
+    _.each(config.sites, function (site) {
+      del.sync([
+        skinPath(site)+'/css',
+        skinPath(site)+'/fonts',
+        skinPath(site)+'/images',
+        skinPath(site)+'/js'
+      ]);
     });
   });
 
@@ -201,7 +217,7 @@ module.exports = function (config, callback) {
   });
 
   // Build process
-  gulp.task('build', ['stylesheets', 'javascripts', 'images', 'custom']);
+  gulp.task('build', ['stylesheets', 'javascripts', 'images', 'fonts', 'custom']);
 
   // Our default task will clean and build
   gulp.task('default', ['clean'], function () {
@@ -222,6 +238,7 @@ module.exports = function (config, callback) {
 
       // @todo Remove once initial development is concluded
       gulp.watch('bower_components/magento-boilerplate/assets/stylesheets/**/*.scss', ['stylesheets']);
+      gulp.watch('bower_components/magento-boilerplate/assets/javascripts/**/*', ['javascripts']);
       gulp.watch('bower_components/magento-boilerplate/assets/images/**/*', ['images']);
     });
   });

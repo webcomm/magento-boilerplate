@@ -1,0 +1,64 @@
+// Magento-based helpers
+
+.nobr {
+  white-space: nowrap;
+}
+
+.wrap {
+  white-space: normal;
+}
+
+.a-left {
+  @extend .text-left;
+}
+
+.a-center {
+  @extend .text-center;
+}
+
+.a-right {
+  @extend .text-right;
+}
+
+.v-top {
+  vertical-align: top;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.f-left,
+.left {
+  float: left;
+}
+
+.f-right,
+.right {
+  float: right;
+}
+
+.f-none {
+  float: none;
+}
+
+.f-fix {
+  @extend .pull-left;
+  width: 100%;
+}
+
+.no-display {
+  @extend .hide;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-bg {
+  background: none;
+}

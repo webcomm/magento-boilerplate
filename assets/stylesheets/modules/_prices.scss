@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
-  @include inline-list();
+.price-box {
+  p {
+    margin-bottom: $paragraph-margin-bottom / 2;
+  }
 }

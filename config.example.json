@@ -19,10 +19,10 @@
       // will be compiled.
       //
       // Available:
-      //     accordion, alert-boxes, breadcrumbs, button-groups, buttons, clearing, dropdown, dropdown-buttons, equalizer, flex-video, icon-bar, inline-lists, joyride, keystrokes, labels, magellan, orbit, pagination, panels, pricing-tables, progress-bars, range-slider, reveal, side-nav, split-buttons, sub-nav, switches, tables, tabs, thumbs, tooltips, top-bar, type, offcanvas, visibility.
+      //     accordion, block-grid, button-groups, buttons, clearing, dropdown, dropdown-buttons, flex-video, icon-bar, joyride, keystrokes, labels, magellan, orbit, panels, pricing-tables, progress-bars, range-slider, reveal, side-nav, split-buttons, sub-nav, switches, tabs, thumbs, tooltips, offcanvas, visibility.
       //
       // Required:
-      //     grid, block-grid, forms
+      //     grid, alert-boxes, breadcrumbs, equalizer, forms, inline-lists, pagination, tables, top-bar, type
       "components": [],
 
       // BrowserSync server configuration details. These

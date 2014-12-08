@@ -66,50 +66,116 @@
 
 // Table of Contents
 // Boilerplate Settings
-//
-// x. Page Header (due to name conflict with  "header", part of Foundation's type component)
-// x. Logo
-// x. Search
 
 // b. Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$row-width: rem-calc(1280);
-$column-gutter: rem-calc(30);
+$row-width: rem-calc(1280) !default;
+$column-gutter: rem-calc(30) !default;
+
+// 04. Breadcrumbs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-html-alert-classes: false;
+
+// 04. Breadcrumbs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-html-nav-classes: false !default;
+
+// 13. Inline Lists
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-html-inline-list-classes: false !default;
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$white       : #FFFFFF;
-$ghost       : #FAFAFA;
-$smoke       : #EEEEEE;
-$jumbo       : #888888;
+$primary-color: #EF672F !default;
 
-
-$primary-color: #008CBA;
-
-// x. Page Header
+// Layouts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$page-header-top-padding: 1em;
-$page-header-bottom-padding: $page-header-top-padding;
-$page-header-bg-color: $jumbo;
-$page-header-color: $white;
-$page-header-link-color: $ghost;
-$page-header-link-color-hover: $smoke;
+$include-magento-boilerplate-column-set-layouts: true !default;
+$include-magento-boilerplate-page-layouts: true !default;
+$include-magento-boilerplate-product-listings-layouts: true !default;
+$include-magento-boilerplate-products-layouts: true !default;
+$include-magento-boilerplate-customers-layouts: true !default;
 
-
-// x. Logo
+// Blocks
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$logo-width: rem-calc(100);
-$logo-top-margin: rem-calc(40 + 0.5em);
-$logo-bottom-margin: rem-calc(40);
+$include-magento-boilerplate-blocks: true !default;
 
-$logo-float: left;
-$medium-up-logo-width: rem-calc(250);
-
-// x. Search
+// Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$search-button-width: rem-calc(80);
+$include-magento-boilerplate-breadcrumbs: true !default;
+
+// Customers
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-customers: true !default;
+
+// Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-forms: true !default;
+
+// Language
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-language: true !default;
+
+// Links
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-links: true !default;
+
+// Logo
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-logo: true !default;
+$logo-max-width: rem-calc(100) !default;
+
+// Messages
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-messages: true !default;
+
+// One Page Checkout
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-one-page-checkout: true !default;
+
+// Prices
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-prices: true !default;
+
+// Products
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-products: true !default;
+
+// Ratings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-ratings: true !default;
+
+// Search
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-search: true !default;
+$search-button-width: rem-calc(80) !default;
+
+// Standard CMS styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-std: true !default;
+
+// Toolbar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$include-magento-boilerplate-toolbar: true !default;
+$include-pagination-classes: false !default;

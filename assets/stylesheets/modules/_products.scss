@@ -20,6 +20,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.links {
+// The product name is used throughout the website
+.product-name {
+  font-size: $h5-font-size;
+}
+
+// Add to cart links should be displayed as an inline list, and
+// we'll hide the extra markup produced for separators
+.add-to-links {
   @include inline-list();
+
+  span {
+    display: none;
+  }
+}
+
+// Collateral boxes on the product page
+.product-collateral {
+
+  // Tags
+  .box-tags ul li {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  // Upsells
+  .box-up-sell {
+    table {
+      width: 100%;
+    }
+
+    td {
+      width: 25%; // Four products per row
+    }
+  }
 }
