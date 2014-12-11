@@ -20,58 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// Table of Contents
-// Foundation Settings
-//
 // a. Base
-// b. Grid
-// c. Global
-// d. Media Query Ranges
-// e. Typography
-// 01. Accordion
-// 02. Alert Boxes
-// 03. Block Grid
-// 04. Breadcrumbs
-// 05. Buttons
-// 06. Button Groups
-// 07. Clearing
-// 08. Dropdown
-// 09. Dropdown Buttons
-// 10. Flex Video
-// 11. Forms
-// 12. Icon Bar
-// 13. Inline Lists
-// 14. Joyride
-// 15. Keystrokes
-// 16. Labels
-// 17. Magellan
-// 18. Off-canvas
-// 19. Orbit
-// 20. Pagination
-// 21. Panels
-// 22. Pricing Tables
-// 23. Progress Bar
-// 24. Range Slider
-// 25. Reveal
-// 26. Side Nav
-// 27. Split Buttons
-// 28. Sub Nav
-// 29. Switch
-// 30. Tables
-// 31. Tabs
-// 32. Thumbnails
-// 33. Tooltips
-// 34. Top Bar
-// 36. Visibility Classes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Table of Contents
-// Boilerplate Settings
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "foundation/functions";
 
 // b. Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $row-width: rem-calc(1280) !default;
-$column-gutter: rem-calc(30) !default;
 
 // 04. Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -96,86 +54,86 @@ $primary-color: #EF672F !default;
 // Layouts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-column-set-layouts: true !default;
-$include-magento-boilerplate-page-layouts: true !default;
-$include-magento-boilerplate-product-listings-layouts: true !default;
-$include-magento-boilerplate-products-layouts: true !default;
-$include-magento-boilerplate-customers-layouts: true !default;
+$include-column-set-layouts: true !default;
+$include-page-layouts: true !default;
+$include-product-listings-layouts: true !default;
+$include-products-layouts: true !default;
+$include-customers-layouts: true !default;
 
 // Blocks
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-blocks: true !default;
+$include-blocks: true !default;
 
 // Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-breadcrumbs: true !default;
+$include-breadcrumbs: true !default;
 
 // Customers
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-customers: true !default;
+$include-customers: true !default;
 
 // Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-forms: true !default;
+$include-forms: true !default;
 
 // Language
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-language: true !default;
+$include-language: true !default;
 
 // Links
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-links: true !default;
+$include-links: true !default;
 
 // Logo
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-logo: true !default;
+$include-logo: true !default;
 $logo-max-width: rem-calc(100) !default;
 
 // Messages
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-messages: true !default;
+$include-messages: true !default;
 
 // One Page Checkout
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-one-page-checkout: true !default;
+$include-one-page-checkout: true !default;
 
 // Prices
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-prices: true !default;
+$include-prices: true !default;
 
 // Products
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-products: true !default;
+$include-products: true !default;
 
 // Ratings
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-ratings: true !default;
+$include-ratings: true !default;
 
 // Search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-search: true !default;
+$include-search: true !default;
 $search-button-width: rem-calc(80) !default;
 
 // Standard CMS styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-std: true !default;
+$include-std: true !default;
 
 // Toolbar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-magento-boilerplate-toolbar: true !default;
+$include-toolbar: true !default;
 $include-pagination-classes: false !default;

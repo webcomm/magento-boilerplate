@@ -70,11 +70,7 @@
 
 // Tags
 .block-tags {
-  .tags-list {
-    text-align: center;
-
-    li {
-      display: inline;
-    }
+  .tags-list li {
+    display: inline;
   }
 }
