@@ -1,0 +1,190 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2014 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+// Whether elements of the website should be contained or not
+$contain-page: true !default;
+$contain-header: $contain-page !default;
+$contain-nav: $contain-page !default;
+$contain-main: $contain-page !default;
+$contain-footer: $contain-page !default;
+
+// At what screen size should the sidebar kick in? Options: medium, large
+$show-sidebars-from: medium !default;
+$medium-sidebar-columns: 3.5 !default;
+$large-sidebar-columns: 2.5 !default;
+
+@mixin contain-section() {
+  @include grid-row();
+  padding-left: $column-gutter / 2;
+  padding-right: $column-gutter / 2;
+}
+
+@if $contain-header {
+  .header-container .header {
+    @include contain-section();
+  }
+}
+
+@if $contain-nav {
+  .nav-container .nav {
+    @include contain-section();
+  }
+}
+
+@if $contain-main {
+  .main-container .main {
+    @include contain-section();
+  }
+}
+
+@if $contain-footer {
+  .footer-container .footer {
+    @include contain-section();
+  }
+}
+
+// Hide sidebars until they are allowed to display
+.sidebar {
+  display: none;
+
+  @if $show-sidebars-from == medium {
+    @media #{$medium-up} {
+      display: block;
+    }
+  } @elseif $show-sidebars-from == large {
+    @media #{$medium-up} {
+      display: block;
+    }
+  }
+}
+
+// All layouts with exception of single column utilise
+// the grid system for sidebars and content.
+.col2-left-layout,
+.col2-right-layout,
+.col3-layout {
+
+  // Breadcrumbs need margin applied as they fall inside the grid row that's
+  // created by the main row
+  .breadcrumbs {
+    margin-left: $column-gutter / 2;
+    margin-right: $column-gutter / 2;
+  }
+
+  .main {
+
+    // If we contained the main section, we have already setup
+    // a grid row. All we need to do is reduce padding
+    @if $contain-main {
+      padding-left: 0;
+      padding-right: 0;
+    } else {
+      @include grid-row();
+    }
+  }
+
+  .col-main {
+    @include grid-column();
+  }
+}
+
+// Left sidebar
+.col2-left-layout {
+  @media #{$medium-up} {
+    .col-left {
+      @include grid-column($columns: $medium-sidebar-columns, $pull: $total-columns - $medium-sidebar-columns);
+    }
+    .col-main {
+      @include grid-column($columns: $total-columns - $medium-sidebar-columns, $push: $medium-sidebar-columns);
+    }
+  }
+
+  @media #{$large-up} {
+    .col-left {
+      @include grid-column($columns: $large-sidebar-columns, $pull: $total-columns - $large-sidebar-columns);
+    }
+    .col-main {
+      @include grid-column($columns: $total-columns - $large-sidebar-columns, $push: $large-sidebar-columns);
+    }
+  }
+}
+
+// Right sidebar
+.col2-right-layout {
+  @media #{$medium-up} {
+    .col-main {
+      @include grid-column($total-columns - $medium-sidebar-columns);
+    }
+    .col-right {
+      @include grid-column($medium-sidebar-columns);
+    }
+  }
+
+  @media #{$large-up} {
+    .col-main {
+      @include grid-column($total-columns - $large-sidebar-columns);
+    }
+    .col-right {
+      @include grid-column($large-sidebar-columns);
+    }
+  }
+}
+
+// Both sidebars require a little modification of the grid system with some complex mathematics
+.col3-layout {
+  @media #{$medium-up} {
+    .col-wrapper {
+      @include grid-column($columns: $total-columns - $medium-sidebar-columns, $collapse: true);
+
+      .col-left {
+        @include grid-column();
+        width: grid-calc($medium-sidebar-columns, $total-columns - $medium-sidebar-columns);
+      }
+
+      .col-main {
+        @include grid-column();
+        width: grid-calc($total-columns - ($medium-sidebar-columns * 2), $total-columns - $medium-sidebar-columns);
+        float: right;
+      }
+    }
+    .col-right {
+      @include grid-column($medium-sidebar-columns);
+    }
+  }
+
+  @media #{$large-up} {
+    .col-wrapper {
+      @include grid-column($columns: $total-columns - $large-sidebar-columns, $collapse: true);
+
+      .col-left {
+        width: grid-calc($large-sidebar-columns, $total-columns - $large-sidebar-columns);
+      }
+
+      .col-main {
+        width: grid-calc($total-columns - ($large-sidebar-columns * 2), $total-columns - $large-sidebar-columns);
+      }
+    }
+    .col-right {
+      @include grid-column($large-sidebar-columns);
+    }
+  }
+}
