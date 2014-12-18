@@ -103,7 +103,7 @@ $large-sidebar-columns: 2.5 !default;
   }
 
   .col-main {
-    @include grid-column();
+    @include grid-column(12);
   }
 }
 
