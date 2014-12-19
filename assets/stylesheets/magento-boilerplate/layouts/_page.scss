@@ -62,6 +62,11 @@ $large-sidebar-columns: 2.5 !default;
   }
 }
 
+// Rows inside the main section should be nested
+.col-main .row {
+  @include grid-row($behavior: nest);
+}
+
 // Hide sidebars until they are allowed to display
 .sidebar {
   display: none;
@@ -70,10 +75,10 @@ $large-sidebar-columns: 2.5 !default;
     @media #{$medium-up} {
       display: block;
     }
-  } @elseif $show-sidebars-from == large {
-    @media #{$medium-up} {
-      display: block;
-    }
+  }
+
+  @media #{$large-up} {
+    display: block;
   }
 }
 
@@ -109,12 +114,14 @@ $large-sidebar-columns: 2.5 !default;
 
 // Left sidebar
 .col2-left-layout {
-  @media #{$medium-up} {
-    .col-left {
-      @include grid-column($columns: $medium-sidebar-columns, $pull: $total-columns - $medium-sidebar-columns);
-    }
-    .col-main {
-      @include grid-column($columns: $total-columns - $medium-sidebar-columns, $push: $medium-sidebar-columns);
+  @if $show-sidebars-from == medium {
+    @media #{$medium-up} {
+      .col-left {
+        @include grid-column($columns: $medium-sidebar-columns, $pull: $total-columns - $medium-sidebar-columns);
+      }
+      .col-main {
+        @include grid-column($columns: $total-columns - $medium-sidebar-columns, $push: $medium-sidebar-columns);
+      }
     }
   }
 
@@ -130,12 +137,14 @@ $large-sidebar-columns: 2.5 !default;
 
 // Right sidebar
 .col2-right-layout {
-  @media #{$medium-up} {
-    .col-main {
-      @include grid-column($total-columns - $medium-sidebar-columns);
-    }
-    .col-right {
-      @include grid-column($medium-sidebar-columns);
+  @if $show-sidebars-from == medium {
+    @media #{$medium-up} {
+      .col-main {
+        @include grid-column($total-columns - $medium-sidebar-columns);
+      }
+      .col-right {
+        @include grid-column($medium-sidebar-columns);
+      }
     }
   }
 
@@ -151,23 +160,25 @@ $large-sidebar-columns: 2.5 !default;
 
 // Both sidebars require a little modification of the grid system with some complex mathematics
 .col3-layout {
-  @media #{$medium-up} {
-    .col-wrapper {
-      @include grid-column($columns: $total-columns - $medium-sidebar-columns, $collapse: true);
+  @if $show-sidebars-from == medium {
+    @media #{$medium-up} {
+      .col-wrapper {
+        @include grid-column($columns: $total-columns - $medium-sidebar-columns, $collapse: true);
 
-      .col-left {
-        @include grid-column();
-        width: grid-calc($medium-sidebar-columns, $total-columns - $medium-sidebar-columns);
-      }
+        .col-left {
+          @include grid-column();
+          width: grid-calc($medium-sidebar-columns, $total-columns - $medium-sidebar-columns);
+        }
 
-      .col-main {
-        @include grid-column();
-        width: grid-calc($total-columns - ($medium-sidebar-columns * 2), $total-columns - $medium-sidebar-columns);
-        float: right;
+        .col-main {
+          @include grid-column();
+          width: grid-calc($total-columns - ($medium-sidebar-columns * 2), $total-columns - $medium-sidebar-columns);
+          float: right;
+        }
       }
-    }
-    .col-right {
-      @include grid-column($medium-sidebar-columns);
+      .col-right {
+        @include grid-column($medium-sidebar-columns);
+      }
     }
   }
 

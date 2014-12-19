@@ -25,14 +25,9 @@
   font-size: $h5-font-size;
 }
 
-// Add to cart links should be displayed as an inline list, and
-// we'll hide the extra markup produced for separators
-.add-to-links {
-  @include inline-list();
-
-  span {
-    display: none;
-  }
+// Hide the extra markup produced for separators
+.add-to-links span {
+  display: none;
 }
 
 // Collateral boxes on the product page

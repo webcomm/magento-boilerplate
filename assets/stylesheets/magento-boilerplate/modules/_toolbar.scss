@@ -20,6 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+// By default, we don't need to render Foundation's built-in pagination classes
+$include-pagination-classes: false !default;
+
 // Setup common icon properties for both the pager and sorter
 .pager .pages ol .previous,
 .pager .pages ol .next,

@@ -20,6 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+// The maximum width of the logo at all times
+$logo-max-width: rem-calc(100) !default;
+
 .logo {
   display: block;
   max-width: $logo-max-width;

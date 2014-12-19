@@ -20,6 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+// The width of the search button
+$search-button-width: rem-calc(80) !default;
+
 .form-search {
   position: relative;
   height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); // Taken from @mixin form-element()

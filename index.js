@@ -98,7 +98,7 @@ module.exports = function (config, callback) {
 
       // We begin by declaring all of our included components (both required and user-defined)
       _.each(requiredComponents.slice(0).concat(site.components), function (component) {
-        sassVariables.push('$include-foundation-'+component+': true !default;');
+        sassVariables.push('$include-'+component+'-component: true !default;');
       });
 
       // We then declare all components are not included, but because of the "!default" flag,
@@ -106,7 +106,7 @@ module.exports = function (config, callback) {
       // means that we're effectively making sure all the variables are defined
       // so that the SASS file does not error out (see magento-boilerplate.scss)
       _.each(availableComponents, function (noop, component) {
-        sassVariables.push('$include-foundation-'+component+': false !default;');
+        sassVariables.push('$include-'+component+'-component: false !default;');
       });
 
       gulp
