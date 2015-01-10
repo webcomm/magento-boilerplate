@@ -35,7 +35,7 @@
     margin-bottom: (@line-height-computed / 2);
 
     img {
-      .img-thumbnail();
+      &:extend(.img-thumbnail);
     }
   }
 
@@ -63,7 +63,7 @@
 // Products list block
 .products-list {
   li.item {
-    .clearfix();
+    &:extend(.clearfix all);
     padding: (@line-height-computed / 2) 0;
     border-bottom: 1px solid @hr-border;
 
@@ -83,7 +83,7 @@
     display: block;
 
     img {
-      .img-thumbnail();
+      &:extend(.img-thumbnail);
     }
   }
 
@@ -137,7 +137,7 @@
 }
 
 .availability-only-details {
-  .table();
+  &:extend(.table all);
 }
 
 // Add to cart
@@ -160,7 +160,7 @@
 
 // "Add to box"
 .add-to-box {
-  .clearfix();
+  &:extend(.clearfix all);
   text-align: center;
   padding-left: (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
@@ -210,7 +210,7 @@
     padding-right: 0;
 
     img {
-      .img-thumbnail();
+      &:extend(.img-thumbnail);
     }
 
     .more-views ul {
@@ -239,19 +239,19 @@
 
 // Product shop (name, price etc)
 .product-view .product-shop {
-  .panel();
+  &:extend(.panel);
   padding: 15px;
   border-color: @panel-default-border;
 
   .product-name {
-    .panel-heading();
+    &:extend(.panel-heading);
     margin: -15px -15px 15px;
     border-color: @panel-default-border;
     background-color: @panel-default-heading-bg;
     color: @panel-default-text;
 
     h1 {
-      .panel-title();
+      &:extend(.panel-title);
     }
   }
 
@@ -287,7 +287,7 @@
   .product-image-zoom,
   .more-views {
     img {
-      .img-responsive();
+      &:extend(.img-responsive);
     }
   }
 
@@ -303,8 +303,8 @@
 
 // Product Options
 .product-options {
-  .well();
-  .well-sm();
+  &:extend(.well);
+  &:extend(.well-sm);
   margin-bottom: (@line-height-computed / 2);
   position: relative;
 
@@ -345,7 +345,7 @@
     .input-text,
     select,
     textarea {
-      .form-control();
+      &:extend(.form-control);
     }
 
     select[multiple],
@@ -409,7 +409,7 @@
     }
   }
   .price-box {
-    .clearfix();
+    &:extend(.clearfix all);
     padding-top: (@line-height-computed / 2);
   }
   .price-label {
@@ -472,13 +472,13 @@
 }
 
 .product-view .box-collateral {
-  .clearfix();
-  .panel();
+  &:extend(.clearfix all);
+  &:extend(.panel);
   padding: 15px;
   border-color: @panel-default-border;
 
   > h2 {
-    .panel-heading();
+    &:extend(.panel-heading);
     margin: -15px -15px 15px;
     border-color: @panel-default-border;
     background-color: @panel-default-heading-bg;
@@ -590,7 +590,7 @@
     }
   }
   dd {
-    .clearfix();
+    &:extend(.clearfix all);
     padding-bottom: 15px;
     border-bottom: 1px solid @hr-border;
 

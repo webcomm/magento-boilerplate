@@ -118,11 +118,11 @@
 // and the styles don't play nice with mobile,
 // so we'll just embed it as a well.
 .tool-tip {
-  .popover();
+  &:extend(.popover);
   display: block;
 
   .btn-close {
-    .clearfix();
+    &:extend(.clearfix all);
     padding: 9px 14px;
 
     a {
@@ -152,10 +152,10 @@
   }
 }
 .tool-tip-content {
-  .popover-content();
+  &:extend(.popover-content);
 
   img {
-    .img-responsive();
+    &:extend(.img-responsive);
   }
 }
 
@@ -210,7 +210,7 @@
     margin: 0 0 25px;
   }
   .item {
-    .clearfix();
+    &:extend(.clearfix all);
     margin: 0 0 10px;
 
     border-bottom: 1px solid @hr-border;
@@ -267,7 +267,7 @@
   }
 
   dl {
-    .clearfix();
+    &:extend(.clearfix all);
   }
 }
 
@@ -281,7 +281,7 @@
     }
   }
   .agreement-content {
-    .well();
+    &:extend(.well);
     margin-bottom: 0;
     overflow: auto;
     height: (@line-height-computed * 12);
@@ -440,7 +440,7 @@
   }
 
   .step-title {
-    .clearfix();
+    &:extend(.clearfix all);
     padding: 10px 15px;
     border: solid @panel-default-border;
     border-width: 0 1px 1px;
@@ -525,10 +525,10 @@
 
 // Multiple Addresses Checkout
 .checkout-progress {
-  .clearfix();
+  &:extend(.clearfix all);
 
   li {
-    .list-group-item();
+    &:extend(.list-group-item);
   }
 
   @media (min-width: @screen-md) {
@@ -588,7 +588,7 @@
     }
 
     select {
-      .form-control();
+      &:extend(.form-control);
       width: auto;
     }
 
@@ -605,8 +605,8 @@
   // .col2-set h3.legend { margin:0 0 10px; color:#0a263c; }
   // .col2-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
   .box {
-    .well();
-    .well-sm();
+    &:extend(.well);
+    &:extend(.well-sm);
 
     h2 {
 
@@ -622,7 +622,7 @@
   }
 
   .place-order {
-    .clearfix();
+    &:extend(.clearfix all);
 
     .please-wait {
       float: right;
@@ -650,14 +650,14 @@
   }
 
   tfoot .button {
-    .btn-sm();
+    &:extend(.btn-sm);
   }
 }
 
 // Step 2
 .checkout-multishipping-shipping .box-sp-methods {
-  .well();
-  .well-sm();
+  &:extend(.well);
+  &:extend(.well-sm);
 }
 
 // Step 3

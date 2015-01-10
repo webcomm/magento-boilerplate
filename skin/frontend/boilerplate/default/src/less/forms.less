@@ -28,15 +28,15 @@ p.control input.radio {
 }
 
 .input-text {
-  .form-control();
+  &:extend(.form-control);
 }
 
 .form-list {
-  .clearfix();
+  &:extend(.clearfix all);
 
   li {
-    .form-group();
-    .clearfix();
+    &:extend(.form-group);
+    &:extend(.clearfix all);
   }
   label {
     position: relative;
@@ -84,7 +84,7 @@ p.control input.radio {
   }
   textarea,
   select {
-    .form-control();
+    &:extend(.form-control);
   }
   select[multiple],
   textarea {
@@ -96,7 +96,7 @@ p.control input.radio {
     padding-top: 7px;
 
     p {
-      .clearfix();
+      &:extend(.clearfix all);
     }
 
     .btn-remove {
@@ -264,7 +264,7 @@ p.control input.radio {
 }
 
 .fieldset {
-  // .clearfix();
+  // &:extend(.clearfix all);
 }
 
 .legend {
@@ -282,7 +282,7 @@ p.control input.radio {
 
 // Button sets
 .buttons-set {
-  .clearfix();
+  &:extend(.clearfix all);
   margin: 4em 0 0;
   padding: 8px 0 0;
   border-top: 1px solid @legend-border-color;

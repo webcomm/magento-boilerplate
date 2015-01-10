@@ -21,17 +21,17 @@
 // THE SOFTWARE.
 
 .block {
-  .panel();
+  &:extend(.panel);
   border-color: @panel-default-border;
 
   .block-title {
-    .panel-heading();
+    &:extend(.panel-heading);
     border-color: @panel-default-border;
     background-color: @panel-default-heading-bg;
     color: @panel-default-text;
 
     strong {
-      .panel-title();
+      &:extend(.panel-title);
       font-weight: @headings-font-weight;
     }
   }
@@ -44,11 +44,11 @@
 
   .block-content,
   .actions {
-    .clearfix();
+    &:extend(.clearfix all);
   }
 
   .block-content {
-    .clearfix();
+    &:extend(.clearfix all);
 
     li.item {
       padding: 10px 15px;
@@ -77,7 +77,7 @@
 
     button.button {
       float: right;
-      .btn-sm();
+      &:extend(.btn-sm);
     }
   }
 
@@ -123,16 +123,16 @@
 
 /* Block:  Account */
 .block-account {
-  .panel-primary();
+  &:extend(.panel-primary);
 
   .block-title {
-    .panel-heading();
+    &:extend(.panel-heading);
     border-color: @panel-primary-border;
     background-color: @panel-primary-heading-bg;
     color: @panel-primary-text;
 
     strong {
-      .panel-title();
+      &:extend(.panel-title);
       font-weight: @headings-font-weight;
     }
   }
@@ -251,8 +251,8 @@
     }
   }
   .subtotal {
-    .alert();
-    .alert-info();
+    &:extend(.alert);
+    &:extend(.alert-info);
     padding: 4px;
     margin-bottom: 0;
     text-align: center;
@@ -410,7 +410,7 @@
   text-align: center;
 
   img {
-    .img-responsive();
+    &:extend(.img-responsive);
   }
 }
 

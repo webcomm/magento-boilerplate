@@ -30,7 +30,7 @@
     z-index: @zindex-dropdown;
 
     li {
-      .list-group-item();
+      &:extend(.list-group-item);
       cursor: pointer;
 
       .amount {
@@ -80,9 +80,9 @@
 
 }
 .advanced-search-summary {
-  .well();
-  .well-sm();
-  .clearfix();
+  &:extend(.well);
+  &:extend(.well-sm);
+  &:extend(.clearfix all);
 
   ul {
     margin-bottom: 0;

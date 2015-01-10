@@ -23,8 +23,8 @@
 @import "@{bootstrap-path}/tables.less";
 
 .data-table {
-  .table();
-  .table-bordered();
+  &:extend(.table all);
+  &:extend(.table-bordered all);
 
   > tbody > tr:nth-child(odd) {
     > td,
