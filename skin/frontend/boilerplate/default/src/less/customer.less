@@ -70,21 +70,21 @@
 
 // General Account Box
 .box-account {
-  .panel();
+  &:extend(.panel);
   padding: 15px;
   border-color: @panel-default-border;
 
   .box-head {
     margin: -15px -15px 15px;
-    .clearfix();
-    .panel-heading();
+    &:extend(.clearfix all);
+    &:extend(.panel-heading);
     border-color: @panel-default-border;
     background-color: @panel-default-heading-bg;
     color: @panel-default-text;
 
     h2 {
       float: left;
-      .panel-title();
+      &:extend(.panel-title);
     }
 
     a {
@@ -102,7 +102,7 @@
 // Dashboard
 .dashboard {
   .box .box-title {
-    .clearfix();
+    &:extend(.clearfix all);
     padding: 0 0 (@line-height-computed / 2);
     margin: 0 0 (@line-height-computed / 2);
     border-bottom: 1px solid @panel-default-border;
@@ -155,7 +155,7 @@
     margin-left: 20px;
   }
   li.item {
-    .clearfix();
+    &:extend(.clearfix all);
     margin-bottom: (@line-height-computed / 2);
 
     &:last-child {
@@ -214,13 +214,13 @@
   }
 
   li.item {
-    .panel();
+    &:extend(.panel);
     padding: 15px;
     border-color: @panel-default-border;
 
     h3 {
       margin: -15px -15px 15px;
-      .panel-heading();
+      &:extend(.panel-heading);
       border-color: @panel-default-border;
       background-color: @panel-default-heading-bg;
       color: @panel-default-text;
@@ -267,7 +267,7 @@
 }
 
 .order-info-box {
-  .panel();
+  &:extend(.panel);
   margin-left: 0;
   margin-right: 0;
   border-color: @panel-default-border;
@@ -306,7 +306,7 @@
 
 // Order Gift Message
 .gift-message {
-  .panel();
+  &:extend(.panel);
   padding: 15px;
   border-color: @panel-default-border;
 
@@ -332,7 +332,7 @@
 
 // Order Comments
 .order-about {
-  .panel();
+  &:extend(.panel);
   padding: 15px;
   border-color: @panel-default-border;
 
@@ -349,7 +349,7 @@
 // My Wishlist
 .my-wishlist {
   textarea {
-    .form-control();
+    &:extend(.form-control);
     height: auto;
   }
 
@@ -373,14 +373,14 @@
   }
 
   .link-edit {
-    .btn();
-    .btn-default();
+    &:extend(.btn);
+    &:extend(.btn-default);
     width: 100%;
     display: block;
   }
 
   .btn-add {
-    .btn-primary();
+    &:extend(.btn-primary);
   }
 }
 
@@ -390,7 +390,7 @@
     width: 140px;
 
     .product-image {
-      .img-responsive();
+      &:extend(.img-responsive);
     }
 
     .label {

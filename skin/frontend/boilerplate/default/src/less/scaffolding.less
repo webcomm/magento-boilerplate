@@ -53,7 +53,7 @@ header[role="banner"] {
       line-height: @input-height-small; // Line up with template switcher to left
     }
     .form-search {
-      .clearfix();
+      &:extend(.clearfix all);
     }
   }
 
@@ -95,7 +95,7 @@ aside[role="complementary"] {
 
 // Footer
 footer[role="contentinfo"] {
-  .clearfix();
+  &:extend(.clearfix all);
   margin-bottom: @line-height-computed;
 
   > ul > li,

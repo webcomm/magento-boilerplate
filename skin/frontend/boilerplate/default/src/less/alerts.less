@@ -40,26 +40,26 @@
 .success-msg,
 .note-msg,
 .notice-msg {
-  .alert();
+  &:extend(.alert);
 }
 
 .error-msg {
-  .alert-danger();
+  &:extend(.alert-danger);
 }
 
 .success-msg {
-  .alert-success();
+  &:extend(.alert-success);
 }
 
 .note-msg,
 .notice-msg {
-  .alert-info();
+  &:extend(.alert-info);
 }
 
 // Global notices
 .global-site-notice {
-  .alert();
-  .alert-warning();
+  &:extend(.alert);
+  &:extend(.alert-warning);
 
   p {
     margin: 0;

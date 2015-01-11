@@ -24,7 +24,7 @@
 
 .pager,
 .sorter {
-  .clearfix();
+  &:extend(.clearfix all);
 }
 
 // Pager
@@ -55,8 +55,8 @@
     text-align: center;
   }
   .pages ol {
-    .pagination();
-    .pagination-sm();
+    &:extend(.pagination);
+    &:extend(.pagination-sm);
 
     margin: 0;
     display: inline-block;

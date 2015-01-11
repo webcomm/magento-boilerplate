@@ -65,10 +65,10 @@
 
 // Button
 .btn-checkout {
-  .btn-primary();
+  &:extend(.btn-primary);
 
   @media (min-width: @screen-xs) {
-    .btn-lg();
+    &:extend(.btn-lg);
   }
 }
 
@@ -77,13 +77,13 @@
   margin-bottom: 0;
 
   .qty {
-    .input-sm();
+    &:extend(.input-sm);
     width: auto;
     text-align: center;
   }
 
   .button {
-    .btn-sm();
+    &:extend(.btn-sm);
   }
 
   .btn-continue {
@@ -111,16 +111,16 @@
 .cart .crosssell,
 .cart .discount,
 .cart .shipping {
-  .panel();
+  &:extend(.panel);
   border-color: @panel-default-border;
 
   > h2 {
-    .panel-heading();
+    &:extend(.panel-heading);
     border-color: @panel-default-border;
     background-color: @panel-default-heading-bg;
     color: @panel-default-text;
 
-    .panel-title();
+    &:extend(.panel-title);
     font-weight: @headings-font-weight;
   }
 }
@@ -188,10 +188,10 @@
 
 // Shopping Cart Totals
 .cart .totals {
-  .well();
+  &:extend(.well);
 
   table {
-    .table();
+    &:extend(.table all);
   }
 
   .checkout-types {
@@ -232,7 +232,7 @@
 }
 
 .truncated_full_value {
-  .popover();
+  &:extend(.popover);
   top: (@line-height-computed);
 
   dl {
@@ -240,11 +240,11 @@
   }
 
   dt {
-    .popover-title();
+    &:extend(.popover-title);
   }
 
   dd {
-    .popover-content();
+    &:extend(.popover-content);
     margin-left: 0;
   }
 
