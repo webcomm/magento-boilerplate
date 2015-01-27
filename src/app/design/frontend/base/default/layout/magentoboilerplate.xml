@@ -51,9 +51,6 @@
                 <name>js/ie6.js</name>
             </action>
 
-            <!-- Add additional child block to modify the HTML <head> -->
-            <block type="core/template" name="magentoboilerplate.head" template="magentoboilerplate/page/html/head.phtml"/>
-
         </reference>
         <reference name="before_body_end">
 
