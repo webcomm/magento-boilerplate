@@ -41,21 +41,31 @@ $_menu = preg_replace('/(class=".*?)parent(.*?")/', '$1has-dropdown$2', $_menu);
 // Change .level* to dropdown
 $_menu = preg_replace('/(<ul class=")level[0-9](">)/', '$1dropdown$2', $_menu);
 
+// Grab and escape the store name
+$_storeName = $this->escapeHtml(Mage::getStoreConfig('general/store_information/name'));
 ?>
-<?php if($_menu): ?>
-<div class="nav-container">
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="#"><?php echo $this->escapeHtml(Mage::getStoreConfig('general/store_information/name')) ?: '&nbsp;' ?></a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-        </ul>
-        <section class="top-bar-section">
-            <ul id="nav">
-                <?php echo $_menu ?>
+<?php if ($_menu): ?>
+    <div class="nav-container">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1>
+                        <a href="<?=Mage::getUrl('/')?>">
+                            <?php if ($_storeName): ?>
+                                <?=$_storeName?>
+                            <?php else: ?>
+                                &nbsp;
+                            <?php endif ?>
+                        </a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
             </ul>
-        </section>
-    </nav>
-</div>
+            <section class="top-bar-section">
+                <ul id="nav">
+                    <?=$_menu?>
+                </ul>
+            </section>
+        </nav>
+    </div>
 <?php endif ?>
