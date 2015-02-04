@@ -51,11 +51,14 @@
                 <name>js/ie6.js</name>
             </action>
 
+            <!-- Add Modernizr -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/modernizr.js</name>
+            </action>
+
             <!-- Add meta tag for mobile device scaling -->
             <block type="core/template" name="magentoboilerplate.head.meta" template="magentoboilerplate/page/html/head/meta.phtml"/>
-
-            <!-- Add Modernizr -->
-            <block type="core/template" name="magentoboilerplate.head.modernizr" template="magentoboilerplate/page/html/head/modernizr.phtml"/>
 
         </reference>
         <reference name="before_body_end">

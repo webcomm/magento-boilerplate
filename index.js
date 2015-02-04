@@ -178,6 +178,20 @@ module.exports = function (config, callback) {
     });
   });
 
+  // Modernizr is a little different becuase it sits in the head of Magento rather
+  // than at the end of hte page
+  gulp.task('modernizr', function () {
+    _.each(config.sites, function (site) {
+
+      gulp
+        .src('bower_components/modernizr/modernizr.js')
+        .pipe($.if(config.production, $.uglify()))
+        .pipe(gulp.dest(skinPath(site)+'/js'))
+        .pipe(reload({stream:true}))
+        .pipe($.notify('Compiled Modernizr.'));
+    });
+  });
+
   // Images
   gulp.task('images', function () {
     _.each(config.sites, function (site) {
@@ -232,7 +246,7 @@ module.exports = function (config, callback) {
   });
 
   // Build process
-  gulp.task('build', ['stylesheets', 'javascripts', 'images', 'fonts', 'custom']);
+  gulp.task('build', ['stylesheets', 'javascripts', 'modernizr', 'images', 'fonts', 'custom']);
 
   // Our default task will clean and build
   gulp.task('default', ['clean'], function () {
@@ -249,11 +263,11 @@ module.exports = function (config, callback) {
 
       gulp.watch(skinPath(site)+'/assets/stylesheets/**/*.scss', ['stylesheets']);
       gulp.watch(skinPath(site)+'/assets/images/**/*', ['images']);
-      gulp.watch(skinPath(site)+'/assets/javascripts/**/*.js', ['javascripts']);
+      gulp.watch(skinPath(site)+'/assets/javascripts/**/*.js', ['javascripts', 'modernizr']);
 
       // @todo Remove once initial development is concluded
       gulp.watch('bower_components/magento-boilerplate/assets/stylesheets/**/*.scss', ['stylesheets']);
-      gulp.watch('bower_components/magento-boilerplate/assets/javascripts/**/*', ['javascripts']);
+      gulp.watch('bower_components/magento-boilerplate/assets/javascripts/**/*', ['javascripts', 'modernizr']);
       gulp.watch('bower_components/magento-boilerplate/assets/images/**/*', ['images']);
     });
   });
