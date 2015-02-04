@@ -54,6 +54,9 @@
             <!-- Add meta tag for mobile device scaling -->
             <block type="core/template" name="magentboilerplate.head.meta" template="magentoboilerplate/page/html/head/meta.phtml"/>
 
+            <!-- Add Modernizr -->
+            <block type="core/template" name="magentoboilerplate.head.modernizr" template="magentoboilerplate/page/html/head/modernizr.phtml"/>
+
         </reference>
         <reference name="before_body_end">
 
