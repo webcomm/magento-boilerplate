@@ -30,7 +30,11 @@
       "server": {
         "proxy": "magentoboilerplate.dev",
         "port": 3000
-      }
+      },
+
+      // Any additional stylesheets and scripts, relative to the skin path of your package and theme
+      "stylesheets": [],
+      "javascripts": []
     }
   ]
 }

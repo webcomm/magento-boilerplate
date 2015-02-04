@@ -109,11 +109,19 @@ module.exports = function (config, callback) {
         sassVariables.push('$include-'+component+'-component: false !default;');
       });
 
+      // Create an array of stylesheets
+      var stylesheets = [
+        tempWrite.sync(sassVariables.join('\n')), // Temporary file made up of concatenated variables
+        skinPath(site)+'/assets/stylesheets/styles.scss'
+      ];
+
+      // Attach any site-specific stylesheets
+      _.each(site.stylesheets, function (stylesheet) {
+        stylesheets.push(skinPath(site)+'/'+stylesheet);
+      });
+
       gulp
-        .src([
-          tempWrite.sync(sassVariables.join('\n')), // Temporary file made up of concatenated variables
-          skinPath(site)+'/assets/stylesheets/styles.scss'
-        ])
+        .src(stylesheets)
         .pipe($.concat('styles.scss'))
         .pipe($.sass({
           outputStyle: config.production ? 'compressed' : 'nested',
@@ -149,6 +157,11 @@ module.exports = function (config, callback) {
         _.each(availableComponents[component].javascripts, function (javascript) {
           javascripts.push('bower_components/foundation/js/foundation/foundation.'+javascript+'.js');
         });
+      });
+
+      // Now, include any site-specific javascripts
+      _.each(site.javascripts, function (javascript) {
+        javascripts.push(skinPath(site)+'/'+javascript);
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
