@@ -135,7 +135,7 @@ module.exports = function (config, callback) {
         .pipe($.autoprefixer('last 2 versions'))
         .pipe(reload({stream:true}))
         .pipe(gulp.dest(skinPath(site)+'/css'))
-        .pipe($.notify('Compiled stylesheets.'));
+        .pipe($.notify('Compiled Stylesheets.'));
     });
   });
 
@@ -173,7 +173,7 @@ module.exports = function (config, callback) {
         .pipe($.if(config.production, $.uglify()))
         .pipe(gulp.dest(skinPath(site)+'/js'))
         .pipe(reload({stream:true}))
-        .pipe($.notify('Compiled scripts.'));
+        .pipe($.notify('Compiled JavaScripts.'));
     });
   });
 
