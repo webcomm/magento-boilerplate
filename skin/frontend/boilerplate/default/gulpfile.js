@@ -39,7 +39,7 @@ var config = {
   // If you do not have the live reload extension installed,
   // set this to true. We will include the script for you,
   // just to aid with development.
-  appendLiveReload: true,
+  appendLiveReload: false,
 
   // Should CSS & JS be compressed?
   minifyCss: true,
