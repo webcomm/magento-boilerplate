@@ -128,8 +128,7 @@ module.exports = function (config, callback) {
           includePaths: [
             'bower_components/foundation/scss',
             'bower_components/font-awesome/scss',
-            'bower_components/magento-boilerplate/assets/stylesheets',
-            skinPath(site)+'/assets/stylesheets'
+            'bower_components/magento-boilerplate/assets/stylesheets'
           ]
         }))
         .on('error', $.notify.onError())
