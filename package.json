@@ -1,6 +1,6 @@
 {
   "name": "magento-boilerplate",
-  "version": "3.0.0-alpha8",
+  "version": "3.0.0-alpha9",
   "description": "A boilerplate project for creating beautiful sites using Magento, powered by Foundation 5.",
   "main": "index.js",
   "scripts": {
