@@ -1,6 +1,6 @@
 {
   "name": "magento-boilerplate",
-  "version": "3.0.0-alpha9",
+  "version": "3.0.0-alpha10",
   "description": "A boilerplate project for creating beautiful sites using Magento, powered by Foundation 5.",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,13 @@
     "del": "^1.1.1",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-concat": "^2.4.3",
-    "gulp-if": "*",
+    "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.1.0",
     "gulp-load-plugins": "^0.8.0",
-    "gulp-notify": "*",
+    "gulp-notify": "^2.2.0",
     "gulp-sass": "^1.3.2",
-    "gulp-uglify": "*",
-    "temp-write": "*",
-    "underscore": "*"
+    "gulp-uglify": "^1.1.0",
+    "temp-write": "^1.1.0",
+    "underscore": "^1.7.0"
   }
 }
