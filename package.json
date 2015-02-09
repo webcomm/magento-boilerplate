@@ -17,17 +17,17 @@
   },
   "homepage": "https://github.com/webcomm/magento-boilerplate",
   "dependencies": {
-    "browser-sync": "^1.7.2",
-    "del": "^1.1.0",
-    "gulp-autoprefixer": "^2.0.0",
-    "gulp-concat": "^2.4.2",
-    "gulp-if": "^1.2.5",
-    "gulp-imagemin": "^2.0.0",
-    "gulp-load-plugins": "^0.7.1",
-    "gulp-notify": "^2.0.1",
-    "gulp-sass": "^1.2.4",
-    "gulp-uglify": "^1.0.1",
-    "temp-write": "^1.1.0",
-    "underscore": "^1.7.0"
+    "browser-sync": "^2.0.0-rc9",
+    "del": "^1.1.1",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.4.3",
+    "gulp-if": "*",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-notify": "*",
+    "gulp-sass": "^1.3.2",
+    "gulp-uglify": "*",
+    "temp-write": "*",
+    "underscore": "*"
   }
 }
