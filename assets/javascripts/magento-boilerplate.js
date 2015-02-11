@@ -21,20 +21,9 @@ jQuery(document).ready(function ($) {
 
   function equaliseProductListings() {
 
-    // Firstly, we need to put all of the products into
-    // the one grid list so they can be compared
-    var $productsInlisting = $('.category-products .item');
-
-    if (!$productsInlisting.length) return;
-
-    // Add a watch class
-    $productsInlisting.attr('data-equalizer-watch', '');
-
-    var $newListing = $('<ul class="products-grid" data-equalizer></ul>');
-    $newListing.append($('.products-grid > .item'));
-
-    $('.category-products .products-grid').last().after($newListing);
-    $('.category-products .products-grid').not($newListing).remove();
+    // Add equalizer attributs to all product in listings
+    $('.products-grid').attr('data-equalizer', '');
+    $('.products-grid .item').attr('data-equalizer-watch', '');
   }
 
   // Prepare some supporting JavaScript
