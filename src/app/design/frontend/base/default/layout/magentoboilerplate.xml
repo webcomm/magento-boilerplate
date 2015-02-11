@@ -78,7 +78,7 @@
             <!--
                 Add our own scripts to the bottom of the HTML, which is an
                 optimisation that allows the page to load before scripts
-                are processed, giving a better user experience
+                are processed, giving a better user experience.
             -->
             <block type="core/template" name="magentoboilerplate.scripts" template="magentoboilerplate/page/html/scripts.phtml"/>
 
