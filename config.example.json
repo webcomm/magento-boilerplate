@@ -32,9 +32,15 @@
         "port": 3000
       },
 
-      // Any additional stylesheets and scripts, relative to the skin path of your package and theme
-      "stylesheets": [],
-      "javascripts": []
+      // Any additional stylesheets and javascripts, both related to Bower as well as the site's skin path
+      "stylesheets": {
+        "bower": [],
+        "skin": []
+      },
+      "javascripts": {
+        "bower": [],
+        "skin": []
+      }
     }
   ]
 }

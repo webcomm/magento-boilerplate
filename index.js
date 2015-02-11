@@ -140,7 +140,10 @@ module.exports = function (config, callback) {
       ];
 
       // Attach any site-specific stylesheets
-      _.each(site.stylesheets, function (stylesheet) {
+      _.each(site.stylesheets.bower, function (stylesheet) {
+        stylesheets.push('bower_components/'+stylesheet);
+      });
+      _.each(site.stylesheets.skin, function (stylesheet) {
         stylesheets.push(skinPath(site)+'/'+stylesheet);
       });
 
@@ -183,7 +186,10 @@ module.exports = function (config, callback) {
       });
 
       // Now, include any site-specific javascripts
-      _.each(site.javascripts, function (javascript) {
+      _.each(site.javascripts.bower, function (javascript) {
+        javascripts.push('bower_components/'+javascript);
+      });
+      _.each(site.javascripts.skin, function (javascript) {
         javascripts.push(skinPath(site)+'/'+javascript);
       });
 
