@@ -80,6 +80,10 @@
       right: -6px;
       color: $alert-color;
     }
+
+    + .input-box {
+      clear: left;
+    }
   }
 
   // Controls represent checkboxes or radio buttons. Let's float
