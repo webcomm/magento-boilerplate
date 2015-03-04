@@ -48,7 +48,7 @@ module.exports = function (config, callback) {
   // It's a simple way of ensuring only required assets are loaded.
   var availableComponents = {
     'grid':             { javascripts: ['interchange'] },
-    'accordion':        { javascripts: ['accordian'] },
+    'accordion':        { javascripts: ['accordion'] },
     'alert-boxes':      { javascripts: ['alert'] },
     'block-grid':       { javascripts: [] },
     'breadcrumbs':      { javascripts: [] },
