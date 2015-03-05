@@ -135,28 +135,35 @@ module.exports = function (config, callback) {
 
       // Create an array of stylesheets
       var stylesheets = [
-        tempWrite.sync(sassVariables.join('\n')), // Temporary file made up of concatenated variables
-        skinPath(site)+'/assets/stylesheets/styles.scss'
+        tempWrite.sync(sassVariables.join('\n')) // Temporary file made up of concatenated variables
       ];
 
       // Attach any site-specific stylesheets
-      _.each(site.stylesheets.bower, function (stylesheet) {
-        stylesheets.push('bower_components/'+stylesheet);
+      _.each(site.compilation.stylesheets, function (stylesheet) {
+        stylesheets.push(stylesheet);
       });
-      _.each(site.stylesheets.skin, function (stylesheet) {
-        stylesheets.push(skinPath(site)+'/'+stylesheet);
+
+      // Finally, attach the stylesheet in the skin path
+      stylesheets.push(skinPath(site)+'/assets/stylesheets/styles.scss');
+
+      // Create an array of default include paths
+      var includePaths = [
+        'bower_components/foundation/scss',
+        'bower_components/font-awesome/scss',
+        'bower_components/magento-boilerplate/assets/stylesheets'
+      ];
+
+      // Attach any site-specific include paths
+      _.each(site.compilation.includePaths, function (includePath) {
+        includePaths.push(includePath);
       });
 
       gulp
-        .src(stylesheets)
+        .src(_.uniq(stylesheets))
         .pipe($.concat('styles.scss'))
         .pipe($.sass({
           outputStyle: config.production ? 'compressed' : 'nested',
-          includePaths: [
-            'bower_components/foundation/scss',
-            'bower_components/font-awesome/scss',
-            'bower_components/magento-boilerplate/assets/stylesheets'
-          ]
+          includePaths: _.uniq(includePaths)
         }))
         .on('error', $.notify.onError())
         .pipe($.autoprefixer('last 2 versions'))
@@ -186,11 +193,8 @@ module.exports = function (config, callback) {
       });
 
       // Now, include any site-specific javascripts
-      _.each(site.javascripts.bower, function (javascript) {
-        javascripts.push('bower_components/'+javascript);
-      });
-      _.each(site.javascripts.skin, function (javascript) {
-        javascripts.push(skinPath(site)+'/'+javascript);
+      _.each(site.compilation.javascripts, function (javascript) {
+        javascripts.push(javascript);
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
@@ -224,11 +228,22 @@ module.exports = function (config, callback) {
   // Images
   gulp.task('images', function () {
     _.each(config.sites, function (site) {
+
+      // Build array of images
+      var images = [
+        'bower_components/magento-boilerplate/assets/images/**/*'
+      ];
+
+      // Attach site-specific images
+      _.each(site.compilation.images, function (image) {
+        images.push(image);
+      });
+
+      // Add skin images
+      images.push(skinPath(site)+'/assets/images/**/*');
+
       gulp
-        .src([
-          'bower_components/magento-boilerplate/assets/images/**/*',
-          skinPath(site)+'/assets/images/**/*',
-        ])
+        .src(images)
         .pipe($.imagemin({
           optimizationLevel: 3,
           progressive: true,

@@ -32,14 +32,14 @@
         "port": 3000
       },
 
-      // Any additional stylesheets and javascripts, both related to Bower as well as the site's skin path
-      "stylesheets": {
-        "bower": [],
-        "skin": []
-      },
-      "javascripts": {
-        "bower": [],
-        "skin": []
+      // Here we declare any customisations to the behaviour of compilation that are required, such as including
+      // additional Stylesheets, JavaScripts and images to be merged into the produced files, as well as any
+      // additional include paths which may assist in the production of clean and concise SCSS.
+      "compilation": {
+        "stylesheets": [],
+        "javascripts": [],
+        "images": [],
+        "includePaths": []
       }
     }
   ]
