@@ -166,6 +166,7 @@ module.exports = function (config, callback) {
         .pipe($.concat('styles.scss'))
         .pipe($.sass({
           outputStyle: config.production ? 'compressed' : 'nested',
+          sourceComments: !config.production,
           includePaths: _.uniq(includePaths)
         }))
         .on('error', $.notify.onError())
