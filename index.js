@@ -158,6 +158,9 @@ module.exports = function (config, callback) {
         includePaths.push(includePath);
       });
 
+      // Finally, include the theme's directory in the include paths
+      includePaths.push(skinPath(site)+'/assets/stylesheets');
+
       gulp
         .src(_.uniq(stylesheets))
         .pipe($.concat('styles.scss'))
