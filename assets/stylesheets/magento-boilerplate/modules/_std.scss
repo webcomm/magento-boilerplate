@@ -23,12 +23,12 @@
 // Magento wraps CMS-based content in a special class so that styles may
 // be applied directly to it.
 .std {
-  ul.disc {
+  ul {
     margin-left: $list-side-margin;
     list-style: disc outside;
   }
 
-  ol.ol {
+  ol {
     margin-left: $list-ordered-side-margin;
     list-style: decimal outside;
   }
