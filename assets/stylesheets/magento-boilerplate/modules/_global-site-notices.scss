@@ -1,0 +1,9 @@
+.global-site-notice {
+  @include alert();
+  @include alert-style($warning-color);
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+}
