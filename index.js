@@ -165,7 +165,6 @@ module.exports = function (config, callback) {
         .pipe($.concat('styles.scss'))
         .pipe($.sass({
           outputStyle: config.production ? 'compressed' : 'nested',
-          sourcemap: true,
           sourceComments: !config.production,
           includePaths: _.uniq(includePaths)
         }))
