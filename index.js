@@ -30,7 +30,6 @@ module.exports = function (config, callback) {
   var gulp = require('gulp');
   var browserSync = require('browser-sync');
   var del = require('del');
-  var reload = browserSync.reload;
   var tempWrite = require('temp-write');
   var _ = require('underscore');
 
@@ -166,13 +165,16 @@ module.exports = function (config, callback) {
         .pipe($.concat('styles.scss'))
         .pipe($.sass({
           outputStyle: config.production ? 'compressed' : 'nested',
+          sourcemap: true,
           sourceComments: !config.production,
           includePaths: _.uniq(includePaths)
         }))
         .on('error', $.notify.onError())
         .pipe($.autoprefixer('last 2 versions'))
-        .pipe(reload({stream:true}))
         .pipe(gulp.dest(skinPath(site)+'/css'))
+        .pipe(browserSync.stream({
+          match: '*.css'
+        }))
         .pipe($.notify('Compiled Stylesheets.'));
     });
   });
@@ -210,7 +212,7 @@ module.exports = function (config, callback) {
         .pipe($.concat('scripts.js'))
         .pipe($.if(config.production, $.uglify()))
         .pipe(gulp.dest(skinPath(site)+'/js'))
-        .pipe(reload({stream:true}))
+        .pipe(browserSync.stream())
         .pipe($.notify('Compiled JavaScripts.'));
     });
   });
@@ -224,7 +226,7 @@ module.exports = function (config, callback) {
         .src('bower_components/modernizr/modernizr.js')
         .pipe($.if(config.production, $.uglify()))
         .pipe(gulp.dest(skinPath(site)+'/js'))
-        .pipe(reload({stream:true}))
+        .pipe(browserSync.stream())
         .pipe($.notify('Compiled Modernizr.'));
     });
   });
@@ -254,7 +256,9 @@ module.exports = function (config, callback) {
           interlaced: true
         }))
         .pipe(gulp.dest(skinPath(site)+'/images'))
-        .pipe(reload({stream:true, once:true}));
+        .pipe(browserSync.stream({
+          once: true
+        }));
     });
   });
 
@@ -263,7 +267,7 @@ module.exports = function (config, callback) {
       gulp
         .src('bower_components/font-awesome/fonts/*.{eot,svg,ttf,woff}')
         .pipe(gulp.dest(skinPath(site)+'/fonts'))
-        .pipe(reload({stream:true}));
+        .pipe(browserSync.stream());
     });
   });
 
@@ -307,7 +311,7 @@ module.exports = function (config, callback) {
     _.each(config.sites, function (site) {
 
       // Watch template files for changes
-      gulp.watch(templatePath(site)+'/**/*', reload);
+      gulp.watch(templatePath(site)+'/**/*', browserSync.reload);
 
       gulp.watch(skinPath(site)+'/assets/stylesheets/**/*.scss', ['stylesheets']);
       gulp.watch(skinPath(site)+'/assets/images/**/*', ['images']);
