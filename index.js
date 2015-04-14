@@ -171,9 +171,7 @@ module.exports = function (config, callback) {
         .on('error', $.notify.onError())
         .pipe($.autoprefixer('last 2 versions'))
         .pipe(gulp.dest(skinPath(site)+'/css'))
-        .pipe(browserSync.stream({
-          match: '*.css'
-        }))
+        .pipe(browserSync.stream())
         .pipe($.notify('Compiled Stylesheets.'));
     });
   });
@@ -309,17 +307,31 @@ module.exports = function (config, callback) {
   gulp.task('watch', ['serve'], function () {
     _.each(config.sites, function (site) {
 
-      // Watch template files for changes
-      gulp.watch(templatePath(site)+'/**/*', browserSync.reload);
+      var stylesheets = [skinPath(site)+'/assets/stylesheets/**/*.scss'];
+      _.each(site.watch.stylesheets, function (stylesheet) {
+        stylesheets.push(stylesheet);
+      });
+      gulp.watch(stylesheets, ['stylesheets']);
 
-      gulp.watch(skinPath(site)+'/assets/stylesheets/**/*.scss', ['stylesheets']);
-      gulp.watch(skinPath(site)+'/assets/images/**/*', ['images']);
-      gulp.watch(skinPath(site)+'/assets/javascripts/**/*.js', ['javascripts', 'modernizr']);
+      var javascripts = [skinPath(site)+'/assets/javascripts/**/*.js'];
+      _.each(site.watch.javascripts, function (javascript) {
+        javascripts.push(javascript);
+      });
+      gulp.watch(javascripts, ['javascripts', 'modernizr']);
 
-      // @todo Remove once initial development is concluded
-      gulp.watch('bower_components/magento-boilerplate/assets/stylesheets/**/*.scss', ['stylesheets']);
-      gulp.watch('bower_components/magento-boilerplate/assets/javascripts/**/*', ['javascripts', 'modernizr']);
-      gulp.watch('bower_components/magento-boilerplate/assets/images/**/*', ['images']);
+      var images = [skinPath(site)+'/assets/images/**/*'];
+      _.each(site.watch.images, function (image) {
+        images.push(image);
+      });
+      gulp.watch(images, ['images']);
+
+      var others = [templatePath(site)+'/**/*'];
+      _.each(site.watch.others, function (other) {
+        others.push(other);
+      });
+      gulp.watch(others, function () {
+        browserSync.reload(); // @todo find the new, proper API
+      });
     });
   });
 };

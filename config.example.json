@@ -40,6 +40,14 @@
         "javascripts": [],
         "images": [],
         "includePaths": []
+      },
+
+      // Finally, you may declare any additional paths to watch
+      "watch": {
+        "stylesheets": [],
+        "javascripts": [],
+        "images": [],
+        "others": []
       }
     }
   ]
