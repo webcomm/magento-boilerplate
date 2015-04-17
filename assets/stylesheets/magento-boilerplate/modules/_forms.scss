@@ -69,23 +69,6 @@
     }
   }
 
-  // Required labels
-  .required {
-    float: left;
-    position: relative;
-
-    em {
-      position: absolute;
-      top: 0;
-      right: -6px;
-      color: $alert-color;
-    }
-
-    + .input-box {
-      clear: left;
-    }
-  }
-
   // Controls represent checkboxes or radio buttons. Let's float
   // the checkboxes to line the labels up nicely.
   .control {
@@ -203,6 +186,23 @@
         @include grid-column(4);
       }
     }
+  }
+}
+
+// Required labels
+label.required {
+  float: left;
+  position: relative;
+
+  em {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    color: $alert-color;
+  }
+
+  + .input-box {
+    clear: left;
   }
 }
 
