@@ -62,6 +62,11 @@ $large-sidebar-columns: 2.5 !default;
   }
 }
 
+// Rows inside the main section should be nested
+.col-main .row {
+  @include grid-row($behavior: nest);
+}
+
 // Hide sidebars until they are allowed to display
 .sidebar {
   display: none;
