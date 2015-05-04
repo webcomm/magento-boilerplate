@@ -27,7 +27,7 @@
     @include crumbs();
 
     // Hide the separator, it's already provided by Foundation
-    span {
+    > span {
       display: none;
     }
 
