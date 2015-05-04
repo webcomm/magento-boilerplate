@@ -1,7 +1,6 @@
 .global-site-notice {
   @include alert();
   @include alert-style($warning-color);
-  margin-bottom: 0;
   text-align: center;
 
   p {
