@@ -23,6 +23,9 @@
         "magento-hackathon/magento-composer-installer":"*"
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
         "magento-root-dir": "./",
         "magento-deploystrategy": "copy",
         "map": [
