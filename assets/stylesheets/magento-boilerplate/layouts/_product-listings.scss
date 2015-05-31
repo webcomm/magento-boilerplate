@@ -42,6 +42,15 @@
   }
 }
 
+// On a single column layout, when we're dealing with large screens, we'll
+// show 5 products side-by-side, simply because the majority of use-cases
+// would do well with this.
+.col1-layout .category-products .item {
+  @media #{$large-up} {
+    @include grid-column(12 / 5);
+  }
+}
+
 // Between medium and large screens in a three column layout, the sidebars
 // take up too much room to stack three columns of products. We'll stick to
 // a single layout in that case
