@@ -262,7 +262,7 @@ module.exports = function (config, callback) {
   gulp.task('fonts', function () {
     _.each(config.sites, function (site) {
       gulp
-        .src('bower_components/font-awesome/fonts/*.{eot,svg,ttf,woff}')
+        .src('bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}')
         .pipe(gulp.dest(skinPath(site)+'/fonts'))
         .pipe(browserSync.stream());
     });
