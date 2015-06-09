@@ -10,9 +10,6 @@
     }
   ],
   "extra": {
-    "branch-alias": {
-      "dev-develop": "3.0-dev"
-    },
     "map": [
       ["src/app/code/community/Webcomm/MagentoBoilerplate", "app/code/community/Webcomm/MagentoBoilerplate"],
       ["src/app/design/frontend/base/default/layout/magentoboilerplate.xml", "app/design/frontend/base/default/layout/magentoboilerplate.xml"],
