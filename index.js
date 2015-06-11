@@ -247,11 +247,6 @@ module.exports = function (config, callback) {
 
       gulp
         .src(images)
-        .pipe($.imagemin({
-          optimizationLevel: 3,
-          progressive: true,
-          interlaced: true
-        }))
         .pipe(gulp.dest(skinPath(site)+'/images'))
         .pipe(browserSync.stream({
           once: true
