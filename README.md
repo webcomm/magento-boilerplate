@@ -25,7 +25,7 @@ Begin by creating a `composer.json` in the root of Magento, and ensure it has th
     ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "webcomm/magento-boilerplate": "dev-master"
+        "webcomm/magento-boilerplate": "2.0.x-dev"
     },
     "extra": {
         "magento-root-dir": "./",
