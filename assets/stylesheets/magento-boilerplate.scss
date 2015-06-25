@@ -31,6 +31,7 @@
 // We use these to control whether entire layouts are loaded in
 $include-column-set-layouts:       true !default;
 $include-page-layouts:             true !default;
+$include-main-layouts:             true !default;
 $include-product-listings-layouts: true !default;
 $include-products-layouts:         true !default;
 $include-customers-layouts:        true !default;
@@ -96,7 +97,8 @@ $include-toolbar-module:             true !default;
 // Now we will load up our fonts
 @import "font-awesome";
 
-// Include our own mixins
+// Include our own functions and
+@import "magento-boilerplate/functions";
 @import "magento-boilerplate/mixins";
 
 // Base styles for HTML elements (reset everything for Magento)
@@ -105,6 +107,7 @@ $include-toolbar-module:             true !default;
 // Layouts are used to control the page structure from a high-level
 @if $include-column-set-layouts       { @import "magento-boilerplate/layouts/col-sets"; }
 @if $include-page-layouts             { @import "magento-boilerplate/layouts/page"; }
+@if $include-main-layouts             { @import "magento-boilerplate/layouts/main"; }
 @if $include-product-listings-layouts { @import "magento-boilerplate/layouts/product-listings"; }
 @if $include-products-layouts         { @import "magento-boilerplate/layouts/products"; }
 @if $include-customers-layouts        { @import "magento-boilerplate/layouts/customers"; }
