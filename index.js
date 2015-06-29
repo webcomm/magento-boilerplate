@@ -256,8 +256,19 @@ module.exports = function (config, callback) {
 
   gulp.task('fonts', function () {
     _.each(config.sites, function (site) {
+      var fonts = [
+        'bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
+      ];
+
+      // Attach site-specific fonts
+      _.each(site.compilation.fonts, function (font) {
+        fonts.push(font);
+      });
+
+      fonts.push(skinPath(site)+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}');
+
       gulp
-        .src('bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}')
+        .src(fonts)
         .pipe(gulp.dest(skinPath(site)+'/fonts'))
         .pipe(browserSync.stream());
     });
