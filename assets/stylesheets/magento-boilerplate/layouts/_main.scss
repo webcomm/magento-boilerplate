@@ -64,11 +64,11 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
 
   .col-main {
     @include grid-column(12);
-  }
 
-  // Rows inside the main section should be nested
-  .row {
-    @include grid-row($behavior: nest);
+    // Rows inside the main section should be nested
+    .row {
+      @include grid-row($behavior: nest);
+    }
   }
 }
 
@@ -98,21 +98,26 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
 // Left sidebar uses the same markup as the right sidebar, so we need to push
 // and pull columns around to achieve this layout.
 .col2-left-layout {
-  @media #{$medium-only} {
-    .col-left {
-      @include grid-column($columns: $medium-left-sidebar-columns, $pull: $total-columns - $medium-left-sidebar-columns);
-    }
-    .col-main {
-      @include grid-column($columns: $total-columns - $medium-left-sidebar-columns, $push: $medium-left-sidebar-columns);
+
+  @if $show-sidebars-from == 'medium' {
+    @media #{$medium-only} {
+      .col-left {
+        @include grid-column($columns: $medium-left-sidebar-columns, $pull: $total-columns - $medium-left-sidebar-columns);
+      }
+      .col-main {
+        @include grid-column($columns: $total-columns - $medium-left-sidebar-columns, $push: $medium-left-sidebar-columns);
+      }
     }
   }
 
-  @media #{$large-up} {
-    .col-left {
-      @include grid-column($columns: $large-left-sidebar-columns, $pull: $total-columns - $large-left-sidebar-columns);
-    }
-    .col-main {
-      @include grid-column($columns: $total-columns - $large-left-sidebar-columns, $push: $large-left-sidebar-columns);
+  @if $show-sidebars-from == 'medium' or $show-sidebars-from == 'large' {
+    @media #{$large-up} {
+      .col-left {
+        @include grid-column($columns: $large-left-sidebar-columns, $pull: $total-columns - $large-left-sidebar-columns);
+      }
+      .col-main {
+        @include grid-column($columns: $total-columns - $large-left-sidebar-columns, $push: $large-left-sidebar-columns);
+      }
     }
   }
 
@@ -131,21 +136,26 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
 // Right sidebar is semantically closest to the display structure and therefore
 // has the simplest layout rules out of all the layouts that use sidebars.
 .col2-right-layout {
-  @media #{$medium-only} {
-    .col-main {
-      @include grid-column($columns: $total-columns - $medium-right-sidebar-columns);
-    }
-    .col-right {
-      @include grid-column($columns: $medium-right-sidebar-columns);
+
+  @if $show-sidebars-from == 'medium' {
+    @media #{$medium-only} {
+      .col-main {
+        @include grid-column($columns: $total-columns - $medium-right-sidebar-columns);
+      }
+      .col-right {
+        @include grid-column($columns: $medium-right-sidebar-columns);
+      }
     }
   }
 
-  @media #{$large-up} {
-    .col-main {
-      @include grid-column($columns: $total-columns - $large-right-sidebar-columns);
-    }
-    .col-right {
-      @include grid-column($columns: $large-right-sidebar-columns);
+  @if $show-sidebars-from == 'medium' or $show-sidebars-from == 'large' {
+    @media #{$large-up} {
+      .col-main {
+        @include grid-column($columns: $total-columns - $large-right-sidebar-columns);
+      }
+      .col-right {
+        @include grid-column($columns: $large-right-sidebar-columns);
+      }
     }
   }
 
@@ -165,51 +175,56 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
 // main column inside a wrapper for the 3 column layout,
 // we need to adjust widths to account for this.
 .col3-layout {
-  @media #{$medium-only} {
-    .col-wrapper {
-      @include grid-column($columns: $total-columns - $medium-right-sidebar-columns, $collapse: true);
 
-      .col-left {
-        @include grid-column();
-        width: grid-calc(
-          $medium-left-sidebar-columns,
-          $total-columns - $medium-right-sidebar-columns
-        );
+  @if $show-sidebars-from == 'medium' {
+    @media #{$medium-only} {
+      .col-wrapper {
+        @include grid-column($columns: $total-columns - $medium-right-sidebar-columns, $collapse: true);
+
+        .col-left {
+          @include grid-column();
+          width: grid-calc(
+            $medium-left-sidebar-columns,
+            $total-columns - $medium-right-sidebar-columns
+          );
+        }
+        .col-main {
+          @include grid-column($float: right);
+          width: grid-calc(
+            $total-columns - $medium-left-sidebar-columns - $medium-right-sidebar-columns,
+            $total-columns - $medium-right-sidebar-columns
+          );
+        }
       }
-      .col-main {
-        @include grid-column($float: right);
-        width: grid-calc(
-          $total-columns - $medium-left-sidebar-columns - $medium-right-sidebar-columns,
-          $total-columns - $medium-right-sidebar-columns
-        );
+      .col-right {
+        @include grid-column($columns: $medium-right-sidebar-columns);
       }
-    }
-    .col-right {
-      @include grid-column($columns: $medium-right-sidebar-columns);
     }
   }
 
-  @media #{$large-up} {
-    .col-wrapper {
-      @include grid-column($columns: $total-columns - $large-right-sidebar-columns, $collapse: true);
+  @if $show-sidebars-from == 'medium' or $show-sidebars-from == 'large' {
+    @media #{$large-up} {
+      .col-wrapper {
+        @include grid-column($columns: $total-columns - $large-right-sidebar-columns, $collapse: true);
 
-      .col-left {
-        @include grid-column();
-        width: grid-calc(
-          $large-left-sidebar-columns,
-          $total-columns - $large-right-sidebar-columns
-        );
+        .col-left {
+          @include grid-column();
+          width: grid-calc(
+            $large-left-sidebar-columns,
+            $total-columns - $large-right-sidebar-columns
+          );
+        }
+        .col-main {
+          @include grid-column($float: right);
+          width: grid-calc(
+            $total-columns - $large-left-sidebar-columns - $large-right-sidebar-columns,
+            $total-columns - $large-right-sidebar-columns
+          );
+        }
       }
-      .col-main {
-        @include grid-column($float: right);
-        width: grid-calc(
-          $total-columns - $large-left-sidebar-columns - $large-right-sidebar-columns,
-          $total-columns - $large-right-sidebar-columns
-        );
+      .col-right {
+        @include grid-column($columns: $large-right-sidebar-columns);
       }
-    }
-    .col-right {
-      @include grid-column($columns: $large-right-sidebar-columns);
     }
   }
 
