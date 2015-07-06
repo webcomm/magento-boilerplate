@@ -30,6 +30,8 @@ module.exports = function (config, callback) {
   var gulp = require('gulp');
   var browserSync = require('browser-sync');
   var del = require('del');
+  var mergeStream = require('merge-stream');
+  var runSequence = require('run-sequence');
   var tempWrite = require('temp-write');
   var _ = require('underscore');
 
@@ -111,7 +113,10 @@ module.exports = function (config, callback) {
 
   // Compile stylesheets for every site
   gulp.task('stylesheets', function () {
+    var streams = [];
+
     _.each(config.sites, function (site) {
+      var site = config.sites[0];
 
       // We're going to create a temporary file for each site, which is a valid
       // SASS stylesheet that defines variables. We'll then prepend this to
@@ -160,25 +165,32 @@ module.exports = function (config, callback) {
       // Finally, include the theme's directory in the include paths
       includePaths.push(skinPath(site)+'/assets/stylesheets');
 
-      gulp
-        .src(_.uniq(stylesheets))
-        .pipe($.concat('styles.scss'))
-        .pipe($.sass({
-          outputStyle: config.production ? 'compressed' : 'nested',
-          sourceComments: !config.production,
-          includePaths: _.uniq(includePaths)
-        }))
-        .on('error', $.notify.onError())
-        .pipe($.autoprefixer('last 2 versions'))
-        .pipe(gulp.dest(skinPath(site)+'/css'))
-        .pipe(browserSync.stream())
-        .pipe($.notify('Compiled Stylesheets.'));
+      streams.push(
+        gulp
+          .src(_.uniq(stylesheets))
+          .pipe($.concat('styles.scss'))
+          .pipe($.sass({
+            outputStyle: config.production ? 'compressed' : 'nested',
+            sourceComments: !config.production,
+            includePaths: _.uniq(includePaths)
+          }))
+          .on('error', $.notify.onError())
+          .pipe($.autoprefixer('last 2 versions'))
+          .pipe(gulp.dest(skinPath(site)+'/css'))
+          .pipe(browserSync.stream())
+          .pipe($.notify('Compiled Stylesheets.'))
+      );
     });
+
+    return mergeStream(streams);
   });
 
   // JavaScripts
   gulp.task('javascripts', function () {
+    var streams = [];
+
     _.each(config.sites, function (site) {
+      var site = config.sites[0];
 
       // By default, we will load jQuery and the core Foundation library
       var javascripts = [
@@ -204,32 +216,44 @@ module.exports = function (config, callback) {
       javascripts.push('bower_components/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
       javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
 
-      gulp
-        .src(_.uniq(javascripts)) // Avoid duplicates
-        .pipe($.concat('scripts.js'))
-        .pipe($.if(config.production, $.uglify()))
-        .pipe(gulp.dest(skinPath(site)+'/js'))
-        .pipe(browserSync.stream())
-        .pipe($.notify('Compiled JavaScripts.'));
+      streams.push(
+        gulp
+          .src(_.uniq(javascripts)) // Avoid duplicates
+          .pipe($.concat('scripts.js'))
+          .pipe($.if(config.production, $.uglify()))
+          .pipe(gulp.dest(skinPath(site)+'/js'))
+          .pipe(browserSync.stream())
+          .pipe($.notify('Compiled JavaScripts.'))
+        );
     });
+
+    return mergeStream(streams);
   });
 
   // Modernizr is a little different becuase it sits in the head of Magento rather
   // than at the end of hte page
   gulp.task('modernizr', function () {
+    var streams = [];
+
     _.each(config.sites, function (site) {
 
-      gulp
-        .src('bower_components/modernizr/modernizr.js')
-        .pipe($.if(config.production, $.uglify()))
-        .pipe(gulp.dest(skinPath(site)+'/js'))
-        .pipe(browserSync.stream())
-        .pipe($.notify('Compiled Modernizr.'));
+      streams.push(
+        gulp
+          .src('bower_components/modernizr/modernizr.js')
+          .pipe($.if(config.production, $.uglify()))
+          .pipe(gulp.dest(skinPath(site)+'/js'))
+          .pipe(browserSync.stream())
+          .pipe($.notify('Compiled Modernizr.'))
+      );
     });
+
+    return mergeStream(streams);
   });
 
   // Images
   gulp.task('images', function () {
+    var streams = [];
+
     _.each(config.sites, function (site) {
 
       // Build array of images
@@ -245,33 +269,55 @@ module.exports = function (config, callback) {
       // Add skin images
       images.push(skinPath(site)+'/assets/images/**/*');
 
-      gulp
-        .src(images)
-        .pipe(gulp.dest(skinPath(site)+'/images'))
-        .pipe(browserSync.stream({
-          once: true
-        }));
+      streams.push(
+        gulp
+          .src(images)
+          .pipe(gulp.dest(skinPath(site)+'/images'))
+          .pipe(browserSync.stream({
+            once: true
+          }))
+      );
     });
+
+    return mergeStream(streams);
   });
 
   gulp.task('fonts', function () {
+    var streams = [];
+
     _.each(config.sites, function (site) {
-      var fonts = [
-        'bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
-      ];
 
-      // Attach site-specific fonts
-      _.each(site.compilation.fonts, function (font) {
-        fonts.push(font);
-      });
-
-      fonts.push(skinPath(site)+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}');
-
-      gulp
-        .src(fonts)
-        .pipe(gulp.dest(skinPath(site)+'/fonts'))
-        .pipe(browserSync.stream());
+      streams.push(
+        gulp
+          .src('bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}')
+          .pipe(gulp.dest(skinPath(site)+'/fonts'))
+          .pipe(browserSync.stream())
+      );
     });
+
+    return mergeStream(streams);
+  });
+
+  gulp.task('manifest', function () {
+    var streams = [];
+
+    _.each(config.sites, function (site) {
+      streams.push(
+        gulp
+          .src([
+            skinPath(site)+'/css/styles.css',
+            skinPath(site)+'/js/scripts.js'
+          ], {
+            base: skinPath(site)
+          })
+          .pipe($.rev())
+          .pipe(gulp.dest(skinPath(site)))
+          .pipe($.rev.manifest())
+          .pipe(gulp.dest(skinPath(site)))
+      );
+    });
+
+    return mergeStream(streams);
   });
 
   // Clean out compiled files synchronously (so errors are not raised in other tasks)
@@ -281,7 +327,8 @@ module.exports = function (config, callback) {
         skinPath(site)+'/css',
         skinPath(site)+'/fonts',
         skinPath(site)+'/images',
-        skinPath(site)+'/js'
+        skinPath(site)+'/js',
+        skinPath(site)+'/rev-manifest.json'
       ]);
     });
   });
@@ -296,16 +343,17 @@ module.exports = function (config, callback) {
   // Custom tasks
   gulp.task('custom', function () {
     if (typeof callback === 'function') {
-      callback.apply(this, [gulp]);
+      return callback.apply(this, [gulp]);
     }
   });
 
-  // Build process
-  gulp.task('build', ['stylesheets', 'javascripts', 'modernizr', 'images', 'fonts', 'custom']);
-
   // Our default task will clean and build
   gulp.task('default', ['clean'], function () {
-    gulp.start('build');
+    runSequence(
+      ['stylesheets', 'javascripts', 'modernizr', 'images', 'fonts'],
+      'manifest',
+      'custom'
+    );
   });
 
   // Watching assets will start a build in web server that will

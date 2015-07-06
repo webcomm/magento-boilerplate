@@ -31,6 +31,13 @@
             <version>0.1.0</version>
         </Webcomm_MagentoBoilerplate>
     </modules>
+    <global>
+        <helpers>
+            <magentoboilerplate>
+                <class>Webcomm_MagentoBoilerplate_Helper</class>
+            </magentoboilerplate>
+        </helpers>
+    </global>
     <frontend>
         <layout>
             <updates>

@@ -32,6 +32,10 @@
             <!-- Remove assets that are not required with Magento Boilerplate -->
             <action method="removeItem">
                 <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
                 <name>css/styles-ie.css</name>
             </action>
             <action method="removeItem">
@@ -61,6 +65,11 @@
             <action method="removeItem">
                 <type>js</type>
                 <name>scriptaculous/slider.js</name>
+            </action>
+
+            <!-- Add dynamically produced stylesheet path -->
+            <action method="addCss">
+                <name helper="magentoboilerplate/getStylesheetUrl"/>
             </action>
 
             <!-- Add Modernizr -->
