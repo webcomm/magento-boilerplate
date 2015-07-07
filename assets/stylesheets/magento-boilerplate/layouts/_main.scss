@@ -64,11 +64,11 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
 
   .col-main {
     @include grid-column(12);
+  }
 
-    // Rows inside the main section should be nested
-    .row {
-      @include grid-row($behavior: nest);
-    }
+  // Rows inside the main section should be nested
+  .row {
+    @include grid-row($behavior: nest);
   }
 }
 
