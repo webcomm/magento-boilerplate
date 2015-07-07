@@ -301,21 +301,32 @@ module.exports = function (config, callback) {
   gulp.task('manifest', function () {
     var streams = [];
 
-    _.each(config.sites, function (site) {
-      streams.push(
-        gulp
-          .src([
-            skinPath(site)+'/css/styles.css',
-            skinPath(site)+'/js/scripts.js'
-          ], {
-            base: skinPath(site)
-          })
-          .pipe($.rev())
-          .pipe(gulp.dest(skinPath(site)))
-          .pipe($.rev.manifest())
-          .pipe(gulp.dest(skinPath(site)))
-      );
-    });
+    // Because the manifest task actually produces a unique stylesheet and
+    // JavaScript file every change, BrowserSync doesn't detect a change
+    // with an existing file in the DOM, and therefore won't reload
+    // the page or reinject stylesheets, defeating the whole
+    // purpose of BrowserSync even being integreated.
+    // We'll only generate a manifest on a
+    // production environment, which is
+    // fine becuase that's the only
+    // place it's needed.
+    if (config.production) {
+      _.each(config.sites, function (site) {
+        streams.push(
+          gulp
+            .src([
+              skinPath(site)+'/css/styles.css',
+              skinPath(site)+'/js/scripts.js'
+            ], {
+              base: skinPath(site)
+            })
+            .pipe($.rev())
+            .pipe(gulp.dest(skinPath(site)))
+            .pipe($.rev.manifest())
+            .pipe(gulp.dest(skinPath(site)))
+        );
+      });
+    }
 
     return mergeStream(streams);
   });
