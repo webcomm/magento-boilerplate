@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Webcomm_MagentoBoilerplate>
-            <version>0.1.0</version>
+            <version>3.0.18</version>
         </Webcomm_MagentoBoilerplate>
     </modules>
     <global>
@@ -37,6 +37,13 @@
                 <class>Webcomm_MagentoBoilerplate_Helper</class>
             </magentoboilerplate>
         </helpers>
+        <resources>
+            <magentoboilerplate_setup>
+                <setup>
+                    <module>Webcomm_MagentoBoilerplate</module>
+                </setup>
+            </magentoboilerplate_setup>
+        </resources>
     </global>
     <frontend>
         <layout>
@@ -47,4 +54,11 @@
             </updates>
         </layout>
     </frontend>
+    <default>
+        <dev>
+            <template>
+                <allow_symlink>1</allow_symlink>
+            </template>
+        </dev>
+    </default>
 </config>
