@@ -51,7 +51,7 @@ $include-xlarge-column-layouts: row-width-is-atleast(xlarge) !default;
     // a grid row. All we need to do is reduce padding
     padding-left: 0;
     padding-right: 0;
-  } @felse {
+  } @else {
     @include grid-row();
   }
 
