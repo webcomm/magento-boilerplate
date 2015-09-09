@@ -108,8 +108,8 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
     {
         $classes = parent::_getMenuItemClasses($item);
 
-        if ($item->hasChildren()) {
-            $classes[] = 'parent';
+        if ($item->hasChildren() && $item->getLevel() == 0) {
+            $classes[] = 'dropdown';
         }
 
         return $classes;
