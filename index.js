@@ -152,9 +152,9 @@ module.exports = function (config, callback) {
 
       // Create an array of default include paths
       var includePaths = [
-        'bower_components/foundation/scss',
-        'bower_components/font-awesome/scss',
-        'bower_components/magento-boilerplate/assets/stylesheets'
+        'node_modules/magento-boilerplate/node_modules/foundation-sites/scss',
+        'node_modules/magento-boilerplate/node_modules/font-awesome/scss',
+        'node_modules/magento-boilerplate/assets/stylesheets'
       ];
 
       // Attach any site-specific include paths
@@ -194,16 +194,16 @@ module.exports = function (config, callback) {
 
       // By default, we will load jQuery and the core Foundation library
       var javascripts = [
-        'bower_components/jquery/dist/jquery.js',
-        'bower_components/magento-boilerplate/assets/javascripts/no-conflict.js',
-        'bower_components/foundation/js/foundation/foundation.js'
+        'node_modules/magento-boilerplate/node_modules/foundation-sites/js/vendor/jquery.js',
+        'node_modules/magento-boilerplate/assets/javascripts/no-conflict.js',
+        'node_modules/magento-boilerplate/node_modules/foundation-sites/js/foundation/foundation.js'
       ];
 
       // Now we will loop through all required components as well as user-defined
       // components to create a list of JavaScripts that we need to include.
       _.each(requiredComponents.slice(0).concat(site.components), function (component) {
         _.each(availableComponents[component].javascripts, function (javascript) {
-          javascripts.push('bower_components/foundation/js/foundation/foundation.'+javascript+'.js');
+          javascripts.push('node_modules/magento-boilerplate/node_modules/foundation-sites/js/foundation/foundation.'+javascript+'.js');
         });
       });
 
@@ -213,7 +213,7 @@ module.exports = function (config, callback) {
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
-      javascripts.push('bower_components/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
+      javascripts.push('node_modules/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
       javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
 
       streams.push(
@@ -239,7 +239,7 @@ module.exports = function (config, callback) {
 
       streams.push(
         gulp
-          .src('bower_components/modernizr/modernizr.js')
+          .src('node_modules/magento-boilerplate/node_modules/foundation-sites/js/vendor/modernizr.js')
           .pipe($.if(config.production, $.uglify()))
           .pipe(gulp.dest(skinPath(site)+'/js'))
           .pipe(browserSync.stream())
@@ -258,7 +258,7 @@ module.exports = function (config, callback) {
 
       // Build array of images
       var images = [
-        'bower_components/magento-boilerplate/assets/images/**/*'
+        'node_modules/magento-boilerplate/assets/images/**/*'
       ];
 
       // Attach site-specific images
@@ -288,7 +288,7 @@ module.exports = function (config, callback) {
     _.each(config.sites, function (site) {
 
       var fonts = [
-        'bower_components/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}',
+        'node_modules/magento-boilerplate/node_modules/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}',
         skinPath(site)+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
       ];
 
