@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Webcomm_MagentoBoilerplate>
-            <version>3.0.18</version>
+            <version>3.0.21</version>
         </Webcomm_MagentoBoilerplate>
     </modules>
     <global>

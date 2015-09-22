@@ -77,19 +77,13 @@
                 <type>skin_js</type>
                 <name>js/modernizr.js</name>
             </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name helper="magentoboilerplate/getJavascriptUrl"/>
+            </action>
 
             <!-- Add meta tag for mobile device scaling -->
             <block type="core/template" name="magentoboilerplate.head.meta" template="magentoboilerplate/page/html/head/meta.phtml"/>
-
-        </reference>
-        <reference name="before_body_end">
-
-            <!--
-                Add our own scripts to the bottom of the HTML, which is an
-                optimisation that allows the page to load before scripts
-                are processed, giving a better user experience.
-            -->
-            <block type="core/template" name="magentoboilerplate.scripts" template="magentoboilerplate/page/html/scripts.phtml"/>
 
         </reference>
         <reference name="catalog.topnav">
