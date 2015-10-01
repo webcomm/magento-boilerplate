@@ -62,10 +62,24 @@
 				<name>varien/menu.js</name>
 			</action>
 
+			<action method="removeItem"><type>js</type><file>prototype/prototype.js</file></action>
+			<action method="removeItem"><type>js</type><file>lib/ccard.js</file></action>
+			<action method="removeItem"><type>js</type><file>prototype/validation.js</file></action>
+			<action method="removeItem"><type>js</type><file>scriptaculous/builder.js</file></action>
+			<action method="removeItem"><type>js</type><file>scriptaculous/effects.js</file></action>
+			<action method="removeItem"><type>js</type><file>scriptaculous/dragdrop.js</file></action>
+			<action method="removeItem"><type>js</type><file>scriptaculous/controls.js</file></action>
+			<action method="removeItem"><type>js</type><file>scriptaculous/slider.js</file></action>
+			<action method="removeItem"><type>js</type><file>varien/js.js</file></action>
+			<action method="removeItem"><type>js</type><file>varien/form.js</file></action>
+			<action method="removeItem"><type>js</type><file>mage/translate.js</file></action>
+			<action method="removeItem"><type>js</type><file>mage/cookies.js</file></action>
+
 			<!-- Add our assets -->
 			<action method="addCss">
 				<stylesheet>css/style.css</stylesheet>
 			</action>
+			<action method="addJs"><name>mage.js</name></action>
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/script.js</name>
