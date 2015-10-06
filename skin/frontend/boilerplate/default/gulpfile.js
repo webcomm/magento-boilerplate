@@ -109,7 +109,7 @@ gulp.task('js', function() {
     .pipe(concat('script.js'));
 
   if (config.uglifyJS === true) {
-    mage.pipe(uglify());
+    mage.pipe(uglify({"mangle":false})); // Do not rename super global variables as it breaks prototype functionality
     boilerplate.pipe(uglify());
   }
 
