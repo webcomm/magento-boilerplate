@@ -81,7 +81,7 @@ class Webcomm_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_Bloc
                     $suffix = Mage::getStoreConfig('catalog/navigation/top_in_dropdown_suffix');
                     $html .= '<li class="level1 level-top-in-dropdown">';
                     $html .= '<a href="'.$child->getUrl().'"><span>';
-                    $html .= $this->escapeHtml($prefix.' '.$child->getName().' '.$suffix);
+                    $html .= $this->escapeHtml($this->__($prefix).' '.$child->getName().' '.$suffix);
                     $html .= '</span></a>';
                     $html .= '</li>';
                     $html .= '<li class="divider"></li>';
