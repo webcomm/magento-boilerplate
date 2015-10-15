@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2011-2014 Webcomm Pty Ltd
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+-->
+
+<layout>
+    <default>
+        <reference name="head">
+
+            <!-- Remove assets that are not required with Magento Boilerplate -->
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/styles-ie.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/widgets.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/print.css</name>
+            </action>
+            <action method="removeItem">
+                <type>js</type>
+                <name>lib/ds-sleight.js</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_js</type>
+                <name>js/ie6.js</name>
+            </action>
+            <action method="removeItem">
+                <type>js</type>
+                <name>scriptaculous/builder.js</name>
+            </action>
+            <action method="removeItem">
+                <type>js</type>
+                <name>scriptaculous/dragdrop.js</name>
+            </action>
+            <action method="removeItem">
+                <type>js</type>
+                <name>scriptaculous/slider.js</name>
+            </action>
+
+            <!-- Add dynamically produced stylesheet path -->
+            <action method="addCss">
+                <name helper="magentoboilerplate/getStylesheetUrl"/>
+            </action>
+
+            <!-- Add Modernizr -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/modernizr.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name helper="magentoboilerplate/getJavascriptUrl"/>
+            </action>
+
+            <!-- Add meta tag for mobile device scaling -->
+            <block type="core/template" name="magentoboilerplate.head.meta" template="magentoboilerplate/page/html/head/meta.phtml"/>
+
+        </reference>
+        <reference name="catalog.topnav">
+            <action method="setTemplate">
+                <template>magentoboilerplate/page/html/topmenu.phtml</template>
+            </action>
+        </reference>
+    </default>
+    <catalog_category_default>
+        <update handle="update_product_listings"/>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <update handle="update_product_listings"/>
+    </catalog_category_layered>
+    <update_product_listings>
+        <reference name="product_list">
+
+            <!--
+                We will set an (almost) infinite column count for product
+                listings so that responsive layotus can be used to
+                alter the product count for each column.
+            -->
+            <action method="setColumnCount">
+                <column_count>9999999</column_count>
+            </action>
+
+        </reference>
+    </update_product_listings>
+</layout>

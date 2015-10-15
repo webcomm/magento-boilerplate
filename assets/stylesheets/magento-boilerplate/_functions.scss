@@ -1,0 +1,21 @@
+// Function to determine if the row width is at least a given size,
+// where sizes are medium, large, xlarge, xxlarge
+@function row-width-is-atleast($size) {
+
+  // Convert row width into em units
+  $row-width-ems: em-calc($row-width * $rem-base);
+
+  // Find the corresponding lower bound of the media
+  // query that corresponds to the given size.
+  @if $size == medium {
+    $size-ems: $small-breakpoint + em-calc(1);
+  } @elseif $size == large {
+    $size-ems: $medium-breakpoint + em-calc(1);
+  } @elseif $size == xlarge {
+    $size-ems: $large-breakpoint + em-calc(1);
+  } @elseif $size == xxlarge {
+    $size-ems: $xlarge-breakpoint + em-calc(1);
+  }
+
+  @return $row-width-ems >= $size-ems;
+}
