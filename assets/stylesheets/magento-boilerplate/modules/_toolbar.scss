@@ -1,0 +1,122 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2015 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+// By default, we don't need to render Foundation's built-in pagination classes
+$include-pagination-classes: false !default;
+
+// Setup common icon properties for both the pager and sorter
+.pager .pages ol .previous,
+.pager .pages ol .next,
+.sorter .sort-by a {
+
+  // Hide the image Magento ships with
+  img {
+    display: none;
+  }
+
+  // Attach an icon to the "after" pseudo element
+  &:after {
+    @include fa-icon();
+  }
+}
+
+.pager,
+.sorter {
+  @include clearfix();
+}
+
+// The pager is responsible for navigating between pages
+.pager {
+  text-align: center;
+
+  .amount {
+    float: left;
+  }
+
+  .limiter {
+    float: right;
+  }
+
+  .limiter {
+    // Hide the "Show" label
+    label {
+      display: none;
+    }
+
+    select {
+      @include inline-form-select();
+    }
+  }
+
+  .pages {
+    display: inline-block;
+
+    // Hide the "Page:" label
+    strong {
+      display: none;
+    }
+
+    // The list of available pages will be styled based off Foundation's pagination component
+    ol {
+      @include pagination();
+
+      .current {
+        @include pagination-current-item($has-anchor: false);
+      }
+
+      // Page links
+      .previous:after {
+        content: $fa-var-caret-left;
+      }
+      .next:after {
+        content: $fa-var-caret-right;
+      }
+    }
+  }
+}
+
+.sorter {
+
+  label {
+    display: inline-block;
+  }
+
+  .view-mode {
+    float: left;
+  }
+
+  .sort-by {
+    float: right;
+    select {
+      @include inline-form-select();
+    }
+
+    // Use up/down arrows. These look reverse, but it's because the link itself
+    // is an inverse of
+    a:after {
+      content: $fa-var-caret-up;
+    }
+    a[href*="dir=asc"]:after {
+      content: $fa-var-caret-down;
+    }
+  }
+}

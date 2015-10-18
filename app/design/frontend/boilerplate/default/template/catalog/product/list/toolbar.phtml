@@ -85,11 +85,11 @@
             <?php endforeach; ?>
             </select>
             <?php if($this->getCurrentDirection() == 'desc'): ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">
+                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>">
                     <i class="fa fa-arrow-down"></i>
                 </a>
             <?php else: ?>
-                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>">
+                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>">
                     <i class="fa fa-arrow-up"></i>
                 </a>
             <?php endif; ?>

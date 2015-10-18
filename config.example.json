@@ -1,0 +1,55 @@
+{
+  // Whether we are in production mode or not
+  "production": false,
+
+  // Each frontend separation of Magento is just considered
+  // a site within the context of the Boilerplate
+  "sites": [
+    {
+      // The package and theme respectively represent the
+      // location of both template files and skin files
+      "package": "boilerplate",
+      "theme": "default",
+
+      // Below you may specify any components that you would like to include
+      // with your site. This will ensure that the required JavaScripts and
+      // stylesheets are available. Only choose the ones you need to
+      // include, and no more. There are a number of required
+      // components which, whether you include or not,
+      // will be compiled.
+      //
+      // Available:
+      //     accordion, block-grid, button-groups, buttons, clearing, dropdown, dropdown-buttons, flex-video, icon-bar, joyride, keystrokes, labels, magellan, orbit, panels, pricing-tables, progress-bars, range-slider, reveal, side-nav, split-buttons, sub-nav, switches, tabs, thumbs, tooltips, offcanvas.
+      //
+      // Required:
+      //     grid, alert-boxes, breadcrumbs, equalizer, forms, inline-lists, pagination, tables, top-bar, type, visibility
+      "components": [],
+
+      // BrowserSync server configuration details. These
+      // options are passed directly into BrowserSync.
+      "server": {
+        "proxy": "magentoboilerplate.dev",
+        "port": 3000
+      },
+
+      // Here we declare any customisations to the behaviour of compilation that are required, such as including
+      // additional Stylesheets, JavaScripts and images to be merged into the produced files, as well as any
+      // additional include paths which may assist in the production of clean and concise SCSS.
+      "compilation": {
+        "stylesheets": [],
+        "javascripts": [],
+        "images": [],
+        "fonts": [],
+        "includePaths": []
+      },
+
+      // Finally, you may declare any additional paths to watch
+      "watch": {
+        "stylesheets": [],
+        "javascripts": [],
+        "images": [],
+        "others": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2011-2015 Webcomm Pty Ltd
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+$legend-bg: $white !default;
+
+// Fieldsets
+.fieldset {
+  @include fieldset();
+  position: relative;
+
+  // Magento uses non-semantic markup for fieldset legends. Unfortunately, this
+  // means we need to steal styles directly from Foundation's form stylesheets.
+  .legend {
+    font-weight: $legend-font-weight;
+    background: $legend-bg;
+    padding: $legend-padding;
+    margin: 0;
+    margin-#{$default-float}: rem-calc(-3);
+    position: absolute;
+    top: rem-calc(16 * -0.7); // 16px is the default font size, 1.4 is the line height, this figure will align it nicely vertically
+    left: $fieldset-padding; // Align with contents of fieldset
+    font-size: 100%; // Because Magento uses headers, let's reset the font size
+  }
+}
+
+// Form lists
+.form-list {
+
+  // When there's a list item with a class of "fields" applied, it is
+  // Magento's way of nested two inputs, side-by-side. Grid FTW!
+  .fields {
+    @include grid-row($behavior: nest);
+
+    // Sometimes Magento nests fields directly inside fields, such as
+    // the "New Address" section of the checkout
+    > .fields {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .field {
+      @include grid-column(12);
+
+      @media #{$medium-up} {
+        @include grid-column(6);
+
+        // When Magento just has a single field, let's make it always full width
+        &:first-child:last-child {
+          @include grid-column(12);
+        }
+      }
+    }
+  }
+
+  // Controls represent checkboxes or radio buttons. Let's float
+  // the checkboxes to line the labels up nicely.
+  .control {
+    @include clearfix();
+
+    .input-box {
+      display: inline-block;
+    }
+
+    label {
+      @include inline-control-label();
+    }
+  }
+
+  // Labels immediately proceeding input text boxes should be pulled closer
+  .input-text + label {
+    margin: $form-spacing * -1 0 $form-spacing 0;
+  }
+
+  // Pattern for combinations below is
+  // prefix-FIRSTNAME-middlename-LASTNAME-suffix
+  // where FIRSTNAME and LASTNAME are more important
+  // than prefix, middlename and suffix. Present
+  // item are represented by a number and a dash.
+  // This ensures we hit every concevable combination
+  @media #{$medium-up} {
+
+    // 1-1-0-1-0
+    .customer-name-prefix {
+      .name-prefix {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(5);
+      }
+    }
+
+    // 1-1-1-1-0
+    .customer-name-prefix-middlename {
+      .name-prefix,
+      .name-middlename, {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(4);
+      }
+    }
+
+    // 1-1-0-1-1
+    .customer-name-prefix-suffix {
+      .name-prefix,
+      .name-suffix {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(4);
+      }
+    }
+
+    // 1-1-1-1-1
+    .customer-name-prefix-middlename-suffix {
+      .name-prefix,
+      .name-middlename,
+      .name-suffix {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(3);
+      }
+    }
+
+    // 0-1-1-1-0
+    .customer-name-middlename {
+      .name-middlename {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(5);
+      }
+    }
+
+    // 0-1-1-1-1
+    .customer-name-middlename-suffix {
+      .name-middlename,
+      .name-suffix, {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(4);
+      }
+    }
+
+    // 0-1-0-1-1
+    .customer-name-suffix {
+      .name-suffix {
+        @include grid-column(2);
+      }
+      .name-firstname,
+      .name-lastname {
+        @include grid-column(5);
+      }
+    }
+
+    // Date of birth is just an even split
+    .customer-dob {
+      @include grid-row($behavior: nest);
+
+      [class^="dob-"] {
+        @include grid-column(4);
+      }
+    }
+  }
+}
+
+// Required labels
+label.required {
+  float: left;
+  position: relative;
+
+  em {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    color: $alert-color;
+  }
+
+  + .input-box {
+    clear: left;
+  }
+}
+
+// Footers, buttons
+.buttons-set {
+  @include clearfix();
+  text-align: right;
+
+  .back-link {
+    float: left;
+  }
+}
+
+// Validation
+p.required {
+  color: $alert-color;
+}
+.validation-advice {
+  @include form-error-message();
+  margin-top: $form-spacing * -1;
+}

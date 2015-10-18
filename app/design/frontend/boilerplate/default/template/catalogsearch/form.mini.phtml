@@ -36,7 +36,7 @@ $catalogSearchHelper =  $this->helper('catalogsearch');
             </span>
             <input id="search" type="text" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="input-text form-control" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>">
             <span class="input-group-btn">
-                <button type="submit" title="<?php echo $this->__('Search') ?>" class="btn btn-default"><span><span><?php echo $this->__('Search') ?></span></span></button>
+                <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Search')) ?>" class="btn btn-default"><span><span><?php echo $this->__('Search') ?></span></span></button>
             </span>
         </div>
 
@@ -44,7 +44,7 @@ $catalogSearchHelper =  $this->helper('catalogsearch');
         <div id="search_autocomplete" class="search-autocomplete"></div>
         <script type="text/javascript">
         //<![CDATA[
-            var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search entire store here...') ?>');
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo Mage::helper('core')->jsQuoteEscape($this->__('Search entire store here...')) ?>');
             searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete');
         //]]>
         </script>
