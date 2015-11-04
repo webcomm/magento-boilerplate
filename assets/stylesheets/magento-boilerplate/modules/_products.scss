@@ -50,3 +50,43 @@
     }
   }
 }
+
+// Product options
+.product-options {
+
+  // Title of option
+  dt {
+    @include clearfix(); // Labels in here are left-floated
+
+    .required + .price-notice {
+      margin-left: rem-calc(10);
+    }
+  }
+
+  // Option value(s)
+  .options-list {
+    li {
+      @include clearfix();
+    }
+
+    .radio, .checkbox {
+      float: left;
+      margin: rem-calc(5 5 0 0);
+    }
+
+    // Spans with a "label" class
+    .label {
+      display: block;
+      margin-left: rem-calc(20);
+      margin-bottom: $paragraph-margin-bottom / 2;
+    }
+  }
+
+  .datetime-picker {
+    min-width: rem-calc(45);
+
+    @media #{$medium-up} {
+      min-width: rem-calc(50);
+    }
+  }
+}
