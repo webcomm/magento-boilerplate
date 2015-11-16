@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "webcomm/magento-boilerplate",
     "type": "magento-module",
     "description": "HTML5 Twitter Bootstrap 3.1 Magento Boilerplate Template",
@@ -41,24 +40,4 @@
     "config": {
         "preferred-install": "dist"
     }
-=======
-  "name": "webcomm/magento-boilerplate",
-  "type": "magento-module",
-  "description": "A boilerplate project for creating beautiful sites using Magento, powered by Foundation 5.",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Webcomm",
-      "email": "hello@webcomm.io"
-    }
-  ],
-  "extra": {
-    "map": [
-      ["src/app/code/community/Webcomm/MagentoBoilerplate", "app/code/community/Webcomm/MagentoBoilerplate"],
-      ["src/app/design/frontend/base/default/layout/magentoboilerplate.xml", "app/design/frontend/base/default/layout/magentoboilerplate.xml"],
-      ["src/app/design/frontend/base/default/template/magentoboilerplate", "app/design/frontend/base/default/template/magentoboilerplate"],
-      ["src/app/etc/modules/Webcomm_MagentoBoilerplate.xml", "app/etc/modules/Webcomm_MagentoBoilerplate.xml"]
-    ]
-  }
->>>>>>> upstream/master
 }
