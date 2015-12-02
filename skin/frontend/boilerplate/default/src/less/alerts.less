@@ -28,6 +28,9 @@
 .error {
   color: @state-danger-text;
 }
+.warning {
+  color: @state-warning-text;
+}
 .notice {
   color: @state-info-text;
 }
@@ -38,6 +41,7 @@
 
 .error-msg,
 .success-msg,
+.warning-msg,
 .note-msg,
 .notice-msg {
   &:extend(.alert);
@@ -45,6 +49,10 @@
 
 .error-msg {
   &:extend(.alert-danger);
+}
+
+.warning-msg {
+  &:extend(.alert-warning);
 }
 
 .success-msg {
