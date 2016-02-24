@@ -37,6 +37,11 @@
                 <class>Webcomm_MagentoBoilerplate_Model</class>
             </magentoboilerplate>
         </models>
+	<helpers>
+            <magentoboilerplate>
+                <class>Webcomm_MagentoBoilerplate_Helper</class>
+            </magentoboilerplate>
+        </helpers>
         <events>
             <core_layout_update_updates_get_after>
                 <observers>
