@@ -32,6 +32,7 @@ var
   concat       = require('gulp-concat'),
   notify       = require('gulp-notify'),
   cache        = require('gulp-cache'),
+  merge        = require('merge-stream'),
   livereload   = require('gulp-livereload');
 
 var config = {
@@ -67,6 +68,28 @@ gulp.task('css', function() {
 
 // JS
 gulp.task('js', function() {
+  var core = [
+    '../../../../js/prototype/prototype.js',
+    '../../../../js/lib/ccard.js',
+    '../../../../js/prototype/validation.js',
+
+    // Scriptaculous is not needed when using bootstrap
+    // '../../../../js/scriptaculous/builder.js',
+    // '../../../../js/scriptaculous/effects.js',
+    // '../../../../js/scriptaculous/dragdrop.js',
+    // '../../../../js/scriptaculous/controls.js',
+    // '../../../../js/scriptaculous/slider.js',
+
+    '../../../../js/varien/js.js',
+    '../../../../js/varien/form.js',
+    '../../../../js/mage/translate.js',
+    '../../../../js/mage/cookies.js'
+  ];
+
+  var mage = gulp
+    .src(core)
+    .pipe(concat('mage.js'));
+
   var scripts = [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/bootstrap/js/transition.js',
@@ -81,16 +104,19 @@ gulp.task('js', function() {
     scripts.push('src/js/livereload.js');
   }
 
-  var stream = gulp
+  var boilerplate = gulp
     .src(scripts)
     .pipe(concat('script.js'));
 
   if (config.uglifyJS === true) {
-    stream.pipe(uglify());
+    mage.pipe(uglify({"mangle":false})); // Do not rename super global variables as it breaks prototype functionality
+    boilerplate.pipe(uglify());
   }
 
-  return stream
-    .pipe(gulp.dest('js'))
+  mage.pipe(gulp.dest('../../../../js')); // Put concated mage core js file in /js
+  boilerplate.pipe(gulp.dest('js'));
+
+  return merge(mage, boilerplate)
     .pipe(notify({ message: 'Successfully compiled JavaScript' }));
 });
 
