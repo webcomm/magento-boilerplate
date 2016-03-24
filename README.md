@@ -21,11 +21,16 @@ Begin by creating a `composer.json` in the root of Magento, and ensure it has th
         {
            "type": "vcs",
            "url": "https://github.com/magento-hackathon/magento-composer-installer"
+       },
+       {
+            "url": "https://github.com/Inchoo/Inchoo_PHP7.git",
+            "type": "git"
         }
     ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "webcomm/magento-boilerplate": "2.0.x-dev"
+        "webcomm/magento-boilerplate": "2.0.x-dev",
+        "inchoo/php7": "*"
     },
     "extra": {
         "magento-root-dir": "./",
