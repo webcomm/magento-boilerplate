@@ -152,6 +152,8 @@ module.exports = function (config, callback) {
 
       // Create an array of default include paths
       var includePaths = [
+        'node_modules/foundation-sites/scss',
+        'node_modules/font-awesome/scss',
         'node_modules/magento-boilerplate/node_modules/foundation-sites/scss',
         'node_modules/magento-boilerplate/node_modules/font-awesome/scss',
         'node_modules/magento-boilerplate/assets/stylesheets'

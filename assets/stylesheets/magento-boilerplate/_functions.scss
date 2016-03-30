@@ -4,6 +4,7 @@
 
   // Convert row width into em units
   $row-width-ems: em-calc($row-width * $rem-base);
+  $size-ems: null;
 
   // Find the corresponding lower bound of the media
   // query that corresponds to the given size.
