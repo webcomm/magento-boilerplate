@@ -23,16 +23,17 @@
  */
 
 // Load plugins
-var
-  gulp         = require('gulp'),
-  less         = require('gulp-less'),
-  minifycss    = require('gulp-minify-css'),
-  uglify       = require('gulp-uglify'),
-  rimraf       = require('gulp-rimraf'),
-  concat       = require('gulp-concat'),
-  notify       = require('gulp-notify'),
-  cache        = require('gulp-cache'),
-  livereload   = require('gulp-livereload');
+var gulp         = require('gulp');
+var less         = require('gulp-less-sourcemap');
+var minifycss    = require('gulp-minify-css');
+var uglify       = require('gulp-uglify');
+var rimraf       = require('gulp-rimraf');
+var concat       = require('gulp-concat');
+var notify       = require('gulp-notify');
+var cache        = require('gulp-cache');
+var livereload   = require('gulp-livereload');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
 
 var config = {
 
@@ -45,7 +46,7 @@ var config = {
   minifyCss: true,
   uglifyJS: true
 
-}
+};
 
 // CSS
 gulp.task('css', function() {
@@ -97,9 +98,15 @@ gulp.task('js', function() {
 // Images
 gulp.task('images', function() {
   return gulp
-    .src('src/images/**/*')
-    .pipe(gulp.dest('images'))
-    .pipe(notify({ message: 'Successfully processed image' }));
+      .src(['src/images/**'])
+      .pipe(imagemin({
+        optimizationLevel: 4,
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+      }))
+      .pipe(gulp.dest('images'))
+      .pipe(notify({ message: 'Successfully processed image' }));
 });
 
 // Fonts
