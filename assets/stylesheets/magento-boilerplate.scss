@@ -28,6 +28,9 @@
 // http://mattstauffer.co/blog/organizing-css-oocss-smacss-and-bem
 // and the sources it references. Cheers Matt, you rock mate!
 
+// Default variables for Foundation
+$include-pagination-classes: false !default;
+
 // We use these to control whether entire layouts are loaded in
 $include-column-set-layouts:       true !default;
 $include-page-layouts:             true !default;
