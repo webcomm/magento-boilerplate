@@ -20,77 +20,83 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.opc {
+@mixin one-page-checkout-module() {
+  .opc {
 
-  // Titles of each step
-  .step-title {
-    h2 {
-      display: inline-block;
+    // Titles of each step
+    .step-title {
+      h2 {
+        display: inline-block;
+      }
+
+      a {
+        float: right;
+      }
     }
 
-    a {
+    // Choosing various options (payment methods, etc)
+    .sp-methods {
+      label {
+        display: inline-block;
+      }
+    }
+
+    .buttons-set {
+
+      // Float buttons to the right so the waiting message looks better
+      .button {
+        float: right;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  // There's a little "Loading next step..." message that appears
+  .please-wait {
+    &:before {
+      @include fa-icon();
+      content: $fa-var-refresh;
+      animation: fa-spin 2s infinite linear;
+    }
+  }
+
+  // Tooltips
+  .tool-tip {
+    position: absolute;
+    padding: rem-calc(20);
+    border-style: $fieldset-border-style;
+    border-width: $fieldset-border-width;
+    border-color: $fieldset-border-color;
+    background-color: $white; // Same as background
+    z-index: 1005; // Same as Foundation's reveal
+
+    .btn-close {
       float: right;
     }
   }
 
-  // Choosing various options (payment methods, etc)
-  .sp-methods {
-    label {
-      display: inline-block;
+  // Payment step
+  #co-payment-form {
+
+    // Tweak the saved credit card expiry
+    label[for="ccsave_expiration"] + .input-box {
+      @include grid-row($behavior: nest);
+      clear: left; // Clear the floated label
+
+      .v-fix {
+        @include grid-column(6);
+      }
     }
   }
 
-  .buttons-set {
-
-    // Float buttons to the right so the waiting message looks better
-    .button {
-      float: right;
-      margin-left: 20px;
-    }
-  }
-}
-
-// There's a little "Loading next step..." message that appears
-.please-wait {
-  &:before {
-    @include fa-icon();
-    content: $fa-var-refresh;
-    animation: fa-spin 2s infinite linear;
-  }
-}
-
-// Tooltips
-.tool-tip {
-  position: absolute;
-  padding: rem-calc(20);
-  border-style: $fieldset-border-style;
-  border-width: $fieldset-border-width;
-  border-color: $fieldset-border-color;
-  background-color: $white; // Same as background
-  z-index: 1005; // Same as Foundation's reveal
-
-  .btn-close {
-    float: right;
-  }
-}
-
-// Payment step
-#co-payment-form {
-
-  // Tweak the saved credit card expiry
-  label[for="ccsave_expiration"] + .input-box {
-    @include grid-row($behavior: nest);
-    clear: left; // Clear the floated label
-
-    .v-fix {
-      @include grid-column(6);
+  // Review
+  #opc-review {
+    table {
+      width: 100%;
     }
   }
 }
 
-// Review
-#opc-review {
-  table {
-    width: 100%;
-  }
+@if $include-one-page-checkout-module {
+  @include one-page-checkout-module;
 }

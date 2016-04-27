@@ -20,19 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.breadcrumbs {
-  @include crumb-container();
+@mixin breadcrumbs-module {
+  .breadcrumbs {
+    @include crumb-container();
 
-  li {
-    @include crumbs();
+    li {
+      @include crumbs();
 
-    // Hide the separator, it's already provided by Foundation
-    > span {
-      display: none;
-    }
+      // Hide the separator, it's already provided by Foundation
+      > span {
+        display: none;
+      }
 
-    strong {
-      color: $crumb-font-color-current; // Account for different markup other than Foundation expected
+      strong {
+        color: $crumb-font-color-current; // Account for different markup other than Foundation expected
+      }
     }
   }
+}
+
+@if $include-breadcrumbs-module {
+  @include breadcrumbs-module;
 }

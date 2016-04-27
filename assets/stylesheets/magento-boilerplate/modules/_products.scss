@@ -20,73 +20,79 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// The product name is used throughout the website
-.product-name {
-  font-size: $h5-font-size;
+@mixin products-module() {
+  // The product name is used throughout the website
+  .product-name {
+    font-size: $h5-font-size;
+  }
+
+  // Hide the extra markup produced for separators
+  .add-to-links span {
+    display: none;
+  }
+
+  // Collateral boxes on the product page
+  .product-collateral {
+
+    // Tags
+    .box-tags ul li {
+      display: inline;
+      white-space: nowrap;
+    }
+
+    // Upsells
+    .box-up-sell {
+      table {
+        width: 100%;
+      }
+
+      td {
+        width: 25%; // Four products per row
+      }
+    }
+  }
+
+  // Product options
+  .product-options {
+
+    // Title of option
+    dt {
+      @include clearfix(); // Labels in here are left-floated
+
+      .required + .price-notice {
+        margin-left: rem-calc(10);
+      }
+    }
+
+    // Option value(s)
+    .options-list {
+      li {
+        @include clearfix();
+      }
+
+      .radio, .checkbox {
+        float: left;
+        margin: rem-calc(5 5 0 0);
+      }
+
+      // Spans with a "label" class
+      .label {
+        display: block;
+        margin-left: rem-calc(20);
+        margin-bottom: $paragraph-margin-bottom / 2;
+      }
+    }
+
+    .datetime-picker {
+      min-width: rem-calc(45);
+
+      @media #{$medium-up} {
+        min-width: rem-calc(50);
+      }
+    }
+  }
 }
 
-// Hide the extra markup produced for separators
-.add-to-links span {
-  display: none;
-}
-
-// Collateral boxes on the product page
-.product-collateral {
-
-  // Tags
-  .box-tags ul li {
-    display: inline;
-    white-space: nowrap;
-  }
-
-  // Upsells
-  .box-up-sell {
-    table {
-      width: 100%;
-    }
-
-    td {
-      width: 25%; // Four products per row
-    }
-  }
-}
-
-// Product options
-.product-options {
-
-  // Title of option
-  dt {
-    @include clearfix(); // Labels in here are left-floated
-
-    .required + .price-notice {
-      margin-left: rem-calc(10);
-    }
-  }
-
-  // Option value(s)
-  .options-list {
-    li {
-      @include clearfix();
-    }
-
-    .radio, .checkbox {
-      float: left;
-      margin: rem-calc(5 5 0 0);
-    }
-
-    // Spans with a "label" class
-    .label {
-      display: block;
-      margin-left: rem-calc(20);
-      margin-bottom: $paragraph-margin-bottom / 2;
-    }
-  }
-
-  .datetime-picker {
-    min-width: rem-calc(45);
-
-    @media #{$medium-up} {
-      min-width: rem-calc(50);
-    }
-  }
+@if $include-products-module {
+  @include products-module;
 }

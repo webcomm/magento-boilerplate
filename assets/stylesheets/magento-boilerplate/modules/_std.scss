@@ -20,22 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// Magento wraps CMS-based content in a special class so that styles may
-// be applied directly to it.
-.std {
-  ul,
-  ol,
-  dl {
-    margin-bottom: $list-margin-bottom;
-  }
+@mixin std-module() {
 
-  ul {
-    margin-left: $list-side-margin;
-    list-style: disc outside;
-  }
+  // Magento wraps CMS-based content in a special class so that styles may
+  // be applied directly to it.
+  .std {
+    ul,
+    ol,
+    dl {
+      margin-bottom: $list-margin-bottom;
+    }
 
-  ol {
-    margin-left: $list-ordered-side-margin;
-    list-style: decimal outside;
+    ul {
+      margin-left: $list-side-margin;
+      list-style: disc outside;
+    }
+
+    ol {
+      margin-left: $list-ordered-side-margin;
+      list-style: decimal outside;
+    }
   }
+}
+
+@if $include-std-module {
+  @include std-module;
 }

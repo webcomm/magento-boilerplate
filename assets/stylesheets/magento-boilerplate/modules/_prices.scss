@@ -20,12 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.price-box {
-  p {
-    margin-bottom: $paragraph-margin-bottom / 2;
+@mixin prices-module() {
+  .price-box {
+    p {
+      margin-bottom: $paragraph-margin-bottom / 2;
+    }
+  }
+
+  .price-notice {
+    font-weight: $font-weight-bold;
   }
 }
 
-.price-notice {
-  font-weight: $font-weight-bold;
+@if $include-prices-module {
+  @include prices-module;
 }

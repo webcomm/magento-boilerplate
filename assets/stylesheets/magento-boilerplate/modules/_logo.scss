@@ -20,10 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.logo {
-  display: block;
+@mixin logo-module {
+  .logo {
+    display: block;
 
-  strong {
-    display: none;
+    strong {
+      display: none;
+    }
   }
+}
+
+@if $include-logo-module {
+  @include logo-module;
 }

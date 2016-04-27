@@ -20,24 +20,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.rating-box,
-.rating-box .rating {
-  display: inline-block;
-  height: 14px;
-  background-image: url(../images/ratings.png);
-  background-repeat: repeat-x;
-  background-size: 77px 28px;
+@mixin ratings-module() {
+  .rating-box,
+  .rating-box .rating {
+    display: inline-block;
+    height: 14px;
+    background-image: url(../images/ratings.png);
+    background-repeat: repeat-x;
+    background-size: 77px 28px;
+  }
+
+  .rating-box {
+    position: relative;
+    width: 77px;
+    background-position: left top;
+
+    .rating {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-position: left bottom;
+    }
+  }
 }
 
-.rating-box {
-  position: relative;
-  width: 77px;
-  background-position: left top;
-
-  .rating {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: left bottom;
-  }
+@if $include-ratings-module {
+  @include ratings-module;
 }

@@ -36,43 +36,49 @@ $one-column-product-listing-columns-large-up: 5 !default;
 $three-columns-product-listing-columns-medium: 2 !default;
 $three-columns-product-listing-columns-large-up: 3 !default;
 
-// Setup base layouts for columns and rules used in two column
-// layouts (typical category listing layout used).
-.category-products {
-  @include grid-row($behavior: nest);
+@mixin product-listings-layouts() {
 
-  > [class^="toolbar"] {
-    margin-left: $column-gutter / 2;
-    margin-right: $column-gutter / 2;
-    clear: left;
+  // Setup base layouts for columns and rules used in two column
+  // layouts (typical category listing layout used).
+  .category-products {
+    @include grid-row($behavior: nest);
+
+    > [class^="toolbar"] {
+      margin-left: $column-gutter / 2;
+      margin-right: $column-gutter / 2;
+      clear: left;
+    }
+
+    .item {
+      @include grid-column($total-columns / $two-column-product-listing-columns);
+
+      @media #{$medium-only} {
+        @include grid-column($total-columns / $two-column-product-listing-columns-medium);
+      }
+      @media #{$large-up} {
+        @include grid-column($total-columns / $two-column-product-listing-columns-large-up);
+      }
+    }
   }
 
-  .item {
-    @include grid-column($total-columns / $two-column-product-listing-columns);
+  // Layout for when there's one column
+  .col1-layout .category-products .item {
+    @media #{$large-up} {
+      @include grid-column($total-columns / $one-column-product-listing-columns-large-up);
+    }
+  }
 
+  // Layout for when there's three columns
+  .col3-layout .category-products .item {
     @media #{$medium-only} {
-      @include grid-column($total-columns / $two-column-product-listing-columns-medium);
+      @include grid-column($total-columns / $three-columns-product-listing-columns-medium);
     }
     @media #{$large-up} {
-      @include grid-column($total-columns / $two-column-product-listing-columns-large-up);
+      @include grid-column($total-columns / $three-columns-product-listing-columns-large-up);
     }
   }
 }
 
-// Layout for when there's one column
-.col1-layout .category-products .item {
-  @media #{$large-up} {
-    @include grid-column($total-columns / $one-column-product-listing-columns-large-up);
-  }
+@if $include-product-listings-layouts {
+  @include product-listings-layouts;
 }
-
-// Layout for when there's three columns
-.col3-layout .category-products .item {
-  @media #{$medium-only} {
-    @include grid-column($total-columns / $three-columns-product-listing-columns-medium);
-  }
-  @media #{$large-up} {
-    @include grid-column($total-columns / $three-columns-product-listing-columns-large-up);
-  }
-}
-

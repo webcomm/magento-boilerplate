@@ -32,20 +32,26 @@ $contain-footer: $contain-page !default;
   padding-right: $column-gutter / 2;
 }
 
-@if $contain-header {
-  .header {
-    @include contain-section();
+@mixin page-layouts() {
+  @if $contain-header {
+    .header {
+      @include contain-section();
+    }
+  }
+
+  @if $contain-nav {
+    .nav {
+      @include contain-section();
+    }
+  }
+
+  @if $contain-footer {
+    .footer {
+      @include contain-section();
+    }
   }
 }
 
-@if $contain-nav {
-  .nav {
-    @include contain-section();
-  }
-}
-
-@if $contain-footer {
-  .footer {
-    @include contain-section();
-  }
+@if $include-page-layouts {
+  @include page-layouts;
 }

@@ -23,30 +23,37 @@
 $medium-product-image-columns: 7 !default;
 $large-product-image-columns: 8 !default;
 
-// Basic info + images
-.product-essential {
-  @include grid-row($behavior: nest);
+@mixin products-layouts() {
 
-  .product-shop,
-  .product-img-box {
-    @include grid-column(12);
-  }
+  // Basic info + images
+  .product-essential {
+    @include grid-row($behavior: nest);
 
-  .product-shop {
-    @media #{$medium-only} {
-      @include grid-column($columns: $medium-product-image-columns, $push: $total-columns - $medium-product-image-columns);
+    .product-shop,
+    .product-img-box {
+      @include grid-column(12);
     }
-    @media #{$large-up} {
-      @include grid-column($columns: $total-columns - $large-product-image-columns, $push: $large-product-image-columns);
-    }
-  }
 
-  .product-img-box {
-    @media #{$medium-only} {
-      @include grid-column($columns: $total-columns - $medium-product-image-columns, $pull: $medium-product-image-columns);
+    .product-shop {
+      @media #{$medium-only} {
+        @include grid-column($columns: $medium-product-image-columns, $push: $total-columns - $medium-product-image-columns);
+      }
+      @media #{$large-up} {
+        @include grid-column($columns: $total-columns - $large-product-image-columns, $push: $large-product-image-columns);
+      }
     }
-    @media #{$large-up} {
-      @include grid-column($columns: $large-product-image-columns, $pull: $total-columns - $large-product-image-columns);
+
+    .product-img-box {
+      @media #{$medium-only} {
+        @include grid-column($columns: $total-columns - $medium-product-image-columns, $pull: $medium-product-image-columns);
+      }
+      @media #{$large-up} {
+        @include grid-column($columns: $large-product-image-columns, $pull: $total-columns - $large-product-image-columns);
+      }
     }
   }
+}
+
+@if $include-products-layouts {
+  @include products-layouts;
 }

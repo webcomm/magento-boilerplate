@@ -20,69 +20,75 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// All account pages (except for dashboard)
-.my-account {
+@mixin customers-module {
+  // All account pages (except for dashboard)
+  .my-account {
 
-  // All tables in the customer's account should be full width
-  table {
-    width: 100%;
+    // All tables in the customer's account should be full width
+    table {
+      width: 100%;
+    }
+
+    // Tags
+    .tags-list {
+      li {
+        display: inline;
+      }
+    }
+
+    // Top of account boxes
+    .box-head,
+    .box-title {
+      @include clearfix();
+      text-align: right;
+    }
+    .box-head h2,
+    .box-title h2,
+    .box-title h3 {
+      float: left;
+    }
+
   }
 
-  // Tags
-  .tags-list {
-    li {
-      display: inline;
+  // Customer dashboard is separated for no other reason than it makes it easy
+  // to establish what is the dashboard and what is not.
+  .dashboard {
+
+    // Account info
+    .box-info {
+
+      // Overcome a strange edge-case in Magento where their column structure
+      // clashes with our grid integration
+      > .col2-set > .box > .box-title {
+        margin-left: $column-gutter / 2;
+        margin-right: $column-gutter / 2;
+      }
+    }
+
+    // Reviews & tags have common styles
+    .box-reviews ol,
+    .box-tags ol {
+      margin-left: $list-ordered-side-margin;
+      list-style: decimal outside;
+
+      // The number is legacy markup for older browsers to control their style
+      .number {
+        display: none;
+      }
+    }
+
+    // Tags
+    .box-tags {
+
+      // Make the list of tags display near their label
+      .tags ul,
+      .tags li {
+        display: inline;
+      }
     }
   }
-
-  // Top of account boxes
-  .box-head,
-  .box-title {
-    @include clearfix();
-    text-align: right;
-  }
-  .box-head h2,
-  .box-title h2,
-  .box-title h3 {
-    float: left;
-  }
-
 }
 
-// Customer dashboard is separated for no other reason than it makes it easy
-// to establish what is the dashboard and what is not.
-.dashboard {
-
-  // Account info
-  .box-info {
-
-    // Overcome a strange edge-case in Magento where their column structure
-    // clashes with our grid integration
-    > .col2-set > .box > .box-title {
-      margin-left: $column-gutter / 2;
-      margin-right: $column-gutter / 2;
-    }
-  }
-
-  // Reviews & tags have common styles
-  .box-reviews ol,
-  .box-tags ol {
-    margin-left: $list-ordered-side-margin;
-    list-style: decimal outside;
-
-    // The number is legacy markup for older browsers to control their style
-    .number {
-      display: none;
-    }
-  }
-
-  // Tags
-  .box-tags {
-
-    // Make the list of tags display near their label
-    .tags ul,
-    .tags li {
-      display: inline;
-    }
-  }
+@if $include-customers-module {
+  @include customers-module;
 }

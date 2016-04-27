@@ -23,25 +23,31 @@
 // The width of the search button
 $search-button-width: rem-calc(80) !default;
 
-.form-search {
-  position: relative;
-  height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); // Taken from @mixin form-element()
+@mixin search-module() {
+  .form-search {
+    position: relative;
+    height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); // Taken from @mixin form-element()
 
-  label {
-    display: none;
-  }
+    label {
+      display: none;
+    }
 
-  .input-text {
-    position: absolute;
-    left: 0;
-    right: $search-button-width;
-    width: auto;
-  }
+    .input-text {
+      position: absolute;
+      left: 0;
+      right: $search-button-width;
+      width: auto;
+    }
 
-  .button {
-    @include prefix-postfix-base();
-    @include postfix($is-button: true);
-    float: right;
-    width: $search-button-width;
+    .button {
+      @include prefix-postfix-base();
+      @include postfix($is-button: true);
+      float: right;
+      width: $search-button-width;
+    }
   }
+}
+
+@if $include-search-module {
+  @include search-module;
 }

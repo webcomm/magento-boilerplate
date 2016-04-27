@@ -20,29 +20,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// Utility message classes
-.notice {
-  color: $warning-color;
-}
-.error {
-  color: $success-color;
-}
-.success {
-  color: $success-color;
+@mixin messages-module {
+
+  // Utility message classes
+  .notice {
+    color: $warning-color;
+  }
+  .error {
+    color: $success-color;
+  }
+  .success {
+    color: $success-color;
+  }
+
+  // All alert messages
+  .messages li li {
+    @include alert();
+  }
+
+  // Various alert styles
+  .notice-msg ul li {
+    @include alert-style($warning-color);
+  }
+  .error-msg ul li {
+    @include alert-style($alert-color);
+  }
+  .success-msg ul li {
+    @include alert-style($success-color);
+  }
 }
 
-// All alert messages
-.messages li li {
-  @include alert();
-}
-
-// Various alert styles
-.notice-msg ul li {
-  @include alert-style($warning-color);
-}
-.error-msg ul li {
-  @include alert-style($alert-color);
-}
-.success-msg ul li {
-  @include alert-style($success-color);
+@if $include-messages-module {
+  @include messages-module;
 }
