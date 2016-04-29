@@ -196,16 +196,17 @@ module.exports = function (config, callback) {
 
       // By default, we will load jQuery and the core Foundation library
       var javascripts = [
-        'node_modules/magento-boilerplate/node_modules/foundation-sites/js/vendor/jquery.js',
+        require.resolve('jquery'),
         'node_modules/magento-boilerplate/assets/javascripts/no-conflict.js',
-        'node_modules/magento-boilerplate/node_modules/foundation-sites/js/foundation/foundation.js'
+        require.resolve('foundation-sites')
       ];
 
       // Now we will loop through all required components as well as user-defined
       // components to create a list of JavaScripts that we need to include.
+      var foundationJavascriptsBasePath = require('path').dirname(require.resolve('foundation-sites'));
       _.each(requiredComponents.slice(0).concat(site.components), function (component) {
         _.each(availableComponents[component].javascripts, function (javascript) {
-          javascripts.push('node_modules/magento-boilerplate/node_modules/foundation-sites/js/foundation/foundation.'+javascript+'.js');
+          javascripts.push(foundationJavascriptsBasePath+'/foundation.'+javascript+'.js');
         });
       });
 
@@ -215,7 +216,7 @@ module.exports = function (config, callback) {
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
-      javascripts.push('node_modules/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
+      javascripts.push('assets/javascripts/magento-boilerplate.js');
       javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
 
       streams.push(
@@ -241,7 +242,7 @@ module.exports = function (config, callback) {
 
       streams.push(
         gulp
-          .src('node_modules/magento-boilerplate/node_modules/foundation-sites/js/vendor/modernizr.js')
+          .src('node_modules/foundation-sites/js/vendor/modernizr.js')
           .pipe($.if(config.production, $.uglify()))
           .pipe(gulp.dest(skinPath(site)+'/js'))
           .pipe(browserSync.stream())
@@ -287,10 +288,18 @@ module.exports = function (config, callback) {
   gulp.task('fonts', function () {
     var streams = [];
 
+    var fontAwesomeBaseDirectory;
+    try {
+      var fontAwesomeBaseDirectoryStats = require('fs').lstatSync(fontAwesomeBaseDirectory = 'node_modules/font-awesome');
+      fontAwesomeBaseDirectoryStats.isDirectory();
+    } catch (e) {
+      fontAwesomeBaseDirectory = 'node_modules/magento-boilerplate/node_modules/font-awesome';
+    }
+
     _.each(config.sites, function (site) {
 
       var fonts = [
-        'node_modules/magento-boilerplate/node_modules/font-awesome/fonts/*.{eot,otf,svg,ttf,woff,woff2}',
+        fontAwesomeBaseDirectory+'/fonts/*.{eot,otf,svg,ttf,woff,woff2}',
         skinPath(site)+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
       ];
 
