@@ -216,7 +216,7 @@ module.exports = function (config, callback) {
       });
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
-      javascripts.push('assets/javascripts/magento-boilerplate.js');
+      javascripts.push('node_modules/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
       javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
 
       streams.push(
