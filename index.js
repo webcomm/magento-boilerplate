@@ -177,7 +177,7 @@ module.exports = function (config, callback) {
             includePaths: _.uniq(includePaths)
           }))
           .on('error', $.notify.onError())
-          .pipe($.autoprefixer('last 2 versions'))
+          .pipe($.autoprefixer())
           .pipe(gulp.dest(skinPath(site)+'/css'))
           .pipe(browserSync.stream())
           .pipe($.notify('Compiled Stylesheets.'))
