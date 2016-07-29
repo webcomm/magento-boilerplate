@@ -103,12 +103,56 @@ module.exports = function (config, callback) {
     'visibility'
   ];
 
-  function templatePath(site) {
-    return 'app/design/frontend/'+site.package+'/'+site.theme;
+  var browserSyncInstances = [];
+
+  function allTemplatePaths(site) {
+    var paths = [];
+
+    if (typeof site.parentTheme !== 'undefined') {
+      paths.push('app/design/frontend/'+site.package+'/'+site.parentTheme);
+    }
+
+    paths.push('app/design/frontend/'+site.package+'/'+site.theme);
+
+    return paths;
+  }
+
+  function allSkinPaths(site) {
+    var paths = [];
+
+    if (typeof site.parentTheme !== 'undefined') {
+      paths.push('skin/frontend/'+site.package+'/'+site.parentTheme);
+    }
+
+    paths.push('skin/frontend/'+site.package+'/'+site.theme);
+
+    return paths;
   }
 
   function skinPath(site) {
-    return 'skin/frontend/'+site.package+'/'+site.theme;
+    var skinPaths = allSkinPaths(site);
+
+    return skinPaths[skinPaths.length - 1];
+  }
+
+  function initBrowserSyncInstance(site) {
+    var browserSyncInstance = require('browser-sync').create(site.server.proxy);
+    browserSyncInstance.init(site.server);
+
+    browserSyncInstances[site.server.proxy] = browserSyncInstance;
+  }
+
+  function hasBrowserSyncInstance(site) {
+    var browserSyncInstance = browserSyncInstances[site.server.proxy];
+
+    return typeof browserSyncInstance !== 'undefined';
+  }
+
+  function callStreamOnBrowserInstance(site, options) {
+    console.log('calling!');
+    var browserSyncInstance = browserSyncInstances[site.server.proxy];
+
+    return browserSyncInstance.stream(options);
   }
 
   // Compile stylesheets for every site
@@ -116,7 +160,6 @@ module.exports = function (config, callback) {
     var streams = [];
 
     _.each(config.sites, function (site) {
-      var site = config.sites[0];
 
       // We're going to create a temporary file for each site, which is a valid
       // SASS stylesheet that defines variables. We'll then prepend this to
@@ -147,8 +190,9 @@ module.exports = function (config, callback) {
         stylesheets.push(stylesheet);
       });
 
-      // Finally, attach the stylesheet in the skin path
-      stylesheets.push(skinPath(site)+'/assets/stylesheets/styles.scss');
+      // Finally, attach the stylesheet in the last skin path only
+      var skinPaths = allSkinPaths(site);
+      stylesheets.push(skinPaths[skinPaths.length - 1]+'/assets/stylesheets/styles.scss');
 
       // Create an array of default include paths
       var includePaths = [
@@ -165,7 +209,9 @@ module.exports = function (config, callback) {
       });
 
       // Finally, include the theme's directory in the include paths
-      includePaths.push(skinPath(site)+'/assets/stylesheets');
+      _.each(allSkinPaths(site), function (skinPath) {
+        includePaths.push(skinPath+'/assets/stylesheets');
+      });
 
       streams.push(
         gulp
@@ -179,7 +225,7 @@ module.exports = function (config, callback) {
           .on('error', $.notify.onError())
           .pipe($.autoprefixer())
           .pipe(gulp.dest(skinPath(site)+'/css'))
-          .pipe(browserSync.stream())
+          .pipe(hasBrowserSyncInstance(site) ? callStreamOnBrowserInstance(site) : $.tap(function () {}))
           .pipe($.notify('Compiled Stylesheets.'))
       );
     });
@@ -192,7 +238,6 @@ module.exports = function (config, callback) {
     var streams = [];
 
     _.each(config.sites, function (site) {
-      var site = config.sites[0];
 
       // By default, we will load jQuery and the core Foundation library
       var javascripts = [
@@ -225,7 +270,7 @@ module.exports = function (config, callback) {
           .pipe($.concat('scripts.js'))
           .pipe($.if(config.production, $.uglify()))
           .pipe(gulp.dest(skinPath(site)+'/js'))
-          .pipe(browserSync.stream())
+          .pipe(hasBrowserSyncInstance(site) ? callStreamOnBrowserInstance(site) : $.tap(function () {}))
           .pipe($.notify('Compiled JavaScripts.'))
         );
     });
@@ -245,7 +290,7 @@ module.exports = function (config, callback) {
           .src('node_modules/foundation-sites/js/vendor/modernizr.js')
           .pipe($.if(config.production, $.uglify()))
           .pipe(gulp.dest(skinPath(site)+'/js'))
-          .pipe(browserSync.stream())
+          .pipe(hasBrowserSyncInstance(site) ? callStreamOnBrowserInstance(site) : $.tap(function () {}))
           .pipe($.notify('Compiled Modernizr.'))
       );
     });
@@ -270,15 +315,17 @@ module.exports = function (config, callback) {
       });
 
       // Add skin images
-      images.push(skinPath(site)+'/assets/images/**/*');
+      _.each(allSkinPaths(site), function (skinPath) {
+        images.push(skinPath+'/assets/images/**/*');
+      });
 
       streams.push(
         gulp
           .src(images)
           .pipe(gulp.dest(skinPath(site)+'/images'))
-          .pipe(browserSync.stream({
+          .pipe(hasBrowserSyncInstance(site) ? callStreamOnBrowserInstance(site, {
             once: true
-          }))
+          }) : $.tap(function() {}))
       );
     });
 
@@ -298,10 +345,11 @@ module.exports = function (config, callback) {
 
     _.each(config.sites, function (site) {
 
-      var fonts = [
-        fontAwesomeBaseDirectory+'/fonts/*.{eot,otf,svg,ttf,woff,woff2}',
-        skinPath(site)+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
-      ];
+      var fonts = [fontAwesomeBaseDirectory+'/fonts/*.{eot,otf,svg,ttf,woff,woff2}'];
+
+      _.each(allSkinPaths(site), function (skinPath) {
+        skinPath+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
+      });
 
       streams.push(
         gulp
@@ -363,7 +411,7 @@ module.exports = function (config, callback) {
   // Serve the website with live reloading
   gulp.task('serve', function() {
     _.each(config.sites, function (site) {
-      browserSync(site.server);
+      initBrowserSyncInstance(site);
     });
   });
 
@@ -388,25 +436,33 @@ module.exports = function (config, callback) {
   gulp.task('watch', ['serve'], function () {
     _.each(config.sites, function (site) {
 
-      var stylesheets = [skinPath(site)+'/assets/stylesheets/**/*.scss'];
+      var stylesheets = _.map(allSkinPaths(site), function (skinPath) {
+        return skinPath+'/assets/stylesheets/**/*.scss';
+      });
       _.each(site.watch.stylesheets, function (stylesheet) {
         stylesheets.push(stylesheet);
       });
       gulp.watch(stylesheets, ['stylesheets']);
 
-      var javascripts = [skinPath(site)+'/assets/javascripts/**/*.js'];
+      var javascripts = _.map(allSkinPaths(site), function (skinPath) {
+        return skinPath+'/assets/javascripts/**/*.js';
+      });
       _.each(site.watch.javascripts, function (javascript) {
         javascripts.push(javascript);
       });
       gulp.watch(javascripts, ['javascripts', 'modernizr']);
 
-      var images = [skinPath(site)+'/assets/images/**/*'];
+      var images = _.map(allSkinPaths(site), function (skinPath) {
+        return skinPath+'/assets/images/*';
+      });
       _.each(site.watch.images, function (image) {
         images.push(image);
       });
       gulp.watch(images, ['images']);
 
-      var others = [templatePath(site)+'/**/*'];
+      var others = _.map(allTemplatePaths(site), function (templatePath) {
+        return templatePath+'/**/*';
+      });
       _.each(site.watch.others, function (other) {
         others.push(other);
       });
