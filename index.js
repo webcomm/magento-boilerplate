@@ -149,7 +149,6 @@ module.exports = function (config, callback) {
   }
 
   function callStreamOnBrowserInstance(site, options) {
-    console.log('calling!');
     var browserSyncInstance = browserSyncInstances[site.server.proxy];
 
     return browserSyncInstance.stream(options);
@@ -262,7 +261,10 @@ module.exports = function (config, callback) {
 
       // Finally, we'll compile all JavaScripts located in the skin path for the site
       javascripts.push('node_modules/magento-boilerplate/assets/javascripts/magento-boilerplate.js');
-      javascripts.push(skinPath(site)+'/assets/javascripts/**/*.js');
+
+      _.each(allSkinPaths(site), function (skinPath) {
+        javascripts.push(skinPath+'/assets/javascripts/**/*.js');
+      });
 
       streams.push(
         gulp
@@ -348,7 +350,7 @@ module.exports = function (config, callback) {
       var fonts = [fontAwesomeBaseDirectory+'/fonts/*.{eot,otf,svg,ttf,woff,woff2}'];
 
       _.each(allSkinPaths(site), function (skinPath) {
-        skinPath+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}'
+        fonts.push(skinPath+'/assets/fonts/*.{eot,otf,svg,ttf,woff,woff2}');
       });
 
       streams.push(
