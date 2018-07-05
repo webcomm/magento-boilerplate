@@ -101,19 +101,19 @@ $include-toolbar-module:             true !default;
 @if $include-accordion-component == false          { $include-html-accordian-classes: false !default; }
 @if $include-alert-boxes-component == false        { $include-html-alert-classes: false !default; }
 @if $include-block-grid-component == false         { $include-html-block-grid-classes: false !default; }
-@if $include-breadcrumbs-component == false &&
-    $include-side-nav-component == false &&
+@if $include-breadcrumbs-component == false and
+    $include-side-nav-component == false and
     $include-sub-nav-component == false            { $include-html-nav-classes: false !default; }
-@if $include-button-groups-component == false &&
-    $include-buttons-component == false &&
-    $include-dropdown-buttons-component == false &&
+@if $include-button-groups-component == false and
+    $include-buttons-component == false and
+    $include-dropdown-buttons-component == false and
     $include-split-buttons-component == false      { $include-html-button-classes: false !default; }
 @if $include-clearing-component == false           { $include-html-clearing-classes: false !default; }
 @if $include-dropdown-component == false           { $include-html-dropdown-classes: false !default; }
-@if $include-flex-video-component == false &&
-    $include-progress-bars-component == false &&
+@if $include-flex-video-component == false and
+    $include-progress-bars-component == false and
     $include-thumbs-component == false             { $include-html-media-classes: false !default; }
-@if $include-forms-component == false &&
+@if $include-forms-component == false and
     $include-switches-component == false           { $include-html-form-classes: false !default; }
 @if $include-icon-bar-component == false           { $include-html-icon-bar-classes: false !default; }
 @if $include-inline-lists-component == false       { $include-html-inline-lists-classes: false !default; }
